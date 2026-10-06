@@ -51,4 +51,4 @@ Even the most expensive approach is a few dollars for all 20 books. Determinism 
 | Induce the spec, LLM on audit flags (3 of 20 books) | 80.9% | 68.5% |
 | Induce the spec, no LLM | 72.5% | 52.4% |
 | Camelot as the extraction layer | 20.1% | 4.5% |
-| Embeddings as the page filter | 84% page recall at 66% precision, against 98.9% at 99.7% for the regex finder | |
+| Embeddings as the page filter | 84% page recall at 66% precision, the regex finder is in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder) | |
