@@ -2,28 +2,28 @@
 
 Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 sets, 2,218 rows, 20 books). A row counts only when all five fields are exact. The held-out set is 25 pages labeled after all tuning and scored once.
 
-| | 1. Spec per book (ours) | 2. Spec by example | 3. Structure labels | 4. Per-page LLM | 5. Multimodal |
-| :--- | ---: | ---: | ---: | ---: | ---: |
-| Exact rows | 98.4% | 97.1% | 96.2% | 95.8% | **99.1%** |
-| Sets fully correct | 94.5% | 93.6% | 77.2% | 82.6% | **96.5%** |
-| Precision | 98.6% | 97.2% | 91.5% | 91.9% | **99.1%** |
-| Mfr/finish swaps | 0 | 0 | 0 | 0 | 0 |
-| Held-out rows | 97.2% | 97.2% | | | |
-| Held-out sets | 89.5% | 89.5% | | | |
-| Values invented | impossible | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
-| LLM calls, 20 books | 22 | 39 | 694 | 694 | 694 |
-| Tokens, estimated | 51K | 82K | 1.3M | 1.2M | 2.6M |
-| Same output every run | yes | yes | no | no | no |
-| Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
-| Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book | not run whole-book |
+| | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
+| :--- | ---: | ---: | ---: | ---: |
+| Exact rows | 98.4% | 97.1% | 95.8% | **99.1%** |
+| Sets fully correct | 94.5% | 93.6% | 82.6% | **96.5%** |
+| Precision | 98.6% | 97.2% | 91.9% | **99.1%** |
+| Mfr/finish swaps | 0 | 0 | 0 | 0 |
+| Held-out rows | 97.2% | 97.2% | | |
+| Held-out sets | 89.5% | 89.5% | | |
+| Values invented | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
+| LLM calls, 20 books | 22 | 39 | 694 | 694 |
+| Tokens, estimated | 51K | 82K | 1.2M | 2.6M |
+| Same output every run | yes | yes | no | no |
+| Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
+| Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book |
 
 The last two rows are the whole pipeline, not just the labeled pages. Every approach shares the page finder in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder), which reaches all 697 set pages. Approaches 1 and 2 then ran every book, and the set numbers they output are checked against every printed set header. End to end for approach 1: every set page reached, 99.7% of printed set numbers out as a set, 98.4% of rows exact on labeled pages (97.2% held out).
 
 ## Reading the numbers
 
-- **The multimodal score is inflated.** The labels were made by Claude reading the same page images under nearly the same rules. Two independent labelers agree about 99% of the time, and approach 5 lands right there, so it is as consistent as a second labeler. Whether it is correct, this benchmark cannot say.
+- **The multimodal score is inflated.** The labels were made by Claude reading the same page images under nearly the same rules. Two independent labelers agree about 99% of the time, and approach 4 lands right there, so it is as consistent as a second labeler. Whether it is correct, this benchmark cannot say.
 - **Approach 1 was tuned on this benchmark.** Every fix in the interpreter was found here. The held-out numbers are the ones to quote.
-- **Strike-through is the dividing line.** HFH, SJC and Valor strike out revised rows. Approaches 1 and 2 detect the strike marks in the PDF and drop them, approach 5 sees them in the image, approaches 3 and 4 cannot and keep the rows. That is most of the gap between 96% rows and 77% sets for approach 3.
+- **Strike-through is the dividing line.** HFH, SJC and Valor strike out revised rows. Approaches 1 and 2 detect the strike marks in the PDF and drop them, approach 4 sees them in the image, approach 3 cannot and keeps the rows.
 
 ## Where each one loses
 
@@ -31,19 +31,18 @@ The last two rows are the whole pipeline, not just the labeled pages. Every appr
 | :--- | :--- | :--- |
 | 1. Spec per book | Star 72% of sets | prose cells with the finish and maker written inside a sentence |
 | 2. Spec by example | Star 61% | the sample pages do not show Star's third header spelling |
-| 3. Structure labels | SJC 59%, Roselle 29% | struck rows kept, set-column text folded into descriptions |
-| 4. Per-page LLM | Roselle 19%, Door Co 40% | values formatted differently from one call to the next |
-| 5. Multimodal | Star 72% | prose cells |
+| 3. Per-page LLM | Roselle 19%, Door Co 40% | values formatted differently from one call to the next |
+| 4. Multimodal | Star 72% | prose cells |
 
 ## Cost
 
 Per-call figures are from the actual test inputs and outputs.
 
-| | 1 | 2 | 3 | 4 | 5 |
-| :--- | ---: | ---: | ---: | ---: | ---: |
-| Input tokens per call | 2,100 | 1,500 | 1,360 | 1,150 | 3,250 |
-| Output tokens per call | 200 | 600 | 530 | 555 | 530 |
-| Calls | 22 | 39 | 694 | 694 | 694 |
+| | 1 | 2 | 3 | 4 |
+| :--- | ---: | ---: | ---: | ---: |
+| Input tokens per call | 2,100 | 1,500 | 1,150 | 3,250 |
+| Output tokens per call | 200 | 600 | 555 | 530 |
+| Calls | 22 | 39 | 694 | 694 |
 
 Even the most expensive approach is a few dollars for all 20 books. Determinism and editability decide this, not cost.
 
@@ -51,6 +50,7 @@ Even the most expensive approach is a few dollars for all 20 books. Determinism 
 
 | Approach | Rows | Sets |
 | :--- | ---: | ---: |
+| Structure labels per page, code copies the text by id | 96.2% | 77.2% |
 | LLM writes a Python parser per book | 91.6% | 72.0% |
 | Induce the spec, LLM on audit flags (3 of 20 books) | 80.9% | 68.5% |
 | Induce the spec, no LLM | 72.5% | 52.4% |

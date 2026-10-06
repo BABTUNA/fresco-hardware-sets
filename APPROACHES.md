@@ -1,14 +1,13 @@
 # Approaches
 
-Every approach has two layers: a page finder that keeps only the pages that hold sets, then a model step on those pages. The finder is the same for all five, described below. The approaches differ in what the model does. Numbers are in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
+Every approach has two layers: a page finder that keeps only the pages that hold sets, then a model step on those pages. The finder is the same for all four, described below. The approaches differ in what the model does. Numbers are in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
 
 | | What the model does | Calls for 20 books | Same output every run |
 | :--- | :--- | ---: | :--- |
 | **1. Spec per book (ours)** | writes a JSON layout spec from 2 sample pages | 22 | yes |
 | **2. Spec by example** | points at the runs of text on 2 sample pages, code derives the spec | 39 | yes |
-| **3. Structure labels per page** | points at runs on every page, code copies the text | 694 | no |
-| **4. Grounded per-page LLM** | writes the values for every page, citing source lines | 694 | no |
-| **5. Multimodal per-page LLM** | same as 4, with the page image | 694 | no |
+| **3. Grounded per-page LLM** | writes the values for every page, citing source lines | 694 | no |
+| **4. Multimodal per-page LLM** | same as 3, with the page image | 694 | no |
 
 ## Layer 1: the page finder
 
@@ -59,28 +58,23 @@ L7: [20@290]OUTSWINGING DRS
 
 **Trade-off.** Approach 1 with the fragile part removed. The model never writes a regex or a value, so there is far less to vary between runs, and it scores within a point of approach 1. It only knows what the two sample pages show.
 
-## 3. Structure labels per page
-
-The same pointing, on every page. Code copies the text by id. Across 155 pages the model referenced 10,856 ids and every one was on the page.
-
-**Trade-off.** Nothing can be invented or reformatted, and the output is a list of small integers. One call per page, and like every text-only approach it cannot see strike-through.
-
-## 4. Grounded per-page LLM
+## 3. Grounded per-page LLM
 
 Every page goes to the model as numbered lines. The model writes the sets and rows, and each row cites the lines it came from. Code checks the citations and builds the boxes. This is how most production extraction products work.
 
 **Trade-off.** Handles any layout with no rules, but one call per page, values can drift between runs (`613` against `613 (OIL RUBBED BRONZE)`), and 23 of 8,028 values were not in the lines they cited.
 
-## 5. Multimodal per-page LLM
+## 4. Multimodal per-page LLM
 
-Approach 4 plus the rendered page image. The model uses the image for layout and strike-through, and copies values from the text lines.
+Approach 3 plus the rendered page image. The model uses the image for layout and strike-through, and copies values from the text lines.
 
-**Trade-off.** The only approach that sees struck-through revisions, and the best raw score. Twice the tokens of 4, and the labels were made by Claude from the same images under the same rules, so its score is the most inflated.
+**Trade-off.** The only approach that sees struck-through revisions, and the best raw score. Twice the tokens of 3, and the labels were made by Claude from the same images under the same rules, so its score is the most inflated.
 
 ## Tested and dropped
 
 | Approach | Result | Why |
 | :--- | :--- | :--- |
+| Structure labels per page: the model points at runs on every page, code copies the text | 96.2% rows, 77.2% sets | nothing can be invented, but one call per page, cannot see strike-through, and approach 2 gets the same guarantee in 39 calls |
 | LLM writes a Python parser per book | 91.6% rows | breaks on layouts the sample pages did not show, generated code cannot be edited in a UI |
 | Induce the spec from repetition, no LLM | 72.5% rows | headers and columns that few rows share give it nothing to count |
 | Induce, LLM only on audit flags | 80.9% rows | the audit was built for LLM spec failures and let the induction failures through |
@@ -94,7 +88,6 @@ Approach 4 plus the rendered page image. The model uses the image for layout and
 | finder | `experiments/finder.py`, `layer1_truth.py` |
 | 1 | `experiments/e2e.py`, `spec_parse.py`, `specs_e2e/` |
 | 2 | `experiments/alt_byexample.py`, `alt_struct/PROMPT.md` |
-| 3 | `experiments/alt_struct/PROMPT.md`, `alt_struct/convert.py` |
-| 4 | `experiments/alt_llm/PROMPT.md`, `alt_llm/convert.py` |
-| 5 | `experiments/alt_mm/PROMPT.md` |
-| dropped | `alt_code/`, `alt_induce2.py`, `layer1_eval.py`, `alt_camelot.py`, `alt_docling_ceiling.py` |
+| 3 | `experiments/alt_llm/PROMPT.md`, `alt_llm/convert.py` |
+| 4 | `experiments/alt_mm/PROMPT.md` |
+| dropped | `alt_struct/convert.py`, `alt_code/`, `alt_induce2.py`, `layer1_eval.py`, `alt_camelot.py`, `alt_docling_ceiling.py` |
