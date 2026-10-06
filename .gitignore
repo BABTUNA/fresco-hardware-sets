@@ -45,3 +45,6 @@ experiments/out_div/
 out/
 cache/
 corrections/
+experiments/out_*/
+experiments/eval/reconcile.json
+experiments/alt_struct/batches.txt
