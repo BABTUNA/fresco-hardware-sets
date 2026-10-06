@@ -32,6 +32,8 @@ On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md]
 | [CAVEATS.md](CAVEATS.md) | The tricky cases from the brief, with real examples |
 | [BENCHMARK.md](BENCHMARK.md) | How the benchmark works |
 | [RESULTS.md](RESULTS.md) | Benchmark results |
+| [APPROACHES.md](APPROACHES.md) | The four approaches compared, and what was ruled out |
+| [APPROACH_RESULTS.md](APPROACH_RESULTS.md) | How each approach scored on the benchmark |
 
 ## Running the benchmark
 

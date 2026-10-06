@@ -13,3 +13,12 @@ experiments/eval/bench_misses.json
 __pycache__/
 .DS_Store
 .env
+experiments/alt_llm/input/
+experiments/out_llm/
+experiments/out_induced/
+experiments/alt_llm/out/
+experiments/out_hybrid/
+experiments/out_code/
+experiments/alt_code/parsers/*.error.txt
+experiments/alt_mm/out/
+experiments/out_mm/
