@@ -7,17 +7,17 @@ FINISH_SHAPE = re.compile(r"^(?:6\d\d[A-Z]?|US\d{1,2}[A-Z]?|\d{2}[A-Z]{1,2}|BLK|
 FIELDS = ("qty", "description", "catalog", "finish", "mfr")
 
 
+# the plain words a header regex starts with, so near misses can be searched for
+#   "^Hardware Groups?/Sets?\s*#" -> "Hardware Group"   (stops at the first regex operator)
 def literal_prefix(regex):
-    # the plain words a header regex starts with, so near misses can be searched for
-    #   "^Hardware Groups?/Sets?\s*#" -> "Hardware Group"   (stops at the first regex operator)
     m = re.match(r"\^?((?:[A-Za-z #:]|\\[.#:])+)", regex)
     p = (m.group(1) if m else "").replace("\\", "").strip()
     return p if len(p) >= 2 else None
 
 
+# -> list of flags, each {"check": name, "count": n, "examples": [...]}
+#   [{"check": "header_near_miss", "count": 10, "examples": [[96, "Hardware Group No.103 [BULLETIN 023]"]]}]
 def audit(spec, sets, texts, pages, scores, pdf=None):
-    # -> list of flags, each {"check": name, "count": n, "examples": [...]}
-    #   [{"check": "header_near_miss", "count": 10, "examples": [[96, "Hardware Group No.103 [BULLETIN 023]"]]}]
     flags = []
     if spec.get("mode") != "grid":
         # lines that start like the header but did not match it: a spelling the spec writer never saw

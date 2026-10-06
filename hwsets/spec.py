@@ -32,8 +32,8 @@ LIST_END = re.compile(r"Provide each|Each to have|with the following|^\s*QTY\b",
 DOOR_RE = re.compile(r"\b(Single|Pair)\s+(of\s+)?doors?\s*(#|\d)|\bDoor\s*#\s*\w|Opening Description", re.I)
 
 
+# a bad spec fails here, before it runs over a book. returns the spec unchanged
 def validate_spec(spec):
-    # a bad spec fails here, before it runs over a book. returns the spec unchanged
     if spec.get("mode") == "grid":
         for k in ("set_column", "set_number", "columns"):
             if k not in spec:
@@ -58,9 +58,9 @@ def validate_spec(spec):
     return spec
 
 
+# the text the model sees when it writes a spec: each run of words tagged with its left x
+#   out: "=== page 427 ===\n[80]6 [112]EA [148]HINGE [290]5BB1HW 4.5 X 4.5 - NRP AT [464]652 [508]IVE\n..."
 def dump(pdf, pages, gap=8):
-    # the text the model sees when it writes a spec: each run of words tagged with its left x
-    #   out: "=== page 427 ===\n[80]6 [112]EA [148]HINGE [290]5BB1HW 4.5 X 4.5 - NRP AT [464]652 [508]IVE\n..."
     out = []
     for i in pages:
         out.append(f"=== page {i} ===")
@@ -76,8 +76,8 @@ def dump(pdf, pages, gap=8):
     return "\n".join(out)
 
 
+# the spec's columns for one page, with the helpers that decide which field a word belongs to
 class Layout:
-    # the spec's columns for one page, with the helpers that decide which field a word belongs to
     def __init__(self, spec):
         self.cols = sorted(spec["columns"], key=lambda c: c["x"])
         self.fields = [c["field"] for c in self.cols]
@@ -89,8 +89,8 @@ class Layout:
         self.desc_right = None
         self.right = {}
 
+    # how far each column's text reaches on this page, which is where its cells end
     def measure(self, lines):
-        # how far each column's text reaches on this page, which is where its cells end
         edges = collections.defaultdict(list)
         for l in lines:
             if self.straddles(l):
@@ -100,9 +100,9 @@ class Layout:
         self.right = {f: max(v) for f, v in edges.items() if len(v) >= 3}
         self.desc_right = self.right.get("description")
 
+    # true when the line's first word in this column would have fit at the end of the cell above,
+    # which means the line is not a wrap of that cell
     def fits_above(self, prev_lines, line, field):
-        # true when the line's first word in this column would have fit at the end of the cell above,
-        # which means the line is not a wrap of that cell
         words = [w for w, f in zip(line["words"], self.assign(line["words"])) if f == field]
         if not words:
             return None
@@ -113,16 +113,16 @@ class Layout:
                 return right - above[-1]["x1"] >= (words[0]["x1"] - words[0]["x0"]) + 8
         return True
 
+    # the column whose left edge is the last one at or before x
     def field(self, x):
-        # the column whose left edge is the last one at or before x
         k = max((j for j, c in enumerate(self.cols) if c["x"] <= x + SLACK), default=0)
         return self.fields[k]
 
+    # one field per word, by x. a word that continues a run of text (no gap before it) cannot jump
+    # into a code column, so "4.5 X 4.5 NRP" stays in catalog even where NRP sits past the finish edge
+    #   in:  words of "6 EA HINGE 5BB1HW 4.5 X 4.5 NRP 652 IVE" on oswego's columns
+    #   out: ["qty", "unit", "description", "catalog", "catalog", "catalog", "catalog", "catalog", "finish", "mfr"]
     def assign(self, words, gap=4):
-        # one field per word, by x. a word that continues a run of text (no gap before it) cannot jump
-        # into a code column, so "4.5 X 4.5 NRP" stays in catalog even where NRP sits past the finish edge
-        #   in:  words of "6 EA HINGE 5BB1HW 4.5 X 4.5 NRP 652 IVE" on oswego's columns
-        #   out: ["qty", "unit", "description", "catalog", "catalog", "catalog", "catalog", "catalog", "finish", "mfr"]
         out, prev = [], None
         for w in words:
             f = self.field(w["x0"])
@@ -141,17 +141,17 @@ class Layout:
             out[f].append(w["text"])
         return out
 
+    # does the line open with a quantity in the first column
     def qty_start(self, line):
-        # does the line open with a quantity in the first column
         ws = line["words"]
         if self.field(ws[0]["x0"]) != self.fields[0] or len(ws) < 2:
             return False
         t = ws[0]["text"]
         return bool(self.row.match(t) or QTY_ANY.match(t) or (t.lower() == "as" and ws[1]["text"].lower().startswith("req")))
 
+    # does the line start a component: a qty in the first column, or a description plus a code
+    # column aligned to the grid. door lists and door descriptions are header lines, not rows
     def is_anchor(self, line):
-        # does the line start a component: a qty in the first column, or a description plus a code
-        # column aligned to the grid. door lists and door descriptions are header lines, not rows
         c = self.cells(line)
         desc = " ".join(c.get("description", []))
         if DOOR_RE.search(line["text"]) or (desc and not re.search(r"[A-Za-z]{3}", desc) and not any(c.get(f) for f in CODE_FIELDS)):
@@ -161,9 +161,9 @@ class Layout:
         f = set(c)
         return self.anchor_field in f and "description" in f and self.aligned(line)
 
+    # a line continues the row above only if its first description word would not have fit there
+    #   "6 HINGE 5BB1HW 4.5 X 4.5 - NRP AT" then "OUTSWINGING DRS" under catalog -> True
     def wraps(self, prev_lines, line):
-        # a line continues the row above only if its first description word would not have fit there
-        #   "6 HINGE 5BB1HW 4.5 X 4.5 - NRP AT" then "OUTSWINGING DRS" under catalog -> True
         c = self.assign(line["words"])
         first = next((w for w, f in zip(line["words"], c) if f == "description"), None)
         if first is None:
@@ -180,8 +180,8 @@ class Layout:
         right = self.desc_right or next((col["x"] for col in self.cols if col["x"] > above["x1"] + 1), above["x1"] + 200)
         return right - above["x1"] < (first["x1"] - first["x0"]) + 8
 
+    # prose runs straight across column edges, table cells stop short of them
     def straddles(self, line):
-        # prose runs straight across column edges, table cells stop short of them
         return any(w["x0"] < c["x"] - SLACK < w["x1"] for w in line["words"] for c in self.cols[1:])
 
     def aligned(self, line, gap=8):
@@ -189,11 +189,11 @@ class Layout:
         return not self.straddles(line) and any(b["x0"] - a["x1"] > gap for a, b in zip(ws, ws[1:]))
 
 
+# the spec fixes column order and roles, each page's own aligned word edges fix the positions.
+# catches a column that drifts a few points between pages (star page 85)
+#   in:  spec columns catalog 240, finish 470, mfr 497; this page's rows start cells at 243, 471, 499
+#   out: the same spec with catalog 242, finish 470, mfr 498
 def calibrate(spec, lines, reach=45, share=0.25):
-    # the spec fixes column order and roles, each page's own aligned word edges fix the positions.
-    # catches a column that drifts a few points between pages (star page 85)
-    #   in:  spec columns catalog 240, finish 470, mfr 497; this page's rows start cells at 243, 471, 499
-    #   out: the same spec with catalog 242, finish 470, mfr 498
     row = re.compile(spec["row_start"])
     cols = sorted(spec["columns"], key=lambda c: c["x"])
     rows = [l for l in lines if (row.match(l["words"][0]["text"]) or QTY_ANY.match(l["words"][0]["text"]))
@@ -235,16 +235,16 @@ def box(lines):
             round(max(l["x1"] for l in lines), 1), round(max(l["bottom"] for l in lines), 1)]
 
 
+# "3", "3.0", "2571" -> int; blank, "__", "--", "As Req" -> None, never a guess
 def parse_qty(q):
-    # "3", "3.0", "2571" -> int; blank, "__", "--", "As Req" -> None, never a guess
     return int(float(q)) if q and re.fullmatch(r"\d{1,4}(\.0+)?", q) else None
 
 
+# one component from its anchor line plus its wrapped lines
+#   in:  "6 EA HINGE 5BB1HW 4.5 X 4.5 - NRP AT 652 IVE" and the wrap "OUTSWINGING DRS"
+#   out: {"qty": 6, "unit": "EA", "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS",
+#         "finish": "652", "mfr": "IVE", "notes": None, "bbox": [80.1, 98.2, 528.0, 121.7]}
 def assemble(layout, anchor, extra):
-    # one component from its anchor line plus its wrapped lines
-    #   in:  "6 EA HINGE 5BB1HW 4.5 X 4.5 - NRP AT 652 IVE" and the wrap "OUTSWINGING DRS"
-    #   out: {"qty": 6, "unit": "EA", "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS",
-    #         "finish": "652", "mfr": "IVE", "notes": None, "bbox": [80.1, 98.2, 528.0, 121.7]}
     comp = {f: [] for f in layout.fields}
     for l in sorted([anchor] + extra, key=lambda l: l["top"]):
         for w, f in zip(l["words"], layout.assign(l["words"])):
@@ -272,8 +272,8 @@ def assemble(layout, anchor, extra):
     return comp
 
 
+# vertically centered cells: lines of one row overlap vertically, rows are separated by a gap
 def resolve_middle(layout, items):
-    # vertically centered cells: lines of one row overlap vertically, rows are separated by a gap
     groups, notes = [], []
     for kind, l in items:
         if kind == "note":
@@ -300,11 +300,11 @@ def resolve_middle(layout, items):
     return out, notes
 
 
+# the tagged lines of one set on one page -> (components, set notes)
+#   in:  [("anchor", "6 EA HINGE 5BB1HW ... 652 IVE"), ("other", "OUTSWINGING DRS"),
+#         ("anchor", "1 EA CLOSER 4040XP 689 LCN"), ("other", "OPERATIONAL DESCRIPTION: ...")]
+#   out: ([hinge component with the wrap folded in, closer component], ["OPERATIONAL DESCRIPTION: ..."])
 def resolve(layout, valign, items):
-    # the tagged lines of one set on one page -> (components, set notes)
-    #   in:  [("anchor", "6 EA HINGE 5BB1HW ... 652 IVE"), ("other", "OUTSWINGING DRS"),
-    #         ("anchor", "1 EA CLOSER 4040XP 689 LCN"), ("other", "OPERATIONAL DESCRIPTION: ...")]
-    #   out: ([hinge component with the wrap folded in, closer component], ["OPERATIONAL DESCRIPTION: ..."])
     if valign == "middle":
         return resolve_middle(layout, items)
     rows, notes = [], []
@@ -355,10 +355,10 @@ def resolve(layout, valign, items):
     return comps, notes
 
 
+# walk the pages in order, start a set at each header, tag every other line, resolve once per page
+#   out: [{"set_number": "18", "description": None, "meta": ["E120A E121B"], "components": [...],
+#          "notes": [], "location": [{"page": 427, "bbox": [72.0, 73.5, 530.2, 630.5]}]}, ...]
 def run_columns(spec, pdf, pages):
-    # walk the pages in order, start a set at each header, tag every other line, resolve once per page
-    #   out: [{"set_number": "18", "description": None, "meta": ["E120A E121B"], "components": [...],
-    #          "notes": [], "location": [{"page": 427, "bbox": [72.0, 73.5, 530.2, 630.5]}]}, ...]
     layout = Layout(spec)
     hdr = re.compile(spec["set_header"])
     skip = [re.compile(p) for p in spec.get("skip", [])]
@@ -369,8 +369,8 @@ def run_columns(spec, pdf, pages):
     sets, cur, buf = [], None, []
     in_doors = False
 
+    # resolve the lines buffered for the current set on this page
     def flush(page):
-        # resolve the lines buffered for the current set on this page
         nonlocal buf
         if cur is not None and buf:
             comps, notes = resolve(layout, valign, buf)
@@ -449,11 +449,11 @@ def run_columns(spec, pdf, pages):
     return sets
 
 
+# ruled tables: pdfplumber finds the cells, the header row maps printed labels to fields,
+# a cell matching set_number starts a set, other text in that column is the set's description
+#   in:  roselle, columns {"HARDWARE TYPE": "description", "MANUFACTURER - PRODUCT": "product", "QTY.": "qty", ...}
+#   out: sets like run_columns, with "IVES - 5BB1 4.5 x 4.5" split into mfr IVES and catalog 5BB1 4.5 x 4.5
 def run_grid(spec, pdf, pages):
-    # ruled tables: pdfplumber finds the cells, the header row maps printed labels to fields,
-    # a cell matching set_number starts a set, other text in that column is the set's description
-    #   in:  roselle, columns {"HARDWARE TYPE": "description", "MANUFACTURER - PRODUCT": "product", "QTY.": "qty", ...}
-    #   out: sets like run_columns, with "IVES - 5BB1 4.5 x 4.5" split into mfr IVES and catalog 5BB1 4.5 x 4.5
     num_re = re.compile(spec["set_number"])
     sets, cur = [], None
     for i in pages:
@@ -504,6 +504,6 @@ def run_grid(spec, pdf, pages):
     return sets
 
 
+# spec + open pdfplumber pdf + 0-based page list -> sets
 def interpret(spec, pdf, pages):
-    # spec + open pdfplumber pdf + 0-based page list -> sets
     return (run_grid if spec.get("mode") == "grid" else run_columns)(spec, pdf, pages)

@@ -7,16 +7,16 @@ from .audit import audit
 from . import compile as compiler
 
 
+# the checked-in spec for a sample book is named after its folder and file
+#   "data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf" -> "village-of-oswego-specifications-volume-1"
 def spec_name(pdf_path):
-    # the checked-in spec for a sample book is named after its folder and file
-    #   "data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf" -> "village-of-oswego-specifications-volume-1"
     parent = os.path.basename(os.path.dirname(os.path.abspath(pdf_path)))
     stem = os.path.splitext(os.path.basename(pdf_path))[0]
     return re.sub(r"[^a-z0-9]+", "-", f"{parent} {stem}".lower()).strip("-")
 
 
+# -> BookResult (see to_result). spec_path overrides the lookup in spec_dir
 def extract_book(pdf_path, spec_path=None, spec_dir="specs", allow_llm=True):
-    # -> BookResult (see to_result). spec_path overrides the lookup in spec_dir
     texts, scores, runs = find_schedule(pdf_path)
     pdf = pdfplumber.open(pdf_path)
     if not runs:
@@ -47,16 +47,16 @@ def extract_book(pdf_path, spec_path=None, spec_dir="specs", allow_llm=True):
     return to_result(pdf_path, pdf, status, spec_path, flags, sets)
 
 
+# the output file: 1-based pages, catalog -> catalog_number, every set and component with a status
+#   {"file": "SPECIFICATIONS VOLUME 1.pdf", "status": "extracted", "page_count": 584, "page_size": [612.0, 792.0],
+#    "spec": "specs/village-of-oswego-specifications-volume-1.json", "flags": [],
+#    "sets": [{"set_number": "18", "description": null, "status": "active", "moved_to": null,
+#              "doors": ["E120A E121B"], "notes": [],
+#              "location": [{"page": 428, "bbox": [72.0, 73.5, 530.2, 630.5]}],
+#              "components": [{"qty": 6, "description": "HINGE", "catalog_number": "5BB1HW 4.5 X 4.5 - NRP",
+#                              "mfr": "IVE", "finish": "652", "notes": null,
+#                              "page": 428, "bbox": [80.1, 98.2, 528.0, 121.7]}]}]}
 def to_result(pdf_path, pdf, status, spec_path, flags, sets):
-    # the output file: 1-based pages, catalog -> catalog_number, every set and component with a status
-    #   {"file": "SPECIFICATIONS VOLUME 1.pdf", "status": "extracted", "page_count": 584, "page_size": [612.0, 792.0],
-    #    "spec": "specs/village-of-oswego-specifications-volume-1.json", "flags": [],
-    #    "sets": [{"set_number": "18", "description": null, "status": "active", "moved_to": null,
-    #              "doors": ["E120A E121B"], "notes": [],
-    #              "location": [{"page": 428, "bbox": [72.0, 73.5, 530.2, 630.5]}],
-    #              "components": [{"qty": 6, "description": "HINGE", "catalog_number": "5BB1HW 4.5 X 4.5 - NRP",
-    #                              "mfr": "IVE", "finish": "652", "notes": null,
-    #                              "page": 428, "bbox": [80.1, 98.2, 528.0, 121.7]}]}]}
     out_sets = []
     for s in sets:
         comps = [{"qty": c.get("qty"), "description": c.get("description"), "catalog_number": c.get("catalog"),

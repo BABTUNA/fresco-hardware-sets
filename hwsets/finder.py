@@ -13,24 +13,24 @@ FINISH = re.compile(r"\b(?:6[0-9]{2}|US\d{1,2}[A-Z]?|\d{2}D)\b")
 MIN_ROWS = 2
 
 
+# "3   EA   HINGE   5BB1 4.5 X 4.5 NRP   652   IVE" -> True
+# "B. Silencers and gasketing, where listed in Hardware Sets" -> False
 def row_like(line):
-    # "3   EA   HINGE   5BB1 4.5 X 4.5 NRP   652   IVE" -> True
-    # "B. Silencers and gasketing, where listed in Hardware Sets" -> False
     m = ROW.match(line)
     if m and CODE.match(m.group("tail").split()[-1]):
         return True
     return bool(FINISH.search(line) and HARDWARE.search(line) and re.search(r"(?:^|\s)\d{1,2}(?:\s|$)", line))
 
 
+# raw text lines per page with pypdfium2, fast enough to read a 4,000 page book in seconds.
+# used for scoring and header search, not for coordinates
 def page_texts(path):
-    # raw text lines per page with pypdfium2, fast enough to read a 4,000 page book in seconds.
-    # used for scoring and header search, not for coordinates
     pdf = pdfium.PdfDocument(path)
     return [pdf[i].get_textpage().get_text_range().splitlines() for i in range(len(pdf))]
 
 
+# per page: how many row-like lines, and how many of those mention hardware
 def page_scores(texts):
-    # per page: how many row-like lines, and how many of those mention hardware
     scores, vocab = [], []
     for lines in texts:
         rows = [l for l in lines if row_like(l)]
@@ -39,10 +39,10 @@ def page_scores(texts):
     return scores, vocab
 
 
+# pages with enough rows, joined into runs, allowing a short gap (a set's tail or a legend page)
+#   in:  scores [0, 0, 7, 12, 0, 9, 3, 0, 0, 1, 0]   (one page per entry)
+#   out: [[2, 6]]   a run from page 2 to page 6, 0-based, inclusive
 def runs(scores, vocab, gap=1):
-    # pages with enough rows, joined into runs, allowing a short gap (a set's tail or a legend page)
-    #   in:  scores [0, 0, 7, 12, 0, 9, 3, 0, 0, 1, 0]   (one page per entry)
-    #   out: [[2, 6]]   a run from page 2 to page 6, 0-based, inclusive
     hits = [i for i, s in enumerate(scores) if s >= MIN_ROWS]
     out = []
     for i in hits:
@@ -60,18 +60,18 @@ def runs(scores, vocab, gap=1):
     return [r for r in out if sum(scores[r[0]:r[1] + 1]) >= 5 and sum(vocab[r[0]:r[1] + 1]) >= 3]
 
 
+# the whole first layer: path -> (texts, scores, runs)
 def find_schedule(path):
-    # the whole first layer: path -> (texts, scores, runs)
     texts = page_texts(path)
     scores, vocab = page_scores(texts)
     return texts, scores, runs(scores, vocab)
 
 
+# the compiled header regex is cheap to run over the whole book: pull in set pages the finder
+# scored low because they have few row-shaped lines (an empty set, a set that is one NOTE line)
+#   in:  runs [[417, 444]], a header match on page 446
+#   out: [417, 418, ..., 444, 445, 446]
 def widen_with_headers(spec, texts, runs, margin=3):
-    # the compiled header regex is cheap to run over the whole book: pull in set pages the finder
-    # scored low because they have few row-shaped lines (an empty set, a set that is one NOTE line)
-    #   in:  runs [[417, 444]], a header match on page 446
-    #   out: [417, 418, ..., 444, 445, 446]
     pages = {p for a, b in runs for p in range(a, b + 1)}
     if spec.get("mode") == "grid":
         return sorted(pages)

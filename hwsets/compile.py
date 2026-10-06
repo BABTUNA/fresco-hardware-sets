@@ -7,16 +7,16 @@ PROMPTS = Path(__file__).parent / "prompts"
 MODEL = os.environ.get("HWSETS_MODEL", "claude-sonnet-5-5")
 
 
+# the n densest schedule pages, the ones with the most row-shaped lines
+#   in:  runs [[417, 444]], scores with page 420 at 31 rows and 426 at 29
+#   out: [420, 426]
 def pick_samples(runs, scores, n=2):
-    # the n densest schedule pages, the ones with the most row-shaped lines
-    #   in:  runs [[417, 444]], scores with page 420 at 31 rows and 426 at 29
-    #   out: [420, 426]
     pages = [p for a, b in runs for p in range(a, b + 1)]
     return sorted(sorted(pages, key=lambda p: scores[p], reverse=True)[:n])
 
 
+# ANTHROPIC_API_KEY from the environment, or from a .env file in the working directory
 def api_key():
-    # ANTHROPIC_API_KEY from the environment, or from a .env file in the working directory
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key and os.path.exists(".env"):
         for line in open(".env"):
@@ -27,8 +27,8 @@ def api_key():
     return key
 
 
+# one call, the reply is the spec JSON (with or without a code fence)
 def ask_claude(prompt, text):
-    # one call, the reply is the spec JSON (with or without a code fence)
     import anthropic
     client = anthropic.Anthropic(api_key=api_key())
     msg = client.messages.create(model=MODEL, max_tokens=3000,
@@ -40,16 +40,16 @@ def ask_claude(prompt, text):
     return validate_spec(json.loads(m.group(0)))
 
 
+# -> (spec, dump), the dump is kept for the repair call
 def compile_spec(pdf, runs, scores):
-    # -> (spec, dump), the dump is kept for the repair call
     pages = pick_samples(runs, scores)
     text = dump(pdf, pages)
     prompt = (PROMPTS / "spec.md").read_text()
     return ask_claude(prompt, text), text
 
 
+# one more call with the spec, what the audit found, and the same sample pages
 def repair(spec, flags, text):
-    # one more call with the spec, what the audit found, and the same sample pages
     prompt = (PROMPTS / "repair.md").read_text()
     body = "Current spec:\n" + json.dumps(spec, indent=1) + "\n\nAudit flags:\n" + json.dumps(flags, indent=1) + "\n\nSample pages:\n" + text
     return ask_claude(prompt, body)

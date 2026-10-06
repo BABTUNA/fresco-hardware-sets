@@ -2,19 +2,19 @@
 import re
 
 
+# thin horizontal rules on the page as (x0, x1, y). a rule through a word's middle is a strike-through,
+# one just under it is an underline, so the caller checks the height
 def strike_marks(page):
-    # thin horizontal rules on the page as (x0, x1, y). a rule through a word's middle is a strike-through,
-    # one just under it is an underline, so the caller checks the height
     return [(o["x0"], o["x1"], (o["top"] + o["bottom"]) / 2) for o in page.lines + page.rects
             if o["bottom"] - o["top"] < 2.5 and o["x1"] - o["x0"] > 4]
 
 
+# one pdfplumber page -> lines in reading order, each with its words and box
+#   in:  page 427 of oswego
+#   out: [{"top": 98.2, "bottom": 108.1, "x0": 80.1, "x1": 528.0,
+#          "text": "6 EA HINGE 5BB1HW 4.5 X 4.5 NRP 652 IVE",
+#          "words": [{"text": "6", "x0": 80.1, "x1": 85.3, "top": 98.2, "bottom": 108.1, "struck": False}, ...]}, ...]
 def page_lines(page, ytol=2.5):
-    # one pdfplumber page -> lines in reading order, each with its words and box
-    #   in:  page 427 of oswego
-    #   out: [{"top": 98.2, "bottom": 108.1, "x0": 80.1, "x1": 528.0,
-    #          "text": "6 EA HINGE 5BB1HW 4.5 X 4.5 NRP 652 IVE",
-    #          "words": [{"text": "6", "x0": 80.1, "x1": 85.3, "top": 98.2, "bottom": 108.1, "struck": False}, ...]}, ...]
     words = page.extract_words(extra_attrs=["upright", "size"], keep_blank_chars=False, x_tolerance=1.5)
     # rotated text is a watermark, private-use glyphs are icons
     words = [w for w in words if w["upright"] and not all(0xE000 <= ord(ch) <= 0xF8FF for ch in w["text"])]
