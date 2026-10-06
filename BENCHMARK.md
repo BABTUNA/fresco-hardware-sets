@@ -207,7 +207,7 @@ FAIL  revisions       struck-row-gasketing found 1: ['GASKETING SET']
 
 | Caveat | Passed |
 | :--- | ---: |
-| Mfr vs finish | 4/5 |
+| Mfr vs finish | 5/5 |
 | NOT USED | 6/6 |
 | Missing qty | 5/5 |
 | Set boundaries | 5/5 |
@@ -215,9 +215,9 @@ FAIL  revisions       struck-row-gasketing found 1: ['GASKETING SET']
 | Column layouts | 4/4 |
 | Revisions (struck text) | 2/2 |
 | No-set books | 21/21 |
-| **Total** | **48/49** |
+| **Total** | **49/49** |
 
-The one failure is Gerrard's `Set #AL 01`, read as set `AL` because the header regex does not allow a space in the number.
+All 49 pass. The last failure, Gerrard's `Set #AL 01` read as set `AL`, was fixed on 2026-10-06.
 
 ## 4. Running it
 

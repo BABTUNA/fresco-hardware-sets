@@ -6,11 +6,11 @@ All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the stric
 
 | | 1. Spec per book (ours) | 2. Per-page LLM | 3. Multimodal per-page | 4. Parser per book |
 | :--- | ---: | ---: | ---: | ---: |
-| Exact rows | 98.3% | 95.8% | **99.1%** | 91.6% |
-| Exact rows, pages the spec writer never saw | 98.2% | 95.8% | 99.0% | 90.9% |
-| Precision | 98.4% | 91.9% | **99.1%** | 88.8% |
-| Per-book average | 98.7% | 96.3% | 99.2% | 92.5% |
-| Sets fully correct | 93.9% | 82.6% | **96.5%** | 72.0% |
+| Exact rows | 98.4% | 95.8% | **99.1%** | 91.6% |
+| Exact rows, pages the spec writer never saw | 98.3% | 95.8% | 99.0% | 90.9% |
+| Precision | 98.6% | 91.9% | **99.1%** | 88.8% |
+| Per-book average | 98.8% | 96.3% | 99.2% | 92.5% |
+| Sets fully correct | 94.5% | 82.6% | **96.5%** | 72.0% |
 | Sets found | 99.4% | 99.7% | 99.7% | 96.8% |
 | NOT USED and moved status right | 93.8% | 87.5% | 100.0% | 50.0% |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
@@ -26,7 +26,7 @@ All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the stric
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | T0 trivial | 459 | 100.0 | 100.0 | 99.6 | 97.6 |
 | T1 one caveat | 669 | 100.0 | 99.4 | 100.0 | 98.2 |
-| T2 hard | 1,090 | 96.5 | 91.8 | 98.3 | 85.0 |
+| T2 hard | 1,090 | 96.8 | 91.8 | 98.3 | 85.0 |
 
 ## By caveat
 
@@ -37,8 +37,8 @@ Exact rows on rows with each tag.
 | missing_qty | 107 | 95.3 | 91.6 | 98.1 | 68.2 |
 | column_drift | 262 | 93.1 | 95.0 | 94.7 | 62.6 |
 | struck_page | 392 | 97.4 | 96.9 | 99.7 | 96.7 |
-| ambiguous_code | 548 | 98.0 | 98.7 | 98.4 | 89.1 |
-| wrapped | 672 | 95.5 | 92.6 | 97.6 | 86.6 |
+| ambiguous_code | 548 | 98.4 | 98.7 | 98.4 | 89.1 |
+| wrapped | 672 | 96.0 | 92.6 | 97.6 | 86.6 |
 | multi_page | 291 | 96.6 | 96.6 | 99.3 | 91.4 |
 
 ## By book
@@ -51,7 +51,7 @@ Exact rows.
 | bridgeport | 109 | 100.0 | 100.0 | 98.2 | 89.9 |
 | doorco | 74 | 100.0 | 82.4 | 100.0 | 91.9 |
 | forest | 5 | 100.0 | 100.0 | 100.0 | 100.0 |
-| gerrard | 166 | 98.8 | 98.8 | 98.8 | 98.8 |
+| gerrard | 166 | 100.0 | 98.8 | 98.8 | 98.8 |
 | hfh | 206 | 95.1 | 95.6 | 99.0 | 95.1 |
 | jcryan | 155 | 96.8 | 100.0 | 100.0 | 70.3 |
 | livelle | 132 | 98.5 | 100.0 | 100.0 | 98.5 |
@@ -59,7 +59,7 @@ Exact rows.
 | marketview | 90 | 100.0 | 100.0 | 100.0 | 100.0 |
 | morris | 48 | 97.9 | 97.9 | 97.9 | 70.8 |
 | national | 51 | 100.0 | 100.0 | 100.0 | 100.0 |
-| oswego | 120 | 98.3 | 100.0 | 100.0 | 95.8 |
+| oswego | 120 | 99.2 | 100.0 | 100.0 | 95.8 |
 | roselle | 134 | 100.0 | 64.2 | 100.0 | 93.3 |
 | sat | 146 | 100.0 | 100.0 | 100.0 | 100.0 |
 | shubie | 31 | 100.0 | 100.0 | 100.0 | 100.0 |

@@ -281,7 +281,9 @@ def _resolve(layout, valign, items):
         elif kind == "note" or (kind == "other" and NOTE_RE.match(l["text"])) or (kind == "other" and in_note and close):
             (cur["notes"] if cur is not None else notes).append(l["text"])
             in_note = True
-        elif kind == "other" and l["x0"] >= layout.body_x - SLACK and cur is not None and close and layout.wraps(cur["lines"], l):
+        elif kind == "other" and l["x0"] >= layout.body_x - SLACK and cur is not None and close and (
+                layout.filled(l) == {"description"} and prev_kind in ("anchor", "wrap") or layout.wraps(cur["lines"], l)):
+            # text only in the description column, tight under a row, is that row's wrapped description
             cur["lines"].append(l)
         elif kind == "other" and l["x0"] >= layout.body_x - SLACK and "description" in layout.filled(l) \
                 and layout.filled(l) - {"description", "qty", "unit"} and layout.aligned(l) and not DOOR_RE.search(l["text"]) \
@@ -354,8 +356,13 @@ def run_columns(spec, pdf, pages):
             m = hdr.search(t)
             if m:
                 flush(i)
-                cur = {"set_number": m.group("num").strip(),
-                       "description": (m.groupdict().get("desc") or "").strip() or None,
+                num, desc = m.group("num").strip(), (m.groupdict().get("desc") or "").strip()
+                # "Set #AL 01": an all-letter number followed by a digit token is one number
+                dm = re.match(r"^(\d[\w.\-]*)(?:\s+|$)", desc)
+                if re.fullmatch(r"[A-Za-z]{1,4}", num) and dm:
+                    num, desc = f"{num} {dm.group(1)}", desc[dm.end():].strip()
+                cur = {"set_number": num,
+                       "description": desc or None,
                        "meta": [], "components": [], "notes": [], "location": []}
                 sets.append(cur)
                 buf = [("header", l)]
