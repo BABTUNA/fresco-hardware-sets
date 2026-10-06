@@ -85,10 +85,7 @@ A separate Claude agent labels each page from its rendered image only, following
 | Set boundaries | pages with 4 or more sets | Roselle page 15 |
 | Unsampled layouts | one page from every page run not sampled yet | Morris pages 233 to 263 |
 
-**Round 3: fill the gaps, 74 pages.** Two goals:
-
-- Every book gets at least 5 labeled pages. A book with fewer than 5 schedule pages that the spec writer did not see gets all of those instead, which leaves five books under 5 (see The books). Before this, SAT had 178 sets and 3 labeled pages.
-- Caveats with few examples get more. This added JC Ryan pages for centered cells, every SJC and Lyons page with NOT USED lines, rows with a 4-digit quantity, rows ending in a manufacturer name like `Pemko`, and pages with struck text or column drift. The last two were found by scanning the drawing marks and column positions of every schedule page in all 20 books.
+**Round 3, 74 pages:** every book gets at least 5 labeled pages where it has that many unseen (SAT had 3 for 178 sets), and the thin caveats get targeted pages, found by searching the text and scanning the drawing marks and column positions of every schedule page.
 
 | Area | Labeled before round 3 | After | Where the labels come from |
 | :--- | ---: | ---: | :--- |
