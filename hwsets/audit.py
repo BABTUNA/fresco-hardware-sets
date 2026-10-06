@@ -10,8 +10,12 @@ FIELDS = ("qty", "description", "catalog", "finish", "mfr")
 # the plain words a header regex starts with, so near misses can be searched for
 #   "^Hardware Groups?/Sets?\s*#" -> "Hardware Group"   (stops at the first regex operator)
 def literal_prefix(regex):
-    m = re.match(r"\^?((?:[A-Za-z #:]|\\[.#:])+)", regex)
-    p = (m.group(1) if m else "").replace("\\", "").strip()
+    m = re.match(r"\^?(?:\(\?i\))?\\?s?\*?((?:[A-Za-z #:]|\\[.#:]|\\s[+*]?)+)", regex)
+    p = m.group(1) if m else ""
+    # "Groups?": the letter before a "?" is optional, leave it out
+    if m and regex[m.end():m.end() + 1] == "?":
+        p = p[:-1]
+    p = re.sub(r"\\s[+*]?", " ", p).replace("\\", "").strip()
     return p if len(p) >= 2 else None
 
 
@@ -23,10 +27,12 @@ def audit(spec, sets, texts, pages, scores, pdf=None):
         # lines that start like the header but did not match it: a spelling the spec writer never saw
         pre = literal_prefix(spec["set_header"])
         hdr = re.compile(spec["set_header"])
+        skip = [re.compile(x) for x in spec.get("skip", [])]
         if pre:
             miss = [(i, l.strip()) for i in pages for l in texts[i]
                     if re.search(r"(?<![A-Za-z])" + re.escape(pre) + r"(?![A-Za-z]).{0,6}\d", l, re.I)
-                    and not hdr.search(l.strip()) and not re.match(r"\s*(\d{1,4}|_+|-{2})\s", l)]
+                    and not hdr.search(l.strip()) and not re.match(r"\s*(\d{1,4}|_+|-{2})\s", l)
+                    and not any(x.search(l.strip()) for x in skip)]
             if miss:
                 flags.append({"check": "header_near_miss", "count": len(miss), "examples": miss[:6]})
     comps = [c for s in sets for c in s["components"]]
