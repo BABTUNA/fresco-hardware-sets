@@ -1,23 +1,45 @@
 {
-  "mode": "columns",
-  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 78},
-    {"field": "unit", "x": 107},
-    {"field": "description", "x": 141},
-    {"field": "catalog", "x": 273},
-    {"field": "finish", "x": 468},
-    {"field": "mfr", "x": 509}
-  ],
-  "valign": "top",
-  "set_meta": "^(Provide each .* with the following:?|[A-Z]?\\d+[A-Z]?(\\s+[A-Z]?\\d+[A-Z]?)*)\\s*$",
-  "skip": [
-    "^Charlotte County Fire Station",
-    "^Construction Documents\\s*$",
-    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER",
-    "^#\\d+\\s+DOOR HARDWARE\\s+08 71 00",
-    "^\\d{2}/\\d{2}/\\d{2}\\s*$"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "(?i)^\\s*(?:Hardware\\s+Groups?|Hardware\\s+Sets?|Heading|Set)\\s*(?:No\\.?|Number|#|:)?\\s*(?P<num>[A-Z]{0,3}-?\\d+[A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>\\S.*))?$",
+ "row_start": "^\\d{1,3}$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 78
+  },
+  {
+   "field": "unit",
+   "x": 107
+  },
+  {
+   "field": "description",
+   "x": 141
+  },
+  {
+   "field": "catalog",
+   "x": 273
+  },
+  {
+   "field": "finish",
+   "x": 468
+  },
+  {
+   "field": "mfr",
+   "x": 509
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*QTY\\s+DESCRIPTION",
+  "^\\s*#\\d+\\s+DOOR HARDWARE",
+  "DOOR HARDWARE\\s+\\d{2} \\d{2} \\d{2}",
+  "^\\s*\\d{2}/\\d{2}/\\d{2,4}\\s*$",
+  "^\\s*Charlotte County Fire Station",
+  "^\\s*Construction Documents\\s*$"
+ ],
+ "set_meta": "(?i)^\\s*(?:\\d{1,3}[A-Z]?(?:\\s+\\d{1,3}[A-Z]?)*|Provide each\\s.*door\\(s\\).*|Each Opening to Receive:?.*|Description:.*)\\s*$",
+ "note_line": "^\\s*NOTES?:",
+ "end": [
+  "END OF SECTION"
+ ]
 }

@@ -4,13 +4,13 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 
 | | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
 | :--- | ---: | ---: | ---: | ---: |
-| Exact rows | 98.4% (2,183 / 2,218) | 97.1% (2,154 / 2,218) | 95.6% (2,121 / 2,218) | **98.9%** (2,193 / 2,218) |
+| Exact rows | 98.5% (2,184 / 2,218) | 97.1% (2,154 / 2,218) | 95.6% (2,121 / 2,218) | **98.9%** (2,193 / 2,218) |
 | Sets fully correct | 94.5% (294 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
 | Held-out rows | 97.2% (350 / 360) | 97.2% (350 / 360) | | |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
 | Set numbers found, all 20 books | 99.7% (1,172 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
 | Values invented | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
-| LLM calls, 20 books | 22 | 39 | 694 | 694 |
+| LLM calls, 20 books | 20 + repairs (2 in the last run) | 39 | 694 | 694 |
 | Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
 | Same output every run | yes | yes | no | no |
 | Cost, 20 books (per set page) | $0.21 ($0.0003) | $0.53 ($0.0008) | $8.20 ($0.012) | $12.30 ($0.018) |

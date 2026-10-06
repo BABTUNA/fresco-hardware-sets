@@ -1,21 +1,36 @@
 {
-  "mode": "columns",
-  "set_header": "^Set:\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)\\s*(?P<desc>.*)$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 72},
-    {"field": "description", "x": 81},
-    {"field": "catalog", "x": 255},
-    {"field": "mfr", "x": 436}
-  ],
-  "valign": "middle",
-  "skip": [
-    "^arkaspecs\\s",
-    "^006\\.4441\\.000",
-    "^DOOR HARDWARE\\s+08 71 00",
-    "^Copyright \\d{4}",
-    "^(Interior|Exterior)?\\s*Hardware Sets$"
-  ],
-  "set_meta": "^Description:",
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "^\\s*(?:Hardware\\s+)?Sets?\\b\\s*[:#]?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-_/]*)\\s*(?P<desc>.*)$",
+ "row_start": "^\\d{1,3}$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 73
+  },
+  {
+   "field": "description",
+   "x": 80
+  },
+  {
+   "field": "catalog",
+   "x": 256
+  },
+  {
+   "field": "mfr",
+   "x": 437
+  }
+ ],
+ "valign": "middle",
+ "skip": [
+  "arkaspecs",
+  "Bulletin\\s+\\d+",
+  "^\\s*DOOR HARDWARE\\s+\\d",
+  "Copyright\\s+\\d{4}",
+  "^\\s*(Interior|Exterior)\\s+Hardware\\s+Sets?\\s*$"
+ ],
+ "set_meta": "^\\s*(Description:|Provide each|Each Opening to Receive)",
+ "note_line": "^\\s*(Notes?:|Operation:|\\*)",
+ "end": [
+  "END OF SECTION"
+ ]
 }

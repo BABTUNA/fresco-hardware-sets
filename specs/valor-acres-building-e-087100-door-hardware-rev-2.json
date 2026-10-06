@@ -1,21 +1,39 @@
 {
-  "mode": "columns",
-  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*?):?(?:\\s+(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 82},
-    {"field": "unit", "x": 100},
-    {"field": "description", "x": 134},
-    {"field": "finish", "x": 261}
-  ],
-  "valign": "top",
-  "set_meta": "^(Each To Have:?|[0-9A-Z]{2,6},.*\\)\\s*)$",
-  "skip": [
-    "^NEW BUILDINGS FOR VALOR ACRES",
-    "^BUILDING E\\b",
-    "^Bulletin #\\d",
-    "^Qty\\s+Description\\s*$",
-    "^DOOR HARDWARE\\s+087100 - \\d+"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "Hardware\\s+Groups?\\s+(?:No\\.?\\s*)?(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)\\s*:?\\s*(?P<desc>.*)$",
+ "row_start": "^\\d{1,3}(?:\\.\\d)?$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 82
+  },
+  {
+   "field": "unit",
+   "x": 100
+  },
+  {
+   "field": "description",
+   "x": 134
+  },
+  {
+   "field": "finish",
+   "x": 261
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*NEW BUILDINGS FOR",
+  "BUILDING [A-Z]\\b.*Bulletin",
+  "^\\s*Bulletin\\s*#\\d",
+  "^\\s*DOOR HARDWARE\\s+\\d{6}\\s*[-\u2013\u2014]\\s*\\d+",
+  "^\\s*DOOR\\s+HARDWARE\\s*$",
+  "^\\s*\\d{6}\\s*[-\u2013\u2014]\\s*\\d+\\s*$",
+  "^\\s*Qty\\s+Description",
+  "^\\s*Qty\\s+Unit\\s+Description"
+ ],
+ "set_meta": "^(?:Each\\s+(?:To\\s+Have|Opening\\s+to\\s+Receive)\\s*:?|\\(?\\d{2,3}[A-Z]?(?:[,&\\s]+(?:and\\s+)?\\d{2,3}[A-Z]?)*\\)?$|\\d{3}[A-Z]?(?:,|\\s*&).*)",
+ "note_line": "^(?:NOTE\\s*:|PREP\\s+DOOR)",
+ "end": [
+  "END OF SECTION"
+ ]
 }

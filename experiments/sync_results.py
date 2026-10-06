@@ -96,26 +96,17 @@ def before(t):
 s = replace_in(s, "## Before the fixes", None, before)
 open(p, "w").write(s)
 
-# APPROACH_RESULTS.md, the "ours" column only
+# APPROACH_RESULTS.md, the "ours" column of the main table: percent with its fraction
 p = ROOT + "APPROACH_RESULTS.md"; s = open(p).read()
-def ours(t):
-    for label, val in (("Exact rows", all_[1] + "%"), ("Exact rows, pages the spec writer never saw", unseen[1] + "%"), ("Precision", prec + "%"),
-                       ("Per-book average", avg + "%"), ("Sets fully correct", full + "%"), ("Sets found", sets_all[1] + "%"),
-                       ("NOT USED and moved status right", sets_all[2] + "%"), ("Mfr/finish swaps", all_[7])):
-        t = re.sub(rf"^\| {re.escape(label)} \| [^|]+ \|", f"| {label} | {val} |", t, flags=re.M)
-    for name in ("T0 trivial", "T1 one caveat", "T2 hard"):
-        t = re.sub(rf"^\| {name} \| ([\d,]+) \| [\d.]+ \|", lambda m: f"| {name} | {m.group(1)} | {row(name)[1]} |", t, flags=re.M)
-    for tag in ("missing_qty", "column_drift", "struck_page", "ambiguous_code", "wrapped", "multi_page"):
-        t = re.sub(rf"^\| {tag} \| (\d+) \| [\d.]+ \|", lambda m: f"| {tag} | {m.group(1)} | {row(tag)[1]} |", t, flags=re.M)
-    for b in BOOKS:
-        t = re.sub(rf"^\| {b} \| (\d+) \| [\d.]+ \|", lambda m: f"| {b} | {m.group(1)} | {row(b)[1]} |", t, flags=re.M)
-    t = re.sub(r"on rows \([\d.]+% vs 95\.8%\) and sets \([\d.]+% vs 82\.6%\)", f"on rows ({all_[1]}% vs 95.8%) and sets ({full}% vs 82.6%)", t)
-    return t
-s = replace_in(s, "## Summary", "## Grounding", ours)
+matched = re.search(r"row precision: (\d+)/\d+", txt).group(1)
+n_sets = round(float(full) / 100 * int(sets_all[0]))
+s = re.sub(r"^\| Exact rows \| [^|]+ \|", f"| Exact rows | {all_[1]}% ({int(matched):,} / {int(all_[0]):,}) |", s, flags=re.M)
+s = re.sub(r"^\| Sets fully correct \| [^|]+ \|", f"| Sets fully correct | {full}% ({n_sets} / {sets_all[0]}) |", s, flags=re.M)
+s = re.sub(r"^\| Mfr/finish swaps \| [^|]+ \|", f"| Mfr/finish swaps | {all_[7]} |", s, flags=re.M)
 open(p, "w").write(s)
 
 # README and PLAN headline sentences
-p = ROOT + "README.md"; s = open(p).read()
+p = ROOT + "../README.md"; s = open(p).read()
 s = re.sub(r"[\d.]+% of the 2,218 labeled rows come out exactly right with every field correct, and [\d.]+% of the 311 sets are fully correct\.",
            f"{all_[1]}% of the 2,218 labeled rows come out exactly right with every field correct, and {full}% of the 311 sets are fully correct.", s)
 open(p, "w").write(s)

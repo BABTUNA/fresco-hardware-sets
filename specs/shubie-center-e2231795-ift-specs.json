@@ -1,26 +1,46 @@
 {
-  "mode": "columns",
-  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 64},
-    {"field": "unit", "x": 98},
-    {"field": "description", "x": 132},
-    {"field": "catalog", "x": 267},
-    {"field": "finish", "x": 475},
-    {"field": "mfr", "x": 517}
-  ],
-  "valign": "top",
-  "set_meta": "^(For use on Door|Provide each .* with the following|[A-Z]{0,3}\\d+[A-Z]?(\\s+[A-Z]{0,3}\\d+[A-Z]?)*\\s*$)",
-  "skip": [
-    "^Shubenacadie",
-    "^Section 08 71 10",
-    "^DOOR HARDWARE\\s*$",
-    "^Window & Door Replacement",
-    "^Page \\d+\\s*$",
-    "^\\d{4}-\\d{2}-\\d{2}\\s*$",
-    "^Dept\\. Project No\\.",
-    "^\\d+\\.\\d+\\s+SCHEDULE\\s*$"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "(?i)^\\s*(?:Hardware\\s+Groups?|Hardware\\s+Sets?|Set|Heading)\\s*(?:No\\b\\.?|#|:)?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s+(?P<desc>.+))?\\s*$",
+ "row_start": "^\\d{1,3}(\\.\\d)?$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 68
+  },
+  {
+   "field": "unit",
+   "x": 98
+  },
+  {
+   "field": "description",
+   "x": 132
+  },
+  {
+   "field": "catalog",
+   "x": 267
+  },
+  {
+   "field": "finish",
+   "x": 475
+  },
+  {
+   "field": "mfr",
+   "x": 517
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*Shubenacadie\\s+(Wetland|East)",
+  "^\\s*Section\\s+\\d{2}\\s+\\d{2}\\s+\\d{2}",
+  "^\\s*DOOR HARDWARE\\s*$",
+  "^\\s*Window & Door Replacement",
+  "^\\s*Page\\s+\\d+\\s*$",
+  "^\\s*\\d{4}-\\d{2}-\\d{2}\\s*$",
+  "^\\s*Dept\\.?\\s+Project\\s+No",
+  "^\\s*\\d+\\.\\d+\\s+SCHEDULE"
+ ],
+ "set_meta": "(?i)^\\s*(?:For use on Door|Provide each|Each Opening|Description:)|^\\s*(?:[A-Z]{1,2}\\d+[A-Z]?(?:\\s+|$))+$",
+ "end": [
+  "END OF SECTION"
+ ]
 }

@@ -8,10 +8,10 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | :--- | ---: |
 | Sets fully correct (every row exact, nothing extra, status right) | 94.5% (held-out set: 89.5%) |
 | Sets fully correct, pages the spec writer never saw | 94.2% |
-| Exact rows | 98.4% (held-out set: 97.2%) |
-| Exact rows, pages the spec writer never saw | 98.3% |
-| Precision | 98.6% |
-| Per-book average of exact rows | 98.8% |
+| Exact rows | 98.5% (held-out set: 97.2%) |
+| Exact rows, pages the spec writer never saw | 98.4% |
+| Precision | 98.5% |
+| Per-book average of exact rows | 98.9% |
 | Sets found on labeled pages | 99.4% |
 | NOT USED and moved status right | 93.8% |
 | Mfr/finish swaps | 0 of 2,218 |
@@ -22,7 +22,7 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | T0 trivial | 456 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | T1 one caveat | 671 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| T2 hard | 1,091 | 96.8 | 99.2 | 98.4 | 97.3 | 98.9 | 98.4 |
+| T2 hard | 1,091 | 96.9 | 99.2 | 98.5 | 97.3 | 98.9 | 98.4 |
 
 The weakest areas are column drift (93.1% exact rows) and wrapped cells (95.5%), and both are mostly Star, whose catalog cells are full sentences. The T0 misses are Bridgeport, where the labels split `IVES` out of `IVES 69 / 63` and we keep it in the catalog.
 
@@ -35,8 +35,8 @@ Every one of the 155 pages above was used to find and fix bugs, so a separate se
 | Sets | 311 | 38 |
 | Rows | 2,218 | 360 |
 | Sets fully correct | 94.5% | 89.5% |
-| Exact rows | 98.4% | 97.2% |
-| Precision | 98.6% | 97.2% |
+| Exact rows | 98.5% | 97.2% |
+| Precision | 98.5% | 97.2% |
 | Mfr/finish swaps | 0 | 0 |
 | T0 trivial rows | 100.0% | 100.0% |
 | T1 one caveat rows | 100.0% | 100.0% |
@@ -66,17 +66,17 @@ A set counts only when it was found, every labeled row in it is exact, we added 
 | :--- | ---: | ---: |
 | Sets whose header is on a labeled page | 311 | 94.5 |
 | Same, pages the spec writer never saw | 292 | 94.2 |
-| Continued pieces (set started on an earlier page) | 31 | 80.6 |
+| Continued pieces (set started on an earlier page) | 31 | 77.4 |
 
-Per book: star 72% of 18, hfh 86% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 12 books.
+Per book: star 78% of 18, hfh 81% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 12 books.
 
 ## By caveat
 
 | Tag | n | Source books | Exact rows | qty | description | catalog | finish | mfr | Swaps |
 | :--- | ---: | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ambiguous_code | 548 | 16 | 98.4 | 99.3 | 98.5 | 98.4 | 99.3 | 99.3 | 0 |
+| ambiguous_code | 548 | 16 | 98.5 | 99.3 | 98.7 | 98.5 | 99.3 | 99.3 | 0 |
 | centered_cells | 29 | 1: JC Ryan | 96.6 | 100.0 | 96.6 | 100.0 | 100.0 | 100.0 | 0 |
-| column_drift | 262 | 4: Forest, JC Ryan, Morris, Star | 93.1 | 97.7 | 96.9 | 94.3 | 96.6 | 94.3 | 0 |
+| column_drift | 262 | 4: Forest, JC Ryan, Morris, Star | 93.5 | 97.7 | 97.3 | 94.7 | 96.6 | 94.3 | 0 |
 | dense_page | 486 | 9 | 99.8 | 100.0 | 99.8 | 100.0 | 100.0 | 100.0 | 0 |
 | embedded_mfr | 134 | 1: Roselle | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 0 |
 | empty_code | 419 | 18 | 97.6 | 99.3 | 98.6 | 97.9 | 99.3 | 98.8 | 0 |
@@ -85,7 +85,7 @@ Per book: star 72% of 18, hfh 86% of 21, morris 86% of 7, jcryan 88% of 25, oswe
 | missing_qty | 107 | 8 | 95.3 | 95.3 | 95.3 | 95.3 | 97.2 | 95.3 | 0 |
 | multi_page | 291 | 10 | 96.6 | 99.3 | 98.3 | 96.9 | 99.3 | 99.3 | 0 |
 | struck_page | 392 | 3: HFH, SJC, Valor | 97.4 | 99.7 | 99.2 | 98.0 | 99.7 | 99.7 | 0 |
-| wrapped | 672 | 18 | 96.0 | 99.3 | 98.1 | 96.9 | 98.8 | 98.4 | 0 |
+| wrapped | 672 | 18 | 96.1 | 99.3 | 98.2 | 97.0 | 98.8 | 98.4 | 0 |
 
 Source books counts the distinct sample projects behind each tag. Several hard caveats come from only 1 to 3 books, and for most of them those are the only books in the whole corpus that have the caveat: JC Ryan is the only book with centered cells, Roselle the only ruled grid, Lyons and SJC the only books with NOT USED lines, and HFH, SJC and Valor the only books with struck text. A score on those tags measures how well we read those books, not the caveat in general.
 
@@ -124,7 +124,7 @@ The one NOT USED set we miss is SJC E01 on page 734, where the whole block inclu
 | sat | 146 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | shubie | 31 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | sjc | 281 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| star | 150 | 90.7 | 97.3 | 95.3 | 92.7 | 95.3 | 93.3 |
+| star | 150 | 91.3 | 97.3 | 96.0 | 93.3 | 95.3 | 93.3 |
 | usi | 10 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | valor | 137 | 98.5 | 100.0 | 98.5 | 100.0 | 100.0 | 100.0 |
 
@@ -144,11 +144,11 @@ The same scorer on the output before the interpreter fixes of 2026-10-05 and 202
 | | Before | After |
 | :--- | ---: | ---: |
 | Sets fully correct | 70.7% | 94.5% |
-| Exact rows | 94.2% | 98.4% |
-| Precision | 91.5% | 98.6% |
+| Exact rows | 94.2% | 98.5% |
+| Precision | 91.5% | 98.5% |
 | Mfr/finish swaps | 4 | 0 |
 | missing_qty exact rows | 69.2% | 95.3% |
-| column_drift exact rows | 81.7% | 93.1% |
+| column_drift exact rows | 81.7% | 93.5% |
 | struck_page exact rows | 92.9% | 97.4% |
 | Star, sets fully correct | 56% | 72% |
 | Bridgeport, sets fully correct | 65% | 100% |

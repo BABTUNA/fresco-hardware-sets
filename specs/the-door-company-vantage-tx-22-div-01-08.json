@@ -1,23 +1,43 @@
 {
-  "mode": "columns",
-  "set_header": "HARDWARE GROUP NO\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 74},
-    {"field": "unit", "x": 103},
-    {"field": "description", "x": 137},
-    {"field": "catalog", "x": 269},
-    {"field": "finish", "x": 464},
-    {"field": "mfr", "x": 505}
-  ],
-  "valign": "top",
-  "set_meta": "PROVIDE EACH .* DOOR\\(S\\) WITH THE FOLLOWING",
-  "skip": [
-    "^VANTAGE DATA CENTERS",
-    "^ISSUE FOR PERMIT",
-    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER",
-    "^DOOR HARDWARE\\s+08 71 00 - \\d+",
-    "^PART \\d+ -\\s*$"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "(?i)^(?:PART\\s+\\d+\\s*-\\s*)?(?:HARDWARE\\s+(?:GROUP|SET|HEADING)S?|SET|HEADING)\\s*(?:NO\\.?|NUMBER|#)?[\\s:#]*(?P<num>[A-Za-z0-9]+(?:[.\\-][A-Za-z0-9]+)*(?:\\s[0-9]+)?)(?:\\s+(?P<desc>\\S.*))?\\s*$",
+ "row_start": "^\\d{1,3}$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 74
+  },
+  {
+   "field": "unit",
+   "x": 103
+  },
+  {
+   "field": "description",
+   "x": 137
+  },
+  {
+   "field": "catalog",
+   "x": 269
+  },
+  {
+   "field": "finish",
+   "x": 464
+  },
+  {
+   "field": "mfr",
+   "x": 505
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "VANTAGE DATA CENTERS",
+  "ISSUE FOR PERMIT",
+  "^QTY\\s+DESCRIPTION",
+  "^DOOR HARDWARE\\s+\\d",
+  "^PART\\s+\\d+\\s*-\\s*$"
+ ],
+ "set_meta": "(?i)^(?:PART\\s+\\d+\\s*-\\s*)?(?:PROVIDE\\s+EACH|EACH\\s+OPENING|DESCRIPTION:|DOOR\\s+NUMBERS?)",
+ "end": [
+  "END OF SECTION"
+ ]
 }

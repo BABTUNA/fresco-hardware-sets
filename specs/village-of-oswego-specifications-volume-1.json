@@ -1,23 +1,42 @@
 {
-  "mode": "columns",
-  "set_header": "^HARDWARE GROUP NO\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 78},
-    {"field": "unit", "x": 109},
-    {"field": "description", "x": 146},
-    {"field": "catalog", "x": 288},
-    {"field": "finish", "x": 462},
-    {"field": "mfr", "x": 507}
-  ],
-  "valign": "top",
-  "set_meta": "^(PROVIDE EACH .* WITH THE FOLLOWING:?|[A-Z]?\\d+[A-Z]?(\\s+[A-Z]?\\d+[A-Z]?)*)\\s*$",
-  "note_line": "^NOTE:",
-  "skip": [
-    "^Village of Oswego",
-    "^DOOR HARDWARE\\s*$",
-    "^087100 - \\d+\\s*$",
-    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "(?i)^\\s*HARDWARE\\s+GROUPS?\\s+(?:NO\\.?|#)?\\s*(?P<num>[A-Z0-9][A-Z0-9.\\-]*(?:\\s?[A-Z0-9.\\-]+)?)\\s*(?P<desc>.*)$",
+ "row_start": "^\\d{1,3}(\\.\\d)?$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 78
+  },
+  {
+   "field": "unit",
+   "x": 109
+  },
+  {
+   "field": "description",
+   "x": 146
+  },
+  {
+   "field": "catalog",
+   "x": 288
+  },
+  {
+   "field": "finish",
+   "x": 462
+  },
+  {
+   "field": "mfr",
+   "x": 507
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*Village of Oswego",
+  "^\\s*DOOR HARDWARE\\s*$",
+  "^\\s*087100\\s*-\\s*\\d+\\s*$"
+ ],
+ "set_meta": "(?i)^(\\s*(PROVIDE EACH .*DOOR\\(?S?\\)? WITH THE FOLLOWING:?|EACH OPENING TO RECEIVE:?|[A-Z]?\\d{2,4}[A-Z]?(\\s+[A-Z]?\\d{2,4}[A-Z]?)*)\\s*)$",
+ "note_line": "^\\s*NOTE:",
+ "end": [
+  "(?i)END OF SECTION"
+ ]
 }

@@ -1,21 +1,39 @@
 {
-  "mode": "columns",
-  "set_header": "^Set\\s*#\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?P<desc>.*)$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 64},
-    {"field": "description", "x": 71},
-    {"field": "catalog", "x": 210},
-    {"field": "finish", "x": 480},
-    {"field": "mfr", "x": 534}
-  ],
-  "valign": "top",
-  "skip": [
-    "^2535 Gerrard Shelter",
-    "^105220$",
-    "^[A-Z][a-z]{2} \\d{1,2}, \\d{4}\\s+Page \\d+ of \\d+",
-    "^Page \\d+ of \\d+"
-  ],
-  "set_meta": "^Doors?:",
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "^\\s*(?:Hardware\\s+)?(?:Set|Sets|Group|Groups|Heading)\\s*(?:No\\.?|Number|#)?\\s*[:#]?\\s*(?P<num>[A-Za-z]*\\s?[A-Za-z0-9]*(?:[.\\-][A-Za-z0-9]+)*)(?:\\s+(?P<desc>.*))?$",
+ "row_start": "^\\d{1,3}(?:\\.\\d)?$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 64
+  },
+  {
+   "field": "description",
+   "x": 75
+  },
+  {
+   "field": "catalog",
+   "x": 210
+  },
+  {
+   "field": "finish",
+   "x": 480
+  },
+  {
+   "field": "mfr",
+   "x": 534
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*2535 Gerrard Shelter",
+  "^\\s*\\d{5,7}\\s*$",
+  "^\\s*[A-Z][a-z]{2} \\d{1,2}, \\d{4}\\s+Page \\d+ of \\d+",
+  "Page \\d+ of \\d+\\s*$"
+ ],
+ "set_meta": "^\\s*(?:Doors?|Openings?)\\s*:",
+ "note_line": "^\\s*(?:Operational Description:|NOTE:?)",
+ "end": [
+  "END OF SECTION"
+ ]
 }

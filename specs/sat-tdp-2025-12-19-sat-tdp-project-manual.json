@@ -1,22 +1,43 @@
 {
-  "mode": "columns",
-  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
-  "row_start": "^\\d{1,3}$",
-  "columns": [
-    {"field": "qty", "x": 74},
-    {"field": "unit", "x": 105},
-    {"field": "description", "x": 142},
-    {"field": "catalog", "x": 284},
-    {"field": "finish", "x": 458},
-    {"field": "mfr", "x": 503}
-  ],
-  "valign": "top",
-  "set_meta": "^Provide each .* with the following:?\\s*$",
-  "skip": [
-    "^New Terminal - San Antonio International Airport",
-    "^Bulletin T\\d+",
-    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER",
-    "^Door Hardware\\s+08 71 00 - \\d+"
-  ],
-  "end": ["END OF SECTION"]
+ "mode": "columns",
+ "set_header": "^\\s*Hardware\\s+Groups?\\s+(?:No\\.?\\s*|#\\s*)?(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)\\s*(?P<desc>.*)$",
+ "row_start": "^\\d{1,3}(?:\\.\\d)?$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 74
+  },
+  {
+   "field": "unit",
+   "x": 105
+  },
+  {
+   "field": "description",
+   "x": 142
+  },
+  {
+   "field": "catalog",
+   "x": 284
+  },
+  {
+   "field": "finish",
+   "x": 458
+  },
+  {
+   "field": "mfr",
+   "x": 503
+  }
+ ],
+ "valign": "top",
+ "skip": [
+  "^\\s*QTY\\s+DESCRIPTION",
+  "^\\s*New Terminal\\s*-\\s*San Antonio",
+  "^\\s*Bulletin\\s+T\\d+",
+  "^\\s*Door Hardware\\s+08\\s*71\\s*00",
+  "^\\s*\\d{5}\\.[A-Z]\\d+[a-z]?\\s*$"
+ ],
+ "set_meta": "^\\s*(?:Provide each|Each Opening to Receive|Description:|Doors?:)",
+ "end": [
+  "END OF SECTION"
+ ]
 }
