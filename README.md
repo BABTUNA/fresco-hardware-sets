@@ -1,6 +1,6 @@
 # fresco-hardware-sets
 
-Extracts door hardware sets from Division 08 spec PDFs for the Fresco take-home. This is the research and experiment stage. The clean build has not started yet.
+Extracts door hardware sets from Division 08 spec PDFs for the Fresco take-home. `hwsets/` is the extractor, `experiments/` is the research that led to it, `docs/` explains both.
 
 ## The idea
 
@@ -35,6 +35,22 @@ On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md]
 | [RESULTS.md](docs/RESULTS.md) | Benchmark results |
 | [APPROACHES.md](docs/APPROACHES.md) | The four approaches compared, and what was ruled out |
 | [APPROACH_RESULTS.md](docs/APPROACH_RESULTS.md) | How each approach scored on the benchmark |
+
+## Running it
+
+Needs [uv](https://docs.astral.sh/uv/). From the repo root:
+
+```bash
+uv sync
+```
+
+```bash
+uv run hwsets extract "data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf" -o out/oswego.json
+```
+
+The 20 sample books have their compiled specs checked in under `specs/`, so they run with no API key and give the output in the docs. A new book needs `ANTHROPIC_API_KEY` in the environment or in `.env`: one call writes its spec into `specs/`, and a second call runs only if the audit flags something. `--spec path.json` uses a spec of your own, `--no-llm` fails instead of calling the API.
+
+Output: one JSON per book with every set's number, description, status, 1-based page and bounding box, and its components with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`, each with its own page and box. The exact shape is in [IMPLEMENTATION_BACKEND.md](docs/IMPLEMENTATION_BACKEND.md).
 
 ## Running the benchmark
 

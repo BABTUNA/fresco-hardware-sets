@@ -1,0 +1,24 @@
+{
+  "mode": "columns",
+  "set_header": "^HW\\s+(?P<num>[A-Za-z]{0,3}\\d+[A-Za-z0-9.\\-]*)(?:\\s+(?P<desc>.+))?$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 62},
+    {"field": "unit", "x": 69},
+    {"field": "description", "x": 117},
+    {"field": "catalog", "x": 314},
+    {"field": "finish", "x": 519},
+    {"field": "mfr", "x": 561}
+  ],
+  "valign": "top",
+  "set_meta": "^Each Opening to Receive:",
+  "note_line": "^Note:",
+  "skip": [
+    "^SAN JOAQUIN COUNTY",
+    "^BE-WELL BEHAVIORAL HEALTH CAMPUS",
+    "^Quantity\\s+Description\\s+Model Number",
+    "^DOOR HARDWARE\\s+08 71 00 - \\d+",
+    "^Prepared by Door \\+ Hardware Consultants"
+  ],
+  "end": ["END OF SECTION"]
+}

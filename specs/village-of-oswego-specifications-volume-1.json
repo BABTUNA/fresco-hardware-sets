@@ -1,0 +1,23 @@
+{
+  "mode": "columns",
+  "set_header": "^HARDWARE GROUP NO\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*[-:]?\\s*(?P<desc>.+))?$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 78},
+    {"field": "unit", "x": 109},
+    {"field": "description", "x": 146},
+    {"field": "catalog", "x": 288},
+    {"field": "finish", "x": 462},
+    {"field": "mfr", "x": 507}
+  ],
+  "valign": "top",
+  "set_meta": "^(PROVIDE EACH .* WITH THE FOLLOWING:?|[A-Z]?\\d+[A-Z]?(\\s+[A-Z]?\\d+[A-Z]?)*)\\s*$",
+  "note_line": "^NOTE:",
+  "skip": [
+    "^Village of Oswego",
+    "^DOOR HARDWARE\\s*$",
+    "^087100 - \\d+\\s*$",
+    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER"
+  ],
+  "end": ["END OF SECTION"]
+}

@@ -1,0 +1,17 @@
+{
+  "mode": "columns",
+  "set_header": "^Heading\\s*#\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 107},
+    {"field": "description", "x": 131},
+    {"field": "catalog", "x": 241},
+    {"field": "finish", "x": 516}
+  ],
+  "valign": "top",
+  "skip": [
+    "^Page \\d+ of \\d+$"
+  ],
+  "set_meta": "^(Item #\\d+|\\d{3,4}(,\\s*\\d{3,4})*\\s*x\\s*\\d{3,4}\\s*x\\s*\\S+\\s*-)",
+  "end": ["END OF SECTION"]
+}

@@ -1,0 +1,13 @@
+{
+  "mode": "grid",
+  "set_column": "SET",
+  "set_number": "^\\d+\\.\\d+[A-Z]?$",
+  "columns": {
+    "HARDWARE TYPE": "description",
+    "MANUFACTURER - PRODUCT": "product",
+    "QTY.": "qty",
+    "FINISH": "finish",
+    "NOTES": "notes"
+  },
+  "mfr_split": " - "
+}

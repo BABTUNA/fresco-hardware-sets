@@ -1,0 +1,21 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*-\\s*(?P<desc>.*))?$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 74},
+    {"field": "unit", "x": 103},
+    {"field": "description", "x": 138},
+    {"field": "catalog", "x": 272},
+    {"field": "finish", "x": 471},
+    {"field": "mfr", "x": 513}
+  ],
+  "valign": "top",
+  "skip": [
+    "^QTY\\s+DESCRIPTION",
+    "^DOOR HARDWARE$",
+    "^Door Hardware\\s+\\d{6}\\s*-\\s*\\d+$"
+  ],
+  "set_meta": "^(For use on Door.*|Provide each.*|Each to have:?|[A-Z]*\\d+[A-Z0-9]*-\\S+.*|STAIR\\b.*|\\d+[A-Z]?(\\s+\\d+[A-Z]?)*)$",
+  "end": ["END OF SECTION"]
+}
