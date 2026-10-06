@@ -1,0 +1,24 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 74},
+    {"field": "unit", "x": 103},
+    {"field": "description", "x": 138},
+    {"field": "catalog", "x": 272},
+    {"field": "finish", "x": 471},
+    {"field": "mfr", "x": 513}
+  ],
+  "valign": "top",
+  "skip": [
+    "^QTY\\s+DESCRIPTION\\s+CATALOG",
+    "^DOOR HARDWARE\\s*$",
+    "^(?:08|8)\\s?71\\s?00\\b",
+    "^Page\\s+\\d+",
+    "^\\d{6}\\s*-\\s*\\d+\\s*$"
+  ],
+  "set_meta": "^(?:For use on Door|Provide each\\b.*following:|(?:(?:STAIR(?: EXIT)? )?[A-Z]{0,8}\\d+[A-Z0-9]*(?:-[A-Z0-9]+)?)(?:\\s+(?:STAIR(?: EXIT)? )?[A-Z]{0,8}\\d+[A-Z0-9]*(?:-[A-Z0-9]+)?)*$)",
+  "note_line": "^NOTE[S]?:",
+  "end": ["END OF SECTION"]
+}

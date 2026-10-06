@@ -43,6 +43,8 @@ Claude reads the two densest schedule pages of a book, as text with x positions,
 
 **Trade-off.** One call per book, deterministic after that, and a spec edit fixes every set in the book. The fragile part is the regex: every one-shot failure was a header the model's pattern did not match (an anchored start, a plural form, a space in the number). An audit catches most of these and triggers one repair call.
 
+**Why only 2 sample pages.** Tested against 4 densest pages and against up to 4 pages picked for variety (new header spellings and line shapes), 34 fresh one-shot specs, no repair call. Rows: 96.3% with 2 pages, 96.0% with 4, 95.9% with the variety pick. The 4 densest pages look like the first 2, so nothing is learned. The variety pick found Star's second header spelling (59% to 71% of rows) and broke Marketview (100% to 71%): the writer saw door lists on the extra pages and wrote a `set_meta` pattern loose enough to swallow component rows. HFH misses the same rows in all three. The sample is not the weak point, the regex is, and the audit plus one repair call (96.3% to 98.4%) is worth more than any page selection. `experiments/sample_pages.py`, specs in `experiments/specs_sample/`.
+
 ## 2. Spec by example
 
 Every run of words on the 2 sample pages gets an id. The model only points: which ids form a row, which field each id is, which line is a header. Code derives the spec from those labels (columns from where the labeled runs sit, the header pattern generalized from the labeled header lines) and the same interpreter runs it over every page.

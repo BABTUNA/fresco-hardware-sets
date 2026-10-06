@@ -1,0 +1,23 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)\\s*:?\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 83},
+    {"field": "unit", "x": 101},
+    {"field": "description", "x": 135},
+    {"field": "finish", "x": 262}
+  ],
+  "valign": "top",
+  "skip": [
+    "^NEW BUILDINGS FOR VALOR ACRES",
+    "^BUILDING E\\b",
+    "^Bulletin #\\d",
+    "^DOOR HARDWARE\\s+087100\\s*-\\s*\\d+",
+    "^Qty\\s+Description$"
+  ],
+  "set_meta": "^(?:Each To Have:|.*\\)\\s*)$",
+  "end": [
+    "^END OF SECTION"
+  ]
+}

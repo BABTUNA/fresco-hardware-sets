@@ -1,0 +1,31 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group/Sets?\\s*#\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*\\((?P<desc>[^)]*)\\))?",
+  "row_start": "^(\\d{1,3}|__)$",
+  "columns": [
+    {"field": "qty", "x": 75},
+    {"field": "unit", "x": 97},
+    {"field": "description", "x": 120},
+    {"field": "catalog", "x": 231},
+    {"field": "finish", "x": 470},
+    {"field": "mfr", "x": 497}
+  ],
+  "valign": "top",
+  "skip": [
+    "^IFC \\d",
+    "^OCI Design",
+    "^Door Hardware\\s+08 71 00",
+    "^Interior Hardware Sets \\(Typically",
+    "^Blank space after a Group/Set",
+    "^a Hardware Group/Set onto two pages",
+    "^(Note: )?Furnish (and install )?all devices",
+    "^with Contract Documents \\(including",
+    "^Contract Documents \\(including",
+    "^Documents \\(including but not limited",
+    "^specifications? language(,| above)",
+    "^Section, Drawings & full Specification"
+  ],
+  "end": [
+    "END OF SECTION"
+  ]
+}

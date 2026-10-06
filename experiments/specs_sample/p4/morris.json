@@ -1,0 +1,24 @@
+{
+  "mode": "columns",
+  "set_header": "^Set\\s*#\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 92},
+    {"field": "description", "x": 103},
+    {"field": "catalog", "x": 222},
+    {"field": "finish", "x": 459},
+    {"field": "mfr", "x": 506}
+  ],
+  "valign": "top",
+  "skip": [
+    "^MORRIS BANK\\b",
+    "^MACON, GA",
+    "^Azar\\+Walsh",
+    "ISSUED FOR CONTRUCTION",
+    "^DOOR HARDWARE\\s+087100",
+    "^SECTION 087100"
+  ],
+  "set_meta": "^Doors:",
+  "note_line": "^(?:NOTE:|-\\s)",
+  "end": ["END OF SECTION"]
+}

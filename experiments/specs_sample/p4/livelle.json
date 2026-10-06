@@ -1,0 +1,23 @@
+{
+  "mode": "columns",
+  "set_header": "\\bSet:\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 72},
+    {"field": "description", "x": 86},
+    {"field": "catalog", "x": 261},
+    {"field": "finish", "x": 440},
+    {"field": "mfr", "x": 489}
+  ],
+  "valign": "middle",
+  "skip": [
+    "^LIVELLE MULHOLLAND\\b",
+    "^Woodland Hills, CA\\b",
+    "^PE Project \\d",
+    "^LIVELLE - EXHIBIT B\\b",
+    "\\bDOOR HARDWARE\\s*$",
+    "\\b08 71 00 - \\d+\\s*$"
+  ],
+  "set_meta": "^Description:",
+  "end": ["END OF SECTION"]
+}

@@ -1,0 +1,13 @@
+{
+  "mode": "grid",
+  "set_column": "SET",
+  "set_number": "^\\s*(?P<num>\\d{1,3}\\.\\d{1,3}[A-Za-z]?)\\b",
+  "columns": {
+    "HARDWARE TYPE": "description",
+    "MANUFACTURER - PRODUCT": "product",
+    "QTY.": "qty",
+    "FINISH": "finish",
+    "NOTES": "notes"
+  },
+  "mfr_split": " - "
+}

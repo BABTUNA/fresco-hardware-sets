@@ -9,6 +9,12 @@ from score import norm, norm_set, FIELDS
 plan = json.load(open("eval/e2e_plan.json"))
 
 
+# SEEN=p4 or SEEN=div: count the pages of that sample selection (eval/sample_plan.json) as seen by the spec
+# writer instead of the frozen 2-page baseline, for the sample size experiment
+SEEN = os.environ.get("SEEN")
+SAMPLE = json.load(open("eval/sample_plan.json")) if SEEN else {}
+
+
 def result(results_dir, book):
     r1 = f"{results_dir}/{book}.r1.json"
     return json.load(open(r1 if os.path.exists(r1) else f"{results_dir}/{book}.json"))
@@ -74,7 +80,7 @@ def main(results_dir="out_e2e"):
                 any(fc["description"] != c.get("description") for fs, s in zip(ft["sets"], gt["sets"]) for fc, c in zip(fs["components"], s["components"])):
             sys.exit(f"{key} changed since tags were frozen, rerun bench_tags.py")
         # pages the spec writer saw are reported separately so they cannot flatter the headline
-        seen = ft["seen_by_spec_writer"]
+        seen = page_no in SAMPLE[book][SEEN] if SEEN else ft["seen_by_spec_writer"]
 
         # our sets and rows on this page, grouped the same way as the labels
         our_sets = collections.defaultdict(list)

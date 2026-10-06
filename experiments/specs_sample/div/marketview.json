@@ -1,0 +1,30 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?:-\\s*(?P<desc>.*))?$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 79},
+    {"field": "unit", "x": 108},
+    {"field": "description", "x": 142},
+    {"field": "catalog", "x": 273},
+    {"field": "finish", "x": 469},
+    {"field": "mfr", "x": 510}
+  ],
+  "valign": "top",
+  "skip": [
+    "^MARKET VIEW APARTMENTS\\s*$",
+    "^303 HIGHLAND AVENUE\\s*$",
+    "^NATIONAL CITY, CA 91950\\s*$",
+    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER",
+    "^DOOR HARDWARE\\s*$",
+    "^087100 Door Hardware",
+    "^D\\. Hardware Sets:",
+    "^134601 OPT\\d+ Version",
+    "^Legend:\\s*$",
+    "^Link to catalog cut sheet",
+    "^Electrified Opening\\s*$"
+  ],
+  "set_meta": "^(?:For use on Door #|Provide each .*with the following|[A-Z0-9][A-Za-z0-9.\\-]*(?:\\s+[A-Z0-9][A-Za-z0-9.\\-]*)*\\s*$|.*\\)\\s*$)",
+  "note_line": "^(?:NOTE:|\\* = )",
+  "end": ["^END OF SECTION"]
+}

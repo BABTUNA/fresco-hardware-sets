@@ -36,3 +36,8 @@ experiments/alt_struct/dump_out/
 experiments/out_struct/
 experiments/out_byexample/
 experiments/specs_byexample/
+experiments/dumps_p4/
+experiments/dumps_div/
+experiments/out_base/
+experiments/out_p4/
+experiments/out_div/

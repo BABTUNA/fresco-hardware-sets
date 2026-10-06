@@ -1,0 +1,24 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.-]*)(?:\\s*-\\s*(?P<desc>.+))?\\s*$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 75},
+    {"field": "unit", "x": 104},
+    {"field": "description", "x": 139},
+    {"field": "catalog", "x": 273},
+    {"field": "finish", "x": 472},
+    {"field": "mfr", "x": 514}
+  ],
+  "valign": "top",
+  "skip": [
+    "^QTY\\s+DESCRIPTION\\s+CATALOG",
+    "^Legend:",
+    "^Link to catalog cut sheet",
+    "^Electrified Opening"
+  ],
+  "set_meta": "^(?:For use on Door #|Provide each .*door\\(s\\) with the following|(?!\\d{1,3}\\s+EA\\b)[A-Z0-9][A-Z0-9 ,/().#&'-]*)\\s*$",
+  "end": [
+    "END OF SECTION"
+  ]
+}

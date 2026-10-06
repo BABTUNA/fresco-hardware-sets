@@ -1,0 +1,31 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 78},
+    {"field": "unit", "x": 106},
+    {"field": "description", "x": 140},
+    {"field": "catalog", "x": 269},
+    {"field": "finish", "x": 469},
+    {"field": "mfr", "x": 510}
+  ],
+  "valign": "top",
+  "skip": [
+    "^QTY?\\s+DESCRIPTION\\s+CATALOG NUMBER",
+    "^Y$",
+    "^HDR Project No\\.",
+    "^DOOR HARDWARE\\s+Hospital BP",
+    "^08 71 00 - \\d+$",
+    "^Legend:",
+    "^Link to catalog cut sheet",
+    "^Electrified Opening$",
+    "^\\d{6} OPT\\d+",
+    "^V\\d+ \\d+/\\d+/\\d{4} vs\\. V\\d+"
+  ],
+  "set_meta": "^Provide each .* door\\(s\\) with the following:",
+  "note_line": "^NOTE:",
+  "end": [
+    "END OF SECTION"
+  ]
+}

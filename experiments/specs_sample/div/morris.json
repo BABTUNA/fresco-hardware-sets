@@ -1,0 +1,26 @@
+{
+  "mode": "columns",
+  "set_header": "^Set\\s*#\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-/]*)\\s*(?P<desc>.*)$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 86},
+    {"field": "description", "x": 101},
+    {"field": "catalog", "x": 217},
+    {"field": "notes", "x": 397},
+    {"field": "finish", "x": 425},
+    {"field": "mfr", "x": 501}
+  ],
+  "valign": "top",
+  "skip": [
+    "^MORRIS BANK\\b",
+    "^MACON, GA",
+    "^Azar\\+Walsh",
+    "^DOOR HARDWARE\\s+\\d{6}",
+    "^E\\.\\s+Hardware Sets"
+  ],
+  "set_meta": "^(\\d+\\s+(Pair|Single|Pr\\.?)\\s+Doors?\\b|Doors?:|Opening Description:|or$|RM\\s+\\d+$|N/A$|Type\\s)",
+  "note_line": "^(NOTE|Note|Properties)\\b|^-\\s|^\\d+\\.\\s|^[a-z][a-z]+\\s+\\S",
+  "end": [
+    "END OF SECTION"
+  ]
+}
