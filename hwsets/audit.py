@@ -38,7 +38,9 @@ def audit(spec, sets, texts, pages, scores, pdf=None):
         orphan = [i for i in orphan if sum(row_like(l["text"]) and not any(w["struck"] for w in l["words"])
                                            for l in page_lines(pdf.pages[i])) >= 3]
     if orphan:
-        flags.append({"check": "rows_without_components", "count": len(orphan), "examples": orphan[:10]})
+        # the repair call only sees the sample pages, so show it what these pages hold
+        examples = [(i, [l.strip() for l in texts[i] if l.strip()][:12]) for i in orphan[:3]]
+        flags.append({"check": "rows_without_components", "count": len(orphan), "examples": examples})
     if comps:
         # 4+ words in finish or mfr means a column x is wrong
         long_codes = [c for c in comps if any(c.get(f) and len(re.sub(r"\(.*?\)", "", c[f]).split()) > 3 for f in ("finish", "mfr"))]

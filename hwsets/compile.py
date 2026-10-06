@@ -33,7 +33,8 @@ def ask_claude(prompt, text):
     client = anthropic.Anthropic(api_key=api_key())
     msg = client.messages.create(model=MODEL, max_tokens=3000,
                                  messages=[{"role": "user", "content": prompt + "\n\n" + text}])
-    reply = msg.content[0].text
+    # the reply can start with a thinking block, the spec is in the text blocks
+    reply = "".join(b.text for b in msg.content if b.type == "text")
     m = re.search(r"\{.*\}", reply, re.S)
     if not m:
         raise ValueError(f"no JSON in the model reply: {reply[:200]}")
