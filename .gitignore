@@ -29,3 +29,10 @@ experiments/specs_var/
 experiments/out_var/
 experiments/out_camelot/
 experiments/out_hybrid2/
+experiments/alt_struct/input/
+experiments/alt_struct/out/
+experiments/alt_struct/dump_input/
+experiments/alt_struct/dump_out/
+experiments/out_struct/
+experiments/out_byexample/
+experiments/specs_byexample/

@@ -76,6 +76,40 @@ The function runs in a sandbox over every schedule page.
 
 **How it was tested.** One shot per book, no repair. Each parser had a 5 minute limit.
 
+## The model points, code copies (2026-10-06)
+
+The per-page LLM approaches above all have the model write the values, which is where their cost, their run-to-run drift (`613` against `613 (OIL RUBBED BRONZE)`) and their dropped rows come from. These two approaches flip that. Every run of words on a page gets an id, and the model's whole output is structure: which ids form a row, which field each id is, which line is a set header. Code copies the text for each id from the PDF, so a value can never be invented or reformatted, the output is a list of small integers, and every box is exact.
+
+```
+L6: [14@80]6 [15@112]EA [16@148]HINGE [17@290]5BB1HW 4.5 X 4.5 - NRP AT [18@464]652 [19@508]IVE
+L7: [20@290]OUTSWINGING DRS
+```
+```json
+{"qty": [14], "description": [16], "catalog": [17, 20], "finish": [18], "mfr": [19]}
+```
+
+The closest precedent is set-of-mark prompting from the vision world (Yang et al. 2023), where the model answers with the number of a marked region, and extractive summarization by sentence index (Zhang et al. 2023). Both report the same benefit: nothing is invented.
+
+### 7. Structure labels per page
+
+**What it does.** Every page from the finder goes to the model as id-tagged runs. The model returns the sets and rows as ids. Code materializes them.
+
+**Why it is a serious option.** It keeps the per-page LLM's accuracy on rows while removing its two faults. Across the 155 pages the model referenced 10,856 run ids and every one of them was on the page. Output tokens are a fraction of the text-writing version.
+
+**Where it is weak.** One call per page, and it cannot see strike-through from text alone, so struck rows still come out. The research predicts its failure mode exactly: not invented values but id confusion on dense pages, and a run that holds two fields (`1 Ea. Hinge`) can only be pointed at one of them, which code has to split.
+
+**Code.** `experiments/alt_struct/PROMPT.md`, `alt_struct/convert.py`.
+
+### 8. Spec by example
+
+**What it does.** The model labels the structure of only the 2 sample pages per book, the same way as approach 7. Code derives the book's spec from those labels: column positions from where the labeled runs sit, the header pattern from the labeled header lines, the wrap mode from where wrapped runs sit relative to their row, running headers from line shapes that repeat in the page margins. The interpreter from approach 1 runs that spec over every page.
+
+**Why it is a serious option.** It is approach 1 with the fragile part removed. The model no longer writes a regex, which is where every one-shot spec failure came from (an anchored header, a plural form, a space in a set number). It points at examples and code generalizes them, and the result scores within a point of the LLM-written specs. The nondeterminism question largely goes away: pointing at the right runs has far fewer ways to vary than writing a regex, and the derivation is code.
+
+**Where it is weak.** Everything the two sample pages do not show. Star's third header spelling and mid-line header are on other pages, so Star is the weakest book, as it is for approach 1.
+
+**Code.** `experiments/alt_byexample.py` over the labels in `alt_struct/dump_out/`.
+
 ## Two-layer variants tested on 2026-10-06
 
 Every approach above already has two layers: a page filter, then extraction on the filtered pages. This round swapped each layer for something else and kept what measured well. Numbers in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
@@ -126,6 +160,8 @@ Two fresh writers rewrote the specs for Oswego, Gerrard, SJC and JC Ryan from th
 | 1 | `experiments/e2e.py`, `spec_parse.py`, `specs_e2e/` |
 | 2 | `experiments/alt_llm/PROMPT.md`, `alt_llm/convert.py` |
 | 5 | `experiments/alt_induce2.py` |
+| 7 | `experiments/alt_struct/PROMPT.md`, `alt_struct/convert.py` |
+| 8 | `experiments/alt_byexample.py` |
 | 6 | `experiments/alt_induce2.py` plus the audit in `e2e.py` |
 | Layer 1 comparison | `experiments/layer1_score.py`, `layer1_eval.py` |
 | Camelot layer 2 | `experiments/alt_camelot.py` |

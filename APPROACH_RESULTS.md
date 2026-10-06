@@ -78,6 +78,26 @@ Exact rows.
 
 **4. Parser per book.** Before our fixes it beat ours on SJC (99.3% vs 92.2%) and Livelle, where code could say more than the spec language. It falls apart on layouts the two sample pages did not show: Star (49.3%), JC Ryan's centered cells (70.3%) and Morris's second layout (70.8%).
 
+## The model points, code copies (2026-10-06)
+
+Same scorer, same 155 pages.
+
+| | 1. Ours (LLM writes spec) | 8. Spec by example | 7. Structure labels per page | 2. Per-page LLM writes values |
+| :--- | ---: | ---: | ---: | ---: |
+| Exact rows | 98.4% | 97.1% | 96.2% | 95.8% |
+| Sets fully correct | 94.5% | 93.6% | 77.2% | 82.6% |
+| Precision | 98.6% | 97.2% | 91.5% | 91.9% |
+| Mfr/finish swaps | 0 | 0 | 0 | 0 |
+| Values invented | none possible | none possible | none possible | 23 of 8,028 not in cited lines |
+| Held-out set, rows | 97.2% | 97.2% | | |
+| Held-out set, sets | 89.5% | 89.5% | | |
+| LLM calls for 20 books | 22 | 20 | 694 | 694 |
+| Model output | a regex spec | run ids for 2 pages | run ids per page | field values per page |
+
+Approach 7 referenced 10,856 run ids across the 155 pages, all of them on the page. Its sets number is low for the same reason as approach 2: it cannot see strike-through, so SJC and HFH keep struck rows (SJC 59% of sets), and two conventions (Roselle's set-column text folded into descriptions, Bridgeport's inline maker) cost the rest.
+
+Approach 8 reaches 100% of sets on 11 books. Its misses are Star (61%), where the sample pages do not show the third header spelling, and the same ragged wraps that limit approach 1 (HFH, Morris, JC Ryan at 86 to 88%). It scored 89.5% of sets on the held-out pages against approach 1's 89.5%.
+
 ## Two-layer variants (2026-10-06)
 
 Same scorer, same 155 pages. Approach 1 is shown after its fixes.
