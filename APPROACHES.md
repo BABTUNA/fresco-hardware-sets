@@ -1,6 +1,6 @@
 # Approaches
 
-Every approach has the same first layer: a regex page finder that scans the whole PDF for lines shaped like component rows and keeps the pages that hold sets (98.9% of set pages found, 99.7% precision, 694 of 14,224 pages passed). They differ in what the model does on those pages. Numbers are in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
+Every approach has two layers: a page finder that keeps only the pages that hold sets, then a model step on those pages. The finder is the same for all five, described below. The approaches differ in what the model does. Numbers are in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
 
 | | What the model does | Calls for 20 books | Same output every run |
 | :--- | :--- | ---: | :--- |
@@ -9,6 +9,24 @@ Every approach has the same first layer: a regex page finder that scans the whol
 | **3. Structure labels per page** | points at runs on every page, code copies the text | 694 | no |
 | **4. Grounded per-page LLM** | writes the values for every page, citing source lines | 694 | no |
 | **5. Multimodal per-page LLM** | same as 4, with the page image | 694 | no |
+
+## Layer 1: the page finder
+
+A specbook is mostly prose. SAT TDP is 3,930 pages and 122 of them hold sets. The finder scans every page's text for lines shaped like a component row: a quantity, some words, then one or two short codes at the end.
+
+```
+3   EA   HINGE   5BB1 4.5 X 4.5 NRP   652   IVE
+```
+
+A page with two or more such lines that also mention hardware (hinge, closer, lock, strike...) is a schedule page, and consecutive schedule pages form a run. It uses no header wording, so it works the same on every book, and it reads the raw text with pypdfium2, so SAT takes about 6 seconds.
+
+| | Pages passed | Set pages found | Precision |
+| :--- | ---: | ---: | ---: |
+| Regex finder | 694 of 14,224 | 98.9% | 99.7% |
+| Embeddings against hint phrases, best F1 | 885 | 84.0% | 66.4% |
+| tf-idf against hint phrases, best F1 | 850 | 85.7% | 70.6% |
+
+Embeddings lose because the prose pages of a hardware section talk about the same things as the schedule. The shape of a row separates them, the meaning does not. The 21 PDFs with no hardware sets all come back empty.
 
 ## 1. Spec per book (ours)
 
