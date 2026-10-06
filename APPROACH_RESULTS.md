@@ -14,23 +14,21 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
 | Same output every run | yes | yes | no | no |
 
-Set numbers found is the whole pipeline, not just the labeled pages: the page finder in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder) reaches all 697 set pages, approaches 1 and 2 then ran every book, and the set numbers they output are checked against every printed set header. End to end for approach 1: every set page reached, 99.7% of printed set numbers out as a set, 98.4% of rows exact on labeled pages (97.2% held out).
+Notes:
 
-## Reading the numbers
-
-- **The multimodal score is inflated.** The labels were made by Claude reading the same page images under nearly the same rules. Two independent labelers agree about 99% of the time, and approach 4 lands right there, so it is as consistent as a second labeler. Whether it is correct, this benchmark cannot say.
-- **Times are half measured, half estimated.** Finder and interpreter are measured (`experiments/latency.py`: 19 s for all 14,224 pages, 0.1 s per set page). Model calls are estimated from the token counts at 1 s to first token and 60 tokens per second, one call at a time for every approach. Running 10 at once divides every column by about 10. After a spec edit, 1 and 2 rerun in seconds with no call. 3 and 4 rerun every page.
-- **Approach 1 was tuned on this benchmark.** Every fix in the interpreter was found here. The held-out numbers are the ones to quote.
-- **Strike-through is the dividing line.** HFH, SJC and Valor strike out revised rows. Approaches 1 and 2 detect the strike marks in the PDF and drop them, approach 4 sees them in the image, approach 3 cannot and keeps the rows.
+- Set numbers found covers every page of every book, the other rows cover the 155 labeled pages.
+- The multimodal score is inflated: the labels were made by Claude from the same page images.
+- Approach 1 was tuned on this benchmark. Quote the held-out row.
+- Times: finder and interpreter measured, model calls estimated from token counts at 60 tokens per second, one call at a time.
 
 ## Where each one loses
 
 | | Worst books | Why |
 | :--- | :--- | :--- |
-| 1. Spec per book | Star 72% of sets | prose cells with the finish and maker written inside a sentence |
-| 2. Spec by example | Star 61% | the sample pages do not show Star's third header spelling |
-| 3. Per-page LLM | Roselle 19%, Door Co 40% | values formatted differently from one call to the next |
-| 4. Multimodal | Star 72% | prose cells |
+| 1. Spec per book | Star 72% (13 / 18 sets) | prose cells with the finish and maker written inside a sentence |
+| 2. Spec by example | Star 61% (11 / 18) | the sample pages do not show Star's third header spelling |
+| 3. Per-page LLM | Roselle 19% (4 / 21), Door Co 40% (2 / 5) | values formatted differently from one call to the next |
+| 4. Multimodal | Bridgeport 65% (11 / 17), Star 72% (13 / 18) | maker left inside the catalog cell (`HORTON 4100 LH PULL SERIES`), prose cells |
 
 ## Cost
 
