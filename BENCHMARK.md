@@ -66,20 +66,15 @@ One JSON file per page in `eval/gt/`. Oswego, `eval/gt/oswego_p417.json`, set 02
 
 ### How labels are made
 
-Each page is rendered to an image and given to a separate Claude agent that sees only the image and the rules in `LABEL_PROMPT.md`. The labeler never sees the text layer or our output, so the key does not inherit our parser's mistakes. The rules that matter most:
-
-- Copy codes exactly as printed, even if they look like typos. Never substitute a real part number.
-- No quantity printed (blank, `__`, `--`, `As Req`) means `qty: null`.
-- Door lists, opening descriptions, notes paragraphs and legend tables are not components.
-- Struck-through rows are left out. Struck words inside a row are dropped.
+A separate Claude agent labels each page from its rendered image only, following `LABEL_PROMPT.md`. It never sees the text layer or our output. Codes are copied as printed, a blank or `__` quantity is `null`, door lists and notes are not components, and struck-through text is left out.
 
 ### Which pages
 
-We labeled 155 schedule pages, the pages that list sets and their rows. Which pages get labeled decides what the benchmark can see, so they were picked in three rounds. Each round fixes a blind spot in the one before.
+155 schedule pages, picked in three rounds. Each round covered a gap the one before left.
 
-**Round 1: random, 39 pages.** About 2 random schedule pages per book. This gave a first overall number, but most schedule pages are easy, so the caveats were missing or rare.
+**Round 1, 39 pages:** about 2 random schedule pages per book. Most schedule pages are easy, so this gave a first number but few caveats.
 
-**Round 2: one search per caveat, 42 pages.** We searched each book's PDF text for the pattern behind each caveat and labeled the pages it turned up.
+**Round 2, 42 pages:** one search of the PDF text per caveat.
 
 | Caveat | Search | Example found |
 | :--- | :--- | :--- |
