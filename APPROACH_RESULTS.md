@@ -46,6 +46,21 @@ Per-call figures are from the actual test inputs and outputs.
 
 Even the most expensive approach is a few dollars for all 20 books. Determinism and editability decide this, not cost.
 
+## Latency
+
+Measured (`experiments/latency.py`): the finder reads all 14,224 pages of the 20 books in 19 s, the interpreter runs the 703 set pages in 59 s. SAT, the largest book (3,930 pages, 122 of them sets), takes 5.5 s to find and 11.7 s to parse. Rendering a page image for approach 4 is 0.13 s.
+
+Modeled: the model calls in these experiments were not made through the API, so their time comes from the measured token counts at 1 s to first token and 60 output tokens per second, a Sonnet-class rate. That gives 4 s per call for approach 1, 11 s for 2, 10 s for 3 and 4. Approaches 3 and 4 are also shown with 10 calls in flight, a common rate limit.
+
+| | 1. Spec per book | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
+| :--- | ---: | ---: | ---: | ---: |
+| Oswego, 28 set pages | 7 s | 25 s | 4.8 min, 30 s at 10 in flight | 4.7 min, 32 s |
+| SAT, 122 set pages | 22 s | 39 s | 21 min, 2.2 min | 20 min, 2.4 min |
+| All 20 books, 694 calls for 3 and 4 | 3 min | 8.5 min | 2 h, 12 min | 1.9 h, 13 min |
+| After a spec edit | interpreter only: 2 s, 12 s for SAT | same | every page again | every page again |
+
+The gap is structural. Approaches 1 and 2 make a fixed number of calls per book and the rest is local code, so a book takes seconds whatever its size. Approaches 3 and 4 make one call per page, so their time grows with the book and a correction means paying for the whole book again.
+
 ## Dropped approaches
 
 | Approach | Rows | Sets |
