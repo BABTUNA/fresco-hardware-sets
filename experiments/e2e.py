@@ -56,7 +56,8 @@ def audit(spec, sets, texts, pages, scores):
         hdr = re.compile(spec["set_header"])
         if pre:
             miss = [(i, l.strip()) for i in pages for l in texts[i]
-                    if re.search(re.escape(pre) + r".{0,6}\d", l, re.I) and not hdr.search(l.strip())]
+                    if re.search(r"(?<![A-Za-z])" + re.escape(pre) + r"(?![A-Za-z]).{0,6}\d", l, re.I)
+                    and not hdr.search(l.strip()) and not re.match(r"\s*(\d{1,4}|_+|-{2})\s", l)]
             if miss:
                 flags.append({"check": "header_near_miss", "count": len(miss), "examples": miss[:6]})
     comps_by_page = collections.Counter(c["page"] for s in sets for c in s["components"])
