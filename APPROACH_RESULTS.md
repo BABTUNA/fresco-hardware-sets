@@ -4,24 +4,17 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 
 | | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
 | :--- | ---: | ---: | ---: | ---: |
-| Exact rows | 98.4% | 97.1% | 95.8% | **99.1%** |
-| Sets fully correct | 94.5% | 93.6% | 82.6% | **96.5%** |
-| Precision | 98.6% | 97.2% | 91.9% | **99.1%** |
+| Exact rows | 98.4% (2,183 / 2,218) | 97.1% (2,154 / 2,218) | 95.6% (2,121 / 2,218) | **98.9%** (2,193 / 2,218) |
+| Sets fully correct | 94.5% (294 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
+| Held-out rows | 97.2% (350 / 360) | 97.2% (350 / 360) | | |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
-| Held-out rows | 97.2% | 97.2% | | |
-| Held-out sets | 89.5% | 89.5% | | |
+| Set numbers found, all 20 books | 99.7% (1,172 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
 | Values invented | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
 | LLM calls, 20 books | 22 | 39 | 694 | 694 |
-| Tokens, estimated | 51K | 82K | 1.2M | 2.6M |
-| Same output every run | yes | yes | no | no |
-| Time, 1 page | 4 s | 12 s | 10 s | 10 s |
-| Time, 10 pages | 5 s | 23 s | 1.7 min | 1.7 min |
 | Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
-| Time, all 20 books | 3 min | 8.5 min | 2 h | 1.9 h |
-| Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
-| Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book |
+| Same output every run | yes | yes | no | no |
 
-The last two rows are the whole pipeline, not just the labeled pages. Every approach shares the page finder in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder), which reaches all 697 set pages. Approaches 1 and 2 then ran every book, and the set numbers they output are checked against every printed set header. End to end for approach 1: every set page reached, 99.7% of printed set numbers out as a set, 98.4% of rows exact on labeled pages (97.2% held out).
+Set numbers found is the whole pipeline, not just the labeled pages: the page finder in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder) reaches all 697 set pages, approaches 1 and 2 then ran every book, and the set numbers they output are checked against every printed set header. End to end for approach 1: every set page reached, 99.7% of printed set numbers out as a set, 98.4% of rows exact on labeled pages (97.2% held out).
 
 ## Reading the numbers
 
