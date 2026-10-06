@@ -1,0 +1,20 @@
+{
+  "set_header": "^Set:\\s*(?P<num>\\d+(?:\\.\\d+)?[A-Z]?)",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 72},
+    {"field": "description", "x": 79},
+    {"field": "catalog", "x": 247},
+    {"field": "finish", "x": 416},
+    {"field": "mfr", "x": 457}
+  ],
+  "valign": "top",
+  "skip": [
+    "^RADNET CORPORATE OFFICE",
+    "^Draper, Utah",
+    "^ALL-GLASS ENTRANCES\\s+08 4126",
+    "^Hardware Sets$"
+  ],
+  "set_meta": "^(Doors?:|Description:)",
+  "end": ["END OF SECTION"]
+}

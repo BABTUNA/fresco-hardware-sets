@@ -1,0 +1,22 @@
+{"page_image": "hfh_p53.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51T/FB61T - AS REQUIRED", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "INTEGRATED LOCK", "catalog": "AD-300-CY-70-MT-RHO-B 12/24 VDC - LEAD LINE LOCK - AS REQUIRED", "finish": "626", "mfr": "SCE"},
+    {"qty": 1, "description": "SFIC CONST. CORE - CONSTRUCTION PHASE", "catalog": "80-035 GRN", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "PERMANENT CORE - COMBINATED", "catalog": "1C72", "finish": "626", "mfr": "BES"},
+    {"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL X MB - AS REQUIRED", "finish": "713", "mfr": "IVE"},
+    {"qty": 2, "description": "OH STOP", "catalog": "90S X J BKT - AS REQUIRED - STOP TO BE MOUNTED ON ROOM SIDE", "finish": "630", "mfr": "GLY"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" HIGH LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM LOCK TO EPT", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "POWER SUPPLY - AS REQUIRED", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+    {"qty": null, "description": "DIAGRAMS", "catalog": "PROVIDE FACTORY POINT TO POINT WIRING DIAGRAMS", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "048", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 6, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"}
+  ]}
+]}

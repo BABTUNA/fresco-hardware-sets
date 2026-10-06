@@ -1,0 +1,22 @@
+{
+  "set_header": "^(?:PART \\d+ - )?HARDWARE GROUP NO\\.\\s*(?P<num>[A-Z0-9][A-Z0-9.\\-]*)(?:\\s+(?P<desc>.+))?$",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 74},
+    {"field": "unit", "x": 103},
+    {"field": "description", "x": 137},
+    {"field": "catalog", "x": 269},
+    {"field": "finish", "x": 464},
+    {"field": "mfr", "x": 505}
+  ],
+  "valign": "top",
+  "skip": [
+    "^VANTAGE DATA CENTERS",
+    "^ISSUE FOR PERMIT\\s",
+    "^QTY\\s+DESCRIPTION\\s+CATALOG NUMBER",
+    "^DOOR HARDWARE\\s+08 71 00 - \\d+$",
+    "^PART \\d+ -\\s*$"
+  ],
+  "set_meta": "PROVIDE EACH .* WITH THE FOLLOWING",
+  "end": ["END OF SECTION"]
+}

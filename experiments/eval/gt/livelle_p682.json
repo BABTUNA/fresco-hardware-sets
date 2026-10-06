@@ -1,0 +1,33 @@
+{"page_image": "livelle_p682.png", "sets": [
+  {"set_number": "111.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "Hinge, Concealed", "catalog": "MK80A", "finish": "Satin Chrome", "mfr": "MK"},
+    {"qty": 1, "description": "Flush Bolt", "catalog": "2842 @ HM / 2942 @ WD", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": "US26D", "mfr": "RO"},
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "41 70 IN100-10XG77-BIPS B LMW", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Coordinator", "catalog": "2600 Series (size to opening)", "finish": "US28", "mfr": "RO"},
+    {"qty": 2, "description": "Mounting Bracket", "catalog": "2601D", "finish": "Gray", "mfr": "RO"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "351 H / PH9 @ rev-bevel", "finish": "EN", "mfr": "SA"},
+    {"qty": 2, "description": "Kick Plate", "catalog": "K1050=10\" high CSK BEV", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Astragal", "catalog": "357SP x S88", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "112.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "Hinge, Full Mortise", "catalog": "TA2714 NRP", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Flush Bolt w/Fire Bolt", "catalog": "2849 @ HM / 2949 @ WD", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "41 70 IN100-10XG77-BIPS B LMW", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Coordinator", "catalog": "2600 Series (size to opening)", "finish": "US28", "mfr": "RO"},
+    {"qty": 1, "description": "Mounting Bracket", "catalog": "2601D", "finish": "Gray", "mfr": "RO"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "351 CPS", "finish": "EN", "mfr": "SA"},
+    {"qty": 2, "description": "Kick Plate", "catalog": "K1050=10\" high CSK BEV", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Astragal", "catalog": "355CS", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "113.0", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 6, "description": "Hinge, Full Mortise, Hvy Wt", "catalog": "T4A3786", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Concealed Vert Rod Exit, Exit Only", "catalog": "NB 5CH MDPE8610 EO", "finish": "US32D", "mfr": "SA"},
+    {"qty": 1, "description": "Access Control Concealed Vert Rod Exit", "catalog": "NB IN100-MDPE8678-BIPS B NEP (EAC option)", "finish": "US32D", "mfr": "SA"},
+    {"qty": 2, "description": "Conc Overhead Stop", "catalog": "2-336", "finish": "652", "mfr": "RF"}
+  ]}
+]}

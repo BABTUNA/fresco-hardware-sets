@@ -1,0 +1,12 @@
+{"page_image": "jcryan_p23.png", "sets": [
+  {"set_number": "EX-1.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hanging Device", "catalog": "By Balanced Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": null, "description": "Panic Hardware Device (Blumcraft Style)", "catalog": "By Balanced Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": null, "description": "Gasketing, threshold, sweep, astragal", "catalog": "By Balanced Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Electric Strike", "catalog": "By Balanced Door Manufacturer", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "EX-2.0", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": null, "description": "Hanging Device", "catalog": "By Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": null, "description": "Panic Hardware Device", "catalog": "By Door Manufacturer", "finish": null, "mfr": null}
+  ]}
+]}

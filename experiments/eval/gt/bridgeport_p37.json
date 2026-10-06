@@ -1,0 +1,10 @@
+{"page_image": "bridgeport_p37.png", "sets": [
+  {"set_number": "63", "starts_on_page": true, "components": [
+    {"qty": 105, "description": "Standard Hinge", "catalog": "TA786 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+    {"qty": 35, "description": "Exit Device", "catalog": "F-25-R-L-BE 626 510L-BE LAT 626 RHR 914 x 2134 Door", "finish": "626/626", "mfr": null},
+    {"qty": 35, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
+    {"qty": 35, "description": "Wall Door Stop", "catalog": "S120 C26D", "finish": "C26D", "mfr": null},
+    {"qty": 35, "description": "Kick Plate", "catalog": "8400 C32D 8x34", "finish": "C32D", "mfr": null},
+    {"qty": 105, "description": "Door Silencer", "catalog": "SR64 GRY", "finish": "GRY", "mfr": null}
+  ]}
+]}

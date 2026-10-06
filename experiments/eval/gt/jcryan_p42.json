@@ -1,0 +1,25 @@
+{"page_image": "jcryan_p42.png", "sets": [
+  {"set_number": "19.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hanging Device", "catalog": "By Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Office Lock", "catalog": "By Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Closer", "catalog": "By Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"}
+  ]},
+  {"set_number": "20.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "T4A3786", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Rim Exit Device, Passage", "catalog": "[12] PE8815 ETMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer (Mounted on stairwell side of door)", "catalog": "UNI-7500", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S44BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Door Sweep", "catalog": "315CN", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Threshold", "catalog": "151A", "finish": null, "mfr": "Pemko"}
+  ]},
+  {"set_number": "21.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Storeroom/Closet Lock", "catalog": "8204 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S44BL", "finish": null, "mfr": "Pemko"}
+  ]}
+]}

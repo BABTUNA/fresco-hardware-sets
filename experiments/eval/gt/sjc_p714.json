@@ -1,0 +1,31 @@
+{"page_image": "sjc_p714.png", "sets": [
+  {"set_number": "09B", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT SEC", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Mortise Lock-Classrm", "catalog": "MRX-A-05", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "630", "mfr": "TBD"},
+    {"qty": 1, "description": "Door Stop", "catalog": "1841", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"}
+  ]},
+  {"set_number": "10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT SEC TW8", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Lig Res. Mortise Lock-Fail Safe/Secure", "catalog": "X-MRX-A-241/242C-RQE Fail Saf/Secure", "finish": "630", "mfr": "TOW"},
+    {"qty": 2, "description": "Cylinder", "catalog": "Per project", "finish": "630", "mfr": "TBD"},
+    {"qty": 1, "description": "OH Surface Closer", "catalog": "4210T/4510T TBTRX mount on public side", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 1, "description": "Card Reader", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "10A", "starts_on_page": true, "continues_on_next_page": false, "status": "moved", "components": []},
+  {"set_number": "10B", "starts_on_page": true, "continues_on_next_page": false, "status": "moved", "components": []},
+  {"set_number": "10C", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT SEC", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Push/Pull Set", "catalog": "MRX-A-72", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Overhead Surface Auto Operator", "catalog": "SW200i 115VAC", "finish": "628", "mfr": "BSM"},
+    {"qty": null, "description": "Wave Sense Actuator", "catalog": "MS31 / MS41", "finish": null, "mfr": "BEA"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"}
+  ]},
+  {"set_number": "11", "starts_on_page": true, "continues_on_next_page": false, "status": "moved", "components": []}
+]}

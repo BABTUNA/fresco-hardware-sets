@@ -1,0 +1,34 @@
+{"page_image": "livelle_p664.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "70 IN100-10XG77-BIPS B LP", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "351 P9", "finish": "EN", "mfr": "SA"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050=10\" high CSK BEV", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Door Stop", "catalog": "406", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Sweep", "catalog": "18062CNB", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Threshold", "catalog": "270A MSES25 or Per Detail", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "74.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "Hinge, Full Mortise", "catalog": "TA2714 NRP", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Access Control Rim Exit Device", "catalog": "12 70 IN100-PE8877-BIPS B NEP", "finish": "US32D", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "351 CPS", "finish": "EN", "mfr": "SA"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Sweep", "catalog": "18062CNB", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Threshold", "catalog": "270A MSES25 or Per Detail", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "75.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Passage Latch", "catalog": "10XU15 LMW", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Wall Stop", "catalog": "430-RKW", "finish": "US15", "mfr": "RO"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "76.0", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 3, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": "US15", "mfr": "MK"},
+    {"qty": 3, "description": "Hinge, Full Mortise @ 180 degrees", "catalog": "TA2714 5\" x 5\"", "finish": "US26D", "mfr": "MK"},
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "70 IN100-10XG77-BIPS B LP", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "351 O", "finish": "EN", "mfr": "SA"}
+  ]}
+]}

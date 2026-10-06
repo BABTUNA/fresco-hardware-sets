@@ -1,0 +1,25 @@
+{"page_image": "ami_p414.png", "sets": [
+  {"set_number": "18C", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 NRP", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP2", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080T 17A", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 8\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "RAIN DRIP", "catalog": "142AA", "finish": "AA", "mfr": "ZER"},
+    {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "WEATHERSTRIPPING", "catalog": "8217SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "ASTRAGAL", "catalog": "43SP", "finish": "SP", "mfr": "ZER"},
+    {"qty": 2, "description": "DOOR SWEEP", "catalog": "8198AA", "finish": "AA", "mfr": "ZER"},
+    {"qty": 1, "description": "THRESHOLD", "catalog": "566A-223", "finish": "A", "mfr": "ZER"},
+    {"qty": 2, "description": "DOOR POSITION SWITCH-DPDT", "catalog": "GRI 19512W (BY DIV. 28)", "finish": "WHT", "mfr": "GEN"}
+  ]},
+  {"set_number": "X01", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "COVER PLATE", "catalog": "DOGGING KIT-LDK-98", "finish": "US28", "mfr": "VON"},
+    {"qty": 1, "description": "RIM CYLINDER", "catalog": "20-057 ICX", "finish": "626", "mfr": "SCH"},
+    {"qty": 2, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "RELAY/DOOR SEQUENCER", "catalog": "8310-845", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "DOOR POSITION SWITCH-DPDT", "catalog": "GRI 19512W (BY DIV. 28)", "finish": "WHT", "mfr": "GEN"}
+  ]}
+]}

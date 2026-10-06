@@ -1,0 +1,94 @@
+{"page_image": "roselle_p15.png", "sets": [
+  {"set_number": "3.3", "starts_on_page": true, "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "3.4", "starts_on_page": true, "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "AUTO OPERATOR", "catalog": "SW100", "finish": "691 (LIGHT BRONZE)", "mfr": "ASSA ABLOY"},
+    {"qty": 1, "description": "FLOOR STOP", "catalog": "446", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "ROCKWOOD"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "3.5", "starts_on_page": true, "components": [
+    {"qty": 5, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "AUTO OPERATOR", "catalog": "SW100", "finish": "691 (LIGHT BRONZE)", "mfr": "ASSA ABLOY"},
+    {"qty": 2, "description": "FLUSH BOLT", "catalog": "FB45X", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "FLOOR STOP", "catalog": "446", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "ROCKWOOD"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 4, "description": "PROTECTION PLATE", "catalog": "8400 KICK PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "4.1", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9081, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]},
+  {"set_number": "4.2", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9081, 818 LEVER (MILLED TACTILE WARNING), A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "PROTECTION PLATE", "catalog": "8400 MOP PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]},
+  {"set_number": "4.3", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9081, 818 LEVER (MILLED TACTILE WARNING), A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 2, "description": "PROTECTION PLATE", "catalog": "8400 KICK & MOP PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]},
+  {"set_number": "4.4", "starts_on_page": true, "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 818 LEVER (MILLED TACTILE WARNING), A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "4.5", "starts_on_page": true, "components": [
+    {"qty": 5, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 2, "description": "FLUSH BOLT", "catalog": "FB45X", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 2, "description": "FLOOR STOP", "catalog": "446", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "ROCKWOOD"},
+    {"qty": 4, "description": "PROTECTION PLATE", "catalog": "8400 KICK PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "4.6", "starts_on_page": true, "components": [
+    {"qty": 5, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 818 LEVER (MILLED TACTILE WARNING), A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 2, "description": "FLUSH BOLT", "catalog": "FB45X", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 2, "description": "FLOOR STOP", "catalog": "446", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "ROCKWOOD"},
+    {"qty": 4, "description": "PROTECTION PLATE", "catalog": "8400 KICK PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "4.7", "starts_on_page": true, "components": [
+    {"qty": 6, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9081, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 2, "description": "FLUSH BOLT", "catalog": "FB45X", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 2, "description": "FLOOR STOP", "catalog": "446", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "ROCKWOOD"},
+    {"qty": 4, "description": "PROTECTION PLATE", "catalog": "8400 KICK PLATE", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]}
+]}

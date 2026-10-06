@@ -1,0 +1,16 @@
+{"page_image": "sjc_p737.png", "sets": [
+  {"set_number": "E07", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []},
+  {"set_number": "E08", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT TW8 SEC", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Mortise Lock-Fail Secure", "catalog": "X-MRX-A-241C", "finish": "630", "mfr": "TOW"},
+    {"qty": 2, "description": "Cylinder", "catalog": "Per project", "finish": "630", "mfr": "TBD"},
+    {"qty": 1, "description": "OH Surface Closer", "catalog": "4210T/4510T TBTRX mount public side", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Door Stop", "catalog": "1841", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 2, "description": "Door Sweep", "catalog": "C627 SEC", "finish": "628", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"},
+    {"qty": 2, "description": "Card Reader", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+  ]}
+]}

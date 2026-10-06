@@ -1,0 +1,15 @@
+{"page_image": "hfh_p71.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 2, "description": "FIRE EXIT HARDWARE", "catalog": "9827-EO-F-LBR/LBRAFL-499F-SNB [BULLETIN 023, 251218]", "finish": "626", "mfr": "VON"},
+    {"qty": 2, "description": "FIRE/LIFE HOLDER", "catalog": "4040SEH SEH TBWMS120V AC/DC", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP CUSH", "finish": "689", "mfr": "LCN"}
+  ]},
+  {"set_number": "070", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 2, "description": "FIRE EXIT HARDWARE", "catalog": "9827-EO-F-LBR/LBRAFL-499F-SNB [BULLETIN 023, 251218]", "finish": "626", "mfr": "VON"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "FIRE/LIFE SAFETY MAGNET", "catalog": "SEM7800 SERIES AS REQUIRED - 12V/24V/120V", "finish": "689", "mfr": "LCN"}
+  ]},
+  {"set_number": "073", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": []}
+]}

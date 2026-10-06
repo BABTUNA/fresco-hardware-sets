@@ -1,0 +1,334 @@
+{
+ "gerrard": {
+  "file": "2353-gerrard-street-shelter/Hdw Spec & Sch-IFT_5.pdf",
+  "runs": [
+   [
+    17,
+    35
+   ]
+  ],
+  "dump_pages": [
+   28,
+   32
+  ],
+  "gt_pages": [
+   33,
+   34
+  ]
+ },
+ "bridgeport": {
+  "file": "81-85-bridgeport/08-70-00-Hardware-Schedule.pdf",
+  "runs": [
+   [
+    2,
+    31
+   ],
+   [
+    35,
+    48
+   ]
+  ],
+  "dump_pages": [
+   3,
+   12
+  ],
+  "gt_pages": [
+   37,
+   43
+  ]
+ },
+ "ami": {
+  "file": "ami/c43c36d9-000_Full_Volume_ATC_Renovation_Bid_Specs_Volume_1__1_.pdf",
+  "runs": [
+   [
+    396,
+    418
+   ]
+  ],
+  "dump_pages": [
+   411,
+   412
+  ],
+  "gt_pages": [
+   410,
+   414
+  ]
+ },
+ "forest": {
+  "file": "forest-park-school/Project Manual (1).pdf",
+  "runs": [
+   [
+    261,
+    262
+   ]
+  ],
+  "dump_pages": [
+   261,
+   262
+  ],
+  "gt_pages": [
+   261,
+   262
+  ]
+ },
+ "hfh": {
+  "file": "hfh-dg-hospital/08 71 00 - DOOR HARDWARE.pdf",
+  "runs": [
+   [
+    19,
+    118
+   ],
+   [
+    121,
+    162
+   ],
+   [
+    166,
+    182
+   ]
+  ],
+  "dump_pages": [
+   24,
+   27
+  ],
+  "gt_pages": []
+ },
+ "jcryan": {
+  "file": "jc-ryan-2/087100 - Door Hardware-6.pdf",
+  "runs": [
+   [
+    25,
+    45
+   ]
+  ],
+  "dump_pages": [
+   26,
+   27
+  ],
+  "gt_pages": []
+ },
+ "livelle": {
+  "file": "livelle-mulholland/2025-12-12_Livelle_Bid_Set_Project_Manual_Vol1_rev1.pdf",
+  "runs": [
+   [
+    642,
+    699
+   ]
+  ],
+  "dump_pages": [
+   651,
+   695
+  ],
+  "gt_pages": []
+ },
+ "lyons": {
+  "file": "lyons-township-hs/Project Manual (1).pdf",
+  "runs": [
+   [
+    284,
+    293
+   ]
+  ],
+  "dump_pages": [
+   287,
+   288
+  ],
+  "gt_pages": [
+   291,
+   293
+  ]
+ },
+ "marketview": {
+  "file": "market-view-apartments/S_251107 Market View Prelim Project Manual_pdf.pdf",
+  "runs": [
+   [
+    769,
+    779
+   ]
+  ],
+  "dump_pages": [
+   771,
+   777
+  ],
+  "gt_pages": [
+   770,
+   772
+  ]
+ },
+ "morris": {
+  "file": "morris-bank/030f2d1d-Morris_Bank_Macon_-Spec_Manual_Issued_for_Const._1-26-26_FULL_SPECS.pdf",
+  "runs": [
+   [
+    232,
+    262
+   ],
+   [
+    282,
+    289
+   ]
+  ],
+  "dump_pages": [
+   284,
+   288
+  ],
+  "gt_pages": []
+ },
+ "national": {
+  "file": "national-doors-and-hardware/15e2b8ac-FS17_Specs_V1.pdf",
+  "runs": [
+   [
+    405,
+    410
+   ]
+  ],
+  "dump_pages": [
+   406,
+   408
+  ],
+  "gt_pages": [
+   407,
+   410
+  ]
+ },
+ "roselle": {
+  "file": "roselle-public-library/087100_FL_-_Door_Hardware_IFB_REVISED.pdf",
+  "runs": [
+   [
+    14,
+    16
+   ]
+  ],
+  "dump_pages": [
+   15,
+   16
+  ],
+  "gt_pages": []
+ },
+ "sat": {
+  "file": "sat-tdp/2025.12.19 - SAT TDP - Project Manual.pdf",
+  "runs": [
+   [
+    714,
+    835
+   ]
+  ],
+  "dump_pages": [
+   723,
+   731
+  ],
+  "gt_pages": []
+ },
+ "shubie": {
+  "file": "shubie-center/e2231795-IFT_Specs.pdf",
+  "runs": [
+   [
+    173,
+    174
+   ]
+  ],
+  "dump_pages": [
+   173,
+   174
+  ],
+  "gt_pages": [
+   173,
+   174
+  ]
+ },
+ "sjc": {
+  "file": "sjc-well-behavioral/89671ede-20260218_SJC_BeWell_Bldg_B_85__DESIGN_UPDATE_-_SPECIFICATIONS.pdf",
+  "runs": [
+   [
+    709,
+    747
+   ]
+  ],
+  "dump_pages": [
+   715,
+   745
+  ],
+  "gt_pages": [
+   712,
+   746
+  ]
+ },
+ "star": {
+  "file": "star-hardware/9839d1a1-Division_8_Specs_-_Commons_Lane.pdf",
+  "runs": [
+   [
+    24,
+    25
+   ],
+   [
+    52,
+    112
+   ]
+  ],
+  "dump_pages": [
+   65,
+   86
+  ],
+  "gt_pages": [
+   85,
+   102
+  ]
+ },
+ "doorco": {
+  "file": "the-door-company/Vantage TX-22 Div 01, 08.pdf",
+  "runs": [
+   [
+    388,
+    419
+   ]
+  ],
+  "dump_pages": [
+   393,
+   418
+  ],
+  "gt_pages": []
+ },
+ "usi": {
+  "file": "usi/c9634958-Radnet_Building_-_Specs.pdf",
+  "runs": [
+   [
+    562,
+    562
+   ]
+  ],
+  "dump_pages": [
+   562
+  ],
+  "gt_pages": []
+ },
+ "valor": {
+  "file": "valor-acres-building-e/087100-DOOR-HARDWARE_Rev_2.pdf",
+  "runs": [
+   [
+    6,
+    17
+   ]
+  ],
+  "dump_pages": [
+   10,
+   14
+  ],
+  "gt_pages": []
+ },
+ "oswego": {
+  "file": "village-of-oswego/SPECIFICATIONS VOLUME 1.pdf",
+  "runs": [
+   [
+    417,
+    444
+   ]
+  ],
+  "dump_pages": [
+   420,
+   426
+  ],
+  "gt_pages": [
+   434,
+   440
+  ]
+ }
+}

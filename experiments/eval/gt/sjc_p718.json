@@ -1,0 +1,15 @@
+{"page_image": "sjc_p718.png", "sets": [
+  {"set_number": "16", "starts_on_page": true, "continues_on_next_page": false, "status": "moved", "components": []},
+  {"set_number": "17", "starts_on_page": true, "continues_on_next_page": false, "status": "moved", "components": []},
+  {"set_number": "18", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Spring Hinge-HT", "catalog": "CP51 HT", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Hinge-Power Transfer", "catalog": "CB51EL HT", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Fail Secure Cyl. Lock", "catalog": "XCDC-86-S-RQE 24VDC", "finish": "626", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 1, "description": "Card Reader", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+  ]}
+]}

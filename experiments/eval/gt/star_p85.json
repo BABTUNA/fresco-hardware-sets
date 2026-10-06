@@ -1,0 +1,14 @@
+{"page_image": "star_p85.png", "sets": [
+  {"set_number": "14", "starts_on_page": true, "components": [
+    {"qty": null, "description": "Hinge", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Privacy Latch Body with Lever (privacy x occupancy indicator - exterior side lever left unlocked when room is vacant)", "catalog": "BASE Lever #6210SM x PVD #IXBSB satin black finish x M523 x ADA thumbturn H41 (manufacturer has two #s, but furnish/install the decorative thumbturn pictured to right) x EMTI emergency cointurn/slot override and occupancy indicator in 622 Matte Black Power Coat (picture example of Stefano lever only in different finish)", "finish": null, "mfr": "FR"},
+    {"qty": 1, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 x appropriate cam x blocking rings as required (rim or mortise type and quantity as required by locking device)", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "20-030", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Closer", "catalog": "4050A x REG (installed pull-side of door)", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "KO050 10\" tall x 2\" LDW (less door width) x B4E (beveled edges) x counter sunk or approved adhesive per 08 71 00.Part 2 (no raised fasteners)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Wall Stop", "catalog": "1270CV", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B (head & jambs) by NGP", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Bottom Sweep", "catalog": "202NDKB by NGP or approved equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Threshold", "catalog": "Custom fully factory welded 2727Ax270A 10” wide offset or 2550A 10” flush condition (or per detail for flat of quarter inch offset sill detail) x wrap frame stops x beveled miter ends x mastic per specifications x by Pemko approved equal", "finish": null, "mfr": null}
+  ]}
+]}

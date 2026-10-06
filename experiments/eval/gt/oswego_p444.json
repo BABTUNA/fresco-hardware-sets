@@ -1,0 +1,22 @@
+{"page_image": "oswego_p444.png", "sets": [
+  {"set_number": "57", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080T.03.626.A.626.03.626.A.626 RX", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC PRIMUS PERMANENT CORE", "catalog": "20-740-XP CKC - MATCH EXISTING KEYWAY SYSTEM", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "ELECTRIC STRIKE", "catalog": "6211 FSE CON 12/16/24/28 VAC/VDC", "finish": "630", "mfr": "VON"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH SRI TBSRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "PA MOUNTING PLATE - AS REQUIRED", "catalog": "4040XP-18PA SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "CUSH SHOE SUPPORT - AS REQUIRED", "catalog": "4040XP-30 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "BLADE STOP SPACER - AS REQUIRED", "catalog": "4040XP-61 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "RAIN DRIP - AS REQUIRED", "catalog": "142AA", "finish": "AA", "mfr": "ZER"},
+    {"qty": 1, "description": "SEAL", "catalog": "PERIMETER SEAL BY FRAME MANUFACTURER", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "DOOR SWEEP", "catalog": "39A", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "HD THRESHOLD", "catalog": "655A-V3-226", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM LOCK TO EPT", "finish": null, "mfr": "SCH"},
+    {"qty": 2, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "MULTITECH READER - FURNISHED, INSTALLED, COMMISSIONED BY DIV 28", "catalog": "MT15B 5VDC - 28VDC - AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 1, "description": "DOOR CONTACT - BY DIVISION 28", "catalog": "679-05 WD/HM - AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 1, "description": "CREDENTIAL POWER SUPPLY - AS REQUIRED", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"}
+  ]}
+]}

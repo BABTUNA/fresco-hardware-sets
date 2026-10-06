@@ -1,0 +1,31 @@
+{"page_image": "gerrard_p22.png", "sets": [
+{"set_number": "06", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 4, "description": "Hinge(s)", "catalog": "BB1199 5\" x 4\" NRP", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Power Transfer(s)", "catalog": "2-679-0623", "finish": "ALM", "mfr": "HA"},
+{"qty": 1, "description": "Exit Device(s)", "catalog": "4501 RIM MLRX FEC", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Rim Cylinder(s)", "catalog": "3901 SFIC", "finish": "US26D", "mfr": "HA"},
+{"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+{"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+{"qty": 1, "description": "Offset Door Pull(s)", "catalog": "910P 36", "finish": "US10B", "mfr": "HA"},
+{"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+{"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+{"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+{"qty": 3, "description": "Silencers", "catalog": "307D", "finish": "GREY", "mfr": "HA"},
+{"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+{"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+{"qty": 1, "description": "Remote Exit Button", "catalog": "By Security Provider", "finish": null, "mfr": null},
+{"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+{"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+]},
+{"set_number": "07", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 3, "description": "Hinge(s)", "catalog": "BB1199 5\" x 4\"", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Door Pull", "catalog": "910B 36", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+{"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+{"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+{"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+{"qty": 3, "description": "Silencers", "catalog": "307D", "finish": "GREY", "mfr": "HA"},
+{"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+]}
+]}

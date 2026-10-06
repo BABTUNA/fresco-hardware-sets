@@ -1,0 +1,28 @@
+{"page_image": "bridgeport_p43.png", "sets": [
+  {"set_number": "74", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "112XY-83\" C28 EPT @ 42\" Top Down", "finish": "C28", "mfr": null},
+    {"qty": 1, "description": "Accessory", "catalog": "EPT-10-689", "finish": "689", "mfr": null},
+    {"qty": 1, "description": "Exit Device", "catalog": "MEL-24-R-L-BE 630 712L-BE LAT 626 LHR 4' LENGTH 965 x 2134", "finish": "626/630", "mfr": null},
+    {"qty": 1, "description": null, "catalog": "Power Supply - By Security Contractor", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Overhead Door Stop", "catalog": "104S C26D", "finish": "C26D", "mfr": null},
+    {"qty": 1, "description": "Auto Operator", "catalog": "Horton 4100 RH Pull Series", "finish": "US28", "mfr": null},
+    {"qty": 2, "description": "Actuator", "catalog": "8310-813", "finish": null, "mfr": null},
+    {"qty": 2, "description": "Mounting Box", "catalog": "9530-18 628", "finish": "628", "mfr": null},
+    {"qty": 1, "description": "Weatherstripping", "catalog": "Weatherstrip Set By Door Supplier", "finish": "CA", "mfr": null},
+    {"qty": 1, "description": "Weatherstripping", "catalog": "W-24S-CA x 38\"", "finish": "CA", "mfr": null},
+    {"qty": 1, "description": "Threshold", "catalog": "CT-65 x 38\"", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "75", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "Standard Hinge", "catalog": "TA714 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+    {"qty": 1, "description": "Lockset", "catalog": "W581 P6 LAT/LAT 626/626 G", "finish": "626/626", "mfr": null},
+    {"qty": 1, "description": "Electric Strike", "catalog": "6400- 24VDC-630", "finish": "630", "mfr": null},
+    {"qty": 1, "description": "Card Access", "catalog": "Card Reader & Fobs By Security Contractor", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Postion Switch", "catalog": "679-05HM", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Auto Operator", "catalog": "Horton 7900 RH Pull Series", "finish": "US28", "mfr": null},
+    {"qty": 2, "description": "Actuator", "catalog": "8310-813", "finish": null, "mfr": null},
+    {"qty": 2, "description": "Mounting Box", "catalog": "9530-18 628", "finish": "628", "mfr": null},
+    {"qty": 1, "description": "Door Viewer", "catalog": "U698B26D", "finish": "26D", "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Threshold", "catalog": "CT-65 x 38\"", "finish": null, "mfr": null}
+  ]}
+]}

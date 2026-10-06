@@ -1,0 +1,22 @@
+{
+  "mode": "columns",
+  "set_header": "^Hardware Group No\\.?\\s*(?P<num>[A-Za-z0-9][A-Za-z0-9.\\-]*)(?:\\s*-\\s*(?P<desc>.*))?$",
+  "row_start": "^\\d{1,2}$",
+  "columns": [
+    {"field": "qty", "x": 78},
+    {"field": "unit", "x": 107},
+    {"field": "description", "x": 141},
+    {"field": "catalog", "x": 272},
+    {"field": "finish", "x": 468},
+    {"field": "mfr", "x": 509}
+  ],
+  "valign": "top",
+  "skip": [
+    "^Hagerstown Community College",
+    "^Advanced Technology Center Renovation",
+    "^Door Hardware\\s+\\d{6}-\\d+",
+    "^QTY\\s+DESCRIPTION"
+  ],
+  "set_meta": "^(For use on Door.*|Each to have:?|Provide each.*|\\d+[A-Z]?(\\s+\\d+[A-Z]?)*)$",
+  "end": ["END OF SECTION"]
+}

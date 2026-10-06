@@ -1,0 +1,12 @@
+{"page_image": "sjc_p743.png", "sets": [
+  {"set_number": "E15", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []},
+  {"set_number": "E16", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT SEC", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Push/Pull Set", "catalog": "MRX-A-72", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Overhead Surface Auto Operator", "catalog": "SW200i 115VAC", "finish": "628", "mfr": "BSM"},
+    {"qty": null, "description": "Wave Sense Actuator", "catalog": "MS31 / MS41", "finish": null, "mfr": "BEA"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"}
+  ]}
+]}

@@ -1,0 +1,520 @@
+[
+ {
+  "book": "ami",
+  "page": 398,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "ami",
+  "page": 400,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "ami",
+  "page": 413,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 13,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 14,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 29,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "doorco",
+  "page": 394,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "doorco",
+  "page": 395,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "gerrard",
+  "page": 17,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "gerrard",
+  "page": 21,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "gerrard",
+  "page": 22,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "gerrard",
+  "page": 24,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 22,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 37,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 38,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 42,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 57,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 61,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 71,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 98,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 144,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 145,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 29,
+  "targets": [
+   "centered_cells"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 30,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 31,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 32,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 35,
+  "targets": [
+   "centered_cells"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 38,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 40,
+  "targets": [
+   "centered_cells"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 41,
+  "targets": [
+   "centered_cells"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 42,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 43,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 45,
+  "targets": [
+   "centered_cells"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 664,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 665,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "lyons",
+  "page": 285,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "lyons",
+  "page": 289,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "lyons",
+  "page": 292,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "marketview",
+  "page": 774,
+  "targets": [
+   "book_quota"
+  ]
+ },
+ {
+  "book": "marketview",
+  "page": 778,
+  "targets": [
+   "book_quota"
+  ]
+ },
+ {
+  "book": "morris",
+  "page": 248,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "morris",
+  "page": 249,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "national",
+  "page": 405,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "national",
+  "page": 409,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 422,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 423,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 424,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 431,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 444,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 720,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 727,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 733,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 736,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 737,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 711,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 714,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 717,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 718,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 721,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 723,
+  "targets": [
+   "full_name_mfr"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 724,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 727,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 728,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 736,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 737,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 738,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 739,
+  "targets": [
+   "struck_page"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 53,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 55,
+  "targets": [
+   "four_digit_qty"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 73,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 75,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 97,
+  "targets": [
+   "column_drift"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 104,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "valor",
+  "page": 13,
+  "targets": [
+   "struck_page"
+  ]
+ }
+]

@@ -1,0 +1,14 @@
+{"page_image": "star_p53.png", "sets": [
+  {"set_number": "B1 and B2", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges (residential light duty, no ball bearings required)", "catalog": "#5PB1 (size & quantity per Section 08 71 00) - Provide 5PB1 for pricing, but provide alternate VE pricing for residential grade, less gauge hinge 4” x 4” x Ives or approved equal by door/frame manufacturer. - On all project hinges: Where framing/jamb trim will not allow door to open with hitting jamb, provide wide through hinge (width as required to open doors to wall stop or floor stop installation locations)", "finish": "625", "mfr": "IV"},
+    {"qty": 1, "description": "Privacy Latch", "catalog": "Frascio T600 x 270 Metro x 1912Q (square rose) x PY", "finish": "625", "mfr": "FR"},
+    {"qty": 1, "description": "Hinge Pin Stop", "catalog": "Device #1512 in Polished Chrome finish by Don Jo", "finish": "CP", "mfr": "DO"},
+    {"qty": 1, "description": "Alternate Option: Wall Door Bumper Stop", "catalog": "4050.260 (3.75”) x Polished Chrome", "finish": "260", "mfr": "BA"}
+  ]},
+  {"set_number": "C1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges (residential light duty, no ball bearings required)", "catalog": "#5PB1 (size & quantity per Section 08 71 00). Provide 5PB1 for pricing, but provide alternate VE pricing for residential grade, less gauge hinge 4” x 4” x Ives or approved equal by door/frame manufacturer. On all project hinges: Where framing/jamb trim will not allow door to open with hitting jamb, provide wide through hinge (width as required to open doors to wall stop or floor stop installation locations)", "finish": "625", "mfr": "IV"},
+    {"qty": 1, "description": "Passage Latchset", "catalog": "Frascio T600 x 270 Metro x 1912Q (Square Rose)", "finish": "625", "mfr": "FR"},
+    {"qty": 1, "description": "Hinge Pin Stop", "catalog": "Device #1512 in Polished Chrome finish by Don Jo", "finish": "CP", "mfr": "DO"},
+    {"qty": 1, "description": "Alternate Option: Wall Door Bumper Stop", "catalog": "4050.260 (3.75”) x Polished Chrome", "finish": "260", "mfr": "BA"}
+  ]}
+]}

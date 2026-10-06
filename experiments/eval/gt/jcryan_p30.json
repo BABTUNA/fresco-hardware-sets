@@ -1,0 +1,13 @@
+{"page_image": "jcryan_p30.png", "sets": [
+  {"set_number": "4.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "T4A3786", "finish": null, "mfr": "McKinney"},
+    {"qty": 2, "description": "Electric Power Transfer", "catalog": "EL-CEPT", "finish": null, "mfr": "Securitron"},
+    {"qty": 1, "description": "Fail Secure Exit Device, SVR", "catalog": "[12] 55 PE8774 ETMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Vert Rod Exit", "catalog": "[12 ] 55 PE8706 ETMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "UNI-7500", "finish": null, "mfr": "Norton"},
+    {"qty": 2, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 2, "description": "Astragals", "catalog": "303AS", "finish": null, "mfr": "Pemko"},
+    {"qty": 2, "description": "Door/Frame Harness", "catalog": null, "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,20 @@
+{"page_image": "shubie_p173.png", "sets": [
+  {"set_number": "01", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "112XY", "finish": "711", "mfr": "IVE"},
+    {"qty": 1, "description": "PANIC HARDWARE", "catalog": "33A-NL-OP-388", "finish": "315", "mfr": "VON"},
+    {"qty": 1, "description": "RIM CYLINDER", "catalog": "80-329", "finish": "622", "mfr": "SCH"},
+    {"qty": 1, "description": "ELECTRIC STRIKE", "catalog": "6300 FSE", "finish": "630", "mfr": "VON"},
+    {"qty": 1, "description": "LONG DOOR PULL", "catalog": "9264 48\" 20\" O", "finish": "BLK", "mfr": "IVE"},
+    {"qty": 1, "description": "OH STOP", "catalog": "100S", "finish": "BLK", "mfr": "GLY"},
+    {"qty": 1, "description": "AUTO OPERATOR", "catalog": "9542", "finish": "ANCL", "mfr": "LCN"},
+    {"qty": 4, "description": "ACTUATOR, TOUCH", "catalog": "8310-818", "finish": "630", "mfr": "LCN"},
+    {"qty": 1, "description": "DOOR SWEEP", "catalog": "8192A x door width", "finish": null, "mfr": "ZER"},
+    {"qty": 1, "description": "THRESHOLD", "catalog": "545A x door width", "finish": null, "mfr": "ZER"},
+    {"qty": 1, "description": "DOOR SEALANT", "catalog": "GASKETING BY DR SUPPLIER", "finish": null, "mfr": "UNK"},
+    {"qty": 1, "description": "WIRE HARNESS", "catalog": "CON. TO SUIT", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "CREDENTIAL", "catalog": "BY OTHERS", "finish": null, "mfr": "UNK"},
+    {"qty": 1, "description": "READER/CONTROLL", "catalog": "BY OTHERS", "finish": null, "mfr": "UNK"},
+    {"qty": 1, "description": "DOOR CONTACT", "catalog": "679-05 TO SUIT DR MATERIAL", "finish": "WHT", "mfr": "SCE"},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "PS904 900-4RL 120/240 VAC", "finish": "LGR", "mfr": "SCE"}
+  ]}
+]}

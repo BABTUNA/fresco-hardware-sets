@@ -1,0 +1,31 @@
+{"page_image": "valor_p8.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "BARN DR TRACK", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 4, "description": "PULL (ACCESSIBLE WHERE REQUIRED)", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "09", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "BARN DR TRACK", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "ADA PULL", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "DEADBOLT LOCK", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 4, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "STOREROOM LEVER LOCKSET", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SEALS (FIRE) (DR 104A ONLY)", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "11", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 4, "description": "BB HINGE (NRP)", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "STOREROOM LEVER LOCKSET", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "SEALS (THERMAL)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "THRESHOLD", "catalog": null, "finish": "AL", "mfr": null}
+  ]},
+  {"set_number": "12", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 8, "description": "BB HINGE (NRP)", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "ELECT TRANSFER OR HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "CONCEALED VERT ROD ELECT. EXIT DEVICE (NIGHT LATCH FUNCTION)", "catalog": null, "finish": "711", "mfr": null}
+  ]}
+]}

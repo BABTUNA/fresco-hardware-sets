@@ -1,0 +1,19 @@
+{"page_image": "hfh_p154.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PUSH/PULL LATCH", "catalog": "HL6 5\" A", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "DOOR BOTTOM", "catalog": "369AA-Z49", "finish": "AA", "mfr": "ZER"}
+  ]},
+  {"set_number": "180", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PUSH/PULL LATCH", "catalog": "HL6 5\" A", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "OH STOP", "catalog": "90S X J BKT - AS REQUIRED - STOP TO BE MOUNTED ON ROOM SIDE", "finish": "630", "mfr": "GLY"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "DOOR BOTTOM", "catalog": "369AA-Z49", "finish": "AA", "mfr": "ZER"}
+  ]},
+  {"set_number": "181", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": []}
+]}

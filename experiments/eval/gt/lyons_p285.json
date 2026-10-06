@@ -1,0 +1,26 @@
+{"page_image": "lyons_p285.png", "sets": [
+  {"set_number": "06", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CLASSROOM SECURITY W/ INSIDE INDICATOR", "catalog": "ND78BD TLR IS-CRS", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"}
+  ]},
+  {"set_number": "07", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "224XY", "finish": "711", "mfr": "IVE"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-L-F-2SI-03", "finish": "612", "mfr": "VON"},
+    {"qty": 2, "description": "SFIC RIM HOUSING", "catalog": "80-129", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4041 DEL SCUSH", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]},
+  {"set_number": "08", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "CONT. HINGE", "catalog": "224XY", "finish": "711", "mfr": "IVE"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "9947WDC-L-F-2SI-LBR-03-SNB", "finish": "612", "mfr": "VON"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "9947WDC-L-F-2SI-LBRAFL-03-SNB", "finish": "612", "mfr": "VON"},
+    {"qty": 4, "description": "SFIC RIM HOUSING", "catalog": "80-129", "finish": "612", "mfr": "SCH"},
+    {"qty": 4, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" X 1\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]}
+]}

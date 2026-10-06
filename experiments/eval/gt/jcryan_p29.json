@@ -1,0 +1,11 @@
+{"page_image": "jcryan_p29.png", "sets": [
+  {"set_number": "3.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "By Fire Rated Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Electric Power Transfer", "catalog": "By Fire Rated Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Fail Safe Rim Exit Device with integrated request to exit switch", "catalog": "[12] 55 PE8875 ETMI By Door Manufacturer", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Door Closer x Regular Arm mounted on pull side of door", "catalog": "By Fire Rated Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "By Fire Rated Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door/Frame Harness", "catalog": "By Fire Rated Door Manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Stop", "catalog": "RM860", "finish": null, "mfr": "Rockwood"}
+  ]}
+]}

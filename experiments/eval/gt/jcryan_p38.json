@@ -1,0 +1,22 @@
+{"page_image": "jcryan_p38.png", "sets": [
+  {"set_number": "10.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Constant Latching Flush Bolt", "catalog": "2845/ 2945(as required)", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Storeroom/Closet Lock", "catalog": "8204 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Coordinator x Filler Bar x Brackets", "catalog": "2600 Series (Cutouts as Required)", "finish": null, "mfr": "Rockwood"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 2, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 2, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S44BL", "finish": null, "mfr": "Pemko"}
+  ]},
+  {"set_number": "11.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Storeroom/Closet Lock", "catalog": "8204 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S44BL", "finish": null, "mfr": "Pemko"}
+  ]}
+]}

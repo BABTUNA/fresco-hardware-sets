@@ -1,0 +1,21 @@
+{"page_image": "jcryan_p43.png", "sets": [
+{"set_number": "22.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+{"qty": 1, "description": "Storeroom/Closet Lock", "catalog": "8204 LNMI", "finish": null, "mfr": "Sargent"},
+{"qty": 1, "description": "Surface Closer", "catalog": "UNI-7500", "finish": null, "mfr": "Norton"},
+{"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"}
+]},
+{"set_number": "23.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": null, "description": "Hinge, Full Mortise", "catalog": "T4A3786", "finish": null, "mfr": "McKinney"},
+{"qty": 1, "description": "Mortise Exit Device, Nightlatch", "catalog": "[12] PE8904 ETL", "finish": null, "mfr": "Sargent"},
+{"qty": 1, "description": "Surface Closer", "catalog": "UNI-7500", "finish": null, "mfr": "Norton"},
+{"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"}
+]},
+{"set_number": "24.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+{"qty": 1, "description": "Classroom Lock", "catalog": "8237 LNMI", "finish": null, "mfr": "Sargent"},
+{"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+{"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+{"qty": null, "description": "Silencers", "catalog": "608", "finish": null, "mfr": "Rockwood"}
+]}
+]}

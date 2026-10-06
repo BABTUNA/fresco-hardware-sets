@@ -1,0 +1,32 @@
+{"page_image": "valor_p15.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 4, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 2, "description": "B/B DUMMY LEVERS", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "693", "mfr": null}
+  ]},
+  {"set_number": "29", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "DOOR SLIDE TRACK W/ STOP", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 2, "description": "B/B PULLS", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "30", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "ALL HARDWARE BY DOOR SUPPLIER", "catalog": null, "finish": "BBLK", "mfr": null}
+  ]},
+  {"set_number": "31", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "PRIVACY LEVER SET W/ OCCUPANCY INDICATOR", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "32", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 8, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "STOREROOM LEVER LOCKSET", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 2, "description": "SURFACE CLOSER W/ OH STOP", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "MANUAL FLUSHBOLTS (INACTIVE DOOR)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "DUSTPROOF STRIKE", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "33", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 4, "description": "BB HINGE (NRP)", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": null, "finish": "AL", "mfr": null}
+  ]}
+]}

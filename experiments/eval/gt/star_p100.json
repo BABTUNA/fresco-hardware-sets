@@ -1,0 +1,18 @@
+{"page_image": "star_p100.png", "sets": [
+  {"set_number": "31", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Fire Rated Rim Exit/Panic Device", "catalog": "AX 99L-F x 996L-R/V (key override) x #Longitude Lever, delete -F if not rated", "finish": "622", "mfr": "VO"},
+    {"qty": 1, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 x appropriate cam x blocking rings as required (rim or mortise type and quantity as required by locking device)", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "20-030", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "4050A x REG (installed pull-side)", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "KO050 10” tall x 2\" LDW (less door width) x B4E (beveled edges) x counter sunk or approved adhesive per 08 71 00.Part 2 (no raised fasteners)", "finish": "630", "mfr": "TR"},
+    {"qty": 1, "description": "Floor Stop", "catalog": "1214", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Bottom", "catalog": "202NDKB by NGP or equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Terrace Threshold", "catalog": "#430 x RCE (wrap frame stops x beveled miter ends) by NGP approved equal: - To prevent water intrusion under threshold, provide a full bead of mastic. At RCE corners. Install slanted 2% away from building per above specifications (Contractor to prepare sill accordingly to achieve). - Provide NGP Shims: #BAR1 or #BAR2 or #BAR 4 as required so that the threshold does not bow under excessive pressure or weight (shims placed required).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "REX Device (security/ alarm notification)", "catalog": "Specified in above locking hardware (coordinate with Divisions 25-28 and applicable drawings).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switches (also known as Alarm/Door Contacts)", "catalog": "#679-05-WD or #679-05-HM (as required per door material) by Schlage manufacturing (see Divisions 26 and 28 and applicable drawings).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Power Supply", "catalog": "Furnish and install #1) single gang power drop located above or near door (not in corridor or public view, but above celling line where possible); #2) provide power supply #PS902 by Schlage; #3) run conduit from hinge through frame and complete wiring as required to meet manufacturer warranties", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Coordination task for security and/or electrical design and additional non-Division 08 Section scope (including but not limited to wire / connectivity from ground or ceiling through frame to electrified hardware)", "catalog": "By security or electrical as required per Contract Documents: The electrified hardware specified above can be utilized for #1) non-card reader, remote access control applications (unlocked / locked remotely for open during business hours / locked after-hours) and #2) local card readers at openings as directed by architectural drawings, security or electrical. Coordinate with security or electrical Divisions 25-28 and applicable drawings as hardware does not include card reader locations.", "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,22 @@
+{"page_image": "hfh_p174.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "98-L-BE-F-RX996-06SS-CON-SNB [BULLETIN 023, 251218]", "finish": "630", "mfr": "VON"},
+    {"qty": 1, "description": "DELAYED EGRESS MAG", "catalog": "M490DEP MTG BRKT & VOLTAGE AS REQ", "finish": "628", "mfr": "SCE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH TBSRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" HIGH LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM LOCK TO EPT [BULLETIN 023, 251218]", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY [BULLETIN 023, 251218]", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "POWER SUPPLY - AS REQUIRED", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "MULTITECH CREDENTIAL READER", "catalog": "PROVIDED BY DIV 28 - MTB15 OR MTB11 AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 1, "description": "CREDENTIAL POWER SUPPLY", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "DIAGRAMS", "catalog": "PROVIDE FACTORY POINT TO POINT WIRING DIAGRAMS", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "253", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 2, "description": "PIVOT SET", "catalog": "7230F SET", "finish": "630", "mfr": "IVE"},
+    {"qty": 2, "description": "INTERMEDIATE PIVOT", "catalog": "7230F INT", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51T/FB61T - AS REQUIRED", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "PUSH/PULL LATCH", "catalog": "HL6 5\" A L", "finish": "626", "mfr": "SCH"}
+  ]}
+]}

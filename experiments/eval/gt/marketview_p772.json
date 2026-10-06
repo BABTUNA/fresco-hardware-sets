@@ -1,0 +1,22 @@
+{"page_image": "marketview_p772.png", "sets": [
+{"set_number": "07", "starts_on_page": true, "components": [
+  {"qty": 2, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 NRP", "finish": "652", "mfr": "IVE"},
+  {"qty": 1, "description": "ELECTRIC HINGE", "catalog": "5BB1HW 4.5 X 4.5 CON TW8", "finish": "652", "mfr": "IVE"},
+  {"qty": 1, "description": "ELEC FIRE EXIT HARDWARE", "catalog": "RX-FSA-AX-F-25-R-L-LON 24 VDC", "finish": "626", "mfr": "FAL"},
+  {"qty": 1, "description": "INTERFACE BOX", "catalog": "*JB7", "finish": null, "mfr": "VON"},
+  {"qty": 1, "description": "MORTISE CYLINDER", "catalog": "986 009897-024", "finish": "626", "mfr": "FAL"},
+  {"qty": 1, "description": "SURFACE CLOSER", "catalog": "SC81A REG OR PA AS REQ", "finish": "689", "mfr": "FAL"},
+  {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 1 1/2\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+  {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CVX REQUIRES BACKING IN WALL", "finish": "626", "mfr": "IVE"},
+  {"qty": 1, "description": "GASKETING", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+  {"qty": 1, "description": "DOOR BOTTOM", "catalog": "355AA", "finish": "AA", "mfr": "ZER"},
+  {"qty": 1, "description": "THRESHOLD", "catalog": "545A OR AS DETAILED", "finish": "A", "mfr": "ZER"},
+  {"qty": 1, "description": "PIGTAIL CABLE", "catalog": "*RC PIGTAIL 25 FT", "finish": null, "mfr": "SCE"},
+  {"qty": 1, "description": "WIRE HARNESS", "catalog": "CON-XX/CON-XXP LENGTH TO SUIT DOOR CHANNEL", "finish": null, "mfr": "SCH"},
+  {"qty": 1, "description": "WIRE HARNESS", "catalog": "CON-6W", "finish": null, "mfr": "SCH"},
+  {"qty": 1, "description": "MULTITECH READER", "catalog": "*RC15 12 VDC", "finish": "BLK", "mfr": "SCE"},
+  {"qty": 1, "description": "DOOR CONTACT", "catalog": "679-05HM/WD", "finish": "BLK", "mfr": "SCE"},
+  {"qty": 1, "description": "POWER SUPPLY", "catalog": "PS902 900-FA 120/240 VAC COORDINATE WITH ACCESS CONTROL VENDOR", "finish": null, "mfr": "VON"},
+  {"qty": 1, "description": "ADVANCED SECURITY MODULE", "catalog": "*ACC-EDK-3A", "finish": null, "mfr": "ISO"}
+]}
+]}

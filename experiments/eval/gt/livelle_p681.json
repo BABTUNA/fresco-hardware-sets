@@ -1,0 +1,32 @@
+{"page_image": "livelle_p681.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Threshold", "catalog": "Per Detail / Type as Req", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "109.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 8, "description": "Hinge, Full Mortise", "catalog": "TA2714 NRP", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Flush Bolt", "catalog": "2842 @ HM / 2942 @ WD", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": "US26D", "mfr": "RO"},
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "41 70 IN100-10XG77-BIPS B LP", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Mortise Cylinder", "catalog": "72 43 verify cam", "finish": "US32D", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Coordinator", "catalog": "2600 Series (size to opening)", "finish": "US28", "mfr": "RO"},
+    {"qty": 2, "description": "Mounting Bracket", "catalog": "2601D", "finish": "Gray", "mfr": "RO"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "351 CPS", "finish": "EN", "mfr": "SA"},
+    {"qty": 1, "description": "Astragal", "catalog": "355CS", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"}
+  ]},
+  {"set_number": "110.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "Hinge, Full Mortise, Hvy Wt", "catalog": "T4A3786 NRP", "finish": "US15", "mfr": "MK"},
+    {"qty": 1, "description": "Flush Bolt", "catalog": "2842 @ HM / 2942 @ WD", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": "US26D", "mfr": "RO"},
+    {"qty": 1, "description": "Access Control Cyl Lock", "catalog": "41 70 IN100-10XG77-BIPS B LP", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+    {"qty": 1, "description": "Coordinator", "catalog": "2600 Series (size to opening)", "finish": "US28", "mfr": "RO"},
+    {"qty": 2, "description": "Mounting Bracket", "catalog": "2601D", "finish": "Gray", "mfr": "RO"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "351 PH10", "finish": "EN", "mfr": "SA"},
+    {"qty": 2, "description": "Armor Plate", "catalog": "K1050 F =34\" high BEV CSK (F @ rated)", "finish": "US32D", "mfr": "RO"},
+    {"qty": 1, "description": "Astragal", "catalog": "357SP x S88", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Protector Bar", "catalog": "R111LPB", "finish": "10BE", "mfr": "RO"}
+  ]}
+]}

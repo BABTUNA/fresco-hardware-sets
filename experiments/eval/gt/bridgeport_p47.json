@@ -1,0 +1,22 @@
+{"page_image": "bridgeport_p47.png", "sets": [
+  {"set_number": "85", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2571, "description": "Standard Hinge", "catalog": "1010RP F-626E", "finish": "-626E", "mfr": null},
+    {"qty": 857, "description": "Latchset", "catalog": "GLA101 MIL RDT", "finish": "US15", "mfr": null},
+    {"qty": 857, "description": "Door Stop", "catalog": "69 / 63 As Required", "finish": "US15", "mfr": "IVES"}
+  ]},
+  {"set_number": "86", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1311, "description": "Standard Hinge", "catalog": "1010RP F-626E", "finish": "-626E", "mfr": null},
+    {"qty": 437, "description": "Latchset", "catalog": "GLA101 MIL RDT", "finish": "US15", "mfr": null},
+    {"qty": 437, "description": "Door Stop", "catalog": "69 / 63 As Required", "finish": "US15", "mfr": "IVES"}
+  ]},
+  {"set_number": "87", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2388, "description": "Standard Hinge", "catalog": "1010RP F-626E", "finish": "-626E", "mfr": null},
+    {"qty": 796, "description": "Lockset", "catalog": "GLA331 MIL RDT", "finish": "US15", "mfr": null},
+    {"qty": 796, "description": "Door Stop", "catalog": "69 / 63 As Required", "finish": "US15", "mfr": "IVES"}
+  ]},
+  {"set_number": "88", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1635, "description": "Standard Hinge", "catalog": "1010RP F-626E", "finish": "-626E", "mfr": null},
+    {"qty": 545, "description": "Latchset", "catalog": "GLA101 MIL RDT", "finish": "US15", "mfr": null},
+    {"qty": 545, "description": "Door Stop", "catalog": "69 / 63 As Required", "finish": "US15", "mfr": "IVES"}
+  ]}
+]}

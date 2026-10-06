@@ -1,0 +1,35 @@
+{"page_image": "gerrard_p24.png", "sets": [
+  {"set_number": "10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "Hinge(s)", "catalog": "BB1279 4 1/2\" x 4\" NRP", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Electrified Hinge(s)", "catalog": "BB1191 4 1/2\" x 4\" ETW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "MLR Lockset", "catalog": "LPC190-HD L6 EU SFIC REX", "finish": "AL", "mfr": "CMND"},
+    {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+    {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Seal", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+    {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "11", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "Hinge(s)", "catalog": "BB1191 5\" x 4\" NRP", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Electrified Hinge(s)", "catalog": "BB1191 5\" x 4\" ETW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "MLR Lockset", "catalog": "LPC190-HD L6 EU SFIC REX", "finish": "AL", "mfr": "CMND"},
+    {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+    {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Overhead Stop(s)", "catalog": "7016 SRF", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 3, "description": "Silencers", "catalog": "307D", "finish": "GREY", "mfr": "HA"},
+    {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Remote Exit Button", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]}
+]}

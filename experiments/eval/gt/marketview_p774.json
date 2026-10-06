@@ -1,0 +1,28 @@
+{"page_image": "marketview_p774.png", "sets": [
+{"set_number": "09", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+{"qty": 1, "description": "PRIVACY LOCK W/ OUTSIDE INDICATOR", "catalog": "ND40S LON OS-OCC", "finish": "626", "mfr": "SCH"},
+{"qty": 1, "description": "SURFACE CLOSER", "catalog": "SC81A REG OR PA AS REQ", "finish": "689", "mfr": "FAL"},
+{"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 1 1/2\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+{"qty": 1, "description": "MOP PLATE", "catalog": "8400 4\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+{"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV REQUIRES BACKING IN WALL", "finish": "626", "mfr": "IVE"},
+{"qty": 1, "description": "GASKETING", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+]},
+{"set_number": "10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 6, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 NRP", "finish": "652", "mfr": "IVE"},
+{"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P/FB61P AS REQ'D", "finish": "630", "mfr": "IVE"},
+{"qty": 1, "description": "STOREROOM LOCK", "catalog": "T581CP6 LON 23981152 5161", "finish": "626", "mfr": "FAL"},
+{"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL", "finish": "628", "mfr": "IVE"},
+{"qty": 2, "description": "MOUNTING BRACKET", "catalog": "MB/MBF", "finish": "689", "mfr": "IVE"},
+{"qty": 2, "description": "SURFACE CLOSER", "catalog": "SC81A SS", "finish": "689", "mfr": "FAL"},
+{"qty": 1, "description": "GASKETING", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+{"qty": 1, "description": "ASTRAGAL", "catalog": "383AA", "finish": "AA", "mfr": "ZER"}
+]},
+{"set_number": "11", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+{"qty": 1, "description": "PASSAGE SET", "catalog": "W101S LON", "finish": "626", "mfr": "FAL"},
+{"qty": 1, "description": "SURFACE CLOSER", "catalog": "SC81A REG OR PA AS REQ", "finish": "689", "mfr": "FAL"},
+{"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV REQUIRES BACKING IN WALL", "finish": "626", "mfr": "IVE"},
+{"qty": 1, "description": "GASKETING", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+]}
+]}

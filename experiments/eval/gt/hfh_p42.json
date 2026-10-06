@@ -1,0 +1,20 @@
+{"page_image": "hfh_p42.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": []},
+  {"set_number": "035", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 6, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 2, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "ELEC FIRE EXIT HARDWARE", "catalog": "RX-QEL-9847-L-DT-F-LBR- 06SS-CON 24 VDC", "finish": "630", "mfr": "VON"},
+    {"qty": 1, "description": "ELEC FIRE EXIT HARDWARE", "catalog": "RX-QEL-9847-L-NL-F-06SS 24 VDC", "finish": "630", "mfr": "VON"},
+    {"qty": 1, "description": "RIM CYLINDER", "catalog": "1E SERIES - PROVIDE BRASS CONSTRUCTION CORE", "finish": "626", "mfr": "BES"},
+    {"qty": 1, "description": "PERMANENT CORE - COMBINATED", "catalog": "1C72", "finish": "626", "mfr": "BES"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" HIGH LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 2, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 2, "description": "WIRE HARNESS (IN DOOR)", "catalog": "ALLEGION CONNECT TYPE & LENGTH AS REQ", "finish": null, "mfr": "SCH"},
+    {"qty": 2, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY", "finish": null, "mfr": "SCH"},
+    {"qty": 1, "description": "MULTITECH CREDENTIAL READER", "catalog": "PROVIDED BY DIV 28 - MTB15 OR MTB11 AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 2, "description": "DOOR POSITION SWITCH - AS REQUIRED", "catalog": "BY DIVISION 28 [BULLETIN 023, 251218]", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "CREDENTIAL POWER SUPPLY", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "PS904 900-4RL-FA 900-BBK 120/240 VAC [BULLETIN 023, 251218]", "finish": null, "mfr": "VON"}
+  ]}
+]}

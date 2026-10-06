@@ -1,0 +1,16 @@
+{"page_image": "sjc_p746.png", "sets": [
+  {"set_number": "E21", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "AC500 HT TW8 SEC", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Mort Lock-Fail Secure", "catalog": "X-MRX-A-241C", "finish": "630", "mfr": "TOW"},
+    {"qty": 2, "description": "Cylinder", "catalog": "Per project", "finish": "630", "mfr": "TBD"},
+    {"qty": 1, "description": "Overhead Surface Auto Operator", "catalog": "SW200i 120VAC", "finish": "628", "mfr": "BSM"},
+    {"qty": 1, "description": "Door Stop", "catalog": "1841", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 2, "description": "Door Sweep", "catalog": "C627 SEC", "finish": "628", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "MC-4 (Or as Req)", "finish": null, "mfr": "SDC"},
+    {"qty": 2, "description": "Card Reader", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,27 @@
+{"page_image": "ami_p413.png", "sets": [
+  {"set_number": "18A", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 NRP", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP2", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080T 17A", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+    {"qty": 2, "description": "OH STOP", "catalog": "100S", "finish": "630", "mfr": "GLY"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 8\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "WEATHERSTRIPPING", "catalog": "8217SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]},
+  {"set_number": "18B", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 6, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 NRP", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP2", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080T 17A", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 8\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "WEATHERSTRIPPING", "catalog": "8217SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]}
+]}

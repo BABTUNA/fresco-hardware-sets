@@ -1,0 +1,11 @@
+{"page_image": "jcryan_p25.png", "sets": [
+  {"set_number": "EX-3.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "FMHD1", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Storeroom Lock", "catalog": "8204 LNL", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "UNI-7500", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Perimeter Gasket", "catalog": "290 x 2891APK", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Door Shoe", "catalog": "234AV", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Threshold", "catalog": "2005AT", "finish": null, "mfr": "Pemko"}
+  ]}
+]}

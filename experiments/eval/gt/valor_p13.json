@@ -1,0 +1,28 @@
+{"page_image": "valor_p13.png", "sets": [
+{"set_number": "23", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 8, "description": "BB HINGE (NRP)", "catalog": null, "finish": "BBLK", "mfr": null},
+{"qty": 2, "description": "CONCEALED VERT ROD ELECT. EXIT DEVICE (DOGGING, NIGHT LATCH FUNCTION) (PROVIDE HOLES IN EXIT DEVICE FOR DRAINAGE)", "catalog": null, "finish": "711", "mfr": null},
+{"qty": 2, "description": "PULL", "catalog": null, "finish": "711", "mfr": null},
+{"qty": 2, "description": "CYLINDER", "catalog": null, "finish": "622", "mfr": null},
+{"qty": 2, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+{"qty": 2, "description": "SURFACE CLOSER W/ OH STOP", "catalog": null, "finish": "693", "mfr": null},
+{"qty": 1, "description": "SEALS (SOUND)", "catalog": null, "finish": "AL", "mfr": null},
+{"qty": 1, "description": "ADA THRESHOLD", "catalog": null, "finish": "AL", "mfr": null}
+]},
+{"set_number": "24", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 4, "description": "BB HINGE (NRP)", "catalog": null, "finish": "BBLK", "mfr": null},
+{"qty": 1, "description": "EXIT DEVICE (DOGGING, NIGHT LATCH FUNCTION) (PROVIDE HOLES IN EXIT DEVICE FOR DRAINAGE)", "catalog": null, "finish": "711", "mfr": null},
+{"qty": 1, "description": "PULL", "catalog": null, "finish": "711", "mfr": null},
+{"qty": 1, "description": "CYLINDER", "catalog": null, "finish": "622", "mfr": null},
+{"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+{"qty": 1, "description": "SURFACE CLOSER W/ OH STOP", "catalog": null, "finish": "693", "mfr": null},
+{"qty": 1, "description": "SEALS (THERMAL)", "catalog": null, "finish": "AL", "mfr": null},
+{"qty": 1, "description": "ADA THRESHOLD", "catalog": null, "finish": "AL", "mfr": null}
+]},
+{"set_number": "25", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+{"qty": 4, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+{"qty": 1, "description": "EXIT DEVICE (NL FUNCTION W/ LEVER", "catalog": null, "finish": "711", "mfr": null},
+{"qty": 1, "description": "CYLINDER", "catalog": null, "finish": "622", "mfr": null},
+{"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null}
+]}
+]}

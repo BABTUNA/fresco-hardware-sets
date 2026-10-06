@@ -1,0 +1,14 @@
+{"page_image": "star_p97.png", "sets": [
+  {"set_number": "26", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "Continuous Hinge", "catalog": "Select manufacturing SL11-HD device (120 inch or length as required for door height) x black anodized. Different door thicknesses and frame dimensions will affect hinge type. Per specifications whether or not marked throughout all, verify for proper hinge type before submittals. Do not submit hinges until verified for correct hinge application per opening (means and methods with Select factory)", "finish": "BL", "mfr": "SE"},
+    {"qty": 4, "description": "Back-to-Back Offset Pulls", "catalog": "AP423-___-60\" x 622 finish. Do not block emergency key override", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Pair Doors Complete Locking, Deadbolt System", "catalog": "MS1850S x 4015 x 4016 x 4085 x Exterior Key x 4089 exit indicator x 335 Black Anodized", "finish": "335", "mfr": "AD"},
+    {"qty": 2, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 (Rim or Mortise type & quantity as required by locking device x appropriate cam x blocking rings) as required per specifications", "finish": "622", "mfr": "SC"},
+    {"qty": 2, "description": "Permanent Core", "catalog": "23-030", "finish": "622", "mfr": "SC"},
+    {"qty": 2, "description": "Closer x Stop", "catalog": "4050A x CUSH", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Seal", "catalog": "Seals by alum. door/frame manufacturer (head, jambs, and meeting stiles for no rain or water into the building), discuss overlapping astragal below if needed", "finish": null, "mfr": null},
+    {"qty": 4, "description": "Door Bottom", "catalog": "202NDKB by NGP or equal (install at both sides)", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Terrace Threshold", "catalog": "#430 x RCE (wrap frame stops x beveled miter ends) by NGP approved equal: - To prevent water intrusion under threshold, provide a full bead of mastic. At RCE corners. Install slanted 2% away from building per above specifications (Contractor to prepare sill accordingly to achieve). - Provide NGP Shims: #BAR1 or #BAR2 or #BAR 4 as required so that the threshold does not bow under excessive pressure or weight (shims placed required).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Overhead Rain Drip", "catalog": "#17DKB x FFW (fill frame width) by NGP", "finish": null, "mfr": null}
+  ]}
+]}

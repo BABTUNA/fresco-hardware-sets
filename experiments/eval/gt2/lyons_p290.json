@@ -1,0 +1,20 @@
+{"page_image": "lyons_p290.png", "sets": [
+  {"set_number": "18", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CLASSROOM SECURITY W/ INSIDE INDICATOR", "catalog": "L9071BD 03A IS-LOC", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"}
+  ]},
+  {"set_number": "19", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CLASSROOM SECURITY W/ INSIDE INDICATOR", "catalog": "L9071BD 03A IS-LOC", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"}
+  ]},
+  {"set_number": "20", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CLASSROOM SECURITY W/ INSIDE INDICATOR", "catalog": "L9071BD 03A IS-LOC", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP REG", "finish": "691", "mfr": "LCN"}
+  ]},
+  {"set_number": "21", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []},
+  {"set_number": "22", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []}
+]}

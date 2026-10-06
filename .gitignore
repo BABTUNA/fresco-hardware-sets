@@ -1,0 +1,15 @@
+# challenge dataset and anything that copies it wholesale
+data/
+scripts/drive_ids.txt
+scripts/retry_missing.sh
+scripts/*.log
+experiments/eval/pages/
+experiments/dumps/
+experiments/dumps_e2e/
+experiments/out_e2e/
+experiments/out_*.json
+experiments/eval/bench_misses.json
+
+__pycache__/
+.DS_Store
+.env

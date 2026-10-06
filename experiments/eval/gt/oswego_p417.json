@@ -1,0 +1,25 @@
+{"page_image": "oswego_p417.png", "sets": [
+  {"set_number": "02", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "PIVOT SET", "catalog": "7215 SET", "finish": "626", "mfr": "IVE"},
+    {"qty": 2, "description": "INTERMEDIATE PIVOT", "catalog": "7215 INT", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "REMOVABLE MULLION", "catalog": "KR4954 STAB", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "ELEC PANIC HARDWARE", "catalog": "RX-LC-QEL-99-EO W/CYL HOLE- CON-SNB 24 VDC", "finish": "626", "mfr": "VON"},
+    {"qty": 1, "description": "ELEC PANIC HARDWARE", "catalog": "RX-LC-QEL-99-EO-CON-SNB 24 VDC", "finish": "626", "mfr": "VON"},
+    {"qty": 1, "description": "MULLION STORAGE KIT", "catalog": "MT54", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "FSIC RIM CYLINDER", "catalog": "20-057 ICX W/CONST. CORE", "finish": "626", "mfr": "SCH"},
+    {"qty": 2, "description": "FSIC MORTISE CYLINDER", "catalog": "20-061 ICX W/CONST. CORE", "finish": "626", "mfr": "SCH"},
+    {"qty": 3, "description": "FSIC PRIMUS PERMANENT CORE", "catalog": "20-740-XP CKC - MATCH EXISTING KEYWAY SYSTEM", "finish": "626", "mfr": "SCH"},
+    {"qty": 2, "description": "LONG DOOR PULL", "catalog": "9264F 36\" 20\" STD", "finish": "630-316", "mfr": "IVE"},
+    {"qty": 1, "description": "SURF. AUTO OPERATOR W/ MOUNTING PLATE", "catalog": "9553 LONG2 LESS TRACK HL/D AS REQ (120/240 VAC)", "finish": "ANCLR", "mfr": "LCN"},
+    {"qty": 1, "description": "ACTUATOR WITH BOLLARD KIT", "catalog": "8310-3836T", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "ACTUATOR, TOUCHLESS", "catalog": "8310-813J - INTERIOR MULLION MOUNT", "finish": null, "mfr": "LCN"},
+    {"qty": 2, "description": "ACTIVATION RECEIVER", "catalog": "8310-865 - AS REQUIRED", "finish": null, "mfr": "LCN"},
+    {"qty": 1, "description": "MULLION SEAL", "catalog": "139N PSA", "finish": null, "mfr": "ZER"},
+    {"qty": null, "description": "SEALS - AS TESTED BY DOOR MANUFACTURER", "catalog": "BY DOOR / FRAME MANUFACTURER", "finish": null, "mfr": null},
+    {"qty": 1, "description": "THRESHOLD & 2 SWEEPS", "catalog": "THRESHOLD AND SWEEP by Door/Frame Mfgr.", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "MULTITECH READER - FURNISHED, INSTALLED, COMMISSIONED BY DIV 28", "catalog": "MT15B 5VDC - 28VDC - AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 1, "description": "KEY SWITCH", "catalog": "653-1414 L2 12/24 VDC - FOR AUTOMATIC OPERATOR", "finish": "630", "mfr": "SCE"},
+    {"qty": 1, "description": "DOOR CONTACT - BY DIVISION 28", "catalog": "679-05 WD/HM - AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "PS906 900-4RL 900-2RS 900-BBK 120/240 VAC", "finish": null, "mfr": "VON"}
+  ]}
+]}

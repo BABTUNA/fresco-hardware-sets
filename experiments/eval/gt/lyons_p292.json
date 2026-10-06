@@ -1,0 +1,21 @@
+{"page_image": "lyons_p292.png", "sets": [
+  {"set_number": "27", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 (NRP AT OUTSWING LOCKING DOORS)", "finish": "639", "mfr": "IVE"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080BD 03A", "finish": "612", "mfr": "SCH"},
+    {"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]},
+  {"set_number": "28", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "224XY", "finish": "711", "mfr": "IVE"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-L-F-03", "finish": "612", "mfr": "VON"},
+    {"qty": 1, "description": "SFIC RIM HOUSING", "catalog": "80-129", "finish": "612", "mfr": "SCH"},
+    {"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "FIRE/LIFE WALL MAG", "catalog": "SEM7800 SERIES AS REQ", "finish": "695", "mfr": "LCN"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]}
+]}

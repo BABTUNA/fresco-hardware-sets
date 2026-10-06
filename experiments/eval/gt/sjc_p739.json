@@ -1,0 +1,17 @@
+{"page_image": "sjc_p739.png", "sets": [
+{"set_number": "E11", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": null, "description": "Hinge-HT", "catalog": "4C51 HT NRP", "finish": "630", "mfr": "PBB"},
+{"qty": 1, "description": "Hinge-Power Transfer", "catalog": "4C51EL HT", "finish": "630", "mfr": "PBB"},
+{"qty": 1, "description": "Fail Secure Cyl. Lock", "catalog": "XCDC-86-S-RQE 24VDC", "finish": "626", "mfr": "TOW"},
+{"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+{"qty": 1, "description": "OH Surface Closer", "catalog": "4040XP/4040XP EDA", "finish": "689", "mfr": "LCN"},
+{"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+{"qty": 1, "description": "Overhead Rain Drip", "catalog": "16A (As Req)", "finish": "628", "mfr": "NGP"},
+{"qty": 1, "description": "Door Sweep", "catalog": "600A", "finish": "628", "mfr": "NGP"},
+{"qty": 1, "description": "Weatherstrip", "catalog": "700Nx700EN", "finish": "719", "mfr": "NGP"},
+{"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"},
+{"qty": 1, "description": "Card Reader", "catalog": "By Division 28", "finish": null, "mfr": null},
+{"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+{"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+]}
+]}

@@ -1,0 +1,36 @@
+[
+ {"id": "pe-is-pemko", "caveat": "mfr_vs_finish", "book": "morris", "set": "106.38", "desc": "^Continuous Hinge", "expect": {"mfr": "PE", "finish": null, "catalog": "K10BEFM95HD1"}},
+ {"id": "no-is-norton", "caveat": "mfr_vs_finish", "book": "livelle", "page": 642, "desc": "^Surface Closer", "expect": {"finish": "689", "mfr": "NO"}},
+ {"id": "a-is-a-finish", "caveat": "mfr_vs_finish", "book": "oswego", "set": "18", "desc": "^DOOR SWEEP", "expect": {"finish": "A", "mfr": "ZER", "qty": 2}},
+ {"id": "630-de", "caveat": "mfr_vs_finish", "book": "gerrard", "set": "AL 01", "desc": "^Exit Device", "expect": {"finish": "630", "mfr": "DE"}},
+ {"id": "two-letter-mfr", "caveat": "mfr_vs_finish", "book": "star", "set": "06", "desc": "^Hinges", "expect": {"finish": "622", "mfr": "IV"}},
+
+ {"id": "lyons-05", "caveat": "not_used", "book": "lyons", "set": "05", "status": "not_used"},
+ {"id": "lyons-16", "caveat": "not_used", "book": "lyons", "set": "16", "status": "not_used"},
+ {"id": "lyons-21", "caveat": "not_used", "book": "lyons", "set": "21", "status": "not_used"},
+ {"id": "lyons-22", "caveat": "not_used", "book": "lyons", "set": "22", "status": "not_used"},
+ {"id": "sjc-14b", "caveat": "not_used", "book": "sjc", "set": "14B", "page": 716, "status": "not_used"},
+ {"id": "sjc-11-moved", "caveat": "not_used", "book": "sjc", "set": "11", "page": 714, "status": "moved", "moved_to": "E14"},
+
+ {"id": "diagrams-no-qty", "caveat": "missing_qty", "book": "oswego", "set": "18", "desc": "^DIAGRAMS", "expect": {"qty": null, "mfr": "B/O"}},
+ {"id": "hinge-no-qty", "caveat": "missing_qty", "book": "jcryan", "set": "2.0", "desc": "^Hinge, Full Mortise", "expect": {"qty": null, "catalog": "T4A3786", "mfr": "McKinney"}},
+ {"id": "dashes-qty", "caveat": "missing_qty", "book": "roselle", "set": "1.4", "desc": "^SILENCERS", "expect": {"qty": null, "finish": "BLACK"}},
+ {"id": "underscore-qty", "caveat": "missing_qty", "book": "star", "set": "06", "desc": "^Hinges", "expect": {"qty": null}},
+ {"id": "decimal-qty", "caveat": "missing_qty", "book": "forest", "set": "1", "desc": "^Hinge", "expect": {"qty": 3, "finish": "26D", "mfr": "BES"}},
+
+ {"id": "bulletin-header", "caveat": "set_boundaries", "book": "hfh", "set": "103", "exists": true},
+ {"id": "plural-header", "caveat": "set_boundaries", "book": "star", "set": "10.1", "exists": true},
+ {"id": "hyphen-set-number", "caveat": "set_boundaries", "book": "jcryan", "set": "EX-1.0", "exists": true},
+ {"id": "grid-boundary", "caveat": "set_boundaries", "book": "roselle", "set": "1.4", "count": 5},
+ {"id": "no-door-lines", "caveat": "set_boundaries", "book": "morris", "absent": "Single Door #|Pair of Doors? #"},
+
+ {"id": "ex2-spans-pages", "caveat": "multi_page", "book": "jcryan", "set": "EX-2.0", "pages": [23, 24]},
+
+ {"id": "centered-catalog", "caveat": "schemas", "book": "jcryan", "set": "1.0", "desc": "^Jamb Gasketing", "expect": {"catalog": "290_S (Finish to match door/frame color)", "mfr": "Pemko"}},
+ {"id": "wrapped-description", "caveat": "schemas", "book": "oswego", "set": "18", "desc": "^ELECTRIC STRIKE", "expect": {"description": "ELECTRIC STRIKE - FAIL SECURE VOLTAGE AS REQUIRED - PAIR DOORS", "catalog": "6223 FSE CON 12/16/24/28 VAC/VDC"}},
+ {"id": "grid-embedded-mfr", "caveat": "schemas", "book": "roselle", "set": "1.2", "desc": "^MORTISE HINGE", "expect": {"qty": 3, "mfr": "IVES", "catalog": "5BB1 4.5\" x 4.5\""}},
+ {"id": "column-drift", "caveat": "schemas", "book": "star", "set": "14", "desc": "^Hinge", "expect": {"finish": "622", "mfr": "IV"}},
+
+ {"id": "struck-row-gasketing", "caveat": "revisions", "book": "hfh", "set": "110", "absent": "^GASKETING SET"},
+ {"id": "struck-row-core", "caveat": "revisions", "book": "hfh", "set": "110", "absent": "^SFIC CONST"}
+]

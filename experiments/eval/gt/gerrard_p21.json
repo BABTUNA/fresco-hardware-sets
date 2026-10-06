@@ -1,0 +1,34 @@
+{"page_image": "gerrard_p21.png", "sets": [
+  {"set_number": "04", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge(s)", "catalog": "780-111HD x LAR EPT Prep", "finish": "CLR", "mfr": "HA"},
+    {"qty": 1, "description": "Power Transfer(s)", "catalog": "2-679-0623", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Electrified Lockset", "catalog": "3480ELEURX WTN", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+    {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Closer(s)", "catalog": "5100 HDCS", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Thermally Broken Threshold", "catalog": "421S x LAR", "finish": "MIL", "mfr": "HA"},
+    {"qty": 1, "description": "Kerf Seal", "catalog": "By Frame Supplier", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Sweep(s)", "catalog": "750S N x LAR", "finish": "CLR", "mfr": "HA"},
+    {"qty": 1, "description": "Rain Drip", "catalog": "810S x LAR", "finish": "MIL", "mfr": "HA"},
+    {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "05", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 8, "description": "Hinge(s)", "catalog": "BB1168 4 1/2\" x 4 1/2\"", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Power Transfer(s)", "catalog": "2-679-0623", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Exit Device(s)", "catalog": "4501 LBR F FEC w/Fire Bolt", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Exit Device(s)", "catalog": "4501 LBR F MLR FEC", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Passage Trim(s)", "catalog": "45BE WTN", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Automatic Operator", "catalog": "8318", "finish": "ALM", "mfr": "HA"},
+    {"qty": 4, "description": "Protection Plate(s)", "catalog": "190S 10\" x 1\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 2, "description": "Magnetic Holder(s)", "catalog": "380 Series as Req'd", "finish": "LS", "mfr": "HA"},
+    {"qty": 1, "description": "Seal", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+    {"qty": 2, "description": "Astragal(s)", "catalog": "835S x LAR", "finish": "USP", "mfr": "HA"},
+    {"qty": 2, "description": "Astragal Seal(s)", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+    {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]}
+]}

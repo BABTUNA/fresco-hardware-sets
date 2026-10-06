@@ -1,0 +1,21 @@
+{"page_image": "lyons_p291.png", "sets": [
+{"set_number": "23", "starts_on_page": true, "components": [
+  {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080BD 03A", "finish": "612", "mfr": "SCH"},
+  {"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+  {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4041 DEL SCUSH", "finish": "691", "mfr": "LCN"}
+]},
+{"set_number": "24", "starts_on_page": true, "components": [
+  {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080BD 03A", "finish": "612", "mfr": "SCH"},
+  {"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+  {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP REG", "finish": "691", "mfr": "LCN"},
+  {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"}
+]},
+{"set_number": "25", "starts_on_page": true, "components": [
+  {"qty": 1, "description": "INSTITUTION LOCK", "catalog": "L9082BD 03A", "finish": "612", "mfr": "SCH"},
+  {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+  {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"}
+]},
+{"set_number": "26", "starts_on_page": true, "components": [
+  {"qty": 1, "description": "SPRING CUSH ARM", "catalog": "4040XP-3077SCNS", "finish": "691", "mfr": "LCN"}
+]}
+]}

@@ -1,0 +1,18 @@
+{"page_image": "star_p102.png", "sets": [
+  {"set_number": "101", "starts_on_page": true, "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Power Transfer Hinge", "catalog": "5BB1HW x 6-wire (size per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "ANSI Grade 1 Mortise Body Electrified Lockset with Lever", "catalog": "BASE Lever #6210SM x PVD #IXBSB satin black finish x M507EU-RX x L/C in PVD #IXBSB satin black finish (picture example of lever is in a different finish)", "finish": null, "mfr": "FR"},
+    {"qty": 1, "description": "Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 x appropriate cam x blocking rings as required (rim or mortise type and quantity as required by locking device)", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "20-030", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "4050A x REG (pull-side)", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Floor Stop", "catalog": "7280 (installed per 08 71 00.Part 3)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Auto Door Bottom (sound dampening)", "catalog": "423N for wood material doors (or submit 320N for metal doors) application as required per door material x DKB end caps by NGP or approved seal manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Threshold (sound dampening)", "catalog": "410DB (flat) by NGP or approved seal manufacturer (per specifications, provide full bed of mastic under all thresholds). Per above 087100.Part 2 requirements verify floor transition before ordering materials, final to be selected in submittals.", "finish": null, "mfr": null},
+    {"qty": 1, "description": "REX Device (security/ alarm notification)", "catalog": "Specified in above locking hardware (coordinate with Divisions 25-28 and applicable drawings).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Position Switches (also known as Alarm/Door Contacts)", "catalog": "#679-05-WD or #679-05-HM (as required per door material) by Schlage manufacturing (see Divisions 26 and 28 and applicable drawings).", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Power Supply", "catalog": "Furnish and install #1) single gang power drop located above or near door (not in corridor or public view, but above ceiling line where possible); #2) provide power supply #PS902 by Schlage; #3) run conduit from hinge through frame and complete wiring as required to meet manufacturer warranties", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Coordination task for security and/or electrical design and additional non-Division 08 Section scope (including but not limited to wire / connectivity from ground or ceiling through frame to electrified hardware)", "catalog": "By security or electrical as required per Contract Documents: The electrified hardware specified above can be utilized for #1) non-card reader, remote access control applications (unlocked / locked remotely for open during business hours / locked after-hours) and #2) local card readers at openings as directed by architectural drawings, security or electrical. Coordinate with security or electrical Divisions 25-28 and applicable drawings as hardware does not include card reader locations.", "finish": null, "mfr": null}
+  ]}
+]}

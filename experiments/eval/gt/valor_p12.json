@@ -1,0 +1,32 @@
+{"page_image": "valor_p12.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "components": [
+    {"qty": 1, "description": "EXIT DEVICE W/ LATCHING/ PASSAGE FUNCTION & LEVER", "catalog": null, "finish": "711", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SEALS (FIRE)", "catalog": null, "finish": "AL", "mfr": null},
+    {"qty": 1, "description": "DOOR BOTTOM", "catalog": null, "finish": "AL", "mfr": null}
+  ]},
+  {"set_number": "21A", "starts_on_page": true, "components": [
+    {"qty": 4, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "ELECT STRIKE", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "STOREROOM LEVER LOCKSET", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": null, "finish": "GRY", "mfr": null},
+    {"qty": 1, "description": "CARD READER (BY OWNER'S SECURITY CONTRACTOR)", "catalog": null, "finish": null, "mfr": null}
+  ]},
+  {"set_number": "21B", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "PIVOT (BY DR SUPPLIER)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "CONCEALED CLOSER WITH H.O. (BY DR SUPPLIER)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SUPPLIED CENTER LOCK WITH DEADLATCH IN OFFICE FUNCTION", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "22", "starts_on_page": true, "components": [
+    {"qty": 4, "description": "BB HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "STOREROOM LEVER LOCKSET", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER W/ OH STOP", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "SEALS (SMOKE)", "catalog": null, "finish": "AL", "mfr": null}
+  ]}
+]}

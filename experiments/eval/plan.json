@@ -1,0 +1,127 @@
+{
+ "hfh": {
+  "range": [
+   2,
+   182
+  ],
+  "dump_pages": [
+   34,
+   38
+  ],
+  "gt_pages": [
+   53,
+   102
+  ]
+ },
+ "valor": {
+  "range": [
+   0,
+   17
+  ],
+  "dump_pages": [
+   10,
+   14
+  ],
+  "gt_pages": [
+   7,
+   12
+  ]
+ },
+ "livelle": {
+  "range": [
+   630,
+   665
+  ],
+  "dump_pages": [
+   650,
+   651
+  ],
+  "gt_pages": [
+   632,
+   633
+  ]
+ },
+ "usi": {
+  "range": [
+   560,
+   575
+  ],
+  "dump_pages": [
+   561,
+   562
+  ],
+  "gt_pages": [
+   563,
+   574
+  ]
+ },
+ "sat": {
+  "range": [
+   700,
+   830
+  ],
+  "dump_pages": [
+   715,
+   723
+  ],
+  "gt_pages": [
+   757,
+   785
+  ]
+ },
+ "doorco": {
+  "range": [
+   400,
+   468
+  ],
+  "dump_pages": [
+   418,
+   419
+  ],
+  "gt_pages": [
+   403,
+   413
+  ]
+ },
+ "jcryan": {
+  "range": [
+   20,
+   45
+  ],
+  "dump_pages": [
+   27,
+   42
+  ],
+  "gt_pages": [
+   22,
+   23
+  ]
+ },
+ "morris": {
+  "range": [
+   270,
+   330
+  ],
+  "dump_pages": [
+   274,
+   288
+  ],
+  "gt_pages": [
+   272,
+   287
+  ]
+ },
+ "roselle": {
+  "range": [
+   14,
+   16
+  ],
+  "dump_pages": [
+   14,
+   16
+  ],
+  "gt_pages": [
+   15
+  ]
+ }
+}

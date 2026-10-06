@@ -1,0 +1,21 @@
+{
+  "set_header": "^Set:\\s*(?P<num>\\d+(?:\\.\\d+)?[A-Z]?)",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 72},
+    {"field": "description", "x": 86},
+    {"field": "catalog", "x": 261},
+    {"field": "finish", "x": 440},
+    {"field": "mfr", "x": 489}
+  ],
+  "valign": "top",
+  "skip": [
+    "^LIVELLE MULHOLLAND",
+    "^Woodland Hills, CA",
+    "^PE Project \\d",
+    "^LIVELLE - EXHIBIT B",
+    "^Hardware Sets$"
+  ],
+  "set_meta": "^(Description:|Doors?:)",
+  "end": ["END OF SECTION"]
+}

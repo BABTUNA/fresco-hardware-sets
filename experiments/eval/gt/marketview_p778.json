@@ -1,0 +1,23 @@
+{"page_image": "marketview_p778.png", "sets": [
+  {"set_number": "21", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "112XY EPT", "finish": "628", "mfr": "IVE"},
+    {"qty": 1, "description": "EU STOREROOM LOCK", "catalog": "ND80P6DEU LON RX 12V/24V DC", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "SC81A DS", "finish": "689", "mfr": "FAL"},
+    {"qty": 1, "description": "SEALS", "catalog": "BY DOOR MANUFACTURER", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "DOOR SWEEP", "catalog": "39A", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "THRESHOLD", "catalog": "545A OR AS DETAILED", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "CREDENTIAL READER", "catalog": "BY SECURITY CONSULTANT", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "BY SECURITY CONSULTANT", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "22", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "112XY EPT", "finish": "628", "mfr": "IVE"},
+    {"qty": 1, "description": "EU STOREROOM LOCK", "catalog": "ND80P6DEU LON RX 12V/24V DC", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "OH STOP", "catalog": "100S", "finish": "630", "mfr": "GLY"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "SC81A REG OR PA AS REQ", "finish": "689", "mfr": "FAL"},
+    {"qty": 1, "description": "SEALS", "catalog": "BY DOOR MANUFACTURER", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "DOOR SWEEP", "catalog": "39A", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "THRESHOLD", "catalog": "545A OR AS DETAILED", "finish": "A", "mfr": "ZER"},
+    {"qty": 1, "description": "CREDENTIAL READER", "catalog": "BY SECURITY CONSULTANT", "finish": null, "mfr": "B/O"},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "BY SECURITY CONSULTANT", "finish": null, "mfr": null}
+  ]}
+]}

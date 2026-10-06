@@ -1,0 +1,19 @@
+{"page_image": "jcryan_p40.png", "sets": [
+  {"set_number": "14.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Push Plate", "catalog": "70C-RKW", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Door Pull", "catalog": "RM3301-48 Mtg-Type 12XHD", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Automatic Operator", "catalog": "6400 mounted on pull side", "finish": null, "mfr": "LCN"},
+    {"qty": 2, "description": "Wave Plates", "catalog": "8310-813j (hardwired)", "finish": null, "mfr": "LCN"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S44BL", "finish": null, "mfr": "Pemko"}
+  ]},
+  {"set_number": "15.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": []},
+  {"set_number": "16.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Classroom Lock", "catalog": "8237 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "CPS-1601", "finish": null, "mfr": "Norton"},
+    {"qty": 3, "description": "Silencers", "catalog": "SR64/ SR65", "finish": null, "mfr": null}
+  ]}
+]}

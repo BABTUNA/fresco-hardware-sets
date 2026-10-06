@@ -1,0 +1,10 @@
+{"page_image": "bridgeport_p33.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 174, "description": "Standard Hinge", "catalog": "TA714 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+    {"qty": 58, "description": "Latchset", "catalog": "W101 LAT/LAT 626/626", "finish": "626/626", "mfr": null},
+    {"qty": 58, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
+    {"qty": 58, "description": "Wall Door Stop", "catalog": "S120 C26D", "finish": "C26D", "mfr": null},
+    {"qty": 58, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
+    {"qty": 58, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null}
+  ]}
+]}

@@ -1,0 +1,86 @@
+{"page_image": "roselle_p14.png", "sets": [
+  {"set_number": "1.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CYLINDER / CORE", "catalog": "FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"}
+  ]},
+  {"set_number": "1.2", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9077, 18 LEVEL, L ESCUTCHEON - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "ELECTRIC STRIKE", "catalog": "6200 SERIES", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "1.3", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "PANIC HARDWARE", "catalog": "35A MORTISE DEVICE, CONCEALED VERTICAL RODS, 18 LEVER, L ESCUTCHEON, HARDWIRED ALARM KIT W/ POWER SUPPLY - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"}
+  ]},
+  {"set_number": "1.4", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "PANIC HARDWARE", "catalog": "35A MORTISE DEVICE, CONCEALED VERTICAL RODS, 18 LEVER, L ESCUTCHEON", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "MAG. DOOR HOLDER", "catalog": "SEM 7800 SERIES", "finish": "691 (LIGHT BRONZE)", "mfr": "SENTRONIC"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]},
+  {"set_number": "1.5", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9077, 18 LEVEL, L ESCUTCHEON - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"}
+  ]},
+  {"set_number": "2.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9070, 18 LEVEL, L ESCUTCHEON - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "ELECTRIC STRIKE", "catalog": "6200 SERIES", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "THRESHOLD", "catalog": "EXTR. THRESHOLD", "finish": null, "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "2.2", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 5, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9070, 18 LEVEL, L ESCUTCHEON - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "ELECTRIC STRIKE", "catalog": "6200 SERIES", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 2, "description": "FLUSH BOLT", "catalog": "FB45X", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "THRESHOLD", "catalog": "EXTR. THRESHOLD", "finish": null, "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "2.3", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "PANIC HARDWARE", "catalog": "35A MORTISE DEVICE, CONCEALED VERTICAL RODS, 18 LEVER, L ESCUTCHEON, HARDWIRED ALARM KIT W/ POWER SUPPLY - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "GASKETING / SWEEP", "catalog": "WEATHER GASKETING & SWEEP", "finish": "BLACK", "mfr": "PEMKO / NGP / ZERO"},
+    {"qty": null, "description": "THRESHOLD", "catalog": "EXTR. THRESHOLD", "finish": null, "mfr": "PEMKO / NGP / ZERO"}
+  ]},
+  {"set_number": "2.4", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "PANIC HARDWARE", "catalog": "35A MORTISE DEVICE, CONCEALED VERTICAL RODS, QUIET ELECTRIC LATCH RETRACTION, 18 LEVER, L ESCUTCHEON, HARDWIRED ALARM KIT W/ POWER SUPPLY - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "VON DUPRIN"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - EDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "3.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET", "catalog": "L9056, 18 LEVER, A ROSE, 10-072 STRIKE, ADA THUMBTURN - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE AUTO. DOOR BOTTOM", "catalog": "225S", "finish": "MILL ALUM / BLACK", "mfr": "NGP"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"}
+  ]},
+  {"set_number": "3.2", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "MORTISE HINGE", "catalog": "5BB1 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "HW MORTISE HINGE", "catalog": "5BB1HW 4.5\" x 4.5\"", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE LOCKSET ELEC. UNLOCKING", "catalog": "L9092EU, 18 LEVER, A ROSE, 10-072 STRIKE - FSIC PRIMUS", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "SCHLAGE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP - HEDA ARM - METAL COVER", "finish": "691 (LIGHT BRONZE)", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "613 (OIL RUBBED BRONZE)", "mfr": "IVES"},
+    {"qty": 1, "description": "MORTISE AUTO. DOOR BOTTOM", "catalog": "225S", "finish": "MILL ALUM / BLACK", "mfr": "NGP"},
+    {"qty": null, "description": "SILENCERS", "catalog": "SILENCER SI6X", "finish": "BLACK", "mfr": "IVES"},
+    {"qty": null, "description": "DOOR ACCESS CONTROL DEVICES", "catalog": "CARD READER / DPS / POWER SUPPLY / ETC (BY OTHERS)", "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,17 @@
+{
+  "set_header": "^Heading #(?P<num>\\d+)\\s*$",
+  "row_start": "^\\d+$",
+  "columns": [
+    {"field": "qty", "x": 107},
+    {"field": "description", "x": 131},
+    {"field": "catalog", "x": 241},
+    {"field": "finish", "x": 516}
+  ],
+  "skip": [
+    "^Hardware Schedule$",
+    "^Page \\d+ of \\d+",
+    "^=== page"
+  ],
+  "set_meta": "^(Item #\\d+|\\d[\\d, ]*x \\d+ x \\d+)",
+  "end": []
+}

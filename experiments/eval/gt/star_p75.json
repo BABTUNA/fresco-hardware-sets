@@ -1,0 +1,19 @@
+{"page_image": "star_p75.png", "sets": [
+  {"set_number": "06.3", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 2, "description": "Fire Rated Surface Vertical Rod Exit/Panic Device x Lockable Levers", "catalog": "AX 9927L-F x 996L-R/V x Longitude Lever x LBR x Fire Bolts x BHMA 08 function. Delete -F where doors are not rated", "finish": "622", "mfr": "VO"},
+    {"qty": 2, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 (Rim or Mortise type & quantity as required by locking device x appropriate cam x blocking rings) as required per specifications", "finish": "622", "mfr": "SC"},
+    {"qty": 2, "description": "Permanent Core", "catalog": "23-030", "finish": "622", "mfr": "SC"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "4050A parallel arm (installed to swing 180-degrees on push-side of doors)", "finish": "693", "mfr": "LC"},
+    {"qty": 2, "description": "Armor Plate", "catalog": "KA050 34\" tall x 2\" LDW (less door width) x B4E (beveled edges) x counter sunk or approved adhesive per 08 71 00.Part 2 (no raised fasteners)", "finish": "630", "mfr": "TR"},
+    {"qty": 2, "description": "Stop", "catalog": "1214 (installed per 08 71 00.Part 3)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null},
+    {"qty": 2, "description": "UL Listed Split Astragal", "catalog": "672A by NGP or approved seal manufacturer", "finish": null, "mfr": null},
+    {"qty": 2, "description": "Door Bottom Sweep", "catalog": "202NDKB by NGP or approved equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Threshold", "catalog": "513HD x SIA x mastic x by NGP (meet ANSI 156.21 per below)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "07", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 (Rim or Mortise type & quantity as required by locking device x appropriate cam x blocking rings) as required per specifications", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "23-030", "finish": "622", "mfr": "SC"}
+  ]}
+]}

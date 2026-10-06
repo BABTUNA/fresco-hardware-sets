@@ -1,0 +1,27 @@
+{
+  "page_image": "doorco_p403.png",
+  "sets": [
+    {
+      "set_number": "C700RZ",
+      "starts_on_page": true,
+      "components": [
+        {"qty": 2, "description": "CONT. HINGE", "catalog": "224XY EPT", "finish": "628", "mfr": "IVE"},
+        {"qty": 2, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+        {"qty": 1, "description": "ELEC FIRE EXIT HARDWARE", "catalog": "RX-9849-EO-F-CON", "finish": "626", "mfr": "VON"},
+        {"qty": 1, "description": "ELEC FIRE EXIT HARDWARE", "catalog": "RX-9849-L-F-M996-17-FSE-CON", "finish": "626", "mfr": "VON"},
+        {"qty": 1, "description": "RIM CYLINDER", "catalog": "20-057 ICX", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "PERMANENT CORE", "catalog": "COORDINATE WITH OWNER", "finish": "626", "mfr": "SCH"},
+        {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "689", "mfr": "LCN"},
+        {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+        {"qty": 2, "description": "WALL STOP", "catalog": "WS406/407CVX", "finish": "630", "mfr": "IVE"},
+        {"qty": 2, "description": "MEETING STILE", "catalog": "328AA", "finish": "AA", "mfr": "ZER"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488SBK PSA", "finish": "BK", "mfr": "ZER"},
+        {"qty": 1, "description": "DOOR SWEEP", "catalog": "8191AA", "finish": "AA", "mfr": "ZER"},
+        {"qty": 2, "description": "WIRE HARNESS (DOOR)", "catalog": "CON-LENGTH AS REQ", "finish": null, "mfr": "SCH"},
+        {"qty": 1, "description": null, "catalog": "ACCESS CONTROL READER(S) BY DIV 28", "finish": null, "mfr": null},
+        {"qty": 2, "description": null, "catalog": "DOOR POSITION SWITCH BY DIV 28", "finish": null, "mfr": null},
+        {"qty": 1, "description": null, "catalog": "POWER SUPPLY BY DIV 28", "finish": null, "mfr": null}
+      ]
+    }
+  ]
+}

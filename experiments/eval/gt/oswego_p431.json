@@ -1,0 +1,21 @@
+{"page_image": "oswego_p431.png", "sets": [
+  {"set_number": "32", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PRIVACY LOCK W/ OUTSIDE INDICATOR", "catalog": "L9040 03A.03.626.A.626.03.626.A.626 L583-363 OS-OCC", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "REG/ PA SURFACE CLOSER - AS REQUIRED", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X AS REQ B-CS TKTX", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]},
+  {"set_number": "33", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PASSAGE SET", "catalog": "L9010.03.626.A.626.03.626.A.626", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "OH STOP", "catalog": "90S", "finish": "630", "mfr": "GLY"},
+    {"qty": 1, "description": "REG/ PA SURFACE CLOSER - AS REQUIRED", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "MOUNTING PLATE - AS REQUIRED", "catalog": "4040XP-18/18G/18PA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X AS REQ B-CS TKTX", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "AUTO DOOR BOTTOM", "catalog": "369AA-Z49", "finish": "AA", "mfr": "ZER"}
+  ]}
+]}

@@ -1,0 +1,36 @@
+{
+ "set_header": "^Set #(?P<num>\\S+)\\s*$",
+ "row_start": "^\\d+$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 92
+  },
+  {
+   "field": "description",
+   "x": 99
+  },
+  {
+   "field": "catalog",
+   "x": 222
+  },
+  {
+   "field": "finish",
+   "x": 459
+  },
+  {
+   "field": "mfr",
+   "x": 506
+  }
+ ],
+ "skip": [
+  "^MORRIS BANK",
+  "^MACON, GA",
+  "^Azar\\+Walsh",
+  "^DOOR HARDWARE\\s+087100",
+  "^=== page"
+ ],
+ "set_meta": "^Doors:",
+ "end": [],
+ "note_line": "^NOTE:"
+}

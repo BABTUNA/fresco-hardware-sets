@@ -1,0 +1,29 @@
+{"page_image": "morris_p287.png", "sets": [
+  {"set_number": "PR38ICCL", "starts_on_page": true, "components": [
+    {"qty": 4, "description": "Hinges", "catalog": "MPB79 4 1/2 x 4 1/2 NRP", "finish": "10BE", "mfr": "MC"},
+    {"qty": 1, "description": "Deadbolt", "catalog": "468 V21", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Keypad Lock", "catalog": "70 KP10XG77 LL 2 3/4\" BS", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Construction Core", "catalog": "7190224", "finish": null, "mfr": "BE"},
+    {"qty": 1, "description": "Closer", "catalog": "1131 RU", "finish": "EB", "mfr": "SA"},
+    {"qty": 1, "description": "Wall Stop", "catalog": "409", "finish": "10BE", "mfr": "RO"},
+    {"qty": 1, "description": "SFIC", "catalog": "33700006 N 26 DAKM", "finish": null, "mfr": "MED1"},
+    {"qty": 3, "description": "Door Silencer", "catalog": "608-RKW", "finish": "BLK", "mfr": "RO"}
+  ]},
+  {"set_number": "PR38INCL", "starts_on_page": true, "components": [
+    {"qty": 4, "description": "Hinges", "catalog": "MPB79 4 1/2 x 4 1/2 NRP", "finish": "10BE", "mfr": "MC"},
+    {"qty": 1, "description": "Deadbolt", "catalog": "468 V21", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Passage Set", "catalog": "10XU15 LMD 2 3/4\" BS", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Closer", "catalog": "1131 RU", "finish": "EB", "mfr": "SA"},
+    {"qty": 1, "description": "Wall Stop", "catalog": "409", "finish": "10BE", "mfr": "RO"},
+    {"qty": 3, "description": "Door Silencer", "catalog": "608-RKW", "finish": "BLK", "mfr": "RO"}
+  ]},
+  {"set_number": "SR38", "starts_on_page": true, "components": [
+    {"qty": 4, "description": "Hinges", "catalog": "MPB79 4 1/2 x 4 1/2 NRP", "finish": "10BE", "mfr": "MC"},
+    {"qty": 1, "description": "Lockset", "catalog": "70 10XG04 LL 2 3/4\" BS", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Construction Core", "catalog": "7190224", "finish": null, "mfr": "BE"},
+    {"qty": 1, "description": "Overhead Stop", "catalog": "598S", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Wall Stop", "catalog": "409", "finish": "10BE", "mfr": "RO"},
+    {"qty": 1, "description": "SFIC", "catalog": "33700006 N 26 DAKM", "finish": null, "mfr": "MED1"},
+    {"qty": 3, "description": "Door Silencer", "catalog": "608-RKW", "finish": "BLK", "mfr": "RO"}
+  ]}
+]}

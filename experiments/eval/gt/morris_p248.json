@@ -1,0 +1,17 @@
+{"page_image": "morris_p248.png", "sets": [
+  {"set_number": "119", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "10BEFM95HD1", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Exit Device", "catalog": "LC PE8806 F WEMD", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Rim Cylinder", "catalog": "70 7P 34", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Construction Core", "catalog": "7190224", "finish": null, "mfr": "BE"},
+    {"qty": 1, "description": "Electric Strike", "catalog": "9600-LBM 2004M", "finish": "613E", "mfr": "HS"},
+    {"qty": 1, "description": "Closer", "catalog": "351 CPS", "finish": "10BE", "mfr": "SA"},
+    {"qty": 1, "description": "Wiring Harness", "catalog": "QC-C1500", "finish": null, "mfr": "MC"},
+    {"qty": 1, "description": "SFIC", "catalog": "33700006 N 26 DAKM", "finish": null, "mfr": "MED1"},
+    {"qty": 1, "description": "Power Supply", "catalog": "LSP-12-24", "finish": null, "mfr": "SA"},
+    {"qty": 1, "description": "Weatherstrip", "catalog": "290-10BE-PK 1 x 36\" 2 x 96\"", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Raindrip", "catalog": "346-10BE 40\"", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Weatherstrip", "catalog": "18061-10BE-NB 36\"", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Threshold", "catalog": "2008-10BE-PK 36\" MSES25SS", "finish": null, "mfr": "PE"}
+  ]}
+]}

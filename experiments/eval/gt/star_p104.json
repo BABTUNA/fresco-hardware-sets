@@ -1,0 +1,20 @@
+{"page_image": "star_p104.png", "sets": [
+  {"set_number": "101.2", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Privacy Latch Body with Lever (privacy x occupancy indicator - exterior side lever left unlocked when room is vacant)", "catalog": "BASE Lever #6210SM x PVD #IXBSB satin black finish x M523 x ADA thumbturn H41 (manufacturer has two #s, but furnish/install the decorative thumbturn pictured to right) x EMTI emergency cointurn/slot override and occupancy indicator in 622 Matte Black Power Coat (picture example of Stefano lever only in different finish)", "finish": null, "mfr": "FR"},
+    {"qty": 1, "description": "Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 x appropriate cam x blocking rings as required (rim or mortise type and quantity as required by locking device)", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "20-030", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Closer", "catalog": "4050A x REG (required special templated for back-to-back overhead stop installation)", "finish": "689", "mfr": "LC"},
+    {"qty": 1, "description": "Overhead Stop", "catalog": "10 Series (size -336 or as required by door width) or ABH manufacturing equal with required special templated for back-to-back closer installation", "finish": "630", "mfr": "RX"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Auto Door Bottom (sound dampening)", "catalog": "423N for wood material doors (or submit 320N for metal doors) application as required per door material x DKB end caps by NGP or approved seal manufacturer", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Threshold (sound dampening)", "catalog": "410DB (flat) by NGP or approved seal manufacturer (per specifications, provide full bed of mastic under all thresholds). Per above 087100.Part 2 requirements verify floor transition before ordering materials, final to be selected in submittals.", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "101.3", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1HW (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "ANSI Grade 1 Mortise Body Passage Latchset x Lever", "catalog": "Frascio #BASE Lever #6210SM x PVD #IXBSB satin black finish x M501 x L/C in PVD #IXBSB satin black", "finish": null, "mfr": "FR"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "4050A x REG (pull-side)", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Floor Stop", "catalog": "7280 (installed per 08 71 00.Part 3)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null}
+  ]}
+]}

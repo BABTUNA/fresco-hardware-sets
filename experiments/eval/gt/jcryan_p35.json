@@ -1,0 +1,16 @@
+{"page_image": "jcryan_p35.png", "sets": [
+  {"set_number": "8.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Electric Power Transfer", "catalog": "EL-CEPT", "finish": null, "mfr": "Securitron"},
+    {"qty": 1, "description": "Constant Latching Flush Bolt", "catalog": "2845/ 2945(as required)", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Electrified Mortise Lock, Fail Safe", "catalog": "NAC-82270-24v LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Coordinator x Filler Bar x Brackets", "catalog": "2600 Series (Cutouts as Required)", "finish": null, "mfr": "Rockwood"},
+    {"qty": 2, "description": "Surface Closer", "catalog": "UNI-7500 / R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 2, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 2, "description": "Kick Plates", "catalog": "K1050 10\" CSK 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Astragal Set", "catalog": "178SA", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Door/Frame Harness", "catalog": null, "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,14 @@
+{"page_image": "oswego_p418.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": []},
+  {"set_number": "03", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "PIVOT SET", "catalog": "7215 SET", "finish": "626", "mfr": "IVE"},
+    {"qty": 2, "description": "INTERMEDIATE PIVOT", "catalog": "7215 INT", "finish": "626", "mfr": "IVE"},
+    {"qty": 2, "description": "DUMMY PUSH BAR", "catalog": "350", "finish": "628", "mfr": "VON"},
+    {"qty": 2, "description": "LONG DOOR PULL", "catalog": "9264F 36″ 20″ STD", "finish": "630-316", "mfr": "IVE"},
+    {"qty": 1, "description": "SURF. AUTO OPERATOR W/ MOUNTING PLATE", "catalog": "9553 LONG2 LESS TRACK HL/D AS REQ (120/240 VAC)", "finish": "ANCLR", "mfr": "LCN"},
+    {"qty": 1, "description": "ACTUATOR, TOUCHLESS", "catalog": "8310-813 - WALL MOUNT", "finish": "BLK", "mfr": "LCN"},
+    {"qty": 1, "description": "ACTUATOR, TOUCHLESS", "catalog": "8310-813J - MULLION MOUNT", "finish": null, "mfr": "LCN"},
+    {"qty": 1, "description": "SEA", "catalog": "PERIMETER SEAL BY FRAME MANUFACTURER", "finish": null, "mfr": null},
+    {"qty": 1, "description": "ASTRAGAL", "catalog": "MEETING STILE SEAL BY DOOR MANUFACTURER", "finish": null, "mfr": null}
+  ]}
+]}

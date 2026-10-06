@@ -1,0 +1,21 @@
+{
+  "set_header": "Hardware Group/Set #(?P<num>[\\w.]+)",
+  "row_start": "^(\\d+|_+)$",
+  "columns": [
+    {"field": "qty", "x": 75},
+    {"field": "unit", "x": 98},
+    {"field": "description", "x": 110},
+    {"field": "catalog", "x": 254},
+    {"field": "finish", "x": 489},
+    {"field": "mfr", "x": 521}
+  ],
+  "skip": [
+    "^IFC \\d",
+    "^OCI Design",
+    "^Door Hardware\\s+08 71 00",
+    "^Blank space after a Group/Set",
+    "^a Hardware Group/Set onto two pages",
+    "^=== page"
+  ],
+  "end": []
+}

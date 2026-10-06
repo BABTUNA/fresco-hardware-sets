@@ -1,0 +1,11 @@
+{"page_image": "bridgeport_p2.png", "sets": [
+  {"set_number": "1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "Standard Hinge", "catalog": "T4A3386 5\" x 4 1/2\" C32D NRP", "finish": "C32D", "mfr": null},
+    {"qty": 1, "description": "Exit Device", "catalog": "25-R-L-NL 622 510L-NL LAT 626 RHR 965 x 2134 Door", "finish": "626/622", "mfr": null},
+    {"qty": 1, "description": "Cylinder", "catalog": "985 626 1 1/4\" G 6-Pin Open", "finish": "626", "mfr": null},
+    {"qty": 1, "description": "Surface Closer", "catalog": "SC71A Rw/ PA 689", "finish": "689", "mfr": null},
+    {"qty": 1, "description": "Weatherstripping", "catalog": "W-50S-CA x 38\"x84\" Opening", "finish": "CA", "mfr": null},
+    {"qty": 1, "description": "Weatherstripping", "catalog": "W-38S-CA x 38\"", "finish": "CA", "mfr": null},
+    {"qty": 1, "description": "Threshold", "catalog": "CT-45 x 38\"", "finish": null, "mfr": null}
+  ]}
+]}

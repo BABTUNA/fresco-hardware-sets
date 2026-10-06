@@ -1,0 +1,33 @@
+{
+ "set_header": "^Set: (?P<num>[\\w.]+)\\s*$",
+ "row_start": "^\\d+$",
+ "columns": [
+  {
+   "field": "qty",
+   "x": 72
+  },
+  {
+   "field": "description",
+   "x": 79
+  },
+  {
+   "field": "catalog",
+   "x": 255
+  },
+  {
+   "field": "mfr",
+   "x": 436
+  }
+ ],
+ "skip": [
+  "^arkaspecs",
+  "^006\\.4441\\.000",
+  "^DOOR HARDWARE\\s+08 71 00",
+  "^Copyright \\d{4} arkaspecs",
+  "Hardware Sets$",
+  "^=== page"
+ ],
+ "set_meta": "^Description:",
+ "end": [],
+ "valign": "middle"
+}

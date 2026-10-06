@@ -1,0 +1,14 @@
+{"page_image": "usi_p562.png", "sets": [
+  {"set_number": "1.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 2, "description": "Door Bottom Rail", "catalog": "DRT per Elevation", "finish": "BSP", "mfr": "GS"},
+    {"qty": 2, "description": "Door Top Rail", "catalog": "DRT per Elevation", "finish": "BSP", "mfr": "GS"},
+    {"qty": 2, "description": "Bottom Pivot", "catalog": "PV-FM-300END", "finish": "US32D", "mfr": "GS"},
+    {"qty": 1, "description": "Exit Device", "catalog": "PDU8000-3 Code 01", "finish": "BSP", "mfr": "GS"},
+    {"qty": 1, "description": "Exit Device", "catalog": "PDU8000-3", "finish": "BSP", "mfr": "GS"},
+    {"qty": 1, "description": "Mortise Cylinder", "catalog": "CR1080 CT6B", "finish": "BSP", "mfr": "RU"},
+    {"qty": 1, "description": "Interchangeable Core", "catalog": "CR8000", "finish": "BSP", "mfr": "RU"},
+    {"qty": 2, "description": "Concealed Closer", "catalog": "OHC-609-90NHO", "finish": null, "mfr": "GS"},
+    {"qty": 1, "description": "Threshold", "catalog": "271A or Per Sill Detail", "finish": null, "mfr": "PE"},
+    {"qty": 1, "description": "Strike", "catalog": "MSK-DBL", "finish": "BSP", "mfr": "RO"}
+  ]}
+]}

@@ -1,0 +1,18 @@
+{"page_image": "ami_p410.png", "sets": [{"set_number": "11B", "starts_on_page": true, "components": [
+  {"qty": 2, "description": "CONT. HINGE", "catalog": "112XY EPT", "finish": "628", "mfr": "IVE"},
+  {"qty": 2, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+  {"qty": 1, "description": "REMOVABLE MULLION", "catalog": "KR4954 STAB", "finish": "689", "mfr": "VON"},
+  {"qty": 2, "description": "ELEC PANIC HARDWARE", "catalog": "LD-RX-98-EO-CON", "finish": "626", "mfr": "VON"},
+  {"qty": 2, "description": "MORTISE CYLINDER", "catalog": "20-061 ICX 36-083", "finish": "626", "mfr": "SCH"},
+  {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+  {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "689", "mfr": "LCN"},
+  {"qty": 2, "description": "CUSH SHOE SUPPORT", "catalog": "4040XP-30 SRT", "finish": "689", "mfr": "LCN"},
+  {"qty": 2, "description": "BLADE STOP SPACER", "catalog": "4040XP-61 SRT", "finish": "689", "mfr": "LCN"},
+  {"qty": 1, "description": "RAIN DRIP", "catalog": "142AA", "finish": "AA", "mfr": "ZER"},
+  {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"},
+  {"qty": 1, "description": "MULLION SEAL", "catalog": "8780NBK PSA", "finish": "BK", "mfr": "ZER"},
+  {"qty": 1, "description": "PERIMETER GASKETING", "catalog": "BY ALUMINUM DOOR MANUFACTURER", "finish": null, "mfr": null},
+  {"qty": 2, "description": "DOOR SWEEP", "catalog": "8198AA", "finish": "AA", "mfr": "ZER"},
+  {"qty": 1, "description": "THRESHOLD", "catalog": "566A-223", "finish": "A", "mfr": "ZER"},
+  {"qty": 2, "description": "DOOR POSITION SWITCH-DPDT", "catalog": "GRI 19512W (BY DIV. 28)", "finish": "WHT", "mfr": "GEN"}
+]}]}

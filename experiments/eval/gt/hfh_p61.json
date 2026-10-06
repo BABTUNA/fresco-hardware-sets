@@ -1,0 +1,22 @@
+{"page_image": "hfh_p61.png", "sets": [
+{"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 6, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+{"qty": 2, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+{"qty": 1, "description": "AUTO FLUSH BOLT", "catalog": "FB41T/FB31T - AS REQUIRED", "finish": "630", "mfr": "IVE"},
+{"qty": 1, "description": "FAIL SECURE CYLINDRICAL LOCK, RX", "catalog": "9K37DEU 15D RQE - PROVIDE BRASS CONSTRUCTION CORE", "finish": "626", "mfr": "BES"},
+{"qty": 1, "description": "PERMANENT CORE - COMBINATED", "catalog": "1C72", "finish": "626", "mfr": "BES"},
+{"qty": 1, "description": "ELECTRIC STRIKE - FAIL SECURE VOLTAGE AS REQUIRED - PAIR DOORS", "catalog": "6223 FSE CON 12/16/24/28 VAC/VDC", "finish": "630", "mfr": "VON"},
+{"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL X MB - AS REQUIRED", "finish": "713", "mfr": "IVE"},
+{"qty": 1, "description": "AUTOMATIC OPERATOR", "catalog": "BY RELATED SECTION 08 71 13", "finish": null, "mfr": "B/O"},
+{"qty": 3, "description": "WAVE ACTUATOR", "catalog": "BY RELATED SECTION 08 71 13", "finish": null, "mfr": "B/O"},
+{"qty": 2, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+{"qty": 1, "description": "ASTRAGAL - LENGTH AS REQUIRED", "catalog": "41AA", "finish": "AA", "mfr": "ZER"},
+{"qty": 2, "description": "SILENCER", "catalog": "SR64 [BULLETIN 023, 251218]", "finish": "GRY", "mfr": "IVE"},
+{"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM ELECTRIC STRIKE TO EPT", "finish": null, "mfr": "SCH"},
+{"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM LOCK TO EPT", "finish": null, "mfr": "SCH"},
+{"qty": 2, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY", "finish": null, "mfr": "SCH"},
+{"qty": 1, "description": "MULTITECH CREDENTIAL READER", "catalog": "PROVIDED BY DIV 28 - MTB15 OR MTB11 AS REQUIRED", "finish": "BLK", "mfr": "SCE"},
+{"qty": 2, "description": "DOOR POSITION SWITCH - AS REQUIRED", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+{"qty": 1, "description": "CREDENTIAL POWER SUPPLY", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"}
+]}
+]}

@@ -1,0 +1,23 @@
+{"page_image": "livelle_p699.png", "sets": [
+  {"set_number": "147.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+  ]},
+  {"set_number": "148.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+  ]},
+  {"set_number": "149.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+  ]},
+  {"set_number": "150.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+  ]},
+  {"set_number": "151.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+  ]},
+  {"set_number": "MISC", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hub (type & number as required)", "catalog": "AH20W14 by Security Contractor", "finish": null, "mfr": "SA"},
+    {"qty": 10, "description": "Power Supply", "catalog": "AQL104-E1", "finish": null, "mfr": "SU"},
+    {"qty": 1, "description": "Key Cabinet", "catalog": "AWC450-S", "finish": "GRY", "mfr": "TK"},
+    {"qty": 1, "description": "Knox Box", "catalog": "3200R (quantity per drawings)", "finish": null, "mfr": "KN"}
+  ]}
+]}

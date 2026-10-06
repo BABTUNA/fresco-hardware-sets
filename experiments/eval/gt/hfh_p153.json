@@ -1,0 +1,11 @@
+{"page_image": "hfh_p153.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": []},
+  {"set_number": "177", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HEAVYWEIGHT HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING LOCKING DOORS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "ENTRANCE SET", "catalog": "9K3AB 15D", "finish": "626", "mfr": "BES"},
+    {"qty": 1, "description": "PERMANENT CORE - COMBINATED", "catalog": "1C72", "finish": "626", "mfr": "BES"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 3, "description": "SILENCER", "catalog": "SR64", "finish": "GRY", "mfr": "IVE"}
+  ]},
+  {"set_number": "178", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": []}
+]}

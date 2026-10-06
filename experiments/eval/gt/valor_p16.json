@@ -1,0 +1,29 @@
+{"page_image": "valor_p16.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "ELECTRIC STOREROOM LEVER LOCKSET W/ CARD ACCESS (FOR BOTH DIRECTIONS) TO OPEN DOOR", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "PULL", "catalog": null, "finish": "711", "mfr": null},
+    {"qty": 1, "description": "CYLINDER", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "SURFACE CLOSER W/ OH STOP", "catalog": null, "finish": "693", "mfr": null},
+    {"qty": 1, "description": "SEALS (THERMAL)", "catalog": null, "finish": "AL", "mfr": null},
+    {"qty": 1, "description": "ADA THRESHOLD", "catalog": null, "finish": "AL", "mfr": null},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": null, "finish": "GRY", "mfr": null},
+    {"qty": 2, "description": "CARD READER (BY OWNER'S SECURITY CONTRACTOR)", "catalog": null, "finish": null, "mfr": null}
+  ]},
+  {"set_number": "34", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 4, "description": "GATE SPRING HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 2, "description": "GATE HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 2, "description": "TRANSFER WIRE", "catalog": null, "finish": null, "mfr": null},
+    {"qty": 2, "description": "GATE MOUNTED ELECT EXIT DEVICE WITH MOUNTING PLATE & ADA PULLS", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "CYLINDER", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 1, "description": "CORE", "catalog": null, "finish": "622", "mfr": null},
+    {"qty": 2, "description": "ELECT SHEAR LOCK MOUNTED IN GATE HEAD", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "PUSH TO EXIT BUTTON", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": null, "finish": "GRY", "mfr": null},
+    {"qty": 1, "description": "CARD READER (BY OWNER'S SECURITY CONTRACTOR)", "catalog": null, "finish": null, "mfr": null}
+  ]},
+  {"set_number": "35", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+    {"qty": 2, "description": "GATE SPRING HINGE", "catalog": null, "finish": "BBLK", "mfr": null},
+    {"qty": 1, "description": "TRANSFER WIRE", "catalog": null, "finish": null, "mfr": null}
+  ]}
+]}

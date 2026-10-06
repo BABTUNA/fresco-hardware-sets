@@ -1,0 +1,24 @@
+{"page_image": "star_p76.png", "sets": [
+  {"set_number": "08", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge", "catalog": "5BB1 (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Fire Rated Rim Exit/Panic Device with Passage Lever (never lockable)", "catalog": "AX 99L-BE-F x 996L-BE x #Longitude Passage Lever (never lockable)", "finish": "622", "mfr": "VO"},
+    {"qty": 1, "description": "Closer", "catalog": "4050A x REG (installed pull-side of door)", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "KO050 10\" tall x 2\" LDW (less door width) x B4E (beveled edges) x counter sunk or approved adhesive per 08 71 00.Part 2 (no raised fasteners)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Floor Stop", "catalog": "1214", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B (head & jambs) by NGP", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Bottom Sweep", "catalog": "202NDKB by NGP or approved equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Aluminum Threshold", "catalog": "513DBK flush condition (flat quarter inch) x mastic x by NGP", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "08.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinges", "catalog": "5BB1 (size & quantity per 08 71 00)", "finish": "622", "mfr": "IV"},
+    {"qty": 1, "description": "Rim Exit/Panic Device", "catalog": "AX 99L-NL x 996L-NL (key override) x #Longitude Lever x BHMA 03 locked at all times", "finish": "622", "mfr": "VO"},
+    {"qty": 1, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 x appropriate cam x blocking rings as required (rim or mortise type and quantity as required by locking device)", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Permanent Core", "catalog": "20-030", "finish": "622", "mfr": "SC"},
+    {"qty": 1, "description": "Closer x Stop Arm", "catalog": "4050A x CUSH", "finish": "693", "mfr": "LC"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "KO050 10\" tall x 2\" LDW (less door width) x B4E (beveled edges) x counter sunk or approved adhesive per 08 71 00.Part 2 (no raised fasteners)", "finish": "622", "mfr": "TR"},
+    {"qty": 1, "description": "Seals", "catalog": "5050B seals (head & jambs) by NGP or approved seal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Door Bottom", "catalog": "202NDKB by NGP or equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Aluminum Threshold", "catalog": "427DKB flush condition or 659DKB offset as required per sill condition (7\" flat or quarter inch offset sill, coordinate before submittals) x wrap frame stops x beveled miter ends x mastic x by NGP or equal", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Overhead Rain Drip", "catalog": "Provide #17DKB x FFW (fill frame width) by NGP", "finish": null, "mfr": null}
+  ]}
+]}

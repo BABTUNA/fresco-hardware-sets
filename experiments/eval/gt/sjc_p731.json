@@ -1,0 +1,9 @@
+{"page_image": "sjc_p731.png", "sets": [
+  {"set_number": "A01", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge", "catalog": "A110HD HT SEC", "finish": "628", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Push/Pull Set", "catalog": "MRX-A-72", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Overhead Surface Closer-Track Arm", "catalog": "4040XPT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Door Stop", "catalog": "1841", "finish": "630", "mfr": "ABH"}
+  ]},
+  {"set_number": "A02", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []}
+]}

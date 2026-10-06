@@ -1,0 +1,300 @@
+[
+ {
+  "book": "bridgeport",
+  "page": 2,
+  "targets": [
+   "run_coverage"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 32,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 33,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 47,
+  "targets": [
+   "blank_qty",
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "bridgeport",
+  "page": 48,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "doorco",
+  "page": 404,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "gerrard",
+  "page": 28,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 133,
+  "targets": [
+   "run_coverage"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 153,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 154,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "hfh",
+  "page": 174,
+  "targets": [
+   "run_coverage"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 24,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "jcryan",
+  "page": 25,
+  "targets": [
+   "run_coverage"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 681,
+  "targets": [
+   "ambiguous_code"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 682,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 683,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "livelle",
+  "page": 699,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "lyons",
+  "page": 284,
+  "targets": [
+   "dense_boundaries",
+   "not_used"
+  ]
+ },
+ {
+  "book": "lyons",
+  "page": 290,
+  "targets": [
+   "not_used"
+  ]
+ },
+ {
+  "book": "marketview",
+  "page": 776,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "morris",
+  "page": 258,
+  "targets": [
+   "ambiguous_code"
+  ]
+ },
+ {
+  "book": "morris",
+  "page": 262,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "morris",
+  "page": 263,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 417,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "oswego",
+  "page": 418,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "roselle",
+  "page": 14,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "sat",
+  "page": 715,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 720,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 730,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 731,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 733,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "sjc",
+  "page": 743,
+  "targets": [
+   "dense_boundaries",
+   "not_used"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 25,
+  "targets": [
+   "run_coverage"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 76,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 79,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 80,
+  "targets": [
+   "ambiguous_code",
+   "multi_page"
+  ]
+ },
+ {
+  "book": "star",
+  "page": 100,
+  "targets": [
+   "blank_qty"
+  ]
+ },
+ {
+  "book": "usi",
+  "page": 562,
+  "targets": [
+   "ambiguous_code"
+  ]
+ },
+ {
+  "book": "valor",
+  "page": 8,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "valor",
+  "page": 9,
+  "targets": [
+   "multi_page"
+  ]
+ },
+ {
+  "book": "valor",
+  "page": 15,
+  "targets": [
+   "dense_boundaries"
+  ]
+ },
+ {
+  "book": "valor",
+  "page": 16,
+  "targets": [
+   "ambiguous_code"
+  ]
+ }
+]

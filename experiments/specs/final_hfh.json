@@ -1,0 +1,24 @@
+{
+  "set_header": "^Hardware Group No\\.\\s*(?P<num>[A-Z0-9][A-Z0-9.\\-]*)",
+  "row_start": "^\\d{1,3}$",
+  "columns": [
+    {"field": "qty", "x": 78},
+    {"field": "unit", "x": 106},
+    {"field": "description", "x": 140},
+    {"field": "catalog", "x": 269},
+    {"field": "finish", "x": 469},
+    {"field": "mfr", "x": 510}
+  ],
+  "valign": "top",
+  "skip": [
+    "^QTY?\\s+DESCRIPTION\\s+CATALOG NUMBER",
+    "^Y$",
+    "^HDR Project No\\.",
+    "Henry Ford Hospital",
+    "^DOOR HARDWARE\\s+Hospital",
+    "^08 71 00 - \\d+$"
+  ],
+  "set_meta": "^Provide each .* with the following",
+  "note_line": "^NOTE:",
+  "end": ["END OF SECTION"]
+}

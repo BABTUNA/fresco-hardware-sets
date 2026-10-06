@@ -1,0 +1,21 @@
+{"page_image": "lyons_p289.png", "sets": [
+  {"set_number": "15", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 (NRP AT OUTSWING LOCKING DOORS)", "finish": "639", "mfr": "IVE"},
+    {"qty": 1, "description": "CLASSROOM SECURITY W/ INSIDE INDICATOR", "catalog": "L9071BD 03A IS-LOC", "finish": "612", "mfr": "SCH"},
+    {"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]},
+  {"set_number": "16", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []},
+  {"set_number": "17", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "AUTO FLUSH BOLT", "catalog": "FB31T/FB41T AS REQ", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP1/DP2 AS REQ", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "STOREROOM LOCK", "catalog": "L9080BD 03A 10-072 7/8\" LIP", "finish": "612", "mfr": "SCH"},
+    {"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+    {"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL X MB - AS REQUIRED", "finish": "711", "mfr": "IVE"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"},
+    {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" X 1\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]}
+]}

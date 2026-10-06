@@ -1,0 +1,29 @@
+{"page_image": "valor_p7.png", "sets": [
+  {"set_number": "CONTINUED", "starts_on_page": false, "components": [
+    {"qty": 3, "description": "PB HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "PRIVACY SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "04", "starts_on_page": true, "components": [
+    {"qty": 2, "description": "BB HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "PASSAGE SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "HINGE STOP", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "05", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "PB HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "PASSAGE SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "HINGE STOP", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "06", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "HINGE BY DR SUPPLIER", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "ENTRY SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "SURFACE BOLTS", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "WALL STOP", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 1, "description": "DEADBOLT BY DR SUPPLIER", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "07", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "BARN DR TRACK", "catalog": null, "finish": "BLK", "mfr": null},
+    {"qty": 2, "description": "PULL (ACCESSIBLE WHERE REQUIRED)", "catalog": null, "finish": "BLK", "mfr": null}
+  ]},
+  {"set_number": "08", "starts_on_page": true, "components": []}
+]}

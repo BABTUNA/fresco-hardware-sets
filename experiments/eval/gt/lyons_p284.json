@@ -1,0 +1,17 @@
+{"page_image": "lyons_p284.png", "sets": [
+  {"set_number": "01", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"}
+  ]},
+  {"set_number": "02", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4041 DEL EDA", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"}
+  ]},
+  {"set_number": "03", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "691", "mfr": "LCN"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"}
+  ]},
+  {"set_number": "04", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP REG", "finish": "691", "mfr": "LCN"}
+  ]},
+  {"set_number": "05", "starts_on_page": true, "continues_on_next_page": false, "status": "not_used", "components": []}
+]}

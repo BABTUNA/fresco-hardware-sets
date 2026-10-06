@@ -1,0 +1,27 @@
+{"page_image": "ami_p400.png", "sets": [
+  {"set_number": "03D", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "112XY", "finish": "628", "mfr": "IVE"},
+    {"qty": 1, "description": "CONT. HINGE", "catalog": "112XY EPT", "finish": "628", "mfr": "IVE"},
+    {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+    {"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP2", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "ELEC OFFICE LOCK", "catalog": "AD-300-MS-50-MT-SPA-J (BY DIV. 28)", "finish": "626", "mfr": "SCE"},
+    {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 ICX", "finish": "ORG", "mfr": "SCH"},
+    {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP EDA", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "CUSH SHOE SUPPORT", "catalog": "4040XP-30 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "BLADE STOP SPACER", "catalog": "4040XP-61 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 2, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "PERIMETER GASKETING", "catalog": "BY ALUMINUM DOOR MANUFACTURER", "finish": null, "mfr": null},
+    {"qty": 1, "description": "POWER SUPPLY", "catalog": "(BY DIV. 28)", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "04", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PRIVACY LOCK W/ OUTSIDE INDICATOR", "catalog": "L9040 17A 09-544 OS-OCC", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "MOP PLATE", "catalog": "8400 4\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "KICK PLATE", "catalog": "8400 8\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "DOOR SWEEP", "catalog": "8192AA", "finish": "AA", "mfr": "ZER"}
+  ]}
+]}

@@ -1,0 +1,32 @@
+{"page_image": "gerrard_p33.png", "sets": [
+  {"set_number": "30", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "Hinge(s)", "catalog": "BB1199 5\" x 4\"", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Push Plate(s)", "catalog": "30S 8\" x 16\"", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Door Pull(s)", "catalog": "975P 36", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Mop Plate(s)", "catalog": "190S 4\" x 1\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+    {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+    {"qty": 3, "description": "Silencers", "catalog": "307D", "finish": "GREY", "mfr": "HA"},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "31", "starts_on_page": true, "components": [
+    {"qty": 3, "description": "Hinge(s)", "catalog": "BB1279 4 1/2\" x 4\"", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Electric Strike", "catalog": "2930 CYL", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Storeroom Lockset", "catalog": "3480 WTN SFIC", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+    {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+    {"qty": 1, "description": "Single Operator", "catalog": "8318 Pull", "finish": "ALM", "mfr": "HA"},
+    {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Mop Plate(s)", "catalog": "190S 4\" x 1\" LDW", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+    {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+    {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Push to Lock Button Shared with D147A", "catalog": "2-659-0370", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Occupancy Indicator(s)", "catalog": "2-659-0371", "finish": null, "mfr": "HA"},
+    {"qty": 3, "description": "Silencers", "catalog": "307D", "finish": "GREY", "mfr": "HA"},
+    {"qty": 1, "description": "Sequencer", "catalog": "2-659-0240", "finish": null, "mfr": "HA"},
+    {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+  ]}
+]}

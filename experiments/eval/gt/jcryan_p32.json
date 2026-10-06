@@ -1,0 +1,22 @@
+{"page_image": "jcryan_p32.png", "sets": [
+  {"set_number": "5.5", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "T4A3786", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Continuous Hinge x Power Transfer at 48\" Wide Doors", "catalog": "A500 x TW", "finish": null, "mfr": "ABH"},
+    {"qty": 1, "description": "Electric Power Transfer", "catalog": "EL-CEPT", "finish": null, "mfr": "Securitron"},
+    {"qty": 1, "description": "Fail Secure Exit Device", "catalog": "[12] 55 PE8876 ETMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "7500", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Door Shoe", "catalog": "234AV", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Saddle", "catalog": "2005AT", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Door/Frame Harness", "catalog": null, "finish": null, "mfr": null}
+  ]},
+  {"set_number": "6.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Classroom Lock", "catalog": "8237 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 1, "description": "Kick Plate", "catalog": "K1050 x 10\" High x CSK x 4BE", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 3, "description": "Silencers", "catalog": "SR64/ SR65", "finish": null, "mfr": null}
+  ]}
+]}

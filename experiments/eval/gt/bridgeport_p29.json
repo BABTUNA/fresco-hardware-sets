@@ -1,0 +1,9 @@
+{"page_image": "bridgeport_p29.png", "sets": [
+  {"set_number": "55", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1449, "description": "Standard Hinge", "catalog": "TA714 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+    {"qty": 483, "description": "Electronic Locking Device", "catalog": "SALTO Suite Entry Levers By Others", "finish": "626", "mfr": null},
+    {"qty": 483, "description": "Surface Closer", "catalog": "161BFxTPN 689", "finish": "689", "mfr": null},
+    {"qty": 483, "description": "Door Viewer", "catalog": "U698B26D", "finish": "26D", "mfr": null},
+    {"qty": 483, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null}
+  ]}
+]}

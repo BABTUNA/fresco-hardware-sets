@@ -1,0 +1,30 @@
+{"page_image": "sjc_p738.png", "sets": [
+  {"set_number": "E09", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge", "catalog": "4C51 NRP", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Hinge-Power Transfer", "catalog": "4C51EL", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Delayed Egress Rim Device-EO", "catalog": "ED1100/EF1100-DE", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Power Supply", "catalog": "PS220B 120VAC", "finish": null, "mfr": "CAT"},
+    {"qty": 1, "description": "OH Surface Closer-SCUSH", "catalog": "4040XP SCUSH", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Overhead Rain Drip", "catalog": "16A (As Req)", "finish": "628", "mfr": "NGP"},
+    {"qty": 1, "description": "Door Sweep", "catalog": "C627", "finish": "628", "mfr": "NGP"},
+    {"qty": 1, "description": "Weatherstrip", "catalog": "700Nx700EN", "finish": "719", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"},
+    {"qty": 1, "description": "Door Position Switch", "catalog": "By Division 28", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Lock Power Supply", "catalog": "By Division 28", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "E10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge", "catalog": "4C51 NRP", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Auto Flush Bolts", "catalog": "1860P/1861P/1862P", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "1870/1872", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Cyl. Lock -Storerm", "catalog": "CDC-86-S", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+    {"qty": 1, "description": "Coordinator", "catalog": "3700 Series", "finish": "600", "mfr": "ABH"},
+    {"qty": 2, "description": "Mounting Bracket", "catalog": "3751/3752 (as required)", "finish": "600", "mfr": "ABH"},
+    {"qty": 2, "description": "OH Surface Closer-SCUSH", "catalog": "4040XP SCUSH", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Overlapping Astragal", "catalog": "355CS", "finish": "628", "mfr": "PEM"},
+    {"qty": 2, "description": "Door Sweep", "catalog": "C627", "finish": "628", "mfr": "NGP"},
+    {"qty": 1, "description": "Weatherstrip", "catalog": "700Nx700EN", "finish": "719", "mfr": "NGP"},
+    {"qty": 1, "description": "Threshold", "catalog": "To Suit Sill Condition", "finish": "719", "mfr": "PEM"},
+    {"qty": 2, "description": "Door Position Switch", "catalog": "MC-4 (Or as Req)", "finish": null, "mfr": "SDC"}
+  ]}
+]}

@@ -1,0 +1,6 @@
+{"set_header": "^HARDWARE GROUP NO\\. (?P<num>\\S+)",
+ "row_start": "^\\d{1,3}$",
+ "columns": [{"field":"qty","x":78},{"field":"unit","x":110},{"field":"description","x":146},{"field":"catalog","x":288},{"field":"finish","x":462},{"field":"mfr","x":506}],
+ "skip": ["^Village of Oswego", "^DOOR HARDWARE$", "^087100 - \\d+$", "OPT\\d+ Version"],
+ "set_meta": "^(PROVIDE EACH|[A-Z]?\\d{2,4}[A-Z]?( +[A-Z]?\\d{2,4}[A-Z]?)*$)",
+ "end": ["^END OF SECTION"]}

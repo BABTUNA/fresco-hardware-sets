@@ -1,0 +1,11 @@
+{"page_image": "oswego_p440.png", "sets": [
+  {"set_number": "53", "starts_on_page": true, "components": [
+    {"qty": 1, "description": "PIVOT SET", "catalog": "7215 SET", "finish": "626", "mfr": "IVE"},
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "PASSAGE SET", "catalog": "L9010.03.626.A.626.03.626.A.626", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "OH STOP", "catalog": "100S", "finish": "630", "mfr": "GLY"},
+    {"qty": 1, "description": "REG/ PA SURFACE CLOSER - AS REQUIRED", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "ARMOR PLATE", "catalog": "8400 34\" X AS REQ B-CS TKTX", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+  ]}
+]}

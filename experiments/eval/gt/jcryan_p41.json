@@ -1,0 +1,24 @@
+{"page_image": "jcryan_p41.png", "sets": [
+  {"set_number": "16.5", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 1, "description": "Flush Bolt", "catalog": "555", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Classroom Lock", "catalog": "8237 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "CPS-1601", "finish": null, "mfr": "Norton"},
+    {"qty": 3, "description": "Silencers", "catalog": "SR64/ SR65", "finish": null, "mfr": null}
+  ]},
+  {"set_number": "17.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge, Full Mortise", "catalog": "TA2714", "finish": null, "mfr": "McKinney"},
+    {"qty": 2, "description": "Flush Bolts", "catalog": "555", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Dust Proof Strike", "catalog": "570", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Storeroom Lock", "catalog": "8204 LNMI", "finish": null, "mfr": "Sargent"},
+    {"qty": 1, "description": "Surface Closer", "catalog": "R 7500/ PR7500 (as required)", "finish": null, "mfr": "Norton"},
+    {"qty": 2, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "Pemko"},
+    {"qty": 1, "description": "Astragal", "catalog": "178SA", "finish": null, "mfr": "NGP"}
+  ]},
+  {"set_number": "18.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Pivot Set", "catalog": null, "finish": null, "mfr": "Rixson"},
+    {"qty": 1, "description": "Locking Ladder Pull", "catalog": "LP3301 DBU", "finish": null, "mfr": "Rockwood"},
+    {"qty": 1, "description": "Stop", "catalog": "RM860 / 446 / 9-ADJ Series Per Conditions", "finish": null, "mfr": "Rockwood"}
+  ]}
+]}

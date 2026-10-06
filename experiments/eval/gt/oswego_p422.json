@@ -1,0 +1,14 @@
+{"page_image": "oswego_p422.png", "sets": [
+  {"set_number": "08", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "PIVOT SET", "catalog": "7215 SET", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "INTERMEDIATE PIVOT", "catalog": "7215 INT", "finish": "626", "mfr": "IVE"},
+    {"qty": 1, "description": "DUMMY PUSH BAR", "catalog": "350", "finish": "628", "mfr": "VON"},
+    {"qty": 1, "description": "LONG DOOR PULL", "catalog": "9264F 36\" 20\" STD", "finish": "630-316", "mfr": "IVE"},
+    {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH TBSRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "PA MOUNTING PLATE - AS REQUIRED", "catalog": "4040XP-18PA SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "CUSH SHOE SUPPORT - AS REQUIRED", "catalog": "4040XP-30 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "BLADE STOP SPACER - AS REQUIRED", "catalog": "4040XP-61 SRT", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "SEA", "catalog": "PERIMETER SEAL BY FRAME MANUFACTURER", "finish": null, "mfr": null},
+    {"qty": 1, "description": "ASTRAGAL", "catalog": "MEETING STILE SEAL BY DOOR MANUFACTURER", "finish": null, "mfr": null}
+  ]}
+]}

@@ -1,0 +1,12 @@
+{"page_image": "oswego_p424.png", "sets": [
+  {"set_number": "11", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 3, "description": "HINGE", "catalog": "5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS", "finish": "652", "mfr": "IVE"},
+    {"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-L-F-03-SNB", "finish": "626", "mfr": "VON"},
+    {"qty": 1, "description": "FSIC RIM CYLINDER", "catalog": "20-057 ICX W/CONST. CORE", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "FSIC PRIMUS PERMANENT CORE", "catalog": "20-740-XP CKC - MATCH EXISTING KEYWAY SYSTEM", "finish": "626", "mfr": "SCH"},
+    {"qty": 1, "description": "REG/ PA SURFACE CLOSER - AS REQUIRED", "catalog": "4040XP REG TBSRT/ 4040XP EDA TBSRT - AS REQUIRED", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "ARMOR PLATE", "catalog": "8402 34” X AS REQ B-CS TKTX", "finish": "630", "mfr": "IVE"},
+    {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+    {"qty": 1, "description": "HD THRESHOLD", "catalog": "655A-V3-226", "finish": "A", "mfr": "ZER"}
+  ]}
+]}

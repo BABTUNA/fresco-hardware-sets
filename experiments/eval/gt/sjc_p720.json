@@ -1,0 +1,35 @@
+{"page_image": "sjc_p720.png", "sets": [
+  {"set_number": "22", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": 1, "description": "Continuous Hinge-Double Acting", "catalog": "A507", "finish": "628", "mfr": "ABH"},
+    {"qty": 1, "description": "Ligature Res. Cyl. Lock-Ins.Privay/I.D.", "catalog": "MRX-A-26-O", "finish": "630", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "630", "mfr": "TBD"},
+    {"qty": 1, "description": "Double Acting OH Concealed Closer", "catalog": "KG35", "finish": "630", "mfr": "KSG"},
+    {"qty": 1, "description": "Door Stop", "catalog": "1841", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Gasketing", "catalog": "ANTI-LIG 5050", "finish": "BLK", "mfr": "NGP"},
+    {"qty": 1, "description": "Emergency Rescue Stop", "catalog": "A509 L", "finish": "630", "mfr": "ABH"},
+    {"qty": 1, "description": "Cylinder (For Rescue Stop)", "catalog": "Per project", "finish": "630", "mfr": "TBD"}
+  ]},
+  {"set_number": "23", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge-HT", "catalog": "CB51 HT", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Cyl. Lock-Classrm", "catalog": "CDC-84-S", "finish": "626", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+    {"qty": 1, "description": "OH Surface Closer", "catalog": "4040XP/4040XP EDA", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "5050", "finish": "BLK", "mfr": "NGP"}
+  ]},
+  {"set_number": "24", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge-HT", "catalog": "CB51 HT", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Cyl. Lock-Office", "catalog": "CDC-81-S", "finish": "626", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "5050", "finish": "BLK", "mfr": "NGP"}
+  ]},
+  {"set_number": "24A", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+    {"qty": null, "description": "Hinge-HT", "catalog": "CB51 HT", "finish": "630", "mfr": "PBB"},
+    {"qty": 1, "description": "Cyl. Lock-Office", "catalog": "CDC-81-S", "finish": "626", "mfr": "TOW"},
+    {"qty": 1, "description": "Cylinder", "catalog": "Per project", "finish": "626", "mfr": "TBD"},
+    {"qty": 1, "description": "OH Surface Closer", "catalog": "4040XP/4040XP EDA", "finish": "689", "mfr": "LCN"},
+    {"qty": 1, "description": "Door Stop", "catalog": "Per Specification", "finish": null, "mfr": null},
+    {"qty": 1, "description": "Gasketing", "catalog": "5050", "finish": "BLK", "mfr": "NGP"}
+  ]}
+]}
