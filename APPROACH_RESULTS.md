@@ -14,6 +14,10 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | LLM calls, 20 books | 22 | 39 | 694 | 694 | 694 |
 | Tokens, estimated | 51K | 82K | 1.3M | 1.2M | 2.6M |
 | Same output every run | yes | yes | no | no | no |
+| Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
+| Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book | not run whole-book |
+
+The last two rows are the whole pipeline, not just the labeled pages. Every approach shares the page finder in [APPROACHES.md](APPROACHES.md#layer-1-the-page-finder), which reaches all 697 set pages. Approaches 1 and 2 then ran every book, and the set numbers they output are checked against every printed set header. End to end for approach 1: every set page reached, 99.7% of printed set numbers out as a set, 98.4% of rows exact on labeled pages (97.2% held out).
 
 ## Reading the numbers
 
