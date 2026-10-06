@@ -1,19 +1,19 @@
 # Approach results
 
-All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the strict scorer from [BENCHMARK.md](BENCHMARK.md) on the same 155 labeled pages: 311 sets, 2,218 rows, 20 books. A row only counts if qty, description, catalog, finish and mfr are all right. Approach 1 is scored after the 2026-10-05 interpreter fixes. The other three are unchanged since their test runs.
+All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the strict scorer from [BENCHMARK.md](BENCHMARK.md) on the same 155 labeled pages: 311 sets, 2,218 rows, 20 books. A row only counts if qty, description, catalog, finish and mfr are all right. Approach 1 is scored after the interpreter fixes of 2026-10-05 and 2026-10-06. The other three are unchanged since their test runs.
 
 ## Summary
 
 | | 1. Spec per book (ours) | 2. Per-page LLM | 3. Multimodal per-page | 4. Parser per book |
 | :--- | ---: | ---: | ---: | ---: |
-| Exact rows | 97.6% | 95.8% | **99.1%** | 91.6% |
-| Exact rows, pages the spec writer never saw | 97.4% | 95.8% | 99.0% | 90.9% |
-| Precision | 97.9% | 91.9% | **99.1%** | 88.8% |
-| Per-book average | 98.1% | 96.3% | 99.2% | 92.5% |
-| Sets fully correct | 91.0% | 82.6% | **96.5%** | 72.0% |
-| Sets found | 99.0% | 99.7% | 99.7% | 96.8% |
+| Exact rows | 98.0% | 95.8% | **99.1%** | 91.6% |
+| Exact rows, pages the spec writer never saw | 97.9% | 95.8% | 99.0% | 90.9% |
+| Precision | 98.1% | 91.9% | **99.1%** | 88.8% |
+| Per-book average | 98.5% | 96.3% | 99.2% | 92.5% |
+| Sets fully correct | 92.0% | 82.6% | **96.5%** | 72.0% |
+| Sets found | 99.4% | 99.7% | 99.7% | 96.8% |
 | NOT USED and moved status right | 93.8% | 87.5% | 100.0% | 50.0% |
-| Mfr/finish swaps | 4 | 0 | 0 | 0 |
+| Mfr/finish swaps | 0 | 0 | 0 | 0 |
 | LLM calls for 20 books | 22 | 694 | 694 | 20 |
 | Tokens for 20 books, estimated | ~51K | ~1.2M | ~2.6M | ~87K |
 | Same output every run | yes | no | no | yes |
@@ -26,7 +26,7 @@ All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the stric
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | T0 trivial | 459 | 98.7 | 100.0 | 99.6 | 97.6 |
 | T1 one caveat | 669 | 100.0 | 99.4 | 100.0 | 98.2 |
-| T2 hard | 1,090 | 95.6 | 91.8 | 98.3 | 85.0 |
+| T2 hard | 1,090 | 96.5 | 91.8 | 98.3 | 85.0 |
 
 ## By caveat
 
@@ -35,11 +35,11 @@ Exact rows on rows with each tag.
 | Tag | n | Ours | Per-page | Multimodal | Parser |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | missing_qty | 107 | 95.3 | 91.6 | 98.1 | 68.2 |
-| column_drift | 262 | 88.2 | 95.0 | 94.7 | 62.6 |
-| struck_page | 392 | 97.7 | 96.9 | 99.7 | 96.7 |
-| ambiguous_code | 548 | 96.0 | 98.7 | 98.4 | 89.1 |
-| wrapped | 672 | 94.6 | 92.6 | 97.6 | 86.6 |
-| multi_page | 291 | 96.9 | 96.6 | 99.3 | 91.4 |
+| column_drift | 262 | 93.1 | 95.0 | 94.7 | 62.6 |
+| struck_page | 392 | 97.4 | 96.9 | 99.7 | 96.7 |
+| ambiguous_code | 548 | 98.0 | 98.7 | 98.4 | 89.1 |
+| wrapped | 672 | 95.5 | 92.6 | 97.6 | 86.6 |
+| multi_page | 291 | 96.6 | 96.6 | 99.3 | 91.4 |
 
 ## By book
 
@@ -52,19 +52,19 @@ Exact rows.
 | doorco | 74 | 100.0 | 82.4 | 100.0 | 91.9 |
 | forest | 5 | 100.0 | 100.0 | 100.0 | 100.0 |
 | gerrard | 166 | 98.8 | 98.8 | 98.8 | 98.8 |
-| hfh | 206 | 95.6 | 95.6 | 99.0 | 95.1 |
+| hfh | 206 | 95.1 | 95.6 | 99.0 | 95.1 |
 | jcryan | 155 | 96.8 | 100.0 | 100.0 | 70.3 |
 | livelle | 132 | 98.5 | 100.0 | 100.0 | 98.5 |
 | lyons | 83 | 100.0 | 100.0 | 100.0 | 100.0 |
 | marketview | 90 | 100.0 | 100.0 | 100.0 | 100.0 |
 | morris | 48 | 97.9 | 97.9 | 97.9 | 70.8 |
 | national | 51 | 100.0 | 100.0 | 100.0 | 100.0 |
-| oswego | 120 | 100.0 | 100.0 | 100.0 | 95.8 |
+| oswego | 120 | 98.3 | 100.0 | 100.0 | 95.8 |
 | roselle | 134 | 100.0 | 64.2 | 100.0 | 93.3 |
 | sat | 146 | 100.0 | 100.0 | 100.0 | 100.0 |
 | shubie | 31 | 100.0 | 100.0 | 100.0 | 100.0 |
 | sjc | 281 | 100.0 | 99.3 | 100.0 | 99.3 |
-| star | 150 | 82.0 | 90.7 | 90.7 | 49.3 |
+| star | 150 | 90.7 | 90.7 | 90.7 | 49.3 |
 | usi | 10 | 100.0 | 100.0 | 100.0 | 100.0 |
 | valor | 137 | 98.5 | 97.1 | 100.0 | 97.1 |
 
@@ -125,5 +125,5 @@ Docling found a table on only 64 of 155 pages. Its open issue #3749 says whitesp
 
 - **The labels favor the per-page approaches.** They were made by Claude with the same field rules those prompts use, so formatting choices line up. The effect is strongest for the multimodal approach.
 - **Our interpreter was tuned on this corpus.** Approach 4 got one shot with no repair, and approach 1 had several rounds of fixes.
-- **Ours now scores above the text-only per-page LLM** on rows (97.6% vs 95.8%) and sets (91.0% vs 82.6%), after fixing the four gaps the per-page comparison exposed. Those fixes were made against this benchmark, so the per-page numbers are the more conservative reading.
+- **Ours now scores above the text-only per-page LLM** on rows (98.0% vs 95.8%) and sets (92.0% vs 82.6%), after fixing the four gaps the per-page comparison exposed. Those fixes were made against this benchmark, so the per-page numbers are the more conservative reading.
 - **The multimodal approach is the strongest result.** It is also the least certain one, until some pages are labeled by hand.

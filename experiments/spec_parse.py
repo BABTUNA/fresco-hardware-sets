@@ -13,7 +13,7 @@
 # grid mode spec (ruled tables):
 #   "mode": "grid", "columns": {header label: field}, "set_column": header label,
 #   "set_number": regex for a set number cell, "mfr_split": separator between mfr and catalog
-import re, sys, json, collections
+import re, sys, json, collections, itertools
 import pdfplumber
 from lines import page_lines
 
@@ -25,9 +25,10 @@ QTY_ANY = re.compile(r"^(\d{1,4}(\.0+)?|_+|-{2,3})$")
 NOTE_RE = re.compile(r"^\s*(NOTES?\b|Note\b|Interlock\b|Operational\b|OPERATIONAL\b|Operation:|\*)")
 # door and opening lines sit under a set header but are not hardware
 # allegion-style books list door numbers between these two lines
+FINISH_SHAPE = re.compile(r"6\d\d[A-Z]?|US\d{1,2}[A-Z]?|\d{2}[A-Z]{1,2}")
 DOOR_INTRO = re.compile(r"^\s*For use on Door", re.I)
 LIST_END = re.compile(r"Provide each|Each to have|with the following|^\s*QTY\b", re.I)
-DOOR_RE = re.compile(r"\b(Single|Pair)\s+(of\s+)?Doors?\b|\bDoor\s*#\s*\w|Opening Description", re.I)
+DOOR_RE = re.compile(r"\b(Single|Pair)\s+(of\s+)?doors?\s*(#|\d)|\bDoor\s*#\s*\w|Opening Description", re.I)
 
 
 def dump(pdf, pages, gap=8):
@@ -92,7 +93,7 @@ class Layout:
         out, prev = [], None
         for w in words:
             f = self.field(w["x0"])
-            if prev and f in CODE_FIELDS and out[-1] not in CODE_FIELDS and w["x0"] - prev["x1"] < gap:
+            if prev and f != out[-1] and w["x0"] - prev["x1"] < gap and (f in CODE_FIELDS or w["x0"] < self.cols[self.fields.index(f)]["x"]):
                 f = out[-1]
             out.append(f)
             prev = w
@@ -170,16 +171,22 @@ def calibrate(spec, lines, reach=45, share=0.25):
             clusters[-1].append(x)
         else:
             clusters.append([x])
-    peaks = [min(c) for c in clusters if len(c) >= share * len(rows)]
-    new, floor = [cols[0]], cols[0]["x"]
-    for c in cols[1:]:
-        if c["field"] not in ("catalog", "finish", "mfr", "notes"):
-            # qty, unit and description often share one run of text, so they have no edge to snap to
-            new.append(c); floor = c["x"]; continue
-        near = [p for p in peaks if abs(p - c["x"]) <= reach and p - 1 > floor]
-        x = min(near, key=lambda p: abs(p - c["x"])) - 1 if near else c["x"]
-        new.append({**c, "x": x})
-        floor = x
+    support = {min(c): len(c) / len(rows) for c in clusters if len(c) >= share * len(rows)}
+    code = [c for c in cols[1:] if c["field"] in ("catalog", "finish", "mfr", "notes")]
+    cands = [[p for p in support if abs(p - c["x"]) <= reach and p > cols[0]["x"]] + [None] for c in code]
+    best = None
+    for combo in itertools.product(*cands):
+        xs = [p if p is not None else c["x"] + 1 for p, c in zip(combo, code)]
+        if any(b <= a for a, b in zip(xs, xs[1:])):
+            continue
+        score = sum(support[p] for p in combo if p is not None) - 0.002 * sum(abs(x - c["x"]) for x, c in zip(xs, code))
+        if best is None or score > best[0]:
+            best = (score, combo)
+    chosen = {c["field"]: p for c, p in zip(code, best[1])} if best else {}
+    new = []
+    for c in cols:
+        p = chosen.get(c["field"])
+        new.append({**c, "x": p - 1} if p is not None else c)
     return {**spec, "columns": new}
 
 
@@ -198,12 +205,17 @@ def _assemble(layout, anchor, extra):
     for l in sorted([anchor] + extra, key=lambda l: l["top"]):
         for w, f in zip(l["words"], layout.assign(l["words"])):
             comp[f].append(w["text"])
+    for f in CODE_FIELDS:
+        if f in comp and len(comp[f]) > 1 and all(len(t) <= 3 and t.isalpha() for t in comp[f]):
+            comp[f] = ["".join(comp[f])]
     # a cell line ending in a hyphen continues the same token on the next line
     comp = {k: (re.sub(r"(?<=\w-) (?=\S)", "", " ".join(v)) or None) for k, v in comp.items()}
     for k, v in comp.items():
         # dash placeholders mean the cell is empty
         if v and re.fullmatch(r"-{1,3}", v):
             comp[k] = None
+    if comp.get("mfr") and not comp.get("finish") and "finish" in layout.fields and FINISH_SHAPE.fullmatch(comp["mfr"]):
+        comp["finish"], comp["mfr"] = comp["mfr"], None
     comp["qty"] = _qty(comp.get("qty"))
     comp["bbox"] = _box([anchor] + extra)
     return comp
@@ -243,6 +255,7 @@ def _resolve(layout, valign, items):
         return _resolve_middle(layout, items)
     rows, notes = [], []
     cur, prev, in_note, pending = None, None, False, []
+    prev_kind = None
     for idx, (kind, l) in enumerate(items):
         h = l["bottom"] - l["top"]
         close = prev is not None and l["top"] - prev["bottom"] < 1.2 * h
@@ -265,7 +278,8 @@ def _resolve(layout, valign, items):
         elif kind == "other" and l["x0"] >= layout.body_x - SLACK and cur is not None and close and layout.wraps(cur["lines"], l):
             cur["lines"].append(l)
         elif kind == "other" and l["x0"] >= layout.body_x - SLACK and "description" in layout.filled(l) \
-                and layout.filled(l) - {"description", "qty", "unit"} and layout.aligned(l) and not DOOR_RE.search(l["text"]):
+                and layout.filled(l) - {"description", "qty", "unit"} and layout.aligned(l) and not DOOR_RE.search(l["text"]) \
+                and (layout.filled(l) & set(CODE_FIELDS) or len(layout.cells(l)["description"]) >= 2 or prev_kind == "anchor"):
             # its own description plus another cell, but not a wrap: a row with no quantity
             cur = {"lines": [l], "notes": []}
             rows.append(cur)
@@ -273,6 +287,8 @@ def _resolve(layout, valign, items):
         else:
             notes.append(l["text"])
             cur, in_note = None, False
+        # what this line became, for the next line's decision
+        prev_kind = "anchor" if kind == "anchor" or (cur is not None and cur["lines"] and cur["lines"][-1] is l and len(cur["lines"]) == 1) else ("wrap" if cur is not None and cur["lines"] and cur["lines"][-1] is l else kind)
         prev = l
     comps = []
     for r in rows:
