@@ -12,28 +12,24 @@ Every approach has two layers: a page finder that keeps only the pages that hold
 
 ## Layer 1: the page finder
 
-A specbook is mostly prose. SAT TDP is 3,930 pages and 122 of them hold sets. The finder scans every page's text for lines shaped like a component row: a quantity, some words, then one or two short codes at the end.
+A specbook is mostly prose. SAT TDP is 3,930 pages and 122 of them hold sets. The finder scans every page's raw text for lines shaped like a component row: a quantity, some words, then one or two short codes at the end.
 
 ```
 3   EA   HINGE   5BB1 4.5 X 4.5 NRP   652   IVE
 ```
 
-A page with two or more such lines that also mention hardware (hinge, closer, lock, strike...) is a schedule page, and consecutive schedule pages form a run. It uses no header wording, so it works the same on every book, and it reads the raw text with pypdfium2, so SAT takes about 6 seconds.
+Two or more such lines plus hardware words (hinge, closer, lock...) make a schedule page, and consecutive ones form a run. No header wording, so it works the same on every book. SAT takes about 6 seconds.
 
-**Does it find every set page?** There is no table of contents for this: a TOC gives the section, and the sets are only the back part of it. The independent truth is the printed set headers. A broad header pattern, which never looks at row shapes or at our output, scans every page of every book. A page with a set header is a set page, and a page sitting between two header pages is a continuation. That gives 697 set pages out of 14,224 (`experiments/layer1_truth.py`).
+**Does it find every set page?** A table of contents cannot say, it only gives the section. The truth is the printed set headers: a broad header pattern, independent of the finder and our output, scans every page, and a page with a set header or sitting between two of them is a set page. That gives 697 of 14,224 (`experiments/layer1_truth.py`).
 
 | | Recall | Precision |
 | :--- | ---: | ---: |
-| Finder alone | 689 / 697, 98.9% | 689 / 694, 99.3% |
+| Finder alone | 689 / 697 | 689 / 694 |
 | Finder plus the expand step (header hits next to a run) | 697 / 697 | |
 
-The 8 pages the finder alone skips have few or no row-shaped lines: Bridgeport door lists (`Item #226 1 Single door ...`), an HFH set that is one NOTE line, two JC Ryan sets that say "By Balanced Door Manufacturer" instead of codes, a National header whose rows are on the next page, an empty Door Co set. The expand step picks up all of them because each has a header next to a run.
+The 8 the finder skips have no row-shaped lines (Bridgeport door lists, a JC Ryan set that says "By Balanced Door Manufacturer", an empty Door Co set) and the expand step catches every one. The same header pattern also finds 1,175 printed set numbers and 1,172 are in our output, the 3 missing being two odd Star spellings and one non-set line. The 21 PDFs with no hardware sets come back empty.
 
-Two more checks. The same header pattern finds 1,175 printed set numbers across the books and 1,172 are in our output. The 3 missing are two odd Star header spellings and one line that is not a set. And the 21 PDFs with no hardware sets all come back empty.
-
-The blind spot in this truth: a set whose header spelling the pattern does not match, with no matched header nearby, is invisible to it. The 3 Star lines are that case.
-
-Embeddings and tf-idf against hint phrases were tried as the filter instead: 84% to 86% recall at 66% to 71% precision on the same pages. Prose pages of a hardware section talk about the same things as the schedule, so meaning does not separate them. The shape of a row does.
+Embeddings and tf-idf against hint phrases were tried as the filter instead: 84% recall at 66% precision. Prose pages of a hardware section talk about the same things as the schedule. The shape of a row separates them, meaning does not.
 
 ## 1. Spec per book (ours)
 
