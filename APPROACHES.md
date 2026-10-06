@@ -20,13 +20,14 @@ A specbook is mostly prose. SAT TDP is 3,930 pages and 122 of them hold sets. Th
 
 A page with two or more such lines that also mention hardware (hinge, closer, lock, strike...) is a schedule page, and consecutive schedule pages form a run. It uses no header wording, so it works the same on every book, and it reads the raw text with pypdfium2, so SAT takes about 6 seconds.
 
-| | Pages passed | Set pages found | Precision |
-| :--- | ---: | ---: | ---: |
-| Regex finder | 694 of 14,224 | 98.9% | 99.7% |
-| Embeddings against hint phrases, best F1 | 885 | 84.0% | 66.4% |
-| tf-idf against hint phrases, best F1 | 850 | 85.7% | 70.6% |
+**Does it find every set page?** There is no independent list of schedule pages, so the finder is checked two ways.
 
-Embeddings lose because the prose pages of a hardware section talk about the same things as the schedule. The shape of a row separates them, the meaning does not. The 21 PDFs with no hardware sets all come back empty.
+- **Whole-book reconciliation.** A broad header pattern, independent of the finder and the specs, scans every page of every book for printed set numbers. 1,172 of the 1,175 it finds are in our output. If the finder dropped schedule pages, their set numbers would be missing here. The 3 that are missing are two odd Star header spellings and one line that is not a set.
+- **The 21 PDFs with no hardware sets** all come back empty.
+
+Against the pages the pipeline ends up extracting from (700 of 14,224), the finder passes 694 pages with 98.9% recall and 99.7% precision. That comparison favors the finder, since a page it misses far from any set never gets a chance to count, so the reconciliation above is the number to quote.
+
+Embeddings and tf-idf against hint phrases were tried as the filter instead: 84% to 86% recall at 66% to 71% precision on the same pages. Prose pages of a hardware section talk about the same things as the schedule, so meaning does not separate them. The shape of a row does.
 
 ## 1. Spec per book (ours)
 
