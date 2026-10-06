@@ -1,0 +1,25 @@
+{"page_image": "livelle_p687.png", "sets": [
+{"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "Electric Power Transfer", "catalog": "EL-CEPT", "finish": "630", "mfr": "SU"},
+{"qty": 1, "description": "ElectroLynx Door Harness", "catalog": "QC-C300", "finish": null, "mfr": "MK"},
+{"qty": 1, "description": "ElectroLynx Frame Harness", "catalog": "QC-C1500P", "finish": null, "mfr": "MK"},
+{"qty": 1, "description": "Position Switch", "catalog": "DPS-W-GY", "finish": null, "mfr": "SU"},
+{"qty": 1, "description": "Alarm Release w/ Key Switch Reset", "catalog": "DE-1RED Key reset ( no delay)", "finish": null, "mfr": "AK"},
+{"qty": 1, "description": "Card Reader", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "HD"},
+{"qty": 1, "description": "Power Supply w/Fire Trigger", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "SU"}
+]},
+{"set_number": "123.0", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+{"qty": 3, "description": "Hinge, Full Mortise", "catalog": "TA2314", "finish": "US32D", "mfr": "MK"},
+{"qty": 1, "description": "Fail Safe Elec Lock", "catalog": "RX 72 8270-24V LNP", "finish": "US26D", "mfr": "SA"},
+{"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+{"qty": 1, "description": "Surface Closer", "catalog": "351 CPS", "finish": "EN", "mfr": "SA"},
+{"qty": 1, "description": "Gasketing", "catalog": "332CS", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Door Bottom", "catalog": "2221APK", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Threshold", "catalog": "176A MSES25SS-2", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Electric Power Transfer", "catalog": "EL-CEPT", "finish": "630", "mfr": "SU"},
+{"qty": 1, "description": "ElectroLynx Door Harness", "catalog": "QC-C300", "finish": null, "mfr": "MK"},
+{"qty": 1, "description": "ElectroLynx Frame Harness", "catalog": "QC-C1500P", "finish": null, "mfr": "MK"},
+{"qty": 1, "description": "Alarm Release w/ Key Switch Reset", "catalog": "DE-1RED Key reset ( no delay)", "finish": null, "mfr": "AK"},
+{"qty": 1, "description": "Power Supply w/Fire Trigger", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "SU"}
+]}
+]}

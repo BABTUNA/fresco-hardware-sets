@@ -1,0 +1,46 @@
+{
+  "page_image": "gerrard_p27.png",
+  "sets": [
+    {
+      "set_number": "17",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 2, "description": "Hinge(s)", "catalog": "BB1279 4 1/2\" x 4\" NRP", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Electrified Hinge(s)", "catalog": "BB1191 4 1/2\" x 4\" ETW", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Electrified Lockset", "catalog": "3480ELEURX WTN", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+        {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Closer(s)", "catalog": "5200", "finish": "ALM", "mfr": "HA"},
+        {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Convex Wall Stop(s)", "catalog": "232W", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Seal", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+        {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+        {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+      ]
+    },
+    {
+      "set_number": "18",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 2, "description": "Hinge(s)", "catalog": "BB1279 4 1/2\" x 4\" NRP", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Electrified Hinge(s)", "catalog": "BB1191 4 1/2\" x 4\" ETW", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Electrified Lockset", "catalog": "3480ELEURX WTN", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+        {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Closer(s)", "catalog": "5200 TRK NHOTA", "finish": "ALM", "mfr": "HA"},
+        {"qty": 1, "description": "Kick Plate(s)", "catalog": "190S 10\" x 2\" LDW", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Seal", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+        {"qty": 1, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+        {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+      ]
+    }
+  ]
+}

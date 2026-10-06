@@ -1,0 +1,43 @@
+{
+  "page_image": "valor_p6.png",
+  "sets": [
+    {
+      "set_number": "01",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 3, "description": "BB HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "ENTRY SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "DEADBOLT W/ KEYFOB ACCESS", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "OH STOP", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "SEALS (SMOKE)", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "DOOR VIEWER", "catalog": null, "finish": "BLK", "mfr": null}
+      ]
+    },
+    {
+      "set_number": "02",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 3, "description": "BB HINGE", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "ENTRY SET (SCHLAGE LATITUDE LEVER STYLE)", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "DEADBOLT W/ KEYFOB ACCESS (EXTERIOR DOOR ONLY)", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "OH STOP", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "SURFACE CLOSER", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "SEALS (THERMAL)", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "THRESHOLD", "catalog": null, "finish": "BLK", "mfr": null},
+        {"qty": 1, "description": "DOOR VIEWER (ENTRY DOORS ONLY)", "catalog": null, "finish": "BLK", "mfr": null}
+      ]
+    },
+    {
+      "set_number": "03",
+      "starts_on_page": true,
+      "continues_on_next_page": true,
+      "status": "active",
+      "components": []
+    }
+  ]
+}

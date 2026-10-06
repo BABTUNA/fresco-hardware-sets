@@ -1,0 +1,23 @@
+{
+  "page_image": "star_p57.png",
+  "sets": [
+    {
+      "set_number": "01.1",
+      "starts_on_page": true,
+      "continues_on_next_page": true,
+      "status": "active",
+      "components": [
+        {"qty": 1, "description": "Hydraulic Closers / Hinges Sets", "catalog": "Locinox manufacturing #Tiger 180 Hydraulic Closers / Hinges Set: 180° hydraulic gate closer and hinge for gates up to 165 lbs. x Black Finish.", "finish": null, "mfr": "LO"},
+        {"qty": 1, "description": "Electric Strike", "catalog": "9600 HES LBSM", "finish": "622", "mfr": "HE"},
+        {"qty": 1, "description": "Exterior Rim Exit/Panic Device x Key Override", "catalog": "Von Duprin manufacturing # OUT 55 x 996NL in dark bronze finish", "finish": "643e", "mfr": "VO"},
+        {"qty": 1, "description": "Strikes and Weldable Boxes (template as required by all furnished hardware, see Section 08 71 00, Part 1 for templating requirements and full specs which call for fully welded, no seams, ground smooth, prime and finishes per architectural drawings and welding/paint specifications)", "catalog": "Furnish and install: #1) Welded, templated areas for devices (requires 1-3/4\" thick gate stile and/or boxes as required where device is installed (templates to have custom welded areas preferred yet contact technicians at www.keedex.com for alternate weldable boxes if necessary - means and methods no-designer, show detailed templating in submittals and shop drawings). #2) Provide welded areas and brackets as required for condition for either special strike #1609 or combo devices #050996 strike bracket with 299F (means and methods no-designer, show detailed templating in submittals and shop drawings).", "finish": null, "mfr": null},
+        {"qty": 1, "description": "I/C Cylinders (Rim or Mortise)", "catalog": "20-057 or 20-061 (Rim or Mortise type & quantity as required by locking device x appropriate cam x blocking rings) as required per specifications", "finish": "622", "mfr": "SC"},
+        {"qty": 1, "description": "Permanent Core", "catalog": "23-030", "finish": "622", "mfr": "SC"},
+        {"qty": 1, "description": "Stop", "catalog": "7281 (installed per 08 71 00.Part 3), verify undercut before ordering", "finish": "622", "mfr": "TR"},
+        {"qty": 1, "description": "Bottom Rail (kickplate)", "catalog": "Gates to have greater than 10\" clear, unobstructed and smooth surface per above specifications and by gate manufacturer (push-side, ground smooth, primed and painted to match gate).", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Painted Full Height Astragal", "catalog": "Per above specifications and by gate manufacturer and per specifications (utilized as a positive stop – when gate closes against the astragals the opening cannot swing back in toward the egress side)", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Surface Door Position Switch (also known as Alarm Contacts)", "catalog": "#7766 single pole, double throw x by Schlage manufacturing (coordinate with", "finish": null, "mfr": null}
+      ]
+    }
+  ]
+}

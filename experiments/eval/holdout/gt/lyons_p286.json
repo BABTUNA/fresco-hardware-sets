@@ -1,0 +1,24 @@
+{"page_image": "lyons_p286.png", "sets": [
+{"set_number": "09", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 2, "description": "CONT. HINGE", "catalog": "224XY", "finish": "711", "mfr": "IVE"},
+{"qty": 1, "description": "REMOVABLE MULLION", "catalog": "KR4954 STAB", "finish": "695", "mfr": "VON"},
+{"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-EO-F", "finish": "612", "mfr": "VON"},
+{"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-L-F-2SI-03", "finish": "612", "mfr": "VON"},
+{"qty": 2, "description": "SFIC RIM HOUSING", "catalog": "80-129", "finish": "612", "mfr": "SCH"},
+{"qty": 2, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+{"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP SCUSH", "finish": "691", "mfr": "LCN"},
+{"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+{"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+]},
+{"set_number": "10", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "CONT. HINGE", "catalog": "224XY", "finish": "711", "mfr": "IVE"},
+{"qty": 1, "description": "FIRE EXIT HARDWARE", "catalog": "99-L-F-03", "finish": "612", "mfr": "VON"},
+{"qty": 1, "description": "SFIC RIM HOUSING", "catalog": "80-129", "finish": "612", "mfr": "SCH"},
+{"qty": 1, "description": "SFIC CORE", "catalog": "C607", "finish": "606", "mfr": "FAL"},
+{"qty": 1, "description": "OH STOP", "catalog": "100SE", "finish": "612", "mfr": "GLY"},
+{"qty": 1, "description": "FIRE/LIFE CLOSER", "catalog": "4040SE", "finish": "691", "mfr": "LCN"},
+{"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "612", "mfr": "IVE"},
+{"qty": 1, "description": "WALL STOP", "catalog": "WS401/402CCV", "finish": "612", "mfr": "IVE"},
+{"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"}
+]}
+]}

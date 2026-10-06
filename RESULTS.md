@@ -6,9 +6,9 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 
 | | Result |
 | :--- | ---: |
-| Sets fully correct (every row exact, nothing extra, status right) | 94.5% |
+| Sets fully correct (every row exact, nothing extra, status right) | 94.5% (held-out set: 89.5%) |
 | Sets fully correct, pages the spec writer never saw | 94.2% |
-| Exact rows | 98.4% |
+| Exact rows | 98.4% (held-out set: 97.2%) |
 | Exact rows, pages the spec writer never saw | 98.3% |
 | Precision | 98.6% |
 | Per-book average of exact rows | 98.8% |
@@ -25,6 +25,26 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | T2 hard | 1,091 | 96.8 | 99.2 | 98.4 | 97.3 | 98.9 | 98.4 |
 
 The weakest areas are column drift (93.1% exact rows) and wrapped cells (95.5%), and both are mostly Star, whose catalog cells are full sentences. The T0 misses are Bridgeport, where the labels split `IVES` out of `IVES 69 / 63` and we keep it in the catalog.
+
+## Held-out set
+
+Every one of the 155 pages above was used to find and fix bugs, so a separate set of 25 pages was labeled afterwards and scored once, with no changes made after seeing the result. The pages were picked on 2026-10-06 from schedule pages that had never been labeled and that the spec writer never saw: one from every book that still had such a page (15 books), plus 10 more spread by book size. Labels and frozen tags are in `experiments/eval/holdout/`.
+
+| | Tuned set (155 pages) | Held-out set (25 pages) |
+| :--- | ---: | ---: |
+| Sets | 311 | 38 |
+| Rows | 2,218 | 360 |
+| Sets fully correct | 94.5% | 89.5% |
+| Exact rows | 98.4% | 97.2% |
+| Precision | 98.6% | 97.2% |
+| Mfr/finish swaps | 0 | 0 |
+| T0 trivial rows | 100.0% | 100.0% |
+| T1 one caveat rows | 100.0% | 100.0% |
+| T2 hard rows | 96.8% | 92.8% |
+
+The held-out numbers are the ones to quote. Rows hold up (1.2 points lower), and sets drop 5 points, which with 38 sets is 2 sets: 3 of 4 Star sets and 1 of 2 HFH sets, the two books that were weakest on the tuned set as well. Every other book is at 100% on both. The tuned set is what the fixes were developed against, so its number is the optimistic one.
+
+To run it: `GT=eval/holdout/gt python bench_tags.py` once, then `GT=eval/holdout/gt python bench.py`.
 
 ## Whole-book check
 

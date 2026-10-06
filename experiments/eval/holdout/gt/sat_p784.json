@@ -1,0 +1,26 @@
+{
+  "page_image": "sat_p784.png",
+  "sets": [
+    {
+      "set_number": "CY201T",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 4, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5 (PROVIDE NRP @ OUTSWING, LOCKABLE DOORS)", "finish": "652", "mfr": "IVE"},
+        {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+        {"qty": 1, "description": "EU MORTISE LOCK", "catalog": "LX-RX-64-8271 LE2J 26D FAIL SECURE", "finish": "626", "mfr": "SAR"},
+        {"qty": 1, "description": "LFIC PERMANENT CORE", "catalog": "MATCH EXISTING KEY SYSTEM", "finish": "626", "mfr": "SAR"},
+        {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP RW/PA TBWMS X MTG BRKT, SPCR & PLATE AS REQ", "finish": "689", "mfr": "LCN"},
+        {"qty": 1, "description": "KICK PLATE", "catalog": "8400 10\" X 2\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488S PSA H & J (USE SILENCERS @ NON-RATED DOORS)", "finish": "BK", "mfr": "ZER"},
+        {"qty": 1, "description": "WIRE HARNESS (IN DOOR)", "catalog": "ASSA ABLOY ELECTROLYNX TYPE & LENGTH AS REQ", "finish": null, "mfr": "MCK"},
+        {"qty": 1, "description": "WIRE HARNESS (TO POWER SUPPLY)", "catalog": "QC-C006 - CONNECTION LEADS", "finish": null, "mfr": "MCK"},
+        {"qty": 2, "description": "CREDENTIAL READER", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "UNK"},
+        {"qty": 1, "description": "DOOR POSITION SWITCH", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "B/O"},
+        {"qty": 1, "description": "POWER SUPPLY", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "B/O"}
+      ]
+    }
+  ]
+}

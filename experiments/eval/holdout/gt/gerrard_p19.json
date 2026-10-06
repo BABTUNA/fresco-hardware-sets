@@ -1,0 +1,43 @@
+{
+  "page_image": "gerrard_p19.png",
+  "sets": [
+    {
+      "set_number": "02",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 1, "description": "Continuous Hinge(s)", "catalog": "780-111HD x LAR", "finish": "CLR", "mfr": "HA"},
+        {"qty": 1, "description": "Continuous Hinge(s)", "catalog": "780-111HD x LAR EPT Prep", "finish": "CLR", "mfr": "HA"},
+        {"qty": 1, "description": "Power Transfer(s)", "catalog": "2-679-0623", "finish": "ALM", "mfr": "HA"},
+        {"qty": 1, "description": "Automatic Flush Bolt Set", "catalog": "292D", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Dust Proof Strike", "catalog": "280X", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Exit Device(s)", "catalog": "4501 M MLRX FEC", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Rim Cylinder(s)", "catalog": "3901 SFIC", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Construction Core(s)", "catalog": "3982-BLU", "finish": "BLU", "mfr": "HA"},
+        {"qty": 1, "description": "SFIC Core(s)", "catalog": "3969-C", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Door Pull(s)", "catalog": "H 12J", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Coordinator", "catalog": "297D x LAR", "finish": "BLACK", "mfr": "HA"},
+        {"qty": 2, "description": "Mounting Bracket(s)", "catalog": "297B", "finish": "BLACK", "mfr": "HA"},
+        {"qty": 1, "description": "Overhead Stop(s) Active Leaf", "catalog": "7016 SRF", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Closer(s) Top Jamb Mount", "catalog": "5200", "finish": "ALM", "mfr": "HA"},
+        {"qty": 1, "description": "Single Operator", "catalog": "8318 Push", "finish": "ALM", "mfr": "HA"},
+        {"qty": 2, "description": "Kick Plate(s)", "catalog": "190S 10\" x 1\" LDW", "finish": "US32D", "mfr": "HA"},
+        {"qty": 1, "description": "Floor Stop(s)", "catalog": "267F", "finish": "US26D", "mfr": "HA"},
+        {"qty": 1, "description": "Thermally Broken Threshold", "catalog": "421S x LAR", "finish": "MIL", "mfr": "HA"},
+        {"qty": 1, "description": "Seal", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+        {"qty": 1, "description": "Astragal(s)", "catalog": "835S x LAR", "finish": "USP", "mfr": "HA"},
+        {"qty": 1, "description": "Astragal Seal(s)", "catalog": "726 x LAR", "finish": "S", "mfr": "HA"},
+        {"qty": 2, "description": "Sweep(s)", "catalog": "750S N x LAR", "finish": "CLR", "mfr": "HA"},
+        {"qty": 1, "description": "Rain Drip", "catalog": "810S x LAR", "finish": "MIL", "mfr": "HA"},
+        {"qty": 2, "description": "Actuator(s)", "catalog": "8228-02H/00", "finish": "US32D", "mfr": "HA"},
+        {"qty": 2, "description": "Door Position Switch(es)", "catalog": "2-679-0626", "finish": null, "mfr": "HA"},
+        {"qty": 1, "description": "Reader/Keypad", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Intercom", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Remote Exit Button", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Power Supply", "catalog": "By Security Provider", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Wiring Diagrams", "catalog": "Wiring Diagrams", "finish": null, "mfr": null}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3137 @@
+{
+ "specs": {
+  "ami": {
+   "path": "specs_e2e/ami.json",
+   "sha1": "00a1bddda11b"
+  },
+  "bridgeport": {
+   "path": "specs_e2e/bridgeport.json",
+   "sha1": "9c0e1e374022"
+  },
+  "doorco": {
+   "path": "specs_e2e/doorco.json",
+   "sha1": "c81e16921bae"
+  },
+  "gerrard": {
+   "path": "specs_e2e/gerrard.json",
+   "sha1": "b88879502ec9"
+  },
+  "hfh": {
+   "path": "specs_e2e/hfh.r1.json",
+   "sha1": "adb495e6c542"
+  },
+  "jcryan": {
+   "path": "specs_e2e/jcryan.json",
+   "sha1": "a812b8453cb6"
+  },
+  "livelle": {
+   "path": "specs_e2e/livelle.json",
+   "sha1": "178e32e637e3"
+  },
+  "lyons": {
+   "path": "specs_e2e/lyons.json",
+   "sha1": "cacc13761b32"
+  },
+  "marketview": {
+   "path": "specs_e2e/marketview.json",
+   "sha1": "572e831d3511"
+  },
+  "morris": {
+   "path": "specs_e2e/morris.json",
+   "sha1": "02b3dd6639d2"
+  },
+  "oswego": {
+   "path": "specs_e2e/oswego.json",
+   "sha1": "ecdc081da4a0"
+  },
+  "sat": {
+   "path": "specs_e2e/sat.json",
+   "sha1": "d8d643712d58"
+  },
+  "sjc": {
+   "path": "specs_e2e/sjc.json",
+   "sha1": "04a7f2ae9f35"
+  },
+  "star": {
+   "path": "specs_e2e/star.r1.json",
+   "sha1": "4321440a34a9"
+  },
+  "valor": {
+   "path": "specs_e2e/valor.json",
+   "sha1": "5683c8ca0aa3"
+  }
+ },
+ "pages": {
+  "ami_p401": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "05",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OFFICE/ENTRY LOCK",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FSIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "05A",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OFFICE/ENTRY LOCK",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FSIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "05B",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OFFICE/ENTRY LOCK",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FSIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    }
+   ]
+  },
+  "ami_p406": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "10B",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "ELEC CLASSROOM LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "FSIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER SUPPLY",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "10C",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "ELEC CLASSROOM LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "FSIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER SUPPLY",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    }
+   ]
+  },
+  "bridgeport_p27": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "52",
+     "tags": [],
+     "components": [
+      {
+       "description": "Standard Hinge",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Exit Device",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Wall Door Stop",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Kick Plate",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Door Silencer",
+       "tags": [],
+       "tier": "T0 trivial"
+      }
+     ]
+    },
+    {
+     "set_number": "53",
+     "tags": [],
+     "components": [
+      {
+       "description": "Standard Hinge",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Lockset",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Electric Strike",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Card Access",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Door Postion Switch",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Wall Door Stop",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "Gasketing",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Kick Plate",
+       "tags": [],
+       "tier": "T0 trivial"
+      }
+     ]
+    }
+   ]
+  },
+  "doorco_p390": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CONTINUED",
+     "tags": [
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "PRIVACY WITH INDICATOR",
+       "tags": [
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "PERMANENT CORE",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "341C",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "PRIVACY WITH INDICATOR",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "PERMANENT CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "401",
+     "tags": [
+      "multi_page"
+     ],
+     "components": []
+    }
+   ]
+  },
+  "gerrard_p19": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "02",
+     "tags": [],
+     "components": [
+      {
+       "description": "Continuous Hinge(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Continuous Hinge(s)",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Transfer(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Automatic Flush Bolt Set",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Dust Proof Strike",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Exit Device(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Rim Cylinder(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Construction Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Door Pull(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Coordinator",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Mounting Bracket(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Overhead Stop(s) Active Leaf",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Closer(s) Top Jamb Mount",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Single Operator",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Kick Plate(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Floor Stop(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Thermally Broken Threshold",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Seal",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Astragal(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Astragal Seal(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Sweep(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Rain Drip",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Actuator(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Door Position Switch(es)",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Reader/Keypad",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Intercom",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Remote Exit Button",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Power Supply",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Wiring Diagrams",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    }
+   ]
+  },
+  "gerrard_p27": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "17",
+     "tags": [],
+     "components": [
+      {
+       "description": "Hinge(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Electrified Hinge(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Electrified Lockset",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Construction Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Closer(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Kick Plate(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Convex Wall Stop(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Seal",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Door Position Switch(es)",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Reader/Keypad",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Power Supply",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Wiring Diagrams",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "18",
+     "tags": [],
+     "components": [
+      {
+       "description": "Hinge(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Electrified Hinge(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Electrified Lockset",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Construction Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC Core(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Closer(s)",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Kick Plate(s)",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Seal",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Door Position Switch(es)",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Reader/Keypad",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Power Supply",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Wiring Diagrams",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    }
+   ]
+  },
+  "hfh_p137": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CONTINUED",
+     "tags": [
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "PIVOT SET",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "INTERMEDIATE PIVOT",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "INTEGRATED LOCK",
+       "tags": [
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "SFIC CONST. CORE - CONSTRUCTION PHASE",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "PERMANENT CORE - COMBINATED",
+       "tags": [
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [
+        "multi_page"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "GASKETING SET",
+       "tags": [
+        "ambiguous_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS - IN DOOR",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS CONNECTOR - IN FRAME",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "POWER SUPPLY - AS REQUIRED",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "DIAGRAMS",
+       "tags": [
+        "empty_code",
+        "missing_qty",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "145",
+     "tags": [
+      "multi_page"
+     ],
+     "components": []
+    }
+   ]
+  },
+  "hfh_p86": {
+   "page_tags": [
+    "struck_page"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CONTINUED",
+     "tags": [
+      "multi_page",
+      "struck_page"
+     ],
+     "components": []
+    },
+    {
+     "set_number": "092",
+     "tags": [
+      "multi_page",
+      "struck_page"
+     ],
+     "components": [
+      {
+       "description": "HEAVYWEIGHT HINGE",
+       "tags": [
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [
+        "multi_page",
+        "struck_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ELEC FIRE EXIT HARDWARE",
+       "tags": [
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MAGNETIC LOCK",
+       "tags": [
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "HIGH ENERGY AUTOMATIC OPERATOR",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MOTION SENSOR",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MATS/RAILS - AS REQUIRED",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [
+        "multi_page",
+        "struck_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [
+        "multi_page",
+        "struck_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS - IN DOOR",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS CONNECTOR - IN FRAME",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MULTITECH CREDENTIAL READER",
+       "tags": [
+        "multi_page",
+        "struck_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "DOOR POSITION SWITCH - AS REQUIRED",
+       "tags": [
+        "empty_code",
+        "multi_page",
+        "struck_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "jcryan_p37": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "9.5",
+     "tags": [
+      "column_drift"
+     ],
+     "components": [
+      {
+       "description": "Hinge, Full Mortise",
+       "tags": [
+        "column_drift",
+        "full_name_mfr",
+        "missing_qty"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Electric Power Transfer",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Electrified Mortise Lock, Fail Secure",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Kick Plate",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Stop",
+       "tags": [
+        "centered_cells",
+        "column_drift",
+        "full_name_mfr",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Gasketing",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Door Shoe",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Threshold",
+       "tags": [
+        "column_drift",
+        "full_name_mfr"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Door/Frame Harness",
+       "tags": [
+        "column_drift",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "livelle_p671": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "87.1",
+     "tags": [],
+     "components": [
+      {
+       "description": "Hinge, Full Mortise, Hvy Wt",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Delayed Egress Magnetic Lock",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Rim Exit Device",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Mortise Cylinder",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Small Format Inter Core",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Electric Strike",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Automatic Opener",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "ADO Push Plate",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Kick Plate",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Wall Stop",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Gasketing",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ElectroLynx Frame Harness",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Position Switch",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Card Reader",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "88.0",
+     "tags": [],
+     "components": [
+      {
+       "description": "Hinge, Full Mortise, Hvy Wt",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Passage Latch",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Kick Plate",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Wall Stop",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Gasketing",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Sweep",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Threshold",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "livelle_p687": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CONTINUED",
+     "tags": [
+      "column_drift",
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "Electric Power Transfer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ElectroLynx Door Harness",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ElectroLynx Frame Harness",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Position Switch",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Alarm Release w/ Key Switch Reset",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Card Reader",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Supply w/Fire Trigger",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "123.0",
+     "tags": [
+      "column_drift",
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "Hinge, Full Mortise",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Fail Safe Elec Lock",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Small Format Inter Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Gasketing",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Door Bottom",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Threshold",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Electric Power Transfer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ElectroLynx Door Harness",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ElectroLynx Frame Harness",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Alarm Release w/ Key Switch Reset",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Supply w/Fire Trigger",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "livelle_p697": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CONTINUED",
+     "tags": [
+      "column_drift",
+      "dense_page",
+      "multi_page"
+     ],
+     "components": []
+    },
+    {
+     "set_number": "141.0",
+     "tags": [
+      "column_drift",
+      "dense_page"
+     ],
+     "components": [
+      {
+       "description": "Specialty Door",
+       "tags": [
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "142.0",
+     "tags": [
+      "column_drift",
+      "dense_page"
+     ],
+     "components": [
+      {
+       "description": "Specialty Door",
+       "tags": [
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "142.1",
+     "tags": [
+      "column_drift",
+      "dense_page"
+     ],
+     "components": [
+      {
+       "description": "Mortise Cylinder",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Small Format Inter Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Intercom",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Card Reader",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    },
+    {
+     "set_number": "143.0",
+     "tags": [
+      "column_drift",
+      "dense_page",
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "Sure Close Gate Hinge",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Storeroom/Closet Lock",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Small Format Inter Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Electric Strike",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Buzzer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "SMART Pac Bridge Rectifier",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "empty_code",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Gate Stop",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "dense_page",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "lyons_p286": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "09",
+     "tags": [],
+     "components": [
+      {
+       "description": "CONT. HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "REMOVABLE MULLION",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FIRE EXIT HARDWARE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FIRE EXIT HARDWARE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC RIM HOUSING",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SFIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING SET",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "10",
+     "tags": [],
+     "components": [
+      {
+       "description": "CONT. HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FIRE EXIT HARDWARE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC RIM HOUSING",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SFIC CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "FIRE/LIFE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING SET",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    }
+   ]
+  },
+  "marketview_p779": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "23",
+     "tags": [],
+     "components": [
+      {
+       "description": "CONT. HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "CONST LATCHING BOLT",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "DUST PROOF STRIKE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "CLASSROOM LOCK",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "COORDINATOR",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "MOUNTING BRACKET",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SEALS",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DOOR SWEEP",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "THRESHOLD",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "24",
+     "tags": [],
+     "components": [
+      {
+       "description": "PCKT TRACK & HDWE",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "FLUSH PULL",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "DOOR EDGE PULL",
+       "tags": [],
+       "tier": "T0 trivial"
+      }
+     ]
+    }
+   ]
+  },
+  "morris_p283": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "103.68",
+     "tags": [],
+     "components": [
+      {
+       "description": "Continuous Hinge",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Deadlock",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Thumbturn Cylinder",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Mortise Cylinder",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Construction Core",
+       "tags": [
+        "ambiguous_code",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Pull",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Pull",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Closer",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "Dome Stop",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SFIC",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "oswego_p435": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "43",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "STOREROOM LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "FSIC PRIMUS PERMANENT CORE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "ELECTRIC STRIKE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "REG/ PA SURFACE CLOSER - AS REQUIRED",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING SET",
+       "tags": [
+        "ambiguous_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "WIRE HARNESS - IN DOOR",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS CONNECTOR - IN FRAME",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MULTITECH READER - FURNISHED, INSTALLED, COMMISSIONED BY DIV 28",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DOOR CONTACT - BY DIVISION 28",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "CREDENTIAL POWER SUPPLY - AS REQUIRED",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "sat_p752": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "C201W",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "EU MORTISE LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "LFIC PERMANENT CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (IN DOOR)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (TO POWER SUPPLY)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "CREDENTIAL READER",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DOOR POSITION SWITCH",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER SUPPLY",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "sat_p784": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CY201T",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "EU MORTISE LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "LFIC PERMANENT CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "WALL STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (IN DOOR)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (TO POWER SUPPLY)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "CREDENTIAL READER",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DOOR POSITION SWITCH",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER SUPPLY",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "sat_p788": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "CY206",
+     "tags": [],
+     "components": [
+      {
+       "description": "HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "POWER TRANSFER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "AUTO FLUSH BOLT",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "DUST PROOF STRIKE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "EU MORTISE LOCK",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "LFIC PERMANENT CORE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "COORDINATOR",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "KICK PLATE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "GASKETING",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "MEETING STILE",
+       "tags": [
+        "ambiguous_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (IN DOOR)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "WIRE HARNESS (TO POWER SUPPLY)",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "CREDENTIAL READER",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DOOR POSITION SWITCH",
+       "tags": [
+        "empty_code"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "POWER SUPPLY",
+       "tags": [
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "sjc_p709": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": []
+  },
+  "star_p103": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "101.1",
+     "tags": [
+      "column_drift"
+     ],
+     "components": [
+      {
+       "description": "Hinges",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "missing_qty"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Transfer Hinge",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ANSI Grade 1 Mortise Body Electrified Lockset with Lever",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Cylinders (Rim or Mortise)",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Permanent Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Floor Stop",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Seals",
+       "tags": [
+        "column_drift",
+        "empty_code"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Auto Door Bottom (sound dampening)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Threshold (sound dampening)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "REX Device (security/ alarm notification)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Door Position Switches (also known as Alarm/Door Contacts)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Supply",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Coordination task for security and/or electrical design and additional non-Division 08 Section scope (including but not limited to wire / connectivity from ground or ceiling through frame to electrified hardware)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "star_p108": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "106",
+     "tags": [
+      "column_drift"
+     ],
+     "components": [
+      {
+       "description": "Continuous Hinge Electrified Wire Transfer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Alt. Power Transfer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "ANSI Grade 1 Mortise Body Electrified Lockset with Lever",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "I/C Cylinders (Rim or Mortise)",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Permanent Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Surface Closer",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Stop",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Seal",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Door Position Switches",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Power Supply",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Coordination task for security and/or electrical design and additional non-Division 08 Section scope (including but not limited to wire / connectivity from ground or ceiling through frame to electrified hardware)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "star_p56": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "01",
+     "tags": [
+      "column_drift"
+     ],
+     "components": [
+      {
+       "description": "OFFSET Hung In-Floor Closer Device",
+       "tags": [
+        "column_drift",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Structural Side Intermediate Pivots",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Back-to-Back Pulls",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Floor Stop",
+       "tags": [
+        "ambiguous_code",
+        "column_drift"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Bottom of doors to be greater than 10\" Clear, Unobstructed and Smooth Surface",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Painted Full Height Astragal",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "star_p57": {
+   "page_tags": [
+    "column_drift"
+   ],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "01.1",
+     "tags": [
+      "column_drift",
+      "multi_page"
+     ],
+     "components": [
+      {
+       "description": "Hydraulic Closers / Hinges Sets",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Electric Strike",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Exterior Rim Exit/Panic Device x Key Override",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Strikes and Weldable Boxes (template as required by all furnished hardware, see Section 08 71 00, Part 1 for templating requirements and full specs which call for fully welded, no seams, ground smooth, prime and finishes per architectural drawings and welding/paint specifications)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "I/C Cylinders (Rim or Mortise)",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Permanent Core",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Stop",
+       "tags": [
+        "ambiguous_code",
+        "column_drift",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Bottom Rail (kickplate)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Painted Full Height Astragal",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      },
+      {
+       "description": "Surface Door Position Switch (also known as Alarm Contacts)",
+       "tags": [
+        "column_drift",
+        "empty_code",
+        "multi_page",
+        "wrapped"
+       ],
+       "tier": "T2 hard"
+      }
+     ]
+    }
+   ]
+  },
+  "valor_p6": {
+   "page_tags": [],
+   "seen_by_spec_writer": false,
+   "sets": [
+    {
+     "set_number": "01",
+     "tags": [],
+     "components": [
+      {
+       "description": "BB HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "ENTRY SET (SCHLAGE LATITUDE LEVER STYLE)",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DEADBOLT W/ KEYFOB ACCESS",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SEALS (SMOKE)",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "DOOR VIEWER",
+       "tags": [],
+       "tier": "T0 trivial"
+      }
+     ]
+    },
+    {
+     "set_number": "02",
+     "tags": [],
+     "components": [
+      {
+       "description": "BB HINGE",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "ENTRY SET (SCHLAGE LATITUDE LEVER STYLE)",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "DEADBOLT W/ KEYFOB ACCESS (EXTERIOR DOOR ONLY)",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      },
+      {
+       "description": "OH STOP",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SURFACE CLOSER",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "SEALS (THERMAL)",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "THRESHOLD",
+       "tags": [],
+       "tier": "T0 trivial"
+      },
+      {
+       "description": "DOOR VIEWER (ENTRY DOORS ONLY)",
+       "tags": [
+        "wrapped"
+       ],
+       "tier": "T1 one caveat"
+      }
+     ]
+    },
+    {
+     "set_number": "03",
+     "tags": [
+      "multi_page"
+     ],
+     "components": []
+    }
+   ]
+  }
+ }
+}

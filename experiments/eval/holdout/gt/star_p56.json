@@ -1,0 +1,19 @@
+{
+  "page_image": "star_p56.png",
+  "sets": [
+    {
+      "set_number": "01",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 1, "description": "OFFSET Hung In-Floor Closer Device", "catalog": "FHC F900 OFFSET series single acting non-hold open (door to open smoothly past 90-degress to meet code - with no backcheck until after 90-degrees): - Provide complete package to meet warranty for door size, weight and adjustment per specifications. System includes, but is not limited to cement case, floor closer and installation tools per specifications. - Structural Side Intermediate Pivots required per next line below. - Contact Frameless Hardware Company (FHC): Patrick Comerford CSI CDT CCPR, Architectural / Pre-Bid Services; Cell #805-402-2167. - No Dorma or Rixson floor closer allowed. - Provide closer cover #F900CP per snippet below.", "finish": "622", "mfr": "FHC"},
+        {"qty": 3, "description": "Structural Side Intermediate Pivots", "catalog": "Rixson manufacturing #ML19, Intermediate, Heavy Weight/High Traffic Pivot (used as structural side pivots in order to NOT have a top pivot)", "finish": "622", "mfr": null},
+        {"qty": 2, "description": "Back-to-Back Pulls", "catalog": "AP423-__-60\" x 622 finish x #E-MOUNT.", "finish": "622", "mfr": "TR"},
+        {"qty": 1, "description": "Floor Stop", "catalog": "7281", "finish": "622", "mfr": "TR"},
+        {"qty": 1, "description": "Bottom of doors to be greater than 10\" Clear, Unobstructed and Smooth Surface", "catalog": "Per above specifications and by gate manufacturer (push-side, ground smooth, primed, and painted to match gate).", "finish": null, "mfr": null},
+        {"qty": 1, "description": "Painted Full Height Astragal", "catalog": "Per above specifications and by gate manufacturer and per specifications (utilized as a positive stop – when gate closes against the astragals the opening cannot swing back in toward the egress side)", "finish": null, "mfr": null}
+      ]
+    }
+  ]
+}

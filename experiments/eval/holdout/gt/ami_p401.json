@@ -1,0 +1,46 @@
+{
+  "page_image": "ami_p401.png",
+  "sets": [
+    {
+      "set_number": "05",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+        {"qty": 1, "description": "OFFICE/ENTRY LOCK", "catalog": "L9050T 17A", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "626", "mfr": "IVE"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"}
+      ]
+    },
+    {
+      "set_number": "05A",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+        {"qty": 1, "description": "OFFICE/ENTRY LOCK", "catalog": "L9050T 17A", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "SURFACE CLOSER", "catalog": "4040XP", "finish": "689", "mfr": "LCN"},
+        {"qty": 1, "description": "KICK PLATE", "catalog": "8400 8\" X 2\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "626", "mfr": "IVE"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"}
+      ]
+    },
+    {
+      "set_number": "05B",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 3, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+        {"qty": 1, "description": "OFFICE/ENTRY LOCK", "catalog": "L9050T 17A", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "FSIC CORE", "catalog": "23-030 CKC EV29 T", "finish": "626", "mfr": "SCH"},
+        {"qty": 1, "description": "OH STOP", "catalog": "100S", "finish": "630", "mfr": "GLY"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488FSBK PSA", "finish": "BK", "mfr": "ZER"}
+      ]
+    }
+  ]
+}

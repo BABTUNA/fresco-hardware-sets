@@ -1,0 +1,30 @@
+{
+  "page_image": "sat_p788.png",
+  "sets": [
+    {
+      "set_number": "CY206",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 6, "description": "HINGE", "catalog": "5BB1 4.5 X 4.5", "finish": "652", "mfr": "IVE"},
+        {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+        {"qty": 1, "description": "AUTO FLUSH BOLT", "catalog": "FB31P/FB41P AS REQ", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP2", "finish": "626", "mfr": "IVE"},
+        {"qty": 1, "description": "EU MORTISE LOCK", "catalog": "LX-RX-64-8271 LE2J 26D FAIL SECURE", "finish": "626", "mfr": "SAR"},
+        {"qty": 1, "description": "LFIC PERMANENT CORE", "catalog": "MATCH EXISTING KEY SYSTEM", "finish": "626", "mfr": "SAR"},
+        {"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL X MB X HW PREPS", "finish": "628", "mfr": "IVE"},
+        {"qty": 2, "description": "OH STOP", "catalog": "100S SERIES X SIZE & MOUNTING AS REQ", "finish": "630", "mfr": "GLY"},
+        {"qty": 2, "description": "SURFACE CLOSER", "catalog": "4040XP RW/PA TBWMS X MTG BRKT, SPCR & PLATE AS REQ", "finish": "689", "mfr": "LCN"},
+        {"qty": 2, "description": "KICK PLATE", "catalog": "8400 10\" X 1\" LDW B-CS", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "GASKETING", "catalog": "488S PSA H & J (USE SILENCERS @ NON-RATED DOORS)", "finish": "BK", "mfr": "ZER"},
+        {"qty": 1, "description": "MEETING STILE", "catalog": "8193AA (2 PCS - 1 SET) (OMIT @ NON-RATED DOORS)", "finish": "AA", "mfr": "ZER"},
+        {"qty": 1, "description": "WIRE HARNESS (IN DOOR)", "catalog": "ASSA ABLOY ELECTROLYNX TYPE & LENGTH AS REQ", "finish": null, "mfr": "MCK"},
+        {"qty": 1, "description": "WIRE HARNESS (TO POWER SUPPLY)", "catalog": "QC-C006 - CONNECTION LEADS", "finish": null, "mfr": "MCK"},
+        {"qty": 2, "description": "CREDENTIAL READER", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "UNK"},
+        {"qty": 2, "description": "DOOR POSITION SWITCH", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "B/O"},
+        {"qty": 1, "description": "POWER SUPPLY", "catalog": "AS SPECIFIED IN DIVISION 28", "finish": null, "mfr": "B/O"}
+      ]
+    }
+  ]
+}

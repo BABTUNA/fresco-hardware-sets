@@ -1,7 +1,9 @@
-# compute caveat tags for every labeled page once and freeze them into eval/tags.json
+# compute caveat tags for every labeled page once and freeze them into {TAGS}
 # the scorer reads that file, so a changed spec cannot move components between tiers
 # usage: python bench_tags.py [results dir]   rerun only when labels are added or edited
-import json, re, sys, glob, hashlib
+import json, os, re, sys, glob, hashlib
+GT = os.environ.get("GT", "eval/gt")
+TAGS = "eval/tags.json" if GT == "eval/gt" else GT + "/../tags.json"
 import pdfplumber
 from lines import page_lines
 from spec_parse import calibrate
@@ -101,8 +103,8 @@ def tier(tags):
 def freeze(results_dir="out_e2e"):
     out = {"specs": {}, "pages": {}}
     pdfs = {}
-    for gt_file in sorted(glob.glob("eval/gt/*.json")):
-        book, page_no = re.match(r"eval/gt/(\w+)_p(\d+)\.json", gt_file).groups()
+    for gt_file in sorted(glob.glob(GT + "/*.json")):
+        book, page_no = re.match(r".*/(\w+)_p(\d+)\.json", gt_file).groups()
         page_no = int(page_no)
         if book not in plan:
             continue
@@ -130,9 +132,9 @@ def freeze(results_dir="out_e2e"):
                 comps.append({"description": c.get("description"), "tags": sorted(t), "tier": tier(t - {"dense_page"})})
             page["sets"].append({"set_number": s["set_number"], "tags": sorted(st), "components": comps})
         out["pages"][f"{book}_p{page_no}"] = page
-    json.dump(out, open("eval/tags.json", "w"), indent=1)
+    json.dump(out, open(TAGS, "w"), indent=1)
     n = sum(len(s["components"]) for p in out["pages"].values() for s in p["sets"])
-    print(f"froze tags for {len(out['pages'])} pages, {n} components into eval/tags.json")
+    print(f"froze tags for {len(out['pages'])} pages, {n} components into {TAGS}")
 
 
 if __name__ == "__main__":

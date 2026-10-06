@@ -1,0 +1,32 @@
+{
+  "page_image": "hfh_p137.png",
+  "sets": [
+    {
+      "set_number": "CONTINUED",
+      "starts_on_page": false,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 1, "description": "PIVOT SET", "catalog": "7230F SET", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "INTERMEDIATE PIVOT", "catalog": "7230F INT", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "POWER TRANSFER", "catalog": "EPT10 CON", "finish": "689", "mfr": "VON"},
+        {"qty": 1, "description": "INTEGRATED LOCK", "catalog": "AD-300-CY-70-MT-RHO-B 12/24 VDC - LEAD LINE LOCK - AS REQUIRED", "finish": "626", "mfr": "SCE"},
+        {"qty": 1, "description": "SFIC CONST. CORE - CONSTRUCTION PHASE", "catalog": "80-035 GRN", "finish": null, "mfr": "SCH"},
+        {"qty": 1, "description": "PERMANENT CORE - COMBINATED", "catalog": "1C72", "finish": "626", "mfr": "BES"},
+        {"qty": 2, "description": "WALL STOP", "catalog": "WS406/407CCV", "finish": "630", "mfr": "IVE"},
+        {"qty": 1, "description": "GASKETING SET", "catalog": "188SBK PSA", "finish": "BK", "mfr": "ZER"},
+        {"qty": 1, "description": "WIRE HARNESS - IN DOOR", "catalog": "CON - LENGTH AS REQUIRED - FROM LOCK TO EPT", "finish": null, "mfr": "SCH"},
+        {"qty": 1, "description": "WIRE HARNESS CONNECTOR - IN FRAME", "catalog": "CON - 6W - FROM CON TO POWER SUPPLY", "finish": null, "mfr": "SCH"},
+        {"qty": 1, "description": "POWER SUPPLY - AS REQUIRED", "catalog": "BY DIVISION 28", "finish": null, "mfr": "B/O"},
+        {"qty": null, "description": "DIAGRAMS", "catalog": "PROVIDE FACTORY POINT TO POINT WIRING DIAGRAMS", "finish": null, "mfr": null}
+      ]
+    },
+    {
+      "set_number": "145",
+      "starts_on_page": true,
+      "continues_on_next_page": true,
+      "status": "active",
+      "components": []
+    }
+  ]
+}

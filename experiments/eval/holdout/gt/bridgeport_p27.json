@@ -1,0 +1,36 @@
+{
+  "page_image": "bridgeport_p27.png",
+  "sets": [
+    {
+      "set_number": "52",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 6, "description": "Standard Hinge", "catalog": "TA786 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+        {"qty": 2, "description": "Exit Device", "catalog": "F-25-R-L-BE 626 510L-BE LAT 626 RHR 965 x 2134 Door", "finish": "626/626", "mfr": null},
+        {"qty": 2, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
+        {"qty": 2, "description": "Wall Door Stop", "catalog": "S120 C26D", "finish": "C26D", "mfr": null},
+        {"qty": 2, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null},
+        {"qty": 6, "description": "Door Silencer", "catalog": "SR64 GRY", "finish": "GRY", "mfr": null}
+      ]
+    },
+    {
+      "set_number": "53",
+      "starts_on_page": true,
+      "continues_on_next_page": false,
+      "status": "active",
+      "components": [
+        {"qty": 48, "description": "Standard Hinge", "catalog": "TA714 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
+        {"qty": 16, "description": "Lockset", "catalog": "W581 P6 LAT/LAT 626/626 G", "finish": "626/626", "mfr": null},
+        {"qty": 16, "description": "Electric Strike", "catalog": "6400- 24VDC-630", "finish": "630", "mfr": null},
+        {"qty": 16, "description": "Card Access", "catalog": "Card Reader & Fobs By Security Contractor", "finish": null, "mfr": null},
+        {"qty": 16, "description": "Door Postion Switch", "catalog": "679-05HM", "finish": null, "mfr": null},
+        {"qty": 16, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
+        {"qty": 16, "description": "Wall Door Stop", "catalog": "S120 C26D", "finish": "C26D", "mfr": null},
+        {"qty": 16, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
+        {"qty": 16, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null}
+      ]
+    }
+  ]
+}

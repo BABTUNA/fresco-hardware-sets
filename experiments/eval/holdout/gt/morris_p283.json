@@ -1,0 +1,14 @@
+{"page_image": "morris_p283.png", "sets": [
+{"set_number": "103.68", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 2, "description": "Continuous Hinge", "catalog": "K10BEFM95HD1", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Deadlock", "catalog": "MS1850S Door Height Straight Bolt", "finish": "313", "mfr": "AD"},
+{"qty": 1, "description": "Thumbturn Cylinder", "catalog": "4066-01", "finish": "313", "mfr": "AD"},
+{"qty": 1, "description": "Mortise Cylinder", "catalog": "70 7P 43 13-0512", "finish": "10BE", "mfr": "SA"},
+{"qty": 1, "description": "Construction Core", "catalog": "7190224", "finish": null, "mfr": "BE"},
+{"qty": 2, "description": "Pull", "catalog": "RM3301 35\" 2\" Doors CTC OVERALL LENGTH", "finish": "10BE", "mfr": "RO"},
+{"qty": 2, "description": "Pull", "catalog": "RM3310 30\" 2\" Doors CTC OVERALL LENGTH", "finish": "10BE", "mfr": "RO"},
+{"qty": 2, "description": "Closer", "catalog": "SRI 268 OB", "finish": "10BE", "mfr": "SA"},
+{"qty": 2, "description": "Dome Stop", "catalog": "441", "finish": "10BE", "mfr": "RO"},
+{"qty": 1, "description": "SFIC", "catalog": "33700006 N 26 DAKM", "finish": null, "mfr": "MED1"}
+]}
+]}

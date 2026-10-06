@@ -1,0 +1,19 @@
+{"page_image": "marketview_p779.png", "sets": [
+{"set_number": "23", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 2, "description": "CONT. HINGE", "catalog": "112XY", "finish": "628", "mfr": "IVE"},
+{"qty": 1, "description": "CONST LATCHING BOLT", "catalog": "FB51P/FB61P AS REQ'D", "finish": "630", "mfr": "IVE"},
+{"qty": 1, "description": "DUST PROOF STRIKE", "catalog": "DP1/DP2 AS REQ'D", "finish": "626", "mfr": "IVE"},
+{"qty": 1, "description": "CLASSROOM LOCK", "catalog": "W561CP6 LON", "finish": "626", "mfr": "FAL"},
+{"qty": 1, "description": "COORDINATOR", "catalog": "COR X FL", "finish": "628", "mfr": "IVE"},
+{"qty": 2, "description": "MOUNTING BRACKET", "catalog": "MB/MBF", "finish": "689", "mfr": "IVE"},
+{"qty": 2, "description": "SURFACE CLOSER", "catalog": "SC81A DS", "finish": "689", "mfr": "FAL"},
+{"qty": 1, "description": "SEALS", "catalog": "BY DOOR MANUFACTURER", "finish": null, "mfr": "B/O"},
+{"qty": 2, "description": "DOOR SWEEP", "catalog": "39A", "finish": "A", "mfr": "ZER"},
+{"qty": 1, "description": "THRESHOLD", "catalog": "545A OR AS DETAILED", "finish": "A", "mfr": "ZER"}
+]},
+{"set_number": "24", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "PCKT TRACK & HDWE", "catalog": "200PD", "finish": null, "mfr": "JOH"},
+{"qty": 1, "description": "FLUSH PULL", "catalog": "221", "finish": "626", "mfr": "IVE"},
+{"qty": 1, "description": "DOOR EDGE PULL", "catalog": "230", "finish": "622", "mfr": "IVE"}
+]}
+]}

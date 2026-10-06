@@ -1,6 +1,9 @@
 # caveat benchmark: exact scoring of every labeled set and row, reported per caveat and per difficulty tier
 # usage: python bench.py [results dir]   (default out_e2e, picks <book>.r1.json when present)
 import json, os, re, sys, glob, collections
+# GT=eval/holdout/gt scores a held-out label set; tags are frozen next to it
+GT = os.environ.get("GT", "eval/gt")
+TAGS = "eval/tags.json" if GT == "eval/gt" else GT + "/../tags.json"
 from score import norm, norm_set, FIELDS
 
 plan = json.load(open("eval/e2e_plan.json"))
@@ -12,9 +15,9 @@ def result(results_dir, book):
 
 
 def load_tags():
-    if not os.path.exists("eval/tags.json"):
+    if not os.path.exists(TAGS):
         sys.exit("eval/tags.json missing, run bench_tags.py first")
-    return json.load(open("eval/tags.json"))["pages"]
+    return json.load(open(TAGS))["pages"]
 
 
 def row(c):
@@ -57,8 +60,8 @@ def main(results_dir="out_e2e"):
     misses = []
     full = collections.defaultdict(lambda: [0, 0])
     frozen = load_tags()
-    for gt_file in sorted(glob.glob("eval/gt/*.json")):
-        book, page_no = re.match(r"eval/gt/(\w+)_p(\d+)\.json", gt_file).groups()
+    for gt_file in sorted(glob.glob(GT + "/*.json")):
+        book, page_no = re.match(r".*/(\w+)_p(\d+)\.json", gt_file).groups()
         page_no = int(page_no)
         if book not in plan:
             continue

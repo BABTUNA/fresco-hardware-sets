@@ -23,7 +23,7 @@ The column at x=506 is the manufacturer column, so every `PE` or `ZER` in it is 
 
 ## Where it stands
 
-On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](BENCHMARK.md)), 98.4% of the 2,218 labeled rows come out exactly right with every field correct, and 94.5% of the 311 sets are fully correct. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs are in the output. In the experiments a Claude subagent stood in for the API call that writes each spec.
+On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](BENCHMARK.md)), 98.4% of the 2,218 labeled rows come out exactly right with every field correct, and 94.5% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs are in the output. In the experiments a Claude subagent stood in for the API call that writes each spec.
 
 | Doc | What it covers |
 | :--- | :--- |

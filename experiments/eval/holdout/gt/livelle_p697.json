@@ -1,0 +1,24 @@
+{"page_image": "livelle_p697.png", "sets": [
+{"set_number": "CONTINUED", "starts_on_page": false, "continues_on_next_page": false, "status": "active", "components": []},
+{"set_number": "141.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+]},
+{"set_number": "142.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "Specialty Door", "catalog": "Hardware is furnished complete by Vendor", "finish": null, "mfr": "00"}
+]},
+{"set_number": "142.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 1, "description": "Mortise Cylinder", "catalog": "72 43 verify cam", "finish": "BSP", "mfr": "SA"},
+{"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US4", "mfr": "SA"},
+{"qty": 1, "description": "Intercom", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "OT"},
+{"qty": 1, "description": "Card Reader", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "HD"}
+]},
+{"set_number": "143.0", "starts_on_page": true, "continues_on_next_page": true, "status": "active", "components": [
+{"qty": 2, "description": "Sure Close Gate Hinge", "catalog": "74108325T", "finish": null, "mfr": "DD"},
+{"qty": 1, "description": "Storeroom/Closet Lock", "catalog": "72 8204 LNMW", "finish": "BSP", "mfr": "SA"},
+{"qty": 1, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US4", "mfr": "SA"},
+{"qty": 1, "description": "Electric Strike", "catalog": "1500C-LMS", "finish": "BSP", "mfr": "HS"},
+{"qty": 1, "description": "Buzzer", "catalog": "2006M", "finish": null, "mfr": "HS"},
+{"qty": 1, "description": "SMART Pac Bridge Rectifier", "catalog": "2005M3", "finish": null, "mfr": "HS"},
+{"qty": 1, "description": "Gate Stop", "catalog": "7403", "finish": "BLK", "mfr": "DD"}
+]}
+]}

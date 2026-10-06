@@ -1,0 +1,28 @@
+{"page_image": "livelle_p671.png", "sets": [
+{"set_number": "87.1", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 4, "description": "Hinge, Full Mortise, Hvy Wt", "catalog": "T4A3786", "finish": "US15", "mfr": "MK"},
+{"qty": 1, "description": "Delayed Egress Magnetic Lock", "catalog": "DEM680E-CA15S", "finish": "630", "mfr": "SU"},
+{"qty": 1, "description": "Rim Exit Device", "catalog": "12 5CH 72 PE8806 NEMW", "finish": "US32D", "mfr": "SA"},
+{"qty": 1, "description": "Mortise Cylinder", "catalog": "72 43 verify cam", "finish": "US32D", "mfr": "SA"},
+{"qty": 2, "description": "Small Format Inter Core", "catalog": "7300B CKC GMK", "finish": "US15", "mfr": "SA"},
+{"qty": 1, "description": "Electric Strike", "catalog": "9500-LBM", "finish": "630", "mfr": "HS"},
+{"qty": 1, "description": "Automatic Opener", "catalog": "6211 / 6231 @ rev-bevel door 120V", "finish": "689", "mfr": "NO"},
+{"qty": 2, "description": "ADO Push Plate", "catalog": "639", "finish": null, "mfr": "NO"},
+{"qty": 1, "description": "Kick Plate", "catalog": "K1050=10\" high CSK BEV", "finish": "US32D", "mfr": "RO"},
+{"qty": 1, "description": "Wall Stop", "catalog": "430-RKW", "finish": "US15", "mfr": "RO"},
+{"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "ElectroLynx Frame Harness", "catalog": "QC-C1500P", "finish": null, "mfr": "MK"},
+{"qty": 1, "description": "Position Switch", "catalog": "DPS-W-GY", "finish": null, "mfr": "SU"},
+{"qty": 1, "description": "Card Reader", "catalog": "Furnished by Security Contractor", "finish": null, "mfr": "HD"}
+]},
+{"set_number": "88.0", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
+{"qty": 3, "description": "Hinge, Full Mortise, Hvy Wt", "catalog": "T4A3786", "finish": "US15", "mfr": "MK"},
+{"qty": 1, "description": "Passage Latch", "catalog": "10XU15 LMW", "finish": "US15", "mfr": "SA"},
+{"qty": 1, "description": "Surface Closer", "catalog": "351 O", "finish": "EN", "mfr": "SA"},
+{"qty": 1, "description": "Kick Plate", "catalog": "K1050=10\" high CSK BEV", "finish": "US32D", "mfr": "RO"},
+{"qty": 1, "description": "Wall Stop", "catalog": "430-RKW", "finish": "US15", "mfr": "RO"},
+{"qty": 1, "description": "Gasketing", "catalog": "S88BL", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Sweep", "catalog": "18062CNB", "finish": null, "mfr": "PE"},
+{"qty": 1, "description": "Threshold", "catalog": "272A MSES25", "finish": null, "mfr": "PE"}
+]}
+]}
