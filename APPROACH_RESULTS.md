@@ -13,6 +13,7 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | LLM calls, 20 books | 22 | 39 | 694 | 694 |
 | Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
 | Same output every run | yes | yes | no | no |
+| Cost, 20 books (per set page) | $0.21 ($0.0003) | $0.53 ($0.0008) | $8.20 ($0.012) | $12.30 ($0.018) |
 
 Notes:
 
@@ -20,6 +21,7 @@ Notes:
 - The multimodal score is inflated: the labels were made by Claude from the same page images.
 - Approach 1 was tuned on this benchmark. Quote the held-out row.
 - Times: finder and interpreter measured, model calls estimated from token counts at 60 tokens per second, one call at a time.
+- Cost from the measured tokens per call at $3 per million input and $15 per million output.
 
 ## Where each one loses
 
@@ -29,18 +31,6 @@ Notes:
 | 2. Spec by example | Star 61% (11 / 18) | the sample pages do not show Star's third header spelling |
 | 3. Per-page LLM | Roselle 19% (4 / 21), Door Co 40% (2 / 5) | values formatted differently from one call to the next |
 | 4. Multimodal | Bridgeport 65% (11 / 17), Star 72% (13 / 18) | maker left inside the catalog cell (`HORTON 4100 LH PULL SERIES`), prose cells |
-
-## Cost
-
-Per-call figures are from the actual test inputs and outputs.
-
-| | 1 | 2 | 3 | 4 |
-| :--- | ---: | ---: | ---: | ---: |
-| Input tokens per call | 2,100 | 1,500 | 1,150 | 3,250 |
-| Output tokens per call | 200 | 600 | 555 | 530 |
-| Calls | 22 | 39 | 694 | 694 |
-
-Even the most expensive approach is a few dollars for all 20 books. Determinism and editability decide this, not cost.
 
 ## Dropped approaches
 
