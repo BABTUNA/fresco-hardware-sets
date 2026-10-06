@@ -1,4 +1,5 @@
 # hwsets extract book.pdf [-o out.json] [--spec specs/x.json] [--no-llm]
+# hwsets serve [--port 8000]
 import argparse, json, sys
 from .extract import extract_book
 
@@ -11,7 +12,13 @@ def main():
     ex.add_argument("-o", "--out", help="output file, default stdout")
     ex.add_argument("--spec", help="layout spec to use instead of specs/<book>.json")
     ex.add_argument("--no-llm", action="store_true", help="fail instead of calling the API when no spec exists")
+    sv = sub.add_parser("serve", help="run the viewer")
+    sv.add_argument("--port", type=int, default=8000)
     args = ap.parse_args()
+    if args.cmd == "serve":
+        import uvicorn
+        uvicorn.run("app.server:app", port=args.port, reload=False)
+        return
     result = extract_book(args.pdf, spec_path=args.spec, allow_llm=not args.no_llm)
     text = json.dumps(result, indent=1)
     if args.out:

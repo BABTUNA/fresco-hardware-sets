@@ -1,6 +1,6 @@
 # Hardware sets: frontend implementation
 
-Companion to [IMPLEMENTATION_BACKEND.md](IMPLEMENTATION_BACKEND.md). The viewer reads the `BookResult` the backend writes and calls back into it for reruns. Nothing here is built yet.
+Companion to [IMPLEMENTATION_BACKEND.md](IMPLEMENTATION_BACKEND.md). The viewer reads the `BookResult` the backend writes and calls back into it for reruns. Built: `uv run hwsets serve`, then http://localhost:8000. The look copies the Hardware step of the demo on fresco.build: Inter, white cards on a pale green page, green boxes on the page image.
 
 ## 1. Goals
 
@@ -114,11 +114,8 @@ Example: `{"set_number": "18", "page": 427, "row": 2, "field": "mfr", "value": "
 
 ## 7. Build order
 
-1. Read-only viewer: book list, page image, set boxes, components table.
-2. Spec editor with save and rerun.
-
-**Cut line: enough for the demo video.**
-
-3. Audit flags under the spec, confidence tint on cells.
-4. Corrections.
-5. Export.
+1. Read-only viewer: book list, page image, set boxes, components table. Done.
+2. Spec editor with save and rerun. Done.
+3. Audit flags above the panes. Done. Confidence tint on cells: not started.
+4. Corrections, double-click a cell. Done.
+5. Export. Done.

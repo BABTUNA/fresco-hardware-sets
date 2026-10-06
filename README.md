@@ -52,6 +52,14 @@ The 20 sample books have their compiled specs checked in under `specs/`, so they
 
 Output: one JSON per book with every set's number, description, status, 1-based page and bounding box, and its components with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`, each with its own page and box. The exact shape is in [IMPLEMENTATION_BACKEND.md](docs/IMPLEMENTATION_BACKEND.md).
 
+## The viewer
+
+```bash
+uv run hwsets serve
+```
+
+Then open http://localhost:8000. Pick a book, see each set boxed on its page with its components beside it, double-click a cell to correct it, and edit the layout spec to rerun the whole book with no model call. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
+
 ## Running the benchmark
 
 The specbook PDFs are not in this repo. Put the challenge's Drive folder ids in `scripts/drive_ids.txt`, one `folder_id:project-name` per line, then download:
