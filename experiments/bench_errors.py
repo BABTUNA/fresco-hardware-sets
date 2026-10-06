@@ -8,7 +8,7 @@ rows = collections.defaultdict(list)
 for gt_file in sorted(glob.glob("eval/gt/*.json")):
     book, p = re.match(r"eval/gt/(\w+)_p(\d+)\.json", gt_file).groups()
     p = int(p)
-    d = result("out_e2e", book)
+    d = result(os.environ.get("OUT", "out_e2e"), book)
     gt = json.load(open(gt_file))
     gt_all = [c for s in gt["sets"] for c in s["components"]]
     ours = [c for s in d["sets"] for c in s["components"] if c.get("page") == p and c.get("status") != "removed"]

@@ -76,12 +76,47 @@ The function runs in a sandbox over every schedule page.
 
 **How it was tested.** One shot per book, no repair. Each parser had a 5 minute limit.
 
+## Two-layer variants tested on 2026-10-06
+
+Every approach above already has two layers: a page filter, then extraction on the filtered pages. This round swapped each layer for something else and kept what measured well. Numbers in [APPROACH_RESULTS.md](APPROACH_RESULTS.md).
+
+### 5. Deterministic spec induction, no LLM
+
+**What it does.** Same layer 1 (the regex page finder) and the same interpreter as approach 1, but the spec is induced from the book itself instead of written by Claude. Column positions come from where rows align, column roles from what each column holds (finish-shaped codes, maker codes, unit words), and the set header from the line shape that repeats with a distinct id and is followed by rows. Running headers and footers are the shapes that repeat on most pages at the same height.
+
+**Why it is a serious option.** No LLM call at all, so the compile step is as deterministic as the rest. It answers the objection that a model-written spec can come out differently on another run.
+
+**Where it is weak.** It only sees repetition. A header shape with one odd spelling, a column that few rows use, or a book with one set gives it nothing to count. 72.5% of rows and 52.4% of sets.
+
+**Code.** `experiments/alt_induce2.py`.
+
+### 6. Induce first, LLM only on audit flags
+
+**What it does.** Approach 5, then the audit from approach 1 runs on the result. A book the audit flags gets the LLM-written spec instead. The LLM touches only books where the deterministic spec visibly failed.
+
+**Why it is a serious option.** It is a dial between 5 and 1: fewer calls and more determinism, at the accuracy the audit can protect. On this corpus 3 of 20 books went to the LLM.
+
+**Where it is weak.** The audit was built to catch the ways LLM specs fail (a header variant missed, columns swapped), not the ways induction fails (a column never found, a header prefix that is really a row). It let four badly induced books through. A stricter trigger would send more books to the LLM and move the number toward approach 1.
+
+**Code.** The audit in `experiments/e2e.py` over the output of `alt_induce2.py`.
+
+### Tested and dropped this round
+
+| Variant | Result | Why it is out |
+| :--- | :--- | :--- |
+| **Embeddings as layer 1** (MiniLM, and tf-idf, ranking every page against hint phrases) | 84% page recall at 66% precision, and about 1,190 pages passed to reach 95% recall | The regex finder gets 98.9% recall at 99.7% precision passing 694 pages. Prose pages of a hardware section talk about the same things as the schedule, so meaning does not separate them. Row shapes do. |
+| **Camelot as layer 2** (hybrid mode rows on the finder's pages, roles from value statistics, sets from the induced header) | 20.1% of rows, 4.5% of sets, 28 swaps | Overlapping tables repeat rows, wrapped cells land in separate rows with their own first cell, and the column split changes from page to page. Its clean-row ceiling of 67.8% was never reachable in practice. |
+
+### On the nondeterminism of writing the spec
+
+Two fresh writers rewrote the specs for Oswego, Gerrard, SJC and JC Ryan from the same sample pages. Every rewrite differed from the original in regex wording (the header pattern, the skip list, the end marker), and all three versions extract identical output: the same sets, the same rows, the same scores. The spec is a small constrained artifact and the interpreter normalizes the phrasing. In the build the spec is also written once per book and saved, so every run after compile is deterministic by construction.
+
 ## Ruled out
 
 | Approach | Result | Why it is out |
 | :--- | :--- | :--- |
-| **Open source table libraries**: Camelot, pdfplumber, PyMuPDF, img2table, gmft, Docling | At most 67.8% of rows come out as one clean table row | Wrapped cells split into extra rows, and whitespace lists are often not detected as tables. That is before any column mapping. |
-| **No-LLM template induction** (TWIX style) | 25.3% exact rows | Column roles can be learned from repetition, but set headers cannot, and rows in the wrong set score nothing |
+| **Open source table libraries**: Camelot, pdfplumber, PyMuPDF, img2table, gmft, Docling | At most 67.8% of rows come out as one clean table row | Wrapped cells split into extra rows, and whitespace lists are often not detected as tables. That is before any column mapping. A full pipeline on the best one (Camelot) reached 20% of rows, see above. |
+| **No-LLM template induction, first attempt** | 25.3% exact rows | Its running-header filter dropped every row shape that repeats across pages, which is most component rows. Fixed in approach 5 above. |
 | **Spec by default, per-page LLM on pages with a blank qty** | 94.3% exact rows | The trigger sent 47% of pages to the LLM, including pages the spec already got right. It needs a better trigger. |
 
 ## Code
@@ -90,6 +125,10 @@ The function runs in a sandbox over every schedule page.
 | :--- | :--- |
 | 1 | `experiments/e2e.py`, `spec_parse.py`, `specs_e2e/` |
 | 2 | `experiments/alt_llm/PROMPT.md`, `alt_llm/convert.py` |
+| 5 | `experiments/alt_induce2.py` |
+| 6 | `experiments/alt_induce2.py` plus the audit in `e2e.py` |
+| Layer 1 comparison | `experiments/layer1_score.py`, `layer1_eval.py` |
+| Camelot layer 2 | `experiments/alt_camelot.py` |
 | 3 | `experiments/alt_mm/PROMPT.md`, `alt_llm/convert.py` |
 | 4 | `experiments/alt_code/PROMPT.md`, `alt_code/run.py`, `alt_code/parsers/` |
 | No-LLM induction | `experiments/alt_induce.py` |

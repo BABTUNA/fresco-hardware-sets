@@ -23,3 +23,9 @@ experiments/alt_code/parsers/*.error.txt
 experiments/alt_mm/out/
 experiments/out_mm/
 experiments/eval/holdout/pages/
+experiments/out_induced2/
+experiments/specs_induced2/
+experiments/specs_var/
+experiments/out_var/
+experiments/out_camelot/
+experiments/out_hybrid2/

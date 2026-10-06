@@ -78,6 +78,44 @@ Exact rows.
 
 **4. Parser per book.** Before our fixes it beat ours on SJC (99.3% vs 92.2%) and Livelle, where code could say more than the spec language. It falls apart on layouts the two sample pages did not show: Star (49.3%), JC Ryan's centered cells (70.3%) and Morris's second layout (70.8%).
 
+## Two-layer variants (2026-10-06)
+
+Same scorer, same 155 pages. Approach 1 is shown after its fixes.
+
+| | 1. Ours | 5. Deterministic induction | 6. Induce, LLM on flags | 4. Parser per book |
+| :--- | ---: | ---: | ---: | ---: |
+| Exact rows | 98.4% | 72.5% | 80.9% | 91.6% |
+| Sets fully correct | 94.5% | 52.4% | 68.5% | 72.0% |
+| Precision | 98.6% | 70.9% | 80.1% | 88.8% |
+| Sets found | 99.4% | 89.1% | 91.6% | 96.8% |
+| Mfr/finish swaps | 0 | 0 | 0 | 0 |
+| LLM calls for 20 books | 22 | 0 | 3 | 20 |
+
+Approach 5 gets 10 of 20 books to 89% or better of sets fully correct and 0% on five (Forest, Morris, Valor, and nearly so on JC Ryan and Bridgeport), where a column was never found or the header prefix chosen was a row. Approach 6 recovers SJC, Star and Door Co, the three books the audit flagged, and inherits the rest.
+
+### Layer 1: which pages hold sets
+
+Truth is the 700 pages (of 14,224) on which the pipeline placed a set or a row. Finder is a fixed decision. The other two get the global threshold that maximizes their own F1, which is generous to them.
+
+| Method | Page recall | Precision | Pages passed to layer 2 |
+| :--- | ---: | ---: | ---: |
+| Regex finder (ours) | 98.9% | 99.7% | 694 |
+| tf-idf vs hint phrases, best F1 | 85.7% | 70.6% | 850 |
+| tf-idf, 95% recall | 95.0% | 54.6% | 1,217 |
+| MiniLM embeddings vs hint phrases, best F1 | 84.0% | 66.4% | 885 |
+| MiniLM embeddings, 95% recall | 95.0% | 55.8% | 1,191 |
+
+### Spec variance
+
+Two fresh rewrites (A and B) of the specs for Oswego, Gerrard, SJC and JC Ryan.
+
+| Book | Spec keys that differ from the original | Rows and sets extracted | Score |
+| :--- | :--- | :--- | :--- |
+| Oswego | set_header, set_meta, skip, end (A only) | identical | identical |
+| Gerrard | set_header, skip, end (A only) | identical | identical |
+| SJC | set_header, skip, end (A only) | identical | identical |
+| JC Ryan | skip, and set_header and end (A only) | identical | identical |
+
 ## Grounding
 
 For the two per-page approaches, every value was checked against the lines it cited.
