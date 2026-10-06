@@ -3,7 +3,7 @@
 import re, sys
 
 txt = open(sys.argv[1]).read()
-ROOT = __file__.rsplit("/", 2)[0] + "/"
+ROOT = __file__.rsplit("/", 2)[0] + "/docs/"
 BOOKS = ["ami", "bridgeport", "doorco", "forest", "gerrard", "hfh", "jcryan", "livelle", "lyons", "marketview",
          "morris", "national", "oswego", "roselle", "sat", "shubie", "sjc", "star", "usi", "valor"]
 TAGS = ["ambiguous_code", "centered_cells", "column_drift", "dense_page", "embedded_mfr", "empty_code",
