@@ -41,46 +41,45 @@ Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](I
 ### Extract a book
 
 ```
-hwsets extract book.pdf -o out.json                                  cli.py
-└─ extract_book(pdf_path, spec_dir)                                  extract.py
-   ├─ find_schedule(pdf_path) -> texts, scores, runs                 finder.py
-   │  ├─ page_texts(pdf_path)                                        finder.py
-   │  ├─ row_like(text_line)                                         finder.py
-   │  └─ group_runs(scores, vocab)                                   finder.py
-   ├─ if no runs: return BookResult(status="no_hardware_sets")       extract.py
-   ├─ load_or_compile(pdf_path, runs, scores, spec_dir) -> Spec      compile.py
-   │  ├─ pick_samples(runs, scores)                                  compile.py
-   │  ├─ dump(pdf, pages)                                            compile.py
-   │  │  └─ page_lines(page)                                         lines.py
-   │  ├─ ask_claude(SPEC_PROMPT, dump)                               compile.py
-   │  └─ validate_spec(raw)                                          spec.py
-   ├─ widen_with_headers(spec, texts, runs) -> pages                 finder.py
-   ├─ interpret(spec, pdf, pages) -> list[HardwareSet]               spec.py
-   │  ├─ run_columns(spec, pdf, pages)                               spec.py
-   │  │  ├─ page_lines(page)                                         lines.py
-   │  │  │  └─ mark_struck(words, page)                              lines.py
-   │  │  ├─ calibrate(spec, lines)                                   spec.py
-   │  │  ├─ classify(line, layout)                                   spec.py
-   │  │  ├─ resolve_top(layout, items)                               spec.py
-   │  │  ├─ resolve_middle(layout, items)                            spec.py
-   │  │  │  └─ assemble(layout, anchor, extra) -> Component          spec.py
-   │  │  │     ├─ Layout.assign(words)                               spec.py
-   │  │  │     └─ parse_qty(text)                                    spec.py
-   │  │  └─ set_status(hardware_set)                                 spec.py
-   │  └─ run_grid(spec, pdf, pages)                                  spec.py
-   │     └─ split_mfr(product, sep)                                  spec.py
-   ├─ audit(spec, sets, texts, pages, scores) -> list[Flag]          audit.py
-   │  ├─ header_near_miss                                            audit.py
-   │  ├─ rows_without_components                                     audit.py
-   │  ├─ long_text_in_code_columns                                   audit.py
-   │  ├─ mfr_looks_like_finish                                       audit.py
-   │  ├─ low_coverage                                                audit.py
-   │  └─ suspicious_qty                                              audit.py
-   ├─ if flags: repair(spec, flags, dump) -> Spec                    compile.py
-   │  └─ interpret + audit again, once                               spec.py, audit.py
-   ├─ read_legends(pdf, pages) -> Legend                             legend.py
-   ├─ confidence(component, layout, flags)                           extract.py
-   └─ to_result(sets, flags, pdf, spec) -> BookResult                extract.py
+hwsets extract book.pdf -o out.json                                                                                                cli.py
+└─ extract_book(pdf_path, spec_dir)                              whole pipeline for one PDF                                        extract.py
+   ├─ find_schedule(pdf_path) -> texts, scores, runs             which pages hold sets                                             finder.py
+   │  ├─ page_texts(pdf_path)                                    raw text per page, pypdfium2, fast                                finder.py
+   │  ├─ row_like(text_line)                                     qty, words, short codes at the end?                               finder.py
+   │  └─ group_runs(scores, vocab)                               pages with 2+ rows into runs, drop other trades' lists            finder.py
+   ├─ if no runs: return BookResult(status="no_hardware_sets")                                                                     extract.py
+   ├─ load_or_compile(pdf_path, runs, scores, spec_dir) -> Spec  specs/<book>.json if it exists, else compile                      compile.py
+   │  ├─ pick_samples(runs, scores)                              the 2 densest schedule pages                                      compile.py
+   │  ├─ dump(pdf, pages)                                        text with each run tagged by its x, all the model sees            compile.py
+   │  │  └─ page_lines(page)                                     pdfplumber words into lines with coordinates                      lines.py
+   │  ├─ ask_claude(SPEC_PROMPT, dump)                           one API call, returns the spec JSON                               compile.py
+   │  └─ validate_spec(raw)                                      schema check, compile the regexes, fail loudly                    spec.py
+   ├─ widen_with_headers(spec, texts, runs) -> pages             add header pages near the runs the finder missed                  finder.py
+   ├─ interpret(spec, pdf, pages) -> list[HardwareSet]           columns or grid mode by the spec                                  spec.py
+   │  ├─ run_columns(spec, pdf, pages)                           walk pages, start a set at each header                            spec.py
+   │  │  ├─ page_lines(page)                                                                                                       lines.py
+   │  │  │  └─ mark_struck(words, page)                          thin rule through mid-height marks a word struck                  lines.py
+   │  │  ├─ calibrate(spec, lines)                               re-snap column x to this page's aligned edges                     spec.py
+   │  │  ├─ classify(line, layout)                               header, meta, note, anchor or other                               spec.py
+   │  │  ├─ resolve_top(layout, items)                           wrapped lines sit below their row                                 spec.py
+   │  │  ├─ resolve_middle(layout, items)                        wrapped lines sit above and below                                 spec.py
+   │  │  │  └─ assemble(layout, anchor, extra) -> Component      one row from its lines, fields by x, bbox                         spec.py
+   │  │  │     ├─ Layout.assign(words)                           word to field by x, text runs cannot jump columns                 spec.py
+   │  │  │     └─ parse_qty(text)                                3, 3.0 -> 3, blank, __, As Req -> null                            spec.py
+   │  │  └─ set_status(hardware_set)                             active, not_used, or moved with moved_to                          spec.py
+   │  └─ run_grid(spec, pdf, pages)                              ruled tables, header row maps labels to fields                    spec.py
+   │     └─ split_mfr(product, sep)                              "IVES - 5BB1" -> mfr IVES, catalog 5BB1                           spec.py
+   ├─ audit(spec, sets, texts, pages, scores) -> list[Flag]      does the result fit the book?                                     audit.py
+   │  ├─ header_near_miss                                        lines that start like the header but did not match                audit.py
+   │  ├─ rows_without_components                                 pages with rows and nothing extracted                             audit.py
+   │  ├─ long_text_in_code_columns                               4+ words in finish or mfr, a column x is wrong                    audit.py
+   │  ├─ mfr_looks_like_finish                                   mfr column full of 626, US26D: columns swapped                    audit.py
+   │  ├─ low_coverage                                            far fewer components than row-like lines                          audit.py
+   │  └─ suspicious_qty                                          qty over 99 with no catalog                                       audit.py
+   ├─ if flags: repair(spec, flags, dump) -> Spec                one more call with the flags, then interpret + audit again, once  compile.py
+   ├─ read_legends(pdf, pages) -> Legend                         code/name lists printed in the book, bonus                        legend.py
+   ├─ confidence(component, layout, flags)                       per-field score from column snap, value shape, audit, bonus       extract.py
+   └─ to_result(sets, flags, pdf, spec) -> BookResult            output schema, 1-based pages, book status                         extract.py
 ```
 
 ### Files
