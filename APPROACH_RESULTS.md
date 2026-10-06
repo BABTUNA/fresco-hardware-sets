@@ -15,9 +15,9 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | Tokens, estimated | 51K | 82K | 1.2M | 2.6M |
 | Same output every run | yes | yes | no | no |
 | Time, 1 page | 4 s | 12 s | 10 s | 10 s |
-| Time, 10 pages | 5 s | 23 s | 10 s | 11 s |
-| Time, 100 pages | 14 s | 32 s | 1.7 min | 1.8 min |
-| Time, all 20 books | 3 min | 8.5 min | 12 min | 13 min |
+| Time, 10 pages | 5 s | 23 s | 1.7 min | 1.7 min |
+| Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
+| Time, all 20 books | 3 min | 8.5 min | 2 h | 1.9 h |
 | Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
 | Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book |
 
@@ -26,7 +26,7 @@ The last two rows are the whole pipeline, not just the labeled pages. Every appr
 ## Reading the numbers
 
 - **The multimodal score is inflated.** The labels were made by Claude reading the same page images under nearly the same rules. Two independent labelers agree about 99% of the time, and approach 4 lands right there, so it is as consistent as a second labeler. Whether it is correct, this benchmark cannot say.
-- **Times are half measured, half estimated.** Finder and interpreter are measured (`experiments/latency.py`: 19 s for all 14,224 pages, 0.1 s per set page). Model calls are estimated from the token counts at 1 s to first token and 60 tokens per second, with 10 calls in flight for approaches 3 and 4. After a spec edit, 1 and 2 rerun in seconds with no call. 3 and 4 rerun every page.
+- **Times are half measured, half estimated.** Finder and interpreter are measured (`experiments/latency.py`: 19 s for all 14,224 pages, 0.1 s per set page). Model calls are estimated from the token counts at 1 s to first token and 60 tokens per second, one call at a time for every approach. Running 10 at once divides every column by about 10. After a spec edit, 1 and 2 rerun in seconds with no call. 3 and 4 rerun every page.
 - **Approach 1 was tuned on this benchmark.** Every fix in the interpreter was found here. The held-out numbers are the ones to quote.
 - **Strike-through is the dividing line.** HFH, SJC and Valor strike out revised rows. Approaches 1 and 2 detect the strike marks in the PDF and drop them, approach 4 sees them in the image, approach 3 cannot and keeps the rows.
 
