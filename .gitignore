@@ -22,3 +22,4 @@ experiments/out_code/
 experiments/alt_code/parsers/*.error.txt
 experiments/alt_mm/out/
 experiments/out_mm/
+experiments/eval/holdout/pages/
