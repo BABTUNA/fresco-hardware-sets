@@ -28,7 +28,8 @@ On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md]
 | Doc | What it covers |
 | :--- | :--- |
 | [PLAN.md](docs/PLAN.md) | The approach and build order |
-| [IMPLEMENTATION.md](docs/IMPLEMENTATION.md) | Goals, function trace, data structures for the build |
+| [IMPLEMENTATION_BACKEND.md](docs/IMPLEMENTATION_BACKEND.md) | Extraction: goals, function trace, data structures |
+| [IMPLEMENTATION_FRONTEND.md](docs/IMPLEMENTATION_FRONTEND.md) | Viewer: screens, API, state, build order |
 | [CAVEATS.md](docs/CAVEATS.md) | The tricky cases from the brief, with real examples |
 | [BENCHMARK.md](docs/BENCHMARK.md) | How the benchmark works |
 | [RESULTS.md](docs/RESULTS.md) | Benchmark results |

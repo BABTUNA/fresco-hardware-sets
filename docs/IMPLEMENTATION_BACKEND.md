@@ -1,6 +1,16 @@
-# Hardware sets: implementation
+# Hardware sets: backend implementation
 
-Companion to [PLAN.md](PLAN.md). Function and file names here are the target names for `hwsets/`. The same logic already runs in `experiments/` under older names, listed in the files table.
+Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](IMPLEMENTATION_FRONTEND.md). Function and file names here are the target names for `hwsets/`. The same logic already runs in `experiments/` under older names, listed in the files table.
+
+## 0. Status
+
+| Part | State |
+| :--- | :--- |
+| Finder, lines, interpreter, audit | Done in `experiments/`, benchmarked, needs porting and cleanup |
+| Spec compile and repair calls | The prompt exists (`experiments/SPEC_PROMPT.md`), a Claude subagent stood in for the API call. `compile.py` is new code |
+| Output schema, `extract.py`, `cli.py` | New |
+| Eval | Done, strict scorer in `experiments/bench.py`, 155 labeled pages plus 25 held out |
+| Legends, confidence | Not started (bonus) |
 
 ## 1. Goals
 
@@ -12,7 +22,7 @@ Companion to [PLAN.md](PLAN.md). Function and file names here are the target nam
 **Compile** (`compile.py`)
 - One Claude call per book turns 2 sample pages into a layout spec.
 - At most one repair call, and only when the audit flags something.
-- Compiled specs saved to `specs/`,V so a rerun or a reviewer needs no API key.
+- Compiled specs saved to `specs/`, so a rerun or a reviewer needs no API key.
 
 **Interpret** (`spec.py`, `lines.py`)
 - Deterministic. Same spec and PDF give the same output every time.
@@ -29,13 +39,9 @@ Companion to [PLAN.md](PLAN.md). Function and file names here are the target nam
 - Book status is `extracted`, `no_hardware_sets` or `needs_review`. Set status is `active`, `not_used` or `moved`.
 - Per-field confidence (bonus).
 
-**Eval** (`eval/score.py`)
-- One command prints set recall, component recall and precision, per-field accuracy and mfr/finish swaps per book.
-- Current bar: 66/67 sets, 99.8% recall, 99.1% precision, qty/finish/mfr 100%, 0 swaps.
-
-**Viewer** (`app/`)
-- Show a page with a box per set and the extracted components beside it.
-- Edit the spec and rerun the book without an LLM call.
+**Eval** (`eval/bench.py`)
+- One command prints exact rows, sets fully correct, precision and mfr/finish swaps, in total, by difficulty tier, by caveat and by book.
+- Current bar: 98.4% of 2,218 rows exact, 94.5% of 311 sets fully correct, 0 swaps. Held out: 97.2% of rows, 89.5% of sets.
 
 **Code size**
 - `hwsets/` stays under about 800 lines.
@@ -129,39 +135,21 @@ hwsets extract book.pdf -o out.json                                  cli.py
 ### Score against the labels
 
 ```
-python -m eval.score                                                  eval/score.py
-└─ for each book in eval/books.json
-   ├─ extract_book(pdf_path, spec_dir)                               extract.py
-   └─ for each eval/gt/<book>_p<page>.json
-      ├─ align(gt_components, our_components)                        eval/score.py
-      └─ field_match(gt, ours)                                       eval/score.py
+python -m eval.bench                                                  eval/bench.py
+└─ for each eval/gt/<book>_p<page>.json
+   ├─ load BookResult for the book, keep the sets on this page       eval/bench.py
+   ├─ match_sets(gt_sets, our_sets)                                  eval/bench.py
+   └─ for each matched set: match_rows(gt_rows, our_rows)            eval/bench.py
+      └─ norm(value) per field                                       eval/bench.py
 ```
 
 | Call | What it does |
 | :--- | :--- |
-| `align` | Order-preserving match of labeled components to ours on the same page, using text similarity of description plus catalog. Unmatched labels count against recall, unmatched extractions against precision. |
-| `field_match` | Compares qty exactly and text fields after normalizing case, whitespace, curly quotes and dashes. Counts a swap when our finish equals the label's mfr or the other way round. |
-
-### Viewer
-
-```
-uv run hwsets serve                                                  cli.py
-├─ GET  /                              index.html                    app/server.py
-├─ GET  /api/books                     list books + status           app/server.py
-├─ GET  /api/books/{id}                BookResult                    app/server.py
-├─ GET  /api/books/{id}/pages/{n}.png  render_page(pdf, n)           app/server.py
-└─ PUT  /api/books/{id}/spec           edited spec                   app/server.py
-   ├─ validate_spec(raw)                                             spec.py
-   ├─ interpret(spec, pdf, pages)                                    spec.py
-   ├─ audit(...)                                                     audit.py
-   └─ to_result(...)                                                 extract.py
-```
-
-| Call | What it does |
-| :--- | :--- |
-| `GET /api/books/{id}` | Returns the cached `BookResult`. The page draws one box per set location and highlights a component's bbox on click. |
-| `render_page` | pdfplumber page to PNG, cached on disk. bbox coordinates are scaled by the page width and height in the result. |
-| `PUT /api/books/{id}/spec` | Saves an edited spec, reruns interpret and audit with no LLM call, returns the new result. One edit updates every set in the book. |
+| `match_sets` | Pairs labeled sets with ours by set number on the same page. A labeled set with no partner counts every row as missed. |
+| `match_rows` | A row counts only when all five fields (qty, description, catalog, finish, mfr) are exact after `norm`. Rows are a multiset, so two identical labeled rows need two identical extracted rows. Extra rows count against precision. |
+| `norm` | Case, whitespace, curly quotes and dash variants. Nothing fuzzier. |
+| set fully correct | Every row matched, nothing extra, status right. |
+| swap | Our finish equals the label's mfr or the other way round. |
 
 ### Files
 
@@ -181,7 +169,6 @@ uv run hwsets serve                                                  cli.py
 | `eval/books.json` | book id to PDF path | `experiments/eval/e2e_plan.json` |
 | `eval/gt/<book>_p<page>.json` | labeled pages | `experiments/eval/gt/` |
 | `eval/score.py` | scorer | `experiments/score.py` |
-| `app/server.py`, `app/index.html` | viewer | new |
 | `scripts/download_data.sh` | fetch the 43 PDFs | exists |
 
 ## 3. Data structures
@@ -372,7 +359,7 @@ class BookResult(TypedDict):
 
 ### Ground truth and score
 
-Labeled pages in `eval/gt/`, scores made by `eval/score.py`.
+Labeled pages in `eval/gt/`, scores made by `eval/bench.py`.
 
 ```python
 class GtPage(TypedDict):
@@ -393,13 +380,13 @@ class GtComponent(TypedDict):
     mfr: str | None
 
 class BookScore(TypedDict):
+    gt_rows: int
+    our_rows: int
+    # rows with all five fields exact
+    rows_exact: int
     gt_sets: int
-    sets_found: int
-    gt_components: int
-    our_components: int
-    matched: int
-    # matched components with the field right, per field
-    field_ok: dict[str, int]
+    # every row exact, nothing extra, status right
+    sets_full: int
     # our finish equals the label's mfr or the other way round
     swaps: int
 ```
@@ -416,4 +403,4 @@ class BookScore(TypedDict):
 | `Component` | `assemble`, `run_grid` | `HardwareSet`, `confidence`, `to_result` |
 | `HardwareSet` | `run_columns`, `run_grid` | `audit`, `to_result` |
 | `Flag` | `audit` | `repair`, `to_result`, viewer |
-| `BookResult` | `to_result` | output file, viewer, `eval/score.py` |
+| `BookResult` | `to_result` | output file, viewer, `eval/bench.py` |
