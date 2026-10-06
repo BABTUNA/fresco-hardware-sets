@@ -14,6 +14,10 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | LLM calls, 20 books | 22 | 39 | 694 | 694 |
 | Tokens, estimated | 51K | 82K | 1.2M | 2.6M |
 | Same output every run | yes | yes | no | no |
+| Time, 1 page | 4 s | 12 s | 10 s | 10 s |
+| Time, 10 pages | 5 s | 23 s | 10 s | 11 s |
+| Time, 100 pages | 14 s | 32 s | 1.7 min | 1.8 min |
+| Time, all 20 books | 3 min | 8.5 min | 12 min | 13 min |
 | Set pages reached, all 20 books | 697 / 697 | 697 / 697 | 697 / 697 | 697 / 697 |
 | Printed set numbers found, all 20 books | 1,172 / 1,175 | 1,166 / 1,175 | not run whole-book | not run whole-book |
 
@@ -22,6 +26,7 @@ The last two rows are the whole pipeline, not just the labeled pages. Every appr
 ## Reading the numbers
 
 - **The multimodal score is inflated.** The labels were made by Claude reading the same page images under nearly the same rules. Two independent labelers agree about 99% of the time, and approach 4 lands right there, so it is as consistent as a second labeler. Whether it is correct, this benchmark cannot say.
+- **Times are half measured, half estimated.** Finder and interpreter are measured (`experiments/latency.py`: 19 s for all 14,224 pages, 0.1 s per set page). Model calls are estimated from the token counts at 1 s to first token and 60 tokens per second, with 10 calls in flight for approaches 3 and 4. After a spec edit, 1 and 2 rerun in seconds with no call. 3 and 4 rerun every page.
 - **Approach 1 was tuned on this benchmark.** Every fix in the interpreter was found here. The held-out numbers are the ones to quote.
 - **Strike-through is the dividing line.** HFH, SJC and Valor strike out revised rows. Approaches 1 and 2 detect the strike marks in the PDF and drop them, approach 4 sees them in the image, approach 3 cannot and keeps the rows.
 
@@ -45,21 +50,6 @@ Per-call figures are from the actual test inputs and outputs.
 | Calls | 22 | 39 | 694 | 694 |
 
 Even the most expensive approach is a few dollars for all 20 books. Determinism and editability decide this, not cost.
-
-## Latency
-
-Measured (`experiments/latency.py`): the finder reads all 14,224 pages of the 20 books in 19 s, the interpreter runs the 703 set pages in 59 s. SAT, the largest book (3,930 pages, 122 of them sets), takes 5.5 s to find and 11.7 s to parse. Rendering a page image for approach 4 is 0.13 s.
-
-Modeled: the model calls in these experiments were not made through the API, so their time comes from the measured token counts at 1 s to first token and 60 output tokens per second, a Sonnet-class rate. That gives 4 s per call for approach 1, 11 s for 2, 10 s for 3 and 4. Approaches 3 and 4 are also shown with 10 calls in flight, a common rate limit.
-
-| | 1. Spec per book | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
-| :--- | ---: | ---: | ---: | ---: |
-| Oswego, 28 set pages | 7 s | 25 s | 4.8 min, 30 s at 10 in flight | 4.7 min, 32 s |
-| SAT, 122 set pages | 22 s | 39 s | 21 min, 2.2 min | 20 min, 2.4 min |
-| All 20 books, 694 calls for 3 and 4 | 3 min | 8.5 min | 2 h, 12 min | 1.9 h, 13 min |
-| After a spec edit | interpreter only: 2 s, 12 s for SAT | same | every page again | every page again |
-
-The gap is structural. Approaches 1 and 2 make a fixed number of calls per book and the rest is local code, so a book takes seconds whatever its size. Approaches 3 and 4 make one call per page, so their time grows with the book and a correction means paying for the whole book again.
 
 ## Dropped approaches
 
