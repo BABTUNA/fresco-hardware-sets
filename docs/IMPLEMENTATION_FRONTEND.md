@@ -32,35 +32,57 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 ### Server
 
 ```
-uv run hwsets serve                                                                                     cli.py
-├─ GET  /                                   static/index.html                                           app/server.py
-├─ GET  /api/books                          every PDF under data/ with its status and set count         app/server.py
-├─ GET  /api/books/{id}                     cached BookResult, extract_book first if there is none      app/server.py
-├─ GET  /api/books/{id}/pages/{n}.png       page to PNG at 110 dpi, cached under cache/pages/           app/server.py
-├─ PUT  /api/books/{id}/spec                save the edited spec, then rerun, no LLM call               app/server.py
-│  ├─ validate_spec(raw)                    schema check, compile the regexes                           hwsets/spec.py
-│  ├─ interpret(spec, pdf, pages)           every set in the book again, under a second, 12 s for SAT   hwsets/spec.py
-│  ├─ audit(...)                            fresh flags for the new spec                                hwsets/audit.py
-│  ├─ apply_corrections(sets, corrections)  overlay corrections/<id>.json, drop ones whose row is gone  app/server.py
-│  └─ to_result(...)                        rewrite out/<id>.json, return it                            hwsets/extract.py
-├─ POST /api/books/{id}/corrections         append one Correction, then the same rerun                  app/server.py
-└─ GET  /api/books/{id}/export              BookResult as a download                                    app/server.py
+uv run hwsets serve                         cli.py
+├─ GET  /                                   app/server.py
+│     static/index.html
+├─ GET  /api/books                          app/server.py
+│     every PDF under data/ with its status and set count
+├─ GET  /api/books/{id}                     app/server.py
+│     the cached BookResult, extract_book first if there is none
+├─ GET  /api/books/{id}/pages/{n}.png       app/server.py
+│     page to PNG at 110 dpi, cached under cache/pages/
+├─ PUT  /api/books/{id}/spec                app/server.py
+│     save the edited spec, then rerun, no LLM call
+│  ├─ validate_spec(raw)                    hwsets/spec.py
+│  │     schema check, compile the regexes
+│  ├─ interpret(spec, pdf, pages)           hwsets/spec.py
+│  │     every set in the book again, under a second, 12 s for SAT
+│  ├─ audit(...)                            hwsets/audit.py
+│  │     fresh flags for the new spec
+│  ├─ apply_corrections(sets, corrections)  app/server.py
+│  │     overlay corrections/<id>.json, drop ones whose row is gone
+│  └─ to_result(...)                        hwsets/extract.py
+│        rewrite out/<id>.json and return it
+├─ POST /api/books/{id}/corrections         app/server.py
+│     append one Correction, then the same rerun
+└─ GET  /api/books/{id}/export              app/server.py
+      the BookResult as a download
 ```
 
 ### Client
 
 ```
 app.js
-├─ loadBooks()                   fill the book list
-├─ openBook(id)                  fetch the result, draw the first set's page
-│  ├─ drawPage(n)                image plus boxes, scaled by image_width / page_size[0]
-│  ├─ renderSets()               number, description, status, pages, flag count
-│  └─ renderComponents(set)      table for the selected set, low-confidence cells tinted
-├─ selectSet(set)                jump to its first page, highlight its boxes
-├─ selectComponent(c)            highlight one box
-├─ saveSpec()                    PUT the text area, then openBook again
-├─ correctCell(c, field, value)  POST a Correction, then openBook again
-└─ exportJson()                  link to /export
+├─ loadBooks()
+│     fill the book list
+├─ openBook(id)
+│     fetch the result, draw the first set's page
+│  ├─ drawPage(n)
+│  │     image plus boxes, scaled by image_width / page_size[0]
+│  ├─ renderSets()
+│  │     number, description, status, pages, flag count
+│  └─ renderComponents(set)
+│        table for the selected set, low-confidence cells tinted
+├─ selectSet(set)
+│     jump to its first page, highlight its boxes
+├─ selectComponent(c)
+│     highlight one box
+├─ saveSpec()
+│     PUT the text area, then openBook again
+├─ correctCell(c, field, value)
+│     POST a Correction, then openBook again
+└─ exportJson()
+      link to /export
 ```
 
 ## 5. Data
