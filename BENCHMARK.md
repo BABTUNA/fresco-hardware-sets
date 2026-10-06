@@ -113,6 +113,7 @@ We labeled 155 schedule pages, the pages that list sets and their rows. Which pa
 | **Agreement.** 12 pages labeled twice by independent labelers (`bench_agreement.py`) | 100% of sets, 99.4% of components, 100% of fields agree. The one difference is whether HFH's `DIAGRAMS` row is a component. |
 | **Grounding.** Every labeled catalog, finish and mfr value is looked up in that page's text layer (`bench_grounding.py`) | 5,497 of 5,511 values appear word for word. All 14 exceptions are part numbers that wrap at a hyphen (`...CON-` and `SNB` on two lines), which the label joins correctly. |
 | **Hand review.** Every disagreement between our output and a label was read by hand | 3 label errors found and fixed. All three were the labeler "correcting" a printed code (`SI6X` written as `SR64`). |
+| **Consistency.** One convention was applied two ways in Bridgeport, which has no mfr column: the labelers split `IVES` out of `IVES 69 / 63` as the manufacturer but left `Horton` inside `Horton 4100 LH Pull Series`. The 4 Horton rows were changed to match the 6 IVES rows, so a maker name printed in the catalog cell is the manufacturer. | 4 rows edited on 2026-10-06. |
 
 Agreement measures consistency, not truth. Both labelers are the same model, so they could share a blind spot. The grounding test is the independent check on correctness.
 

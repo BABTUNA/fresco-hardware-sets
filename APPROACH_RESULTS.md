@@ -6,11 +6,11 @@ All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the stric
 
 | | 1. Spec per book (ours) | 2. Per-page LLM | 3. Multimodal per-page | 4. Parser per book |
 | :--- | ---: | ---: | ---: | ---: |
-| Exact rows | 98.0% | 95.8% | **99.1%** | 91.6% |
-| Exact rows, pages the spec writer never saw | 97.9% | 95.8% | 99.0% | 90.9% |
-| Precision | 98.1% | 91.9% | **99.1%** | 88.8% |
-| Per-book average | 98.5% | 96.3% | 99.2% | 92.5% |
-| Sets fully correct | 92.0% | 82.6% | **96.5%** | 72.0% |
+| Exact rows | 98.3% | 95.8% | **99.1%** | 91.6% |
+| Exact rows, pages the spec writer never saw | 98.2% | 95.8% | 99.0% | 90.9% |
+| Precision | 98.4% | 91.9% | **99.1%** | 88.8% |
+| Per-book average | 98.7% | 96.3% | 99.2% | 92.5% |
+| Sets fully correct | 93.9% | 82.6% | **96.5%** | 72.0% |
 | Sets found | 99.4% | 99.7% | 99.7% | 96.8% |
 | NOT USED and moved status right | 93.8% | 87.5% | 100.0% | 50.0% |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
@@ -24,7 +24,7 @@ All four approaches in [APPROACHES.md](APPROACHES.md) were scored with the stric
 
 | Tier | n | Ours | Per-page | Multimodal | Parser |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| T0 trivial | 459 | 98.7 | 100.0 | 99.6 | 97.6 |
+| T0 trivial | 459 | 100.0 | 100.0 | 99.6 | 97.6 |
 | T1 one caveat | 669 | 100.0 | 99.4 | 100.0 | 98.2 |
 | T2 hard | 1,090 | 96.5 | 91.8 | 98.3 | 85.0 |
 
@@ -48,7 +48,7 @@ Exact rows.
 | Book | n | Ours | Per-page | Multimodal | Parser |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | ami | 90 | 100.0 | 100.0 | 100.0 | 100.0 |
-| bridgeport | 109 | 94.5 | 100.0 | 98.2 | 89.9 |
+| bridgeport | 109 | 100.0 | 100.0 | 98.2 | 89.9 |
 | doorco | 74 | 100.0 | 82.4 | 100.0 | 91.9 |
 | forest | 5 | 100.0 | 100.0 | 100.0 | 100.0 |
 | gerrard | 166 | 98.8 | 98.8 | 98.8 | 98.8 |

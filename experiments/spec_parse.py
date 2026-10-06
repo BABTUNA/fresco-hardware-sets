@@ -25,6 +25,8 @@ QTY_ANY = re.compile(r"^(\d{1,4}(\.0+)?|_+|-{2,3})$")
 NOTE_RE = re.compile(r"^\s*(NOTES?\b|Note\b|Interlock\b|Operational\b|OPERATIONAL\b|Operation:|\*)")
 # door and opening lines sit under a set header but are not hardware
 # allegion-style books list door numbers between these two lines
+# full manufacturer names, for books that print the maker inside the catalog cell and have no mfr column
+MAKER_NAMES = re.compile(r"^(Von Duprin|Adams Rite|National Guard|Cavity Sliders|Ives|Horton|Schlage|LCN|Pemko|Norton|Sargent|Hager|Rockwood|McKinney|Trimco|Dorma|Falcon|Corbin Russwin|Corbin|Yale|Stanley|Best|Zero|NGP|Rixson|Glynn-Johnson|ABH|Securitron|HES|Detex|SDC|Bommer|Select)\b\s*", re.I)
 FINISH_SHAPE = re.compile(r"6\d\d[A-Z]?|US\d{1,2}[A-Z]?|\d{2}[A-Z]{1,2}")
 DOOR_INTRO = re.compile(r"^\s*For use on Door", re.I)
 LIST_END = re.compile(r"Provide each|Each to have|with the following|^\s*QTY\b", re.I)
@@ -214,6 +216,10 @@ def _assemble(layout, anchor, extra):
         # dash placeholders mean the cell is empty
         if v and re.fullmatch(r"-{1,3}", v):
             comp[k] = None
+    if "mfr" not in layout.fields and comp.get("catalog"):
+        m = MAKER_NAMES.match(comp["catalog"])
+        if m and comp["catalog"][m.end():].strip():
+            comp["mfr"], comp["catalog"] = m.group(1), comp["catalog"][m.end():].strip()
     if comp.get("mfr") and not comp.get("finish") and "finish" in layout.fields and FINISH_SHAPE.fullmatch(comp["mfr"]):
         comp["finish"], comp["mfr"] = comp["mfr"], None
     comp["qty"] = _qty(comp.get("qty"))

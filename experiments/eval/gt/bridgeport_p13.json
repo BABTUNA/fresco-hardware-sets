@@ -1,34 +1,211 @@
-{"page_image": "bridgeport_p13.png", "sets": [
-{"set_number": "20", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
-{"qty": 3, "description": "Standard Hinge", "catalog": "TA786 5\" x 4 1/2\" C26D", "finish": "C26D", "mfr": null},
-{"qty": 1, "description": "Lockset", "catalog": "MA581 P LTG/LTG 626/626 g LH", "finish": "626/626", "mfr": null},
-{"qty": 1, "description": "Cylinder", "catalog": "985 626 1 1/4\" G 6-Pin Open", "finish": "626", "mfr": null},
-{"qty": 1, "description": "Electric Strike", "catalog": "6400- 24VDC-630", "finish": "630", "mfr": null},
-{"qty": 1, "description": "Entry Phone", "catalog": "Visitor Entry Phone System By Security Contractor", "finish": null, "mfr": null},
-{"qty": 1, "description": "Door Postion Switch", "catalog": "679-05HM", "finish": null, "mfr": null},
-{"qty": 1, "description": "Auto Operator", "catalog": "Horton 4100 LH Pull Series", "finish": "US28", "mfr": null},
-{"qty": 2, "description": "Actuator", "catalog": "8310-813", "finish": null, "mfr": null},
-{"qty": 2, "description": "Mounting Box", "catalog": "9530-18 628", "finish": "628", "mfr": null},
-{"qty": 1, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
-{"qty": 1, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null},
-{"qty": 1, "description": "Schematic", "catalog": "Opening Schematic By Others", "finish": null, "mfr": null}
-]},
-{"set_number": "21", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
-{"qty": 3, "description": "Standard Hinge", "catalog": "TA714 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
-{"qty": 1, "description": "Lockset", "catalog": "W561 P6 LAT/LAT 626/626 G", "finish": "626/626", "mfr": null},
-{"qty": 1, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
-{"qty": 1, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
-{"qty": 1, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null}
-]},
-{"set_number": "22", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
-{"qty": 3, "description": "Standard Hinge", "catalog": "TA786 4 1/2\" x 4\" C26D", "finish": "C26D", "mfr": null},
-{"qty": 1, "description": "Exit Device", "catalog": "F-25-R-L-NL 626 510L-NL LAT 626 LHR 914 x 2134 Door", "finish": "626/626", "mfr": null},
-{"qty": 1, "description": "Electric Strike", "catalog": "6300- 24VDC-630", "finish": "630", "mfr": null},
-{"qty": 1, "description": "Card Access", "catalog": "Card Reader & Fobs By Security Contractor", "finish": null, "mfr": null},
-{"qty": 1, "description": "Door Postion Switch", "catalog": "679-05HM", "finish": null, "mfr": null},
-{"qty": 1, "description": "Surface Closer", "catalog": "SC81A Rw/ PA 689", "finish": "689", "mfr": null},
-{"qty": 1, "description": "Wall Door Stop", "catalog": "S120 C26D", "finish": "C26D", "mfr": null},
-{"qty": 1, "description": "Kick Plate", "catalog": "8400 C32D 8x34", "finish": "C32D", "mfr": null},
-{"qty": 3, "description": "Door Silencer", "catalog": "SR64 GRY", "finish": "GRY", "mfr": null}
-]}
-]}
+{
+ "page_image": "bridgeport_p13.png",
+ "sets": [
+  {
+   "set_number": "20",
+   "starts_on_page": true,
+   "continues_on_next_page": false,
+   "status": "active",
+   "components": [
+    {
+     "qty": 3,
+     "description": "Standard Hinge",
+     "catalog": "TA786 5\" x 4 1/2\" C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Lockset",
+     "catalog": "MA581 P LTG/LTG 626/626 g LH",
+     "finish": "626/626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Cylinder",
+     "catalog": "985 626 1 1/4\" G 6-Pin Open",
+     "finish": "626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Electric Strike",
+     "catalog": "6400- 24VDC-630",
+     "finish": "630",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Entry Phone",
+     "catalog": "Visitor Entry Phone System By Security Contractor",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Door Postion Switch",
+     "catalog": "679-05HM",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Auto Operator",
+     "catalog": "4100 LH Pull Series",
+     "finish": "US28",
+     "mfr": "Horton"
+    },
+    {
+     "qty": 2,
+     "description": "Actuator",
+     "catalog": "8310-813",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 2,
+     "description": "Mounting Box",
+     "catalog": "9530-18 628",
+     "finish": "628",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Gasketing",
+     "catalog": "W-22AL 1/965 x 2/2134",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Kick Plate",
+     "catalog": "8400 C32D 8\" x 36 1/2\"",
+     "finish": "C32D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Schematic",
+     "catalog": "Opening Schematic By Others",
+     "finish": null,
+     "mfr": null
+    }
+   ]
+  },
+  {
+   "set_number": "21",
+   "starts_on_page": true,
+   "continues_on_next_page": false,
+   "status": "active",
+   "components": [
+    {
+     "qty": 3,
+     "description": "Standard Hinge",
+     "catalog": "TA714 4 1/2\" x 4\" C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Lockset",
+     "catalog": "W561 P6 LAT/LAT 626/626 G",
+     "finish": "626/626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Surface Closer",
+     "catalog": "SC81A Rw/ PA 689",
+     "finish": "689",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Gasketing",
+     "catalog": "W-22AL 1/965 x 2/2134",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Kick Plate",
+     "catalog": "8400 C32D 8\" x 36 1/2\"",
+     "finish": "C32D",
+     "mfr": null
+    }
+   ]
+  },
+  {
+   "set_number": "22",
+   "starts_on_page": true,
+   "continues_on_next_page": false,
+   "status": "active",
+   "components": [
+    {
+     "qty": 3,
+     "description": "Standard Hinge",
+     "catalog": "TA786 4 1/2\" x 4\" C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Exit Device",
+     "catalog": "F-25-R-L-NL 626 510L-NL LAT 626 LHR 914 x 2134 Door",
+     "finish": "626/626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Electric Strike",
+     "catalog": "6300- 24VDC-630",
+     "finish": "630",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Card Access",
+     "catalog": "Card Reader & Fobs By Security Contractor",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Door Postion Switch",
+     "catalog": "679-05HM",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Surface Closer",
+     "catalog": "SC81A Rw/ PA 689",
+     "finish": "689",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Wall Door Stop",
+     "catalog": "S120 C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Kick Plate",
+     "catalog": "8400 C32D 8x34",
+     "finish": "C32D",
+     "mfr": null
+    },
+    {
+     "qty": 3,
+     "description": "Door Silencer",
+     "catalog": "SR64 GRY",
+     "finish": "GRY",
+     "mfr": null
+    }
+   ]
+  }
+ ]
+}

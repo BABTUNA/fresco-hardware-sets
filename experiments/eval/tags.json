@@ -70,7 +70,7 @@
   },
   "star": {
    "path": "specs_e2e/star.r1.json",
-   "sha1": "2d570eadadb0"
+   "sha1": "4321440a34a9"
   },
   "usi": {
    "path": "specs_e2e/usi.json",
@@ -728,8 +728,10 @@
       },
       {
        "description": "Auto Operator",
-       "tags": [],
-       "tier": "T0 trivial"
+       "tags": [
+        "full_name_mfr"
+       ],
+       "tier": "T1 one caveat"
       },
       {
        "description": "Actuator",
@@ -889,8 +891,10 @@
       },
       {
        "description": "Auto Operator",
-       "tags": [],
-       "tier": "T0 trivial"
+       "tags": [
+        "full_name_mfr"
+       ],
+       "tier": "T1 one caveat"
       },
       {
        "description": "Actuator",
@@ -1239,8 +1243,10 @@
       },
       {
        "description": "Auto Operator",
-       "tags": [],
-       "tier": "T0 trivial"
+       "tags": [
+        "full_name_mfr"
+       ],
+       "tier": "T1 one caveat"
       },
       {
        "description": "Actuator",
@@ -1314,9 +1320,10 @@
       {
        "description": "Auto Operator",
        "tags": [
+        "full_name_mfr",
         "wrapped"
        ],
-       "tier": "T1 one caveat"
+       "tier": "T2 hard"
       },
       {
        "description": "Actuator",

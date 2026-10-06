@@ -1,17 +1,17 @@
 # Benchmark results
 
-Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 rows) from 20 books, using the end-to-end pipeline output in `experiments/out_e2e/`. How the benchmark works is in [BENCHMARK.md](BENCHMARK.md). These numbers are after the interpreter fixes of 2026-10-05 and 2026-10-06 (struck text, wraps vs notes, rows with no qty, door lines, column drift, centered pre-lines, joint column calibration, split codes, run continuity).
+Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 rows) from 20 books, using the end-to-end pipeline output in `experiments/out_e2e/`. How the benchmark works is in [BENCHMARK.md](BENCHMARK.md). These numbers are after the interpreter fixes of 2026-10-05 and 2026-10-06 (struck text, wraps vs notes, rows with no qty, door lines, column drift, centered pre-lines, joint column calibration, split codes, run continuity, maker names split out of the catalog in books with no mfr column).
 
 ## Summary
 
 | | Result |
 | :--- | ---: |
-| Sets fully correct (every row exact, nothing extra, status right) | 92.0% |
-| Sets fully correct, pages the spec writer never saw | 91.4% |
-| Exact rows | 98.0% |
-| Exact rows, pages the spec writer never saw | 97.9% |
-| Precision | 98.1% |
-| Per-book average of exact rows | 98.5% |
+| Sets fully correct (every row exact, nothing extra, status right) | 93.9% |
+| Sets fully correct, pages the spec writer never saw | 93.5% |
+| Exact rows | 98.3% |
+| Exact rows, pages the spec writer never saw | 98.2% |
+| Precision | 98.4% |
+| Per-book average of exact rows | 98.7% |
 | Sets found on labeled pages | 99.4% |
 | NOT USED and moved status right | 93.8% |
 | Mfr/finish swaps | 0 of 2,218 |
@@ -20,9 +20,9 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 
 | Tier | n | Exact rows | qty | description | catalog | finish | mfr |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| T0 trivial | 459 | 98.7 | 100.0 | 100.0 | 98.7 | 100.0 | 98.7 |
-| T1 one caveat | 669 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| T2 hard | 1,090 | 96.5 | 99.2 | 98.2 | 97.2 | 98.9 | 98.3 |
+| T0 trivial | 456 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+| T1 one caveat | 671 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+| T2 hard | 1,091 | 96.5 | 99.2 | 98.2 | 97.3 | 98.9 | 98.4 |
 
 The weakest areas are column drift (93.1% exact rows) and wrapped cells (95.5%), and both are mostly Star, whose catalog cells are full sentences. The T0 misses are Bridgeport, where the labels split `IVES` out of `IVES 69 / 63` and we keep it in the catalog.
 
@@ -44,11 +44,11 @@ A set counts only when it was found, every labeled row in it is exact, we added 
 
 | | n | Right |
 | :--- | ---: | ---: |
-| Sets whose header is on a labeled page | 311 | 92.0 |
-| Same, pages the spec writer never saw | 292 | 91.4 |
+| Sets whose header is on a labeled page | 311 | 93.9 |
+| Same, pages the spec writer never saw | 292 | 93.5 |
 | Continued pieces (set started on an earlier page) | 31 | 80.6 |
 
-Per book: bridgeport 65% of 17, star 72% of 18, gerrard 86% of 14, hfh 86% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 10 books.
+Per book: star 72% of 18, gerrard 86% of 14, hfh 86% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 11 books.
 
 ## By caveat
 
@@ -57,10 +57,10 @@ Per book: bridgeport 65% of 17, star 72% of 18, gerrard 86% of 14, hfh 86% of 21
 | ambiguous_code | 548 | 16 | 98.0 | 99.3 | 98.2 | 98.4 | 99.3 | 99.3 | 0 |
 | centered_cells | 29 | 1: JC Ryan | 96.6 | 100.0 | 96.6 | 100.0 | 100.0 | 100.0 | 0 |
 | column_drift | 262 | 4: Forest, JC Ryan, Morris, Star | 93.1 | 97.7 | 96.9 | 94.3 | 96.6 | 94.3 | 0 |
-| dense_page | 486 | 9 | 99.0 | 100.0 | 99.8 | 99.2 | 100.0 | 99.2 | 0 |
+| dense_page | 486 | 9 | 99.8 | 100.0 | 99.8 | 100.0 | 100.0 | 100.0 | 0 |
 | embedded_mfr | 134 | 1: Roselle | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 0 |
 | empty_code | 419 | 18 | 96.9 | 99.3 | 97.9 | 97.9 | 99.3 | 98.8 | 0 |
-| full_name_mfr | 134 | 2: JC Ryan, Star | 92.5 | 98.5 | 98.5 | 94.8 | 96.3 | 92.5 | 0 |
+| full_name_mfr | 138 | 2: JC Ryan, Star | 92.8 | 98.6 | 98.6 | 94.9 | 96.4 | 92.8 | 0 |
 | grid_table | 134 | 1: Roselle | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 0 |
 | missing_qty | 107 | 8 | 95.3 | 95.3 | 95.3 | 95.3 | 97.2 | 95.3 | 0 |
 | multi_page | 291 | 10 | 96.6 | 99.3 | 98.3 | 96.9 | 99.3 | 99.3 | 0 |
@@ -74,10 +74,10 @@ Source books counts the distinct sample projects behind each tag. Several hard c
 | Tag | n | Source books | Found | Status right |
 | :--- | ---: | :--- | ---: | ---: |
 | All | 311 | 20 | 99.4 | 93.8 |
-| column_drift | 39 | 4: Forest, JC Ryan, Morris, Star | 97.4 | |
+| column_drift | 39 | 4: Forest, JC Ryan, Morris, Star | 97.4 |  |
 | dense_page | 103 | 9 | 100.0 | 100.0 |
 | moved | 5 | 1: SJC | 100.0 | 100.0 |
-| multi_page | 25 | 8 | 100.0 | |
+| multi_page | 25 | 8 | 100.0 |  |
 | not_used | 11 | 2: Lyons, SJC | 90.9 | 90.9 |
 | struck_page | 63 | 3: HFH, SJC, Valor | 98.4 | 91.7 |
 
@@ -88,7 +88,7 @@ The one NOT USED set we miss is SJC E01 on page 734, where the whole block inclu
 | Book | n | Exact rows | qty | description | catalog | finish | mfr |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | ami | 90 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| bridgeport | 109 | 94.5 | 100.0 | 100.0 | 94.5 | 100.0 | 94.5 |
+| bridgeport | 109 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | doorco | 74 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | forest | 5 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | gerrard | 166 | 98.8 | 100.0 | 98.8 | 100.0 | 100.0 | 100.0 |
@@ -113,7 +113,6 @@ The one NOT USED set we miss is SJC E01 on page 734, where the whole block inclu
 | Error | Where | Tag it hurts |
 | :--- | :--- | :--- |
 | Prose cells, with the finish and maker written inside the sentence (`Trimco`, `625 polished chrome`). The labels pull them out, we leave them in the catalog. | Star page 56 | full_name_mfr |
-| The label splits `IVES` out of `IVES 69 / 63 As Required`, we keep it in the catalog | Bridgeport | catalog, mfr |
 | A ragged wrap that looks like a row with no quantity: `WIRE HARNESS` / `CONNECTOR - IN FRAME`, broken early by the author with room left on the line | Oswego page 445 | wrapped |
 | A fully struck block drops its own header, so the NOT USED set is lost | SJC E01 | not_used |
 | Set `AL 01` saved as `AL`, because the header regex does not allow a space in the number | Gerrard | checks (1 of 49) |
@@ -125,14 +124,15 @@ The same scorer on the output before the interpreter fixes of 2026-10-05 and 202
 
 | | Before | After |
 | :--- | ---: | ---: |
-| Sets fully correct | 70.7% | 92.0% |
-| Exact rows | 94.2% | 98.0% |
-| Precision | 91.5% | 98.1% |
+| Sets fully correct | 70.7% | 93.9% |
+| Exact rows | 94.2% | 98.3% |
+| Precision | 91.5% | 98.4% |
 | Mfr/finish swaps | 4 | 0 |
 | missing_qty exact rows | 69.2% | 95.3% |
 | column_drift exact rows | 81.7% | 93.1% |
 | struck_page exact rows | 92.9% | 97.4% |
 | Star, sets fully correct | 56% | 72% |
+| Bridgeport, sets fully correct | 65% | 100% |
 | NOT USED and moved status right | 75.0% | 93.8% |
 | Checks | 45/49 | 48/49 |
 

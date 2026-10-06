@@ -1,25 +1,154 @@
-{"page_image": "bridgeport_p14.png", "sets": [
-  {"set_number": "23", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
-    {"qty": 3, "description": "Standard Hinge", "catalog": "TA786 5\" x 4 1/2\" C26D", "finish": "C26D", "mfr": null},
-    {"qty": 1, "description": "Latchset", "catalog": "T101 LAT/LAT 626/626", "finish": "626/626", "mfr": null},
-    {"qty": 1, "description": "Electric Strike", "catalog": "6400- 24VDC-630", "finish": "630", "mfr": null},
-    {"qty": 1, "description": "Auto Operator", "catalog": "Horton 4100 RH Pull Series", "finish": "US28", "mfr": null},
-    {"qty": 2, "description": "Actuator", "catalog": "8310-813", "finish": null, "mfr": null},
-    {"qty": 2, "description": "Mounting Box", "catalog": "9530-18 628", "finish": "628", "mfr": null},
-    {"qty": 1, "description": "Gasketing", "catalog": "W-22AL 1/965 x 2/2134", "finish": null, "mfr": null},
-    {"qty": 1, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null},
-    {"qty": 1, "description": "Weatherstripping", "catalog": "W-24S-CA x 38\"", "finish": "CA", "mfr": null}
-  ]},
-  {"set_number": "24", "starts_on_page": true, "continues_on_next_page": false, "status": "active", "components": [
-    {"qty": 3, "description": "Standard Hinge", "catalog": "TA2314 4 1/2\" x 4 1/2\" C32D NRP", "finish": "C32D", "mfr": null},
-    {"qty": 1, "description": "Exit Device", "catalog": "F-25-R-L-NL 626 510L-NL LAT 626 RHR 965 x 2134 Door", "finish": "626/626", "mfr": null},
-    {"qty": 1, "description": "Cylinder", "catalog": "985 626 1 1/4\" G 6-Pin Open", "finish": "626", "mfr": null},
-    {"qty": 1, "description": "Surface Closer", "catalog": "SC71A Rw/ PA 689", "finish": "689", "mfr": null},
-    {"qty": 1, "description": "Overhead Door Stop", "catalog": "104S C26D", "finish": "C26D", "mfr": null},
-    {"qty": 1, "description": "Kick Plate", "catalog": "8400 C32D 8\" x 36 1/2\"", "finish": "C32D", "mfr": null},
-    {"qty": 1, "description": "Weatherstripping", "catalog": "W-2050S-CA x 38\"", "finish": "CA", "mfr": null},
-    {"qty": 2, "description": "Jamb Weatherstripping", "catalog": "W-50S-CAx84\" Opening", "finish": "CA", "mfr": null},
-    {"qty": 1, "description": "Weatherstripping", "catalog": "W-38S-CA x 38\"", "finish": "CA", "mfr": null},
-    {"qty": 1, "description": "Threshold", "catalog": "CT-65 x 38\"", "finish": null, "mfr": null}
-  ]}
-]}
+{
+ "page_image": "bridgeport_p14.png",
+ "sets": [
+  {
+   "set_number": "23",
+   "starts_on_page": true,
+   "continues_on_next_page": false,
+   "status": "active",
+   "components": [
+    {
+     "qty": 3,
+     "description": "Standard Hinge",
+     "catalog": "TA786 5\" x 4 1/2\" C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Latchset",
+     "catalog": "T101 LAT/LAT 626/626",
+     "finish": "626/626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Electric Strike",
+     "catalog": "6400- 24VDC-630",
+     "finish": "630",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Auto Operator",
+     "catalog": "4100 RH Pull Series",
+     "finish": "US28",
+     "mfr": "Horton"
+    },
+    {
+     "qty": 2,
+     "description": "Actuator",
+     "catalog": "8310-813",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 2,
+     "description": "Mounting Box",
+     "catalog": "9530-18 628",
+     "finish": "628",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Gasketing",
+     "catalog": "W-22AL 1/965 x 2/2134",
+     "finish": null,
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Kick Plate",
+     "catalog": "8400 C32D 8\" x 36 1/2\"",
+     "finish": "C32D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Weatherstripping",
+     "catalog": "W-24S-CA x 38\"",
+     "finish": "CA",
+     "mfr": null
+    }
+   ]
+  },
+  {
+   "set_number": "24",
+   "starts_on_page": true,
+   "continues_on_next_page": false,
+   "status": "active",
+   "components": [
+    {
+     "qty": 3,
+     "description": "Standard Hinge",
+     "catalog": "TA2314 4 1/2\" x 4 1/2\" C32D NRP",
+     "finish": "C32D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Exit Device",
+     "catalog": "F-25-R-L-NL 626 510L-NL LAT 626 RHR 965 x 2134 Door",
+     "finish": "626/626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Cylinder",
+     "catalog": "985 626 1 1/4\" G 6-Pin Open",
+     "finish": "626",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Surface Closer",
+     "catalog": "SC71A Rw/ PA 689",
+     "finish": "689",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Overhead Door Stop",
+     "catalog": "104S C26D",
+     "finish": "C26D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Kick Plate",
+     "catalog": "8400 C32D 8\" x 36 1/2\"",
+     "finish": "C32D",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Weatherstripping",
+     "catalog": "W-2050S-CA x 38\"",
+     "finish": "CA",
+     "mfr": null
+    },
+    {
+     "qty": 2,
+     "description": "Jamb Weatherstripping",
+     "catalog": "W-50S-CAx84\" Opening",
+     "finish": "CA",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Weatherstripping",
+     "catalog": "W-38S-CA x 38\"",
+     "finish": "CA",
+     "mfr": null
+    },
+    {
+     "qty": 1,
+     "description": "Threshold",
+     "catalog": "CT-65 x 38\"",
+     "finish": null,
+     "mfr": null
+    }
+   ]
+  }
+ ]
+}
