@@ -2,16 +2,6 @@
 
 Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](IMPLEMENTATION_FRONTEND.md). Function and file names here are the target names for `hwsets/`. The same logic already runs in `experiments/` under older names, listed in the files table.
 
-## 0. Status
-
-| Part | State |
-| :--- | :--- |
-| Finder, lines, interpreter, audit | Done in `experiments/`, benchmarked, needs porting and cleanup |
-| Spec compile and repair calls | The prompt exists (`experiments/SPEC_PROMPT.md`), a Claude subagent stood in for the API call. `compile.py` is new code |
-| Output schema, `extract.py`, `cli.py` | New |
-| Eval | Done, strict scorer in `experiments/bench.py`, 155 labeled pages plus 25 held out |
-| Legends, confidence | Not started (bonus) |
-
 ## 1. Goals
 
 **Find** (`finder.py`)
@@ -92,64 +82,6 @@ hwsets extract book.pdf -o out.json                                  cli.py
    ├─ confidence(component, layout, flags)                           extract.py
    └─ to_result(sets, flags, pdf, spec) -> BookResult                extract.py
 ```
-
-| Call | What it does |
-| :--- | :--- |
-| `extract_book` | Runs the whole pipeline for one PDF and returns a `BookResult`. The only function the CLI, viewer and eval call. |
-| `find_schedule` | Scores every page and returns the page runs that hold schedules. |
-| `page_texts` | Fast text extraction with pypdfium2, one list of text lines per page. Used for scoring and header search, not for coordinates. |
-| `row_like` | True when a line looks like a component row: qty, words, short codes at the end, or a hardware word next to a finish code (grid tables). |
-| `group_runs` | Joins pages with 2+ row-like lines into runs, allowing 1-page gaps. Keeps a run only if it has 5+ rows and 3+ hardware words, which drops other trades' equipment lists. |
-| `load_or_compile` | Returns `specs/<book>.json` if it exists. Otherwise compiles a new spec and saves it. |
-| `pick_samples` | The 2 pages in the runs with the most row-like lines. |
-| `dump` | Renders pages as text where each run of words is tagged with its left x, e.g. `[80]6 [112]EA [148]HINGE [290]5BB1HW 4.5 X 4.5 [464]652 [508]IVE`. This is all the model sees. |
-| `page_lines` | pdfplumber words grouped into visual lines with coordinates. Drops rotated watermark text and private-use icon glyphs. |
-| `ask_claude` | One Anthropic API call with the spec prompt and the dump. Returns the spec JSON. |
-| `validate_spec` | Checks the reply against the spec schema and compiles the regexes, so a bad spec fails loudly before it runs. |
-| `widen_with_headers` | Runs the spec's `set_header` regex over every page's text and adds header pages near the runs, then fills gaps of up to 3 pages. Catches sets the finder scored low (JC Ryan's EX sets). |
-| `interpret` | Picks `run_columns` or `run_grid` from the spec's mode. |
-| `run_columns` | Walks the pages in order. Starts a set at each header, tags every other line, and resolves the tagged lines into components once per page. |
-| `mark_struck` | Marks words crossed by a thin horizontal line at mid-height. A fully struck row is kept with status `removed`. Struck words inside a row are dropped. |
-| `calibrate` | Re-snaps the catalog, finish, mfr and notes columns to this page's own aligned word edges, within 30pt of the spec's x. Fixes drift like Star page 85. |
-| `classify` | Tags a line as `header`, `meta` (door list, "Provide each..."), `note`, `anchor` (starts a component) or `other`. |
-| `resolve_top` | Wrapped lines sit below their row. Each `other` line joins the anchor above it if the vertical gap is small, otherwise it becomes a set note. |
-| `resolve_middle` | Wrapped lines sit above and below their row. Lines that overlap vertically are one row, a positive gap starts a new row. |
-| `assemble` | Builds one `Component` from an anchor line plus its wrapped lines: fields by x, hyphen joins across line breaks, `---` to null, bbox. |
-| `Layout.assign` | Maps each word to a field by x. A word that continues a run of text without a gap cannot jump into the finish or mfr column. |
-| `parse_qty` | `"3"` and `"3.0"` become 3. Blank, `__`, `--`, `As Req` become null. |
-| `set_status` | `moved` with `moved_to` for "Moved to Exterior Set HW E14", `not_used` for NOT USED or N/A, else `active`. |
-| `run_grid` | Ruled tables. pdfplumber finds the table, the header row maps labels to fields, a cell matching `set_number` starts a set, other text in that column becomes the description. |
-| `split_mfr` | `"IVES - 5BB1 4.5\" x 4.5\""` becomes mfr `IVES`, catalog `5BB1 4.5" x 4.5"`. |
-| `audit` | Runs every check and returns the flags. |
-| `header_near_miss` | Lines that start like the header (`Set:`, `Hardware Group No.`) but did not match it. Caught HFH's 10 merged sets and Star's plural variants. |
-| `rows_without_components` | Pages with 3+ row-like lines and no extracted components. |
-| `long_text_in_code_columns` | More than 10% of components have 4+ words in finish or mfr, so a column x is wrong. |
-| `mfr_looks_like_finish` | The mfr column is mostly finish-shaped values (626, US26D, BLK). Means the columns are swapped. |
-| `low_coverage` | Fewer than 60% as many components as row-like lines. |
-| `suspicious_qty` | Qty over 99 with no catalog, like Lyons' door-number line read as qty 115. |
-| `repair` | One Claude call with the spec, the flags with example lines, and the same dump. Returns a revised spec. If flags remain after it, the book is `needs_review`. |
-| `read_legends` | Bonus. Parses code/name lists printed in the book (`HA Hager`, `C Charcoal`) into a lookup. |
-| `confidence` | Bonus. Per-field score from evidence already in hand: did the column snap on this page, does the value fit its column's shape, did the set pass the audit. |
-| `to_result` | Converts to the output schema: 1-based pages, `catalog` renamed to `catalog_number`, legend names added, book status set. |
-
-### Score against the labels
-
-```
-python -m eval.bench                                                  eval/bench.py
-└─ for each eval/gt/<book>_p<page>.json
-   ├─ load BookResult for the book, keep the sets on this page       eval/bench.py
-   ├─ match_sets(gt_sets, our_sets)                                  eval/bench.py
-   └─ for each matched set: match_rows(gt_rows, our_rows)            eval/bench.py
-      └─ norm(value) per field                                       eval/bench.py
-```
-
-| Call | What it does |
-| :--- | :--- |
-| `match_sets` | Pairs labeled sets with ours by set number on the same page. A labeled set with no partner counts every row as missed. |
-| `match_rows` | A row counts only when all five fields (qty, description, catalog, finish, mfr) are exact after `norm`. Rows are a multiset, so two identical labeled rows need two identical extracted rows. Extra rows count against precision. |
-| `norm` | Case, whitespace, curly quotes and dash variants. Nothing fuzzier. |
-| set fully correct | Every row matched, nothing extra, status right. |
-| swap | Our finish equals the label's mfr or the other way round. |
 
 ### Files
 
@@ -390,17 +322,3 @@ class BookScore(TypedDict):
     # our finish equals the label's mfr or the other way round
     swaps: int
 ```
-
-### Flow
-
-| Structure | Made by | Used by |
-| :--- | :--- | :--- |
-| `Word`, `Line` | `page_lines` | `dump`, `calibrate`, `classify`, `resolve_*`, `assemble` |
-| `Runs` | `group_runs` | `load_or_compile`, `widen_with_headers` |
-| `Spec` | `ask_claude`, `repair`, viewer edit | `interpret`, `audit`, `widen_with_headers` |
-| `Layout` | `run_columns` per page | `classify`, `resolve_*`, `assemble` |
-| `Item` | `classify` | `resolve_top`, `resolve_middle` |
-| `Component` | `assemble`, `run_grid` | `HardwareSet`, `confidence`, `to_result` |
-| `HardwareSet` | `run_columns`, `run_grid` | `audit`, `to_result` |
-| `Flag` | `audit` | `repair`, `to_result`, viewer |
-| `BookResult` | `to_result` | output file, viewer, `eval/bench.py` |
