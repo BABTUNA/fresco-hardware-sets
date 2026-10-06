@@ -12,6 +12,8 @@ plan = json.load(open("eval/e2e_plan.json"))
 # SEEN=p4 or SEEN=div: count the pages of that sample selection (eval/sample_plan.json) as seen by the spec
 # writer instead of the frozen 2-page baseline, for the sample size experiment
 SEEN = os.environ.get("SEEN")
+# PAGES=eval/round1_pages.json: score only the listed <book>_p<page> keys
+PAGES = set(json.load(open(os.environ["PAGES"]))) if os.environ.get("PAGES") else None
 SAMPLE = json.load(open("eval/sample_plan.json")) if SEEN else {}
 
 
@@ -74,6 +76,8 @@ def main(results_dir="out_e2e"):
         d = result(results_dir, book)
         gt = json.load(open(gt_file))
         key = f"{book}_p{page_no}"
+        if PAGES is not None and key not in PAGES:
+            continue
         ft = frozen.get(key)
         # tags are frozen against the labels, so an edited label file needs a fresh freeze
         if ft is None or [len(s["components"]) for s in ft["sets"]] != [len(s["components"]) for s in gt["sets"]] or \

@@ -23,6 +23,17 @@ Notes:
 - Times: finder and interpreter measured, model calls estimated from token counts at 60 tokens per second, one call at a time.
 - Cost from the measured tokens per call at $3 per million input and $15 per million output.
 
+## Random samples
+
+The 155 pages above were partly picked to hit caveats. These two sets were drawn at random, so they say what a typical page looks like. Round 1 is 2 random schedule pages per book, labeled first and used in tuning. The held-out set was labeled after all tuning and scored once (`PAGES=eval/round1_pages.json python bench.py`, `GT=eval/holdout/gt python bench.py`).
+
+| | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
+| :--- | ---: | ---: | ---: | ---: |
+| Round 1, 39 random pages: exact rows | 99.6% (531 / 533) | 99.6% (531 / 533) | 96.2% (513 / 533) | 99.1% (528 / 533) |
+| Round 1: sets fully correct | 98.5% (66 / 67) | 97.0% (65 / 67) | 73.1% (49 / 67) | 92.5% (62 / 67) |
+| Held-out, 25 random pages: exact rows | 97.2% (350 / 360) | 97.2% (350 / 360) | not run | not run |
+| Held-out: sets fully correct | 89.5% (34 / 38) | 89.5% (34 / 38) | not run | not run |
+
 ## Where each one loses
 
 | | Worst books | Why |
