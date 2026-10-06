@@ -35,7 +35,7 @@ PDF -> 1. find schedule pages -> 2. compile spec (1 LLM call) -> 3. interpret ev
 | **4. Audit** | Checks the result against the book: header-like lines that did not match, pages with rows but no components, long text in code columns, mfr column that looks like finishes. | `experiments/e2e.py` |
 | **5. Output** | Sets with 1-based page numbers, bbox per page and per component, statuses. | |
 
-**Results so far.** On 20 full books against 39 hand-labeled pages (533 components): 66/67 sets, 99.8% component recall, 99.1% precision, qty/finish/mfr 100%, 0 mfr/finish swaps. 1,198 sets in about 75 seconds. Two books needed one repair call, and the audit flagged exactly those two.
+**Results so far.** On 155 labeled pages from 20 books, scored strictly: 91.0% of sets fully correct, 97.6% of rows exact, 97.9% precision, 4 mfr/finish swaps in 2,218 rows. Across whole books, 1,171 of 1,175 printed set numbers are found. See [RESULTS.md](RESULTS.md).
 
 ## Output
 

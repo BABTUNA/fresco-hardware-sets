@@ -23,7 +23,7 @@ The 694 is the number of schedule pages across the 20 books.
 
 **Why it is a serious option.** One LLM call per book, the same output on every run, and a fix to the spec fixes every set in the book. Evaporate (VLDB 2024) and Scout (arXiv 2608.08261, Aug 2026) both show that an LLM writing an extractor once can match direct LLM extraction at a fraction of the cost.
 
-**Where it is weak.** The spec language only says what its 9 keys can say. Rows with no qty and no mfr, columns that move a long way on one page, and 4-digit quantities fall through it.
+**Where it is weak.** The spec language only says what its 9 keys can say, so everything else has to be a general rule in the interpreter. Rows with no qty, struck text, note lines and column drift all started out as misses and were fixed as interpreter rules. What is left is prose-style cells, where the finish and maker are written inside a sentence (Star).
 
 **How it was tested.** The spec was written from the two densest pages of each book. An audit then checked the output against the whole book, and the 2 books it flagged got one repair call. The interpreter was improved over several rounds on this corpus, so this approach had more tuning than the others.
 

@@ -55,6 +55,7 @@ def main(results_dir="out_e2e"):
     sets_tag = collections.defaultdict(collections.Counter)
     prec = collections.Counter()
     misses = []
+    full = collections.defaultdict(lambda: [0, 0])
     frozen = load_tags()
     for gt_file in sorted(glob.glob("eval/gt/*.json")):
         book, page_no = re.match(r"eval/gt/(\w+)_p(\d+)\.json", gt_file).groups()
@@ -105,8 +106,12 @@ def main(results_dir="out_e2e"):
 
         # row level, one set at a time
         prec["ours"] += sum(len(v) for v in our_rows.values())
+        group_ok = {}
         for k, gcs in gt_rows.items():
-            for g, res in zip(gcs, score_group(gcs, our_rows.get(k, []))):
+            results = score_group(gcs, our_rows.get(k, []))
+            # a set is fully right when every labeled row is exact and we added nothing to it
+            group_ok[k] = all(r["exact"] for r in results) and len(our_rows.get(k, [])) == len(gcs)
+            for g, res in zip(gcs, results):
                 prec["exact"] += res["exact"]
                 buckets = g["_tags"] | {"ALL", g["_tier"], f"book:{book}"} | (set() if seen else {"ALL unseen pages"})
                 for t in buckets:
@@ -119,6 +124,16 @@ def main(results_dir="out_e2e"):
                 if not res["exact"]:
                     misses.append({"page": key, "kind": "row", "description": g.get("description"),
                                    "wrong": [f for f in FIELDS if not res[f]], "tags": sorted(g["_tags"])})
+        for s, fs in zip(gt["sets"], ft["sets"]):
+            starts = s.get("starts_on_page", True)
+            k = group_key(s["set_number"], starts)
+            status = s.get("status", "active")
+            ours = our_sets.get(k, [None])[0] if starts else True
+            ok = ours is not None and group_ok.get(k, not our_rows.get(k)) and (status == "active" or ours.get("status") == status)
+            kind = "sets" if starts else "continued pieces"
+            for b in ("ALL", f"book:{book}") + (() if seen else ("ALL unseen pages",)):
+                full[(kind, b)][0] += 1
+                full[(kind, b)][1] += bool(ok)
 
     pct = lambda a, b: f"{100 * a / b:5.1f}" if b else "    -"
     order = ["ALL", "ALL unseen pages", "T0 trivial", "T1 one caveat", "T2 hard"]
@@ -138,6 +153,13 @@ def main(results_dir="out_e2e"):
     for t in ["ALL"] + sorted(x for x in sets_tag if x != "ALL"):
         b = sets_tag[t]
         print(f"{t:22s} {b['gt']:5d} {pct(b['found'], b['gt']):>6s} {pct(b['status_ok'], b['status_n']):>7s}")
+    print(f"\n{'sets fully correct':22s} {'n':>5s} {'right':>6s}")
+    for kind in ("sets", "continued pieces"):
+        for b in ("ALL", "ALL unseen pages"):
+            n, ok = full[(kind, b)]
+            print(f"{kind + (' (unseen pages)' if b != 'ALL' else ''):34s} {n:5d} {pct(ok, n):>6s}")
+    worst = sorted((full[("sets", t)][1] / full[("sets", t)][0], t[5:], full[("sets", t)][0]) for t in books if full[("sets", t)][0])
+    print("  per book: " + ", ".join(f"{b} {100 * r:.0f}% of {n}" for r, b, n in worst))
     print(f"\nrow precision: {prec['exact']}/{prec['ours']} = {pct(prec['exact'], prec['ours'])}% of our rows on labeled pages are exactly right")
     json.dump(misses, open("eval/bench_misses.json", "w"), indent=1)
     print(f"{len(misses)} misses written to eval/bench_misses.json")

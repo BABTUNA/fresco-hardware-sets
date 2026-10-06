@@ -19,6 +19,15 @@ from lines import page_lines
 
 SLACK = 4
 CODE_FIELDS = ("mfr", "finish")
+# quantities the spec might not list: 4 digits, blanks, "As Req"
+QTY_ANY = re.compile(r"^(\d{1,4}(\.0+)?|_+|-{2,3})$")
+# lines that are notes, not part of a row, whatever the book
+NOTE_RE = re.compile(r"^\s*(NOTES?\b|Note\b|Interlock\b|Operational\b|OPERATIONAL\b|Operation:|\*)")
+# door and opening lines sit under a set header but are not hardware
+# allegion-style books list door numbers between these two lines
+DOOR_INTRO = re.compile(r"^\s*For use on Door", re.I)
+LIST_END = re.compile(r"Provide each|Each to have|with the following|^\s*QTY\b", re.I)
+DOOR_RE = re.compile(r"\b(Single|Pair)\s+(of\s+)?Doors?\b|\bDoor\s*#\s*\w|Opening Description", re.I)
 
 
 def dump(pdf, pages, gap=8):
@@ -46,6 +55,33 @@ class Layout:
         self.row = re.compile(spec["row_start"])
         # the rightmost code column marks a row even when qty is missing
         self.anchor_field = next((f for f in CODE_FIELDS if f in self.fields), None)
+        # right edge of each column's cells on the current page, set per page
+        self.desc_right = None
+        self.right = {}
+
+    def measure(self, lines):
+        # how far each column's text reaches on this page, which is where its cells end
+        edges = collections.defaultdict(list)
+        for l in lines:
+            if self.straddles(l):
+                continue
+            for w, f in zip(l["words"], self.assign(l["words"])):
+                edges[f].append(w["x1"])
+        self.right = {f: max(v) for f, v in edges.items() if len(v) >= 3}
+        self.desc_right = self.right.get("description")
+
+    def fits_above(self, prev_lines, line, field):
+        # true when the line's first word in this column would have fit at the end of the cell above,
+        # which means the line is not a wrap of that cell
+        words = [w for w, f in zip(line["words"], self.assign(line["words"])) if f == field]
+        if not words:
+            return None
+        for l in reversed(prev_lines):
+            above = [w for w, f in zip(l["words"], self.assign(l["words"])) if f == field]
+            if above:
+                right = self.right.get(field, above[-1]["x1"] + 200)
+                return right - above[-1]["x1"] >= (words[0]["x1"] - words[0]["x0"]) + 8
+        return True
 
     def field(self, x):
         k = max((j for j, c in enumerate(self.cols) if c["x"] <= x + SLACK), default=0)
@@ -65,12 +101,47 @@ class Layout:
     def filled(self, line):
         return set(self.assign(line["words"]))
 
+    def cells(self, line):
+        out = collections.defaultdict(list)
+        for w, f in zip(line["words"], self.assign(line["words"])):
+            out[f].append(w["text"])
+        return out
+
+    def qty_start(self, line):
+        ws = line["words"]
+        if self.field(ws[0]["x0"]) != self.fields[0] or len(ws) < 2:
+            return False
+        t = ws[0]["text"]
+        return bool(self.row.match(t) or QTY_ANY.match(t) or (t.lower() == "as" and ws[1]["text"].lower().startswith("req")))
+
     def is_anchor(self, line):
-        first = line["words"][0]
-        if self.row.match(first["text"]) and self.field(first["x0"]) == self.fields[0] and len(line["words"]) > 1:
+        c = self.cells(line)
+        desc = " ".join(c.get("description", []))
+        # door lists and door descriptions are header lines, and a row needs a real word in its description
+        if DOOR_RE.search(line["text"]) or (desc and not re.search(r"[A-Za-z]{3}", desc) and not any(c.get(f) for f in CODE_FIELDS)):
+            return False
+        if self.qty_start(line):
             return True
-        f = self.filled(line)
+        f = set(c)
         return self.anchor_field in f and "description" in f and self.aligned(line)
+
+    def wraps(self, prev_lines, line):
+        # a line continues the row above only if its first description word would not have fit there
+        c = self.assign(line["words"])
+        first = next((w for w, f in zip(line["words"], c) if f == "description"), None)
+        if first is None:
+            return True
+        above = None
+        for l in reversed(prev_lines):
+            ws = [w for w, f in zip(l["words"], self.assign(l["words"])) if f == "description"]
+            if ws:
+                above = ws[-1]
+                break
+        if above is None:
+            return False
+        # the cell ends where this page's description text reaches, not at the next column, since cells have a gutter
+        right = self.desc_right or next((col["x"] for col in self.cols if col["x"] > above["x1"] + 1), above["x1"] + 200)
+        return right - above["x1"] < (first["x1"] - first["x0"]) + 8
 
     def straddles(self, line):
         # prose runs straight across column edges; table cells stop short of them
@@ -81,18 +152,25 @@ class Layout:
         return not self.straddles(line) and any(b["x0"] - a["x1"] > gap for a, b in zip(ws, ws[1:]))
 
 
-def calibrate(spec, lines, reach=30, share=0.35):
+def calibrate(spec, lines, reach=45, share=0.25):
     # the spec fixes column order and roles; each page's own aligned edges fix the positions
     row = re.compile(spec["row_start"])
     cols = sorted(spec["columns"], key=lambda c: c["x"])
-    rows = [l for l in lines if row.match(l["words"][0]["text"]) and abs(l["words"][0]["x0"] - cols[0]["x"]) < 15]
+    rows = [l for l in lines if (row.match(l["words"][0]["text"]) or QTY_ANY.match(l["words"][0]["text"]))
+            and abs(l["words"][0]["x0"] - cols[0]["x"]) < 15]
     if len(rows) < 3:
         return spec
-    hist = collections.Counter()
+    starts = []
     for l in rows:
-        starts = {l["words"][0]["x0"]} | {b["x0"] for a, b in zip(l["words"], l["words"][1:]) if b["x0"] - a["x1"] > 6}
-        hist.update({round(x / 2) * 2 for x in starts})
-    peaks = [x for x, c in hist.items() if c >= share * len(rows)]
+        starts += sorted({l["words"][0]["x0"]} | {b["x0"] for a, b in zip(l["words"], l["words"][1:]) if b["x0"] - a["x1"] > 6})
+    # edges a couple of points apart are one column printed with a slightly different offset
+    clusters = []
+    for x in sorted(starts):
+        if clusters and x - clusters[-1][-1] <= 3:
+            clusters[-1].append(x)
+        else:
+            clusters.append([x])
+    peaks = [min(c) for c in clusters if len(c) >= share * len(rows)]
     new, floor = [cols[0]], cols[0]["x"]
     for c in cols[1:]:
         if c["field"] not in ("catalog", "finish", "mfr", "notes"):
@@ -111,8 +189,8 @@ def _box(lines):
 
 
 def _qty(q):
-    # "3", "3.0" -> 3; blanks, "__", "As Req" -> None
-    return int(float(q)) if q and re.fullmatch(r"\d{1,3}(\.0+)?", q) else None
+    # "3", "3.0", "2571" -> int; blanks, "__", "As Req" -> None
+    return int(float(q)) if q and re.fullmatch(r"\d{1,4}(\.0+)?", q) else None
 
 
 def _assemble(layout, anchor, extra):
@@ -163,47 +241,44 @@ def _resolve(layout, valign, items):
     # items: list of (kind, line) for one set on one page, in reading order
     if valign == "middle":
         return _resolve_middle(layout, items)
-    anchors = [l for k, l in items if k == "anchor"]
-    owned = {id(a): [] for a in anchors}
-    notes, comp_notes = [], {id(a): [] for a in anchors}
-    last = None
-    prev = None
-    for kind, l in items:
-        if kind == "anchor":
-            last, prev = l, l
-            continue
-        if kind == "note":
-            (comp_notes[id(last)] if last is not None else notes).append(l["text"])
-            continue
-        in_body = l["x0"] >= layout.body_x - SLACK
+    rows, notes = [], []
+    cur, prev, in_note, pending = None, None, False, []
+    for idx, (kind, l) in enumerate(items):
         h = l["bottom"] - l["top"]
-        target = None
-        if in_body and anchors:
-            if valign == "middle":
-                mid = (l["top"] + l["bottom"]) / 2
-                dist = lambda a: abs((a["top"] + a["bottom"]) / 2 - mid)
-                near = sorted(anchors, key=dist)
-                best = near[0]
-                if len(near) > 1 and dist(near[1]) - dist(best) < 0.6 * h:
-                    # tie: the row whose own line left this column empty owns the wrapped text
-                    want = layout.filled(l)
-                    best = min(near[:2], key=lambda a: (len(want & layout.filled(a)), dist(a)))
-                if dist(best) <= 2.6 * h:
-                    target = best
-            elif last is not None and prev is not None and l["top"] - prev["bottom"] < 1.2 * h:
-                target = last
-        if target is not None:
-            owned[id(target)].append(l)
-            prev = l
+        close = prev is not None and l["top"] - prev["bottom"] < 1.2 * h
+        nxt = items[idx + 1] if idx + 1 < len(items) else None
+        if kind == "anchor":
+            cur = {"lines": pending + [l], "notes": []}
+            pending = []
+            rows.append(cur)
+            in_note = False
+        elif kind == "other" and nxt is not None and nxt[0] == "anchor" and nxt[1]["top"] - l["bottom"] < 1.2 * h \
+                and l["x0"] >= layout.body_x - SLACK and not (layout.filled(l) & layout.filled(nxt[1])) \
+                and not NOTE_RE.match(l["text"]) and (cur is None or all(
+                    layout.fits_above(cur["lines"], l, f) is not False for f in layout.filled(l))):
+            # a centered cell: this line sits just above a row whose own line is empty in these columns,
+            # and it would have fit in the row above, so it is not that row's wrap
+            pending.append(l)
+        elif kind == "note" or (kind == "other" and NOTE_RE.match(l["text"])) or (kind == "other" and in_note and close):
+            (cur["notes"] if cur is not None else notes).append(l["text"])
+            in_note = True
+        elif kind == "other" and l["x0"] >= layout.body_x - SLACK and cur is not None and close and layout.wraps(cur["lines"], l):
+            cur["lines"].append(l)
+        elif kind == "other" and l["x0"] >= layout.body_x - SLACK and "description" in layout.filled(l) \
+                and layout.filled(l) - {"description", "qty", "unit"} and layout.aligned(l) and not DOOR_RE.search(l["text"]):
+            # its own description plus another cell, but not a wrap: a row with no quantity
+            cur = {"lines": [l], "notes": []}
+            rows.append(cur)
+            in_note = False
         else:
             notes.append(l["text"])
-            if valign != "middle":
-                last = None
+            cur, in_note = None, False
+        prev = l
     comps = []
-    for a in anchors:
-        c = _assemble(layout, a, owned[id(a)])
-        if comp_notes[id(a)]:
-            c["notes"] = " ".join(filter(None, [c.get("notes")] + comp_notes[id(a)]))
+    for r in rows:
+        c = _assemble(layout, r["lines"][0], r["lines"][1:])
+        if r["notes"]:
+            c["notes"] = " ".join(filter(None, [c.get("notes")] + r["notes"]))
         comps.append(c)
     return comps, notes
 
@@ -217,6 +292,7 @@ def run_columns(spec, pdf, pages):
     end = [re.compile(p) for p in spec.get("end", [])]
     valign = spec.get("valign", "top")
     sets, cur, buf = [], None, []
+    in_doors = False
 
     def flush(page):
         nonlocal buf
@@ -233,7 +309,18 @@ def run_columns(spec, pdf, pages):
     for i in pages:
         page = page_lines(pdf.pages[i])
         layout = Layout(calibrate(spec, page))
+        kept = []
         for l in page:
+            struck = [w.get("struck") for w in l["words"]]
+            if any(struck):
+                if struck[0] or sum(struck) > len(struck) / 2:
+                    continue
+                l = dict(l, words=[w for w in l["words"] if not w.get("struck")])
+                l["text"] = " ".join(w["text"] for w in l["words"])
+                l["x0"], l["x1"] = l["words"][0]["x0"], max(w["x1"] for w in l["words"])
+            kept.append(l)
+        layout.measure(kept)
+        for l in kept:
             t = l["text"]
             if any(p.search(t) for p in skip):
                 continue
@@ -250,8 +337,17 @@ def run_columns(spec, pdf, pages):
                        "meta": [], "components": [], "notes": [], "location": []}
                 sets.append(cur)
                 buf = [("header", l)]
+                in_doors = False
                 continue
             if cur is None:
+                continue
+            if DOOR_INTRO.search(t) and not cur["components"]:
+                cur["meta"].append(t); buf.append(("header", l)); in_doors = True
+                continue
+            if in_doors:
+                cur["meta"].append(t); buf.append(("header", l))
+                if LIST_END.search(t) or len(cur["meta"]) > 15:
+                    in_doors = False
                 continue
             if meta and meta.search(t) and not cur["components"] and not any(k == "anchor" for k, _ in buf):
                 cur["meta"].append(t); buf.append(("header", l))

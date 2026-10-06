@@ -209,14 +209,14 @@ FAIL  revisions       struck-row-gasketing found 1: ['GASKETING SET']
 | Mfr vs finish | 4/5 |
 | NOT USED | 6/6 |
 | Missing qty | 5/5 |
-| Set boundaries | 4/5 |
+| Set boundaries | 5/5 |
 | Multi-page | 1/1 |
 | Column layouts | 4/4 |
-| Revisions (struck text) | 0/2 |
+| Revisions (struck text) | 2/2 |
 | No-set books | 21/21 |
-| **Total** | **45/49** |
+| **Total** | **48/49** |
 
-The 4 failures are known bugs: Gerrard's `Set #AL 01` read as set `AL`, Morris door lines read as components, and two struck HFH rows.
+The one failure is Gerrard's `Set #AL 01`, read as set `AL` because the header regex does not allow a space in the number.
 
 ## 4. Running it
 
