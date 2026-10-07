@@ -138,7 +138,7 @@ function renderComponents(s) {
     const name = f === "mfr" ? c.mfr_name : f === "finish" ? c.finish_name : f === "catalog_number" && c.option_names ? Object.entries(c.option_names).map(([k, n]) => `${k} = ${n}`).join(", ") : null;
     // a cell under 0.8 confidence is tinted amber, hover shows the score
     const low = conf != null && conf < 0.8 && !corrected;
-    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}"` : ""}>${v == null ? "—" : v}${name ? `<span class="legend-name">${name}</span>` : ""}</td>`;
+    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}${v != null && f === "notes" ? ", " + String(v).replace(/"/g, "'") : ""}"` : ""}>${v == null ? "—" : f === "notes" ? `<span class="clamp">${v}</span>` : v}${name ? `<span class="legend-name" title="${name}">${name}</span>` : ""}</td>`;
   }).map((cell, j) => j === 0 ? cell + confCell(c) : cell).join("") + "</tr>").join("");
   $("comp-table").querySelectorAll("tr").forEach((tr) => {
     tr.onclick = () => selectComponent(s.components[+tr.dataset.i], tr);

@@ -233,3 +233,9 @@ td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
 
 /* jump to a page by number, next to the page title */
 .page-input { width: 64px; font: inherit; font-size: 13px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 6px; color: var(--heading); }
+
+/* long text stays in its cell: notes clamp to two lines (hover for all of it), legend names to one, long tokens wrap */
+td.description, td.catalog, td.notes { overflow-wrap: anywhere; }
+td.notes { max-width: 200px; }
+td.notes .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.legend-name { max-width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
