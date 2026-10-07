@@ -7,6 +7,7 @@ import pdfplumber
 from hwsets.extract import extract_book, spec_name
 from hwsets.spec import validate_spec, dump
 from hwsets.finder import find_schedule
+from hwsets.lines import page_lines
 from hwsets import compile as compiler
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,6 +143,8 @@ def describe_changes(old, new):
     out = []
     if old.get("set_header") != new.get("set_header"):
         out.append("set header pattern changed")
+    if len(new.get("set_header_extra", [])) != len(old.get("set_header_extra", [])):
+        out.append("a set header spelling added")
     if old.get("row_start") != new.get("row_start"):
         out.append("row start pattern changed")
     oc = {c["field"]: c["x"] for c in old.get("columns", [])} if isinstance(old.get("columns"), list) else {}
@@ -176,6 +179,58 @@ def put_columns(book_id: str, body: dict):
     json.dump(new, open(spec_path(book_id), "w"), indent=1)
     r = rerun(book_id)
     r["changes"] = describe_changes(spec, new)
+    return r
+
+
+# the lines of a page with their boxes, so the viewer can make them clickable
+@app.get("/api/books/{book_id}/pages/{n}/lines")
+def lines_of(book_id: str, n: int):
+    pdf = pdfplumber.open(pdf_path(book_id))
+    if not 1 <= n <= len(pdf.pages):
+        raise HTTPException(404, "no such page")
+    return [{"text": l["text"], "bbox": [round(l["x0"], 1), round(l["top"], 1), round(l["x1"], 1), round(l["bottom"], 1)]}
+            for l in page_lines(pdf.pages[n - 1])]
+
+
+# a line's text as a pattern that matches that line and its siblings: digits become \d+, spaces \s+
+#   "DOOR HARDWARE 087100 - 7" -> "^\s*DOOR\s+HARDWARE\s+\d+\s+\-\s+\d+\s*$"
+def line_pattern(text):
+    body = r"\s+".join(re.sub(r"\d+", "DIGITS", re.escape(w)).replace("DIGITS", r"\d+") for w in text.split())
+    return r"^\s*" + body + r"\s*$"
+
+
+# a header pattern from a clicked line: the words before the set number literally, then the number as num
+#   "Hardware Set/Group #01" -> "^\s*Hardware\s+Set/Group\s*#?\s*(?P<num>[A-Za-z0-9][\w.\-/]*)(?:\s+(?P<desc>.*))?$"
+def header_pattern(text):
+    words = text.split()
+    i = next((k for k, w in enumerate(words) if re.search(r"\d", w)), len(words) - 1)
+    prefix = r"\s+".join(re.escape(w) for w in words[:i]) if i else ""
+    return r"^\s*" + prefix + r"\s*(?:#|No\.?|:)?\s*(?P<num>[A-Za-z0-9][\w.\-/]*)(?:\s+(?P<desc>.*))?$"
+
+
+# what a reviewer says a clicked line is: header, skip, note or meta. the spec gets a literal rule, the book reruns
+@app.post("/api/books/{book_id}/lines")
+def tag_line(book_id: str, body: dict):
+    spec = json.load(open(spec_path(book_id)))
+    if spec.get("mode") == "grid":
+        raise HTTPException(400, "this book is a ruled table, lines cannot be tagged")
+    text, kind = (body.get("text") or "").strip(), body.get("kind")
+    if not text or kind not in ("header", "skip", "note", "meta"):
+        raise HTTPException(400, "need a line and a kind")
+    new = json.loads(json.dumps(spec))
+    if kind == "header":
+        new.setdefault("set_header_extra", []).append(header_pattern(text))
+    elif kind == "skip":
+        new.setdefault("skip", []).append(line_pattern(text))
+    else:
+        key = "note_line" if kind == "note" else "set_meta"
+        pat = r"^\s*" + re.escape(" ".join(text.split()[:2]))
+        new[key] = f"(?:{new[key]})|(?:{pat})" if new.get(key) else pat
+    validate_spec(new)
+    json.dump(new, open(spec_path(book_id), "w"), indent=1)
+    r = rerun(book_id)
+    r["changes"] = {"header": ["a set header spelling added"], "skip": ["a line pattern added to skip"],
+                    "note": ["a note pattern added"], "meta": ["a header block pattern added"]}[kind]
     return r
 
 

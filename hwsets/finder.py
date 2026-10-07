@@ -77,12 +77,12 @@ def widen_with_headers(spec, texts, runs, margin=3):
     pages = {p for a, b in runs for p in range(a, b + 1)}
     if spec.get("mode") == "grid":
         return sorted(pages)
-    hdr = re.compile(spec["set_header"])
+    hdrs = [re.compile(h) for h in [spec["set_header"]] + spec.get("set_header_extra", [])]
     added = True
     while added:
         added = False
         for i, lines in enumerate(texts):
-            if i in pages or not any(hdr.search(l.strip()) for l in lines):
+            if i in pages or not any(h.search(l.strip()) for l in lines for h in hdrs):
                 continue
             if any(abs(i - p) <= margin for p in pages):
                 pages.add(i); added = True

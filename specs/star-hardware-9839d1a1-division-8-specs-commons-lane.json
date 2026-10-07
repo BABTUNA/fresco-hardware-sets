@@ -43,5 +43,8 @@
  "note_line": "^\\s*Note:",
  "end": [
   "END OF SECTION"
+ ],
+ "set_header_extra": [
+  "^\\s*Hardware\\s+Group/Sets\\s*(?:#|No\\.?|:)?\\s*(?P<num>[A-Za-z0-9][\\w.\\-/]*)(?:\\s+(?P<desc>.*))?$"
  ]
 }

@@ -26,7 +26,7 @@ Two or more such lines plus hardware words (hinge, closer, lock...) make a sched
 | Finder alone | 689 / 697 | 689 / 694 |
 | Finder plus the expand step (header hits next to a run) | 697 / 697 | |
 
-The 8 the finder skips have no row-shaped lines (Bridgeport door lists, a JC Ryan set that says "By Balanced Door Manufacturer", an empty Door Co set) and the expand step catches every one. The same header pattern also finds 1,175 printed set numbers and 1,172 are in our output, the 2 missing being one odd Star spelling and one non-set line. The 21 PDFs with no hardware sets come back empty.
+The 8 the finder skips have no row-shaped lines (Bridgeport door lists, a JC Ryan set that says "By Balanced Door Manufacturer", an empty Door Co set) and the expand step catches every one. The same header pattern also finds 1,175 printed set numbers and 1,172 are in our output, the 1 missing being a foodservice line that is not a set. The 21 PDFs with no hardware sets come back empty.
 
 Embeddings and tf-idf against hint phrases were tried as the filter instead: 84% recall at 66% precision. Prose pages of a hardware section talk about the same things as the schedule. The shape of a row separates them, meaning does not.
 

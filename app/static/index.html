@@ -52,7 +52,17 @@
         <span class="spacer"></span>
         <span class="btn-group"><button class="ghost" id="zoom-out" title="Zoom out">&minus;</button><button class="ghost zoom-label" id="zoom-fit" title="Fit to width">Fit</button><button class="ghost" id="zoom-in" title="Zoom in">+</button></span>
         <span class="btn-group"><button class="ghost" id="prev-page" title="Previous page">&#x2039;</button><button class="ghost" id="next-page" title="Next page">&#x203A;</button></span>
-        <button class="ghost guides-btn" id="guides-btn" title="Show the column lines and drag them">Adjust columns</button></div>
+        <button class="ghost guides-btn" id="guides-btn" title="Show the column lines and drag them">Adjust columns</button>
+        <button class="ghost guides-btn" id="lines-btn" title="Click a line on the page and say what it is">Tag a line</button></div>
+      <div class="guide-bar" id="lines-bar" hidden><span>Click any line on the page and say what it is. The rule is added for the whole book.</span><span class="spacer"></span><button class="ghost" id="lines-cancel">Done</button></div>
+      <div class="line-menu" id="line-menu" hidden>
+        <div class="line-text" id="line-menu-text"></div>
+        <button data-kind="header">This starts a set</button>
+        <button data-kind="skip">Not a component, skip it</button>
+        <button data-kind="note">This is a note</button>
+        <button data-kind="meta">Door numbers or header block</button>
+        <button data-kind="" class="ghost">Cancel</button>
+      </div>
       <div class="guide-bar" id="guide-bar" hidden><span>Drag each line to where that column starts on the page, then apply. Every set in the book is re-read.</span><span class="spacer"></span><button class="ghost" id="guides-cancel">Cancel</button><button class="primary small" id="guides-apply">Apply to the book</button></div>
       <div class="page-wrap" id="page-wrap"><img id="page-img" alt=""></div>
       <div class="divider" id="divider" title="Drag to resize"></div>

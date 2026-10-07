@@ -1,5 +1,5 @@
 // the viewer: one book at a time, one set selected, the page it sits on with its boxes
-const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1, spec: null, guides: null };
+const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1, spec: null, guides: null, lines: null };
 const $ = (id) => document.getElementById(id);
 const api = (path, opts) => fetch("/api" + path, opts).then(async (r) => { if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); });
 
@@ -176,7 +176,7 @@ function drawPage(n) {
   // zoom is a width multiplier on the image, the box scale follows from the rendered width
   img.style.width = state.zoom * 100 + "%";
   $("zoom-fit").textContent = state.zoom === 1 ? "Fit" : Math.round(state.zoom * 100) + "%";
-  wrap.querySelectorAll(".box, .guide").forEach((x) => x.remove());
+  wrap.querySelectorAll(".box, .guide, .line").forEach((x) => x.remove());
   img.onload = () => {
     const k = img.clientWidth / b.page_size[0];
     const box = (bb, cls, label, onclick) => {
@@ -193,6 +193,7 @@ function drawPage(n) {
     }
     if (state.comp && state.comp.page === state.page) box(state.comp.bbox, "comp", "");
     drawGuides(k);
+    drawLines(k);
   };
   img.src = `/api/books/${b.id}/pages/${state.page}.png`;
   if (img.complete) img.onload();
@@ -265,6 +266,7 @@ loadBooks();
 function toggleGuides() {
   if (state.guides) return stopGuides();
   if (!state.spec || state.spec.mode === "grid") { say("This book is a ruled table, its columns come from the printed headings.", true); return; }
+  stopLines();
   state.guides = state.spec.columns.map((c) => ({ field: c.field, x: c.x }));
   $("guides-btn").classList.add("on"); $("guide-bar").hidden = false;
   drawPage(state.page);
@@ -329,3 +331,62 @@ $("guides-cancel").onclick = stopGuides;
 $("guides-apply").onclick = applyGuides;
 $("feedback-btn").onclick = sendFeedback;
 $("feedback-note").onkeydown = (e) => { if (e.key === "Enter") sendFeedback(); };
+
+// tag a line: the page's lines become clickable, a click opens a menu of what the line is
+async function toggleLines() {
+  if (state.lines) return stopLines();
+  if (!state.spec || state.spec.mode === "grid") { say("This book is a ruled table, its lines cannot be tagged.", true); return; }
+  stopGuides();
+  state.lines = { page: 0, items: [] };
+  $("lines-btn").classList.add("on"); $("lines-bar").hidden = false;
+  drawPage(state.page);
+}
+
+function stopLines() {
+  state.lines = null;
+  $("lines-btn").classList.remove("on"); $("lines-bar").hidden = true; $("line-menu").hidden = true;
+  $("page-wrap").querySelectorAll(".line").forEach((x) => x.remove());
+}
+
+async function drawLines(k) {
+  if (!state.lines) return;
+  if (state.lines.page !== state.page) {
+    state.lines.page = state.page;
+    state.lines.items = await api(`/books/${state.book.id}/pages/${state.page}/lines`);
+    if (!state.lines || state.lines.page !== state.page) return;
+  }
+  const wrap = $("page-wrap");
+  wrap.querySelectorAll(".line").forEach((x) => x.remove());
+  for (const l of state.lines.items) {
+    const d = document.createElement("div");
+    d.className = "line"; d.title = l.text;
+    d.style.cssText = `left:${l.bbox[0] * k - 2}px;top:${l.bbox[1] * k - 1}px;width:${(l.bbox[2] - l.bbox[0]) * k + 4}px;height:${(l.bbox[3] - l.bbox[1]) * k + 2}px`;
+    d.onclick = (e) => { e.stopPropagation(); openLineMenu(l, d); };
+    wrap.appendChild(d);
+  }
+}
+
+function openLineMenu(line, el) {
+  const menu = $("line-menu"), wrap = $("page-wrap");
+  $("line-menu-text").textContent = line.text;
+  menu.hidden = false;
+  menu.style.left = Math.min(el.offsetLeft, wrap.clientWidth - 330) + "px";
+  menu.style.top = el.offsetTop + el.offsetHeight + 4 + "px";
+  menu.querySelectorAll("button").forEach((b) => (b.onclick = () => { menu.hidden = true; if (b.dataset.kind) tagLine(line, b.dataset.kind); }));
+}
+
+async function tagLine(line, kind) {
+  say("Adding the rule and re-reading the book…");
+  try {
+    const keep = state.set && state.set.set_number;
+    const r = await api(`/books/${state.book.id}/lines`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: line.text, kind }) });
+    const page = state.page;
+    await openBook(state.book.id, keep);
+    drawPage(page);
+    say("Done. " + (r.changes || []).join(", ") + ".");
+  } catch (e) { say(e.message, true); }
+}
+
+$("lines-btn").onclick = toggleLines;
+$("lines-cancel").onclick = stopLines;
+document.addEventListener("click", (e) => { if (!$("line-menu").contains(e.target)) $("line-menu").hidden = true; });

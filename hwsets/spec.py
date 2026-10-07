@@ -2,6 +2,7 @@
 #
 # columns mode (whitespace-aligned layouts):
 #   "set_header": regex on line text, named group num (required) and desc (optional)
+#   "set_header_extra": more header regexes, each with its own num group, added from the viewer by clicking a line
 #   "row_start":  regex on the first word of a component row (usually the qty)
 #   "columns":    [{"field": qty|unit|description|catalog|finish|mfr|notes, "x": left edge}]
 #   "valign":     "top" (wrapped lines follow the row) or "middle" (wrapped lines sit above and below)
@@ -46,8 +47,9 @@ def validate_spec(spec):
     for k in ("set_header", "row_start", "columns"):
         if k not in spec:
             raise ValueError(f"spec needs {k}")
-    if "num" not in re.compile(spec["set_header"]).groupindex:
-        raise ValueError("set_header needs a (?P<num>...) group")
+    for h in [spec["set_header"]] + spec.get("set_header_extra", []):
+        if "num" not in re.compile(h).groupindex:
+            raise ValueError("set_header needs a (?P<num>...) group")
     re.compile(spec["row_start"])
     for c in spec["columns"]:
         if c["field"] not in FIELDS:
@@ -371,7 +373,7 @@ def resolve(layout, valign, items):
 #          "notes": [], "location": [{"page": 427, "bbox": [72.0, 73.5, 530.2, 630.5]}]}, ...]
 def run_columns(spec, pdf, pages):
     layout = Layout(spec)
-    hdr = re.compile(spec["set_header"])
+    hdrs = [re.compile(h) for h in [spec["set_header"]] + spec.get("set_header_extra", [])]
     skip = [re.compile(p) for p in spec.get("skip", [])]
     meta = re.compile(spec["set_meta"]) if spec.get("set_meta") else None
     note = re.compile(spec["note_line"]) if spec.get("note_line") else None
@@ -420,7 +422,7 @@ def run_columns(spec, pdf, pages):
                 flush(i)
                 cur = None
                 continue
-            m = hdr.search(t)
+            m = next((m for h in hdrs if (m := h.search(t))), None)
             if m:
                 flush(i)
                 num, desc = m.group("num").strip(), (m.groupdict().get("desc") or "").strip()

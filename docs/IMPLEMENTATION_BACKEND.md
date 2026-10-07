@@ -175,6 +175,8 @@ class ColumnsSpec(TypedDict):
     mode: Literal["columns"]
     # regex with group num and optional group desc
     set_header: str
+    # more header regexes a reviewer added from the viewer by tagging a line, each with its own num group
+    set_header_extra: list[str]
     # regex matched against the first word of a row
     row_start: str
     columns: list[Column]

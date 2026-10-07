@@ -16,7 +16,7 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | NOT USED and moved status right | 93.8% |
 | Mfr/finish swaps | 0 of 2,218 |
 | Checks | 49/49 |
-| Set numbers printed in the PDFs that we output, all 20 books | 1,173 of 1,175 (99.7%) |
+| Set numbers printed in the PDFs that we output, all 20 books | 1,174 of 1,175 (99.7%) |
 
 | Tier | n | Exact rows | qty | description | catalog | finish | mfr |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -53,7 +53,7 @@ To run it: `GT=eval/holdout/gt python bench_tags.py` once, then `GT=eval/holdout
 | | Count |
 | :--- | ---: |
 | Set numbers printed in the 20 PDFs | 1,175 |
-| Of those, in our output | 1,173 |
+| Of those, in our output | 1,174 |
 | Set numbers we output | 1,173 |
 
 The three not in our output are Star `01` and `102.1`, two more header spellings (`Hardware Set/Group #01`, `Hardware Group/Sets 102.1`), and Livelle `S52`, which is product text (`Hardware Group S52 Series, 200 pound capacity`) rather than a set.
