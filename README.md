@@ -55,7 +55,7 @@ uv sync
 uv run hwsets extract "data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf" -o out/oswego.json
 ```
 
-The 20 sample books have their specs checked in, so they run with no API key. A new book needs `ANTHROPIC_API_KEY` in the environment or in `.env` (see `.env.example`) for its one spec call, and a second call only if the audit flags something.
+The 20 sample books have their specs checked in, so they run with no API key once the PDFs are under `data/` (see the benchmark section for where). A new book needs `ANTHROPIC_API_KEY` in the environment or in `.env` (see `.env.example`) for its one spec call, and a second call only if the audit flags something.
 
 Output: one JSON per book. Each set has a number, description, status, page and box. Each row has `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`, its own page and box, a confidence per field, and full names for codes the book explains in a printed legend.
 
@@ -74,7 +74,7 @@ Then http://localhost:8000.
 
 ## The benchmark
 
-The PDFs are not in the repo. Put the challenge's Drive folder ids in `scripts/drive_ids.txt`, one `folder_id:project-name` per line, then:
+The PDFs are not in the repo. Copy the challenge's Drive folders into `data/`, one folder per project with the Drive folder names kept (`data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf`), since the checked-in specs are named after folder and file. Or put the folder ids in `scripts/drive_ids.txt`, one `folder_id:project-name` per line, and run:
 
 ```bash
 scripts/download_data.sh
