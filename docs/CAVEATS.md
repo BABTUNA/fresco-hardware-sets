@@ -29,11 +29,11 @@ The brief lists six cases where a simple extractor breaks. Below is each one wit
 {"qty": 1, "description": "Continuous Hinge", "catalog_number": "K10BEFM95HD1", "finish": null, "mfr": "PE"}
 ```
 
-**How it scores.** 0 manufacturer/finish swaps in 1,103 labeled components. Across all 20 books:
+**How it scores.** 0 manufacturer/finish swaps in 2,218 labeled rows. Across all 20 books:
 
 | Code | Read as | Count | Books |
 | :--- | :--- | ---: | :--- |
-| `PE` | manufacturer (Pemko) | 318 | Livelle, Morris, USI |
+| `PE` | manufacturer (Pemko) | 319 | Livelle, Morris, USI |
 | `NO` | manufacturer (Norton) | 23 | Livelle |
 | `A` | finish (anodized) | 147 | 8 books |
 
@@ -54,7 +54,7 @@ Other books mark sets with a header line, and the wording changes from book to b
 
 **What we do.** The spec says what a set header looks like in that book. A ruled table like Roselle's uses grid mode, where a number in the SET column starts a set. The audit then looks for lines that start like a header but did not match. That check caught 10 HFH sets that had been merged into their neighbors.
 
-**How it scores.** 98.8% of labeled sets found, 98.9% on pages with 4 or more sets.
+**How it scores.** 99.4% of labeled sets found (309 of 311), 100% of the 103 sets on dense pages with 4 or more per page. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs come out.
 
 **Gaps.**
 - Morris prints a door line under each header, `1 Single Door #104   Banking Personal 106 to/from Office 104   105° RH`. It starts with `1`, so it is read as a component. That happens 27 times.
@@ -83,7 +83,7 @@ HW 11   Moved to Exterior Set HW E14
 {"set_number": "11", "status": "moved", "moved_to": "E14", "components": []}
 ```
 
-**How it scores.** All 6 NOT USED checks pass. Lyons has 4 NOT USED groups in its raw text and we found all 4.
+**How it scores.** All 6 NOT USED checks pass. Lyons has 4 NOT USED groups in its raw text and we found all 4. On the benchmark, 10 of the 11 labeled NOT USED sets come out with the right status.
 
 ## 4. Multi-page sets
 
@@ -95,7 +95,7 @@ HW 11   Moved to Exterior Set HW E14
 "location": [{"page": 24, "bbox": [...]}, {"page": 25, "bbox": [...]}]
 ```
 
-**How it scores.** 238 of the 1,198 extracted sets span a page break. Every labeled multi-page set was found, with 97.8% of its components.
+**How it scores.** 238 of the 1,178 extracted sets span a page break. All 25 labeled multi-page sets were found, with 96.6% of their rows exact. The continued piece is where it slips: 80.6% of those pieces are fully correct, against 94.9% of sets overall.
 
 ## 5. Different column layouts
 
@@ -120,9 +120,9 @@ Rows also wrap differently. In Oswego a long cell continues on the lines below t
 
 **What we do.** This is why there is one spec per book. Claude reads 2 sample pages and writes down that book's columns and wrap style. The interpreter handles both wrap styles, grid tables, and splitting `IVES - 5BB1` into manufacturer and catalog. Each page also re-snaps the catalog, finish and manufacturer columns to its own aligned edges, because columns move a few points between pages.
 
-**How it scores.** Grid tables, centered cells and embedded manufacturers are all at 100%.
+**How it scores.** Grid tables and embedded manufacturers are at 100% of rows exact, centered cells at 96.6%.
 
-**Gap.** Pages where the columns move more than 30 points are the weakest case at 80.5% recall. Morris's second layout and Star page 77 put the finish into the catalog or manufacturer field.
+**Gap.** Pages where the columns move more than 30 points are the weakest layout case at 93.5% of rows exact, next to full-name manufacturers at 92.8%. Morris's second layout and Star page 77 put the finish into the catalog or manufacturer field.
 
 ## 6. Missing quantities
 
@@ -137,7 +137,7 @@ Oswego p427:           DIAGRAMS        PROVIDE FACTORY POINT TO POINT WIRING DIA
 
 **What we do.** All of these become `"qty": null`, never a guess. A row with no qty still starts a new component when it fills the description and manufacturer columns, like Oswego's DIAGRAMS row. `3.0` in Forest Park becomes `3`.
 
-**How it scores.** All 5 missing-quantity checks pass. On the benchmark it is 88.3% recall.
+**How it scores.** All 5 missing-quantity checks pass. On the benchmark, 95.3% of the 107 rows with no quantity are exact.
 
 **Gaps.**
 - A row with no qty and no manufacturer gets merged into the row above. Oswego page 418: `SEALS - AS TESTED BY DOOR MANUFACTURER` ends up inside the MULLION SEAL row.
