@@ -22,7 +22,8 @@ async function openBook(id, keepSet) {
     $("headline").textContent = e.message; return;
   }
   const b = state.book, n = b.sets.length;
-  $("pill").textContent = `${b.status.replace("_", " ").toUpperCase()} · ${b.page_count} PAGES`;
+  const codes = b.legend ? Object.values(b.legend).reduce((n, d) => n + Object.keys(d).length, 0) : 0;
+  $("pill").textContent = `${b.status.replace("_", " ").toUpperCase()} · ${b.page_count} PAGES${codes ? ` · ${codes} CODES IN THE BOOK'S LEGEND` : ""}`;
   $("headline").textContent = n ? `We pulled ${n} hardware sets from ${b.file}.` : `No hardware sets found in ${b.file}.`;
   $("export").href = `/api/books/${id}/export`;
   renderFlags(); renderSteps(); renderSets();
@@ -78,9 +79,11 @@ function renderComponents(s) {
   const cls = { qty: "qty", catalog_number: "catalog", mfr: "mfr", notes: "notes" };
   $("comp-table").tBodies[0].innerHTML = s.components.map((c, i) => `<tr data-i="${i}">` + fields.map((f) => {
     const v = c[f], corrected = (c.corrected || []).includes(f), conf = c.confidence ? c.confidence[f] : null;
+    // a code the book's own legend explains shows its full name under it
+    const name = f === "mfr" ? c.mfr_name : f === "finish" ? c.finish_name : f === "catalog_number" && c.option_names ? Object.entries(c.option_names).map(([k, n]) => `${k} = ${n}`).join(", ") : null;
     // a cell under 0.8 confidence is tinted amber, hover shows the score
     const low = conf != null && conf < 0.8 && !corrected;
-    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}"` : ""}>${v == null ? "—" : v}</td>`;
+    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}"` : ""}>${v == null ? "—" : v}${name ? `<span class="legend-name">${name}</span>` : ""}</td>`;
   }).join("") + "</tr>").join("");
   $("comp-table").querySelectorAll("tr").forEach((tr) => {
     tr.onclick = () => selectComponent(s.components[+tr.dataset.i], tr);

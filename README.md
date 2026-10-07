@@ -58,7 +58,7 @@ Output: one JSON per book with every set's number, description, status, 1-based 
 uv run hwsets serve
 ```
 
-Then open http://localhost:8000. Pick a book, see each set boxed on its page with its components beside it, double-click a cell to correct it, see the cells the extractor is unsure about tinted amber, and edit the layout spec to rerun the whole book with no model call. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
+Then open http://localhost:8000. Pick a book, see each set boxed on its page with its components beside it, double-click a cell to correct it, see the cells the extractor is unsure about tinted amber, read the full name under a code when the book prints a legend for it, and edit the layout spec to rerun the whole book with no model call. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
 
 ## Running the benchmark
 

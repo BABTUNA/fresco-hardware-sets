@@ -43,6 +43,7 @@ Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](I
 **Output** (`extract.py`)
 - Every set has `set_number`, `description`, `location`, `components[]` with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`.
 - Book status is `extracted`, `no_hardware_sets` or `needs_review`. Set status is `active`, `not_used` or `moved`.
+- Codes resolved from the book's own printed lists (`legend.py`): a block of three or more `CODE Name` lines before the first set, under a heading like `MANUFACTURER LIST:` or `Code Description`, or classified by the words in its names. Gerrard, Forest Park, National and Star print them. Each component gets `mfr_name`, `finish_name` and the option codes found in its catalog number (`780-112HD x LAR` gives `LAR = Length as Required`). No model call, and a book without a legend gets nulls.
 - Per-field confidence, from evidence already in hand: does the value look like its column (a finish code, a maker name, a catalog number), did the column snap to this page's edges, did the row have a quantity, did it span several lines, did the book pass the audit. 1.0 means nothing argued against it, under 0.8 is worth a look, an empty cell is 0.8. Across the 20 books 2% of descriptions and 8% of maker codes land under 0.8, and the low ones surfaced two real bugs (column heading rows read as components, `622 SC` left in the mfr column).
 
 **Eval** (`eval/bench.py`)
@@ -92,10 +93,10 @@ hwsets extract book.pdf -o out.json                                             
    │  ├─ suspicious_qty                                qty over 99 with no catalog
    │  └─ many_empty_sets                               headers matched, rows did not
    ├─ if flags: repair(spec, flags, dump)              one more call, then interpret + audit   compile.py
+   ├─ read_legends(texts, runs)                         code lists printed before the sets      legend.py
+   │  └─ resolve(comp, legend)                        mfr_name, finish_name, option_names     legend.py
    └─ to_result(...)                                   output schema, 1-based pages, statuses  extract.py
 ```
-
-Legends (`read_legends`) and per-field confidence are bonus items, not in the trace until they exist.
 
 ### Files
 
@@ -106,7 +107,7 @@ Legends (`read_legends`) and per-field confidence are bonus items, not in the tr
 | `hwsets/spec.py` | spec schema, `Layout`, columns and grid interpreters | `experiments/spec_parse.py` |
 | `hwsets/compile.py` | sample pages, dump, Claude compile and repair calls | `dump` in `experiments/spec_parse.py`, `experiments/SPEC_PROMPT.md` |
 | `hwsets/audit.py` | audit checks | `audit` in `experiments/e2e.py` |
-| `hwsets/legend.py` | legend parsing (bonus) | new |
+| `hwsets/legend.py` | printed code lists to full names | new |
 | `hwsets/extract.py` | pipeline, confidence, output schema | `main` in `experiments/e2e.py` |
 | `hwsets/cli.py` | `extract`, `serve` commands | new |
 | `hwsets/prompts/spec.md` | spec compile prompt | `experiments/SPEC_PROMPT.md` |

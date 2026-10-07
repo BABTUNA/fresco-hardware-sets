@@ -56,6 +56,7 @@ td.qty { color: var(--heading); width: 36px; }
 td.catalog { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--muted-2); }
 td.mfr, td.notes { color: var(--muted); }
 td.notes { font-size: 12px; }
+.legend-name { display: block; font-family: Inter, system-ui, sans-serif; font-size: 11px; color: var(--green-700); }
 td.empty { color: #d1d5db; }
 td.corrected { background: #eff6ff; }
 td.low { background: var(--amber-bg); box-shadow: inset 2px 0 0 var(--amber-border); }
