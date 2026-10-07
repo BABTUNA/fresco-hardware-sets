@@ -8,7 +8,9 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | Sets fully correct | 94.9% (295 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
 | Held-out rows | 97.2% (350 / 360) | 97.2% (350 / 360) | | |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
-| Set numbers found, all 20 books | 99.7% (1,174 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
+| Set numbers found, all 20 books | 99.9% (1,174 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
+| Set pages read, all 20 books | 697 / 697 | 697 / 697 | not run | not run |
+| Sets and rows extracted, all 20 books | 1,177 sets, 10,312 rows | 1,169 sets, 10,328 rows | not run | not run |
 | Values invented | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
 | LLM calls, 20 books | 20 + repairs (2 in the last run) | 39 | 694 | 694 |
 | Time, 100 pages | 14 to 45 s | 32 s | 17 min | 17 min |
@@ -17,7 +19,7 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 
 Notes:
 
-- Set numbers found covers every page of every book, the other rows cover the 155 labeled pages.
+- The first rows score the 155 labeled pages (311 sets, 2,218 labeled rows, about a fifth of the set pages). The "all 20 books" rows are the whole run: 697 set pages, 1,175 printed set numbers, about 10,300 rows extracted. Those rows have no labels, so only the set numbers can be checked there, against an independent scan of the printed headers.
 - The multimodal score is inflated: the labels were made by Claude from the same page images.
 - Approach 1 was tuned on this benchmark. Quote the held-out row.
 - Times: finder and interpreter measured. Approach 1's model call measured on the 20 fresh compiles, 4 to 35 s per book (one call, two where the audit fired). Calls for approaches 2 to 4 estimated from token counts at 60 tokens per second, one call at a time.
