@@ -367,6 +367,35 @@ def review_verdict(body: dict):
     return {"ok": True, "count": len(verdicts)}
 
 
+# label review: the labels alone against the page, no output involved. a verdict per labeled page
+LABEL_REVIEW = os.path.join(EVAL, "label_review.json")
+
+
+@app.get("/api/labels")
+def label_pages():
+    plan = json.load(open(os.path.join(EVAL, "e2e_plan.json")))
+    verdicts = json.load(open(LABEL_REVIEW)) if os.path.exists(LABEL_REVIEW) else {}
+    pages = []
+    for kind, folder in (("tuned", "gt"), ("held-out", os.path.join("holdout", "gt"))):
+        for gt_file in sorted(glob.glob(os.path.join(EVAL, folder, "*.json"))):
+            book, page0 = re.match(r".*/(\w+)_p(\d+)\.json", gt_file).groups()
+            if book not in plan:
+                continue
+            gt = json.load(open(gt_file))
+            key = f"{kind}:{book}_p{page0}"
+            pages.append({"key": key, "kind": kind, "book": book, "book_id": spec_name(os.path.join(DATA, plan[book]["file"])),
+                          "page": int(page0) + 1, "sets": gt["sets"], "verdict": verdicts.get(key)})
+    return pages
+
+
+@app.post("/api/labels")
+def label_verdict(body: dict):
+    verdicts = json.load(open(LABEL_REVIEW)) if os.path.exists(LABEL_REVIEW) else {}
+    verdicts[body["key"]] = {"verdict": body.get("verdict"), "note": body.get("note", "")}
+    json.dump(verdicts, open(LABEL_REVIEW, "w"), indent=1)
+    return {"ok": True, "count": len(verdicts)}
+
+
 @app.get("/api/books/{book_id}/export")
 def export(book_id: str):
     if not os.path.exists(result_path(book_id)):

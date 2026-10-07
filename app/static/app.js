@@ -29,7 +29,7 @@ function renderLibrary() {
 }
 
 function showLibrary() {
-  $("card").hidden = true; $("review").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; if (location.hash === "#review") history.replaceState(null, "", location.pathname);
+  $("card").hidden = true; $("review").hidden = true; $("labels").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; if (location.hash === "#review") history.replaceState(null, "", location.pathname);
   loadBooks();
 }
 
@@ -49,7 +49,7 @@ async function uploadFile(file) {
 
 // fetch a book's result, select a set, and render everything
 async function openBook(id, keepSet) {
-  $("library").hidden = true; $("review").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
+  $("library").hidden = true; $("review").hidden = true; $("labels").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
   // a book already on screen keeps its headline through a rerun, a new one says what is happening
   if (!state.book || state.book.id !== id) { $("headline").textContent = "Extracting…"; $("file-name").textContent = ""; }
   try {
@@ -386,7 +386,7 @@ $("page-input").onkeydown = (e) => { if (e.key === "Enter") $("page-input").blur
 // hand review: every disagreement between the output and a label, with the page, and a verdict per item
 const review = { items: [], i: 0 };
 async function showReview() {
-  $("card").hidden = true; $("library").hidden = true; $("review").hidden = false; $("books-btn").hidden = false;
+  $("card").hidden = true; $("library").hidden = true; $("labels").hidden = true; $("review").hidden = false; $("books-btn").hidden = false;
   const r = await api("/review");
   review.items = r.items;
   const done = review.items.filter((x) => x.verdict).length;
@@ -464,3 +464,66 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "1") saveVerdict("label_wrong"); else if (e.key === "2") saveVerdict("extractor_wrong"); else if (e.key === "3") saveVerdict("both_ok");
   else if (e.key === "ArrowDown" || e.key === "ArrowRight") showReviewItem(review.i + 1); else if (e.key === "ArrowUp" || e.key === "ArrowLeft") showReviewItem(review.i - 1);
 });
+
+// label check: every labeled page with its label, nothing from the extractor. a verdict per page
+const labels = { items: [], i: 0 };
+async function showLabels() {
+  $("card").hidden = true; $("library").hidden = true; $("review").hidden = true; $("labels").hidden = false; $("books-btn").hidden = false;
+  labels.items = await api("/labels");
+  labelsHeadline(); renderLabelsList();
+  const first = labels.items.findIndex((x) => !x.verdict);
+  showLabelsItem(first < 0 ? 0 : first);
+}
+
+function labelsHeadline() {
+  const done = labels.items.filter((x) => x.verdict).length, wrong = labels.items.filter((x) => x.verdict && x.verdict.verdict === "wrong").length;
+  $("labels-headline").textContent = `${labels.items.length} labeled pages, ${done} checked, ${wrong} with a problem.`;
+  $("labels-count").textContent = `${done} of ${labels.items.length}`;
+}
+
+function renderLabelsList() {
+  $("labels-list").innerHTML = labels.items.map((x, i) => `<li data-i="${i}" class="${i === labels.i ? "active" : ""}"><span class="vdot ${x.verdict ? (x.verdict.verdict === "ok" ? "both_ok" : "extractor_wrong") : ""}"></span><span>${x.book} p${x.page}</span><span class="kind">${x.sets.length} sets${x.kind === "held-out" ? " · held out" : ""}</span></li>`).join("");
+  $("labels-list").querySelectorAll("li").forEach((li) => (li.onclick = () => showLabelsItem(+li.dataset.i)));
+}
+
+function showLabelsItem(i) {
+  if (!labels.items.length) return;
+  labels.i = Math.max(0, Math.min(i, labels.items.length - 1));
+  const x = labels.items[labels.i];
+  $("labels-list").querySelectorAll("li").forEach((li) => li.classList.toggle("active", +li.dataset.i === labels.i));
+  const li = $("labels-list").querySelector("li.active"); if (li) li.scrollIntoView({ block: "nearest" });
+  $("labels-title").textContent = `${x.book} · page ${x.page} · ${x.sets.length} labeled sets`;
+  $("labels-pos").textContent = `${labels.i + 1} of ${labels.items.length}`;
+  const cell = (v, cls) => `<td class="${cls || ""}">${v == null ? "<span class='muted'>—</span>" : v}</td>`;
+  $("labels-sets").innerHTML = x.sets.map((s) => `<div class="label-set"><h4>Set ${s.set_number}<span class="muted">${s.starts_on_page === false ? "continued from the previous page" : ""}${s.status && s.status !== "active" ? " · " + s.status : ""}</span></h4>
+    <table><thead><tr><th>QTY</th><th>DESCRIPTION</th><th>CATALOG #</th><th>FINISH</th><th>MFR</th></tr></thead><tbody>
+    ${s.components.map((c) => `<tr>${cell(c.qty)}${cell(c.description)}${cell(c.catalog, "catalog")}${cell(c.finish)}${cell(c.mfr)}</tr>`).join("")}
+    </tbody></table></div>`).join("") || "<p class='muted'>No sets labeled on this page.</p>";
+  const img = $("labels-img"), wrap = $("labels-page");
+  img.onload = () => { wrap.scrollTop = 0; };
+  img.src = `/api/books/${x.book_id}/pages/${x.page}.png`;
+  $("labels-note").value = x.verdict ? x.verdict.note || "" : "";
+  $("labels-saved").textContent = x.verdict ? `saved: ${x.verdict.verdict === "ok" ? "labels are right" : "something is wrong"}` : "";
+  $("labels").querySelectorAll(".verdict").forEach((b) => b.classList.toggle("on", !!x.verdict && x.verdict.verdict === b.dataset.v));
+}
+
+async function saveLabelVerdict(v) {
+  const x = labels.items[labels.i];
+  x.verdict = { verdict: v, note: $("labels-note").value.trim() };
+  await api("/labels", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ key: x.key, ...x.verdict }) });
+  labelsHeadline(); renderLabelsList();
+  if (v === "wrong" && !x.verdict.note) { $("labels-saved").textContent = "saved, add a note on what is wrong and press Enter"; $("labels-note").focus(); return; }
+  const next = labels.items.findIndex((y, j) => j > labels.i && !y.verdict);
+  showLabelsItem(next < 0 ? labels.i : next);
+}
+
+$("labels-shuffle").onclick = () => { for (let i = labels.items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [labels.items[i], labels.items[j]] = [labels.items[j], labels.items[i]]; } labels.i = 0; renderLabelsList(); showLabelsItem(0); };
+$("labels").querySelectorAll(".verdict").forEach((b) => (b.onclick = () => saveLabelVerdict(b.dataset.v)));
+$("labels-note").onkeydown = (e) => { if (e.key === "Enter") { const x = labels.items[labels.i]; saveLabelVerdict(x && x.verdict ? x.verdict.verdict : "wrong"); } };
+document.addEventListener("keydown", (e) => {
+  if ($("labels").hidden || e.target.tagName === "INPUT") return;
+  if (e.key === "1") saveLabelVerdict("ok"); else if (e.key === "2") saveLabelVerdict("wrong");
+  else if (e.key === "ArrowDown" || e.key === "ArrowRight") showLabelsItem(labels.i + 1); else if (e.key === "ArrowUp" || e.key === "ArrowLeft") showLabelsItem(labels.i - 1);
+});
+if (location.hash === "#labels") showLabels();
+window.addEventListener("hashchange", () => { if (location.hash === "#labels") showLabels(); });

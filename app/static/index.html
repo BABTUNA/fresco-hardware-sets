@@ -13,6 +13,35 @@
   <button class="ghost books-btn" id="books-btn" hidden>&#x2039; All books</button>
 </header>
 
+<main class="card" id="labels" hidden>
+  <div class="card-head">
+    <span class="pill">LABEL CHECK</span>
+    <h2 id="labels-headline">The labels alone, against the page.</h2>
+    <p class="sub">No extractor output here. Read the page, read the label, say whether the label is right. 1 = every set and row on this page is labeled correctly, 2 = something is wrong (say what in the note). Arrows move. Shuffle picks a random order. Verdicts save to experiments/eval/label_review.json.</p>
+  </div>
+  <div class="review-panes">
+    <div class="review-side-col">
+      <div class="lib-bar"><button class="ghost" id="labels-shuffle">Shuffle</button><span class="muted" id="labels-count"></span></div>
+      <ul class="review-list" id="labels-list"></ul>
+    </div>
+    <section class="pane review-detail">
+      <div class="pane-head"><span class="pane-title" id="labels-title"></span><span class="spacer"></span><span class="muted" id="labels-pos"></span></div>
+      <div class="review-body">
+        <div class="page-wrap review-page" id="labels-page"><img id="labels-img" alt=""></div>
+        <div class="review-side" id="labels-side">
+          <div id="labels-sets"></div>
+          <div class="verdicts">
+            <button class="verdict" data-v="ok">1 · Labels are right</button>
+            <button class="verdict" data-v="wrong">2 · Something is wrong</button>
+          </div>
+          <input id="labels-note" class="search" placeholder="what is wrong, e.g. set 18 row 3 finish should be 652">
+          <p class="muted" id="labels-saved"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
 <main class="card" id="review" hidden>
   <div class="card-head">
     <span class="pill">HAND REVIEW</span>
