@@ -219,7 +219,9 @@ td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
 .guide { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--blue); cursor: ew-resize; z-index: 2; }
 .guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: -8px; width: 16px; }
 .guide .tag { position: absolute; top: 6px; left: 4px; padding: 2px 6px; background: var(--blue); color: #fff; font-size: 10px; font-weight: 600; border-radius: 4px; white-space: nowrap; text-transform: uppercase; }
-.guide.dragging { border-left-style: solid; }
+.guide.dragging { border-left-style: solid; border-left-width: 3px; z-index: 3; }
+.guide.dragging .tag { background: #1e40af; font-size: 11px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+.guide:hover .tag { background: #1d4ed8; }
 
 /* tag a line: every line of the page gets a hover box, a click opens the menu */
 .line { position: absolute; border: 1px solid transparent; border-radius: 3px; cursor: pointer; z-index: 1; }

@@ -280,15 +280,18 @@ function drawGuides(k) {
   if (!state.guides) return;
   const wrap = $("page-wrap"), img = $("page-img");
   wrap.querySelectorAll(".guide").forEach((x) => x.remove());
+  // labels of neighbouring lines sit on alternating rows so close columns (qty, unit, description) stay readable
+  const sorted = [...state.guides].sort((a, b) => a.x - b.x);
   for (const g of state.guides) {
     const d = document.createElement("div");
     d.className = "guide"; d.style.left = g.x * k + "px"; d.style.height = img.clientHeight + "px";
-    d.innerHTML = `<span class="tag">${g.field}</span>`;
+    const row = sorted.indexOf(g) % 2;
+    d.innerHTML = `<span class="tag" style="top:${6 + row * 24}px">${g.field}</span>`;
     d.onmousedown = (e) => {
       e.preventDefault(); d.classList.add("dragging");
-      const startX = e.clientX, startLeft = g.x * k;
-      const move = (ev) => { const left = Math.max(0, startLeft + ev.clientX - startX); d.style.left = left + "px"; g.x = Math.round(left / k * 10) / 10; };
-      const up = () => { d.classList.remove("dragging"); window.removeEventListener("mousemove", move); window.removeEventListener("mouseup", up); };
+      const startX = e.clientX, startLeft = g.x * k, tag = d.querySelector(".tag");
+      const move = (ev) => { const left = Math.max(0, startLeft + ev.clientX - startX); d.style.left = left + "px"; g.x = Math.round(left / k * 10) / 10; tag.textContent = `${g.field} · x ${Math.round(g.x)}`; };
+      const up = () => { d.classList.remove("dragging"); tag.textContent = g.field; window.removeEventListener("mousemove", move); window.removeEventListener("mouseup", up); };
       window.addEventListener("mousemove", move); window.addEventListener("mouseup", up);
     };
     wrap.appendChild(d);
