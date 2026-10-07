@@ -29,6 +29,9 @@ FINISH_SHAPE = re.compile(r"6\d\d[A-Z]?|US\d{1,2}[A-Z]?|\d{2}[A-Z]{1,2}")
 # door lists sit under a set header in allegion-style books, between these two lines
 DOOR_INTRO = re.compile(r"^\s*For use on Door", re.I)
 LIST_END = re.compile(r"Provide each|Each to have|with the following|^\s*QTY\b", re.I)
+# a column heading row ("DESCRIPTION CATALOG NUMBER FINISH MFR") is never a component, whatever the spec says
+HEADING_WORD = r"(?:QTY\.?|QT|Y|QUANTITY|UNIT|DESCRIPTION|ITEM|CATALOG|CAT\.?|NUMBER|NO\.?|#|MODEL|PRODUCT|FINISH|FIN\.?|MFR\.?|MANUFACTURER|MANF\.?|NOTES?|REMARKS|HARDWARE|TYPE)"
+HEADING_RE = re.compile(rf"^\s*{HEADING_WORD}(?:\s+{HEADING_WORD})+\s*$", re.I)
 DOOR_RE = re.compile(r"\b(Single|Pair)\s+(of\s+)?doors?\s*(#|\d)|\bDoor\s*#\s*\w|Opening Description", re.I)
 
 
@@ -264,11 +267,19 @@ def assemble(layout, anchor, extra):
         m = MAKER_NAMES.match(comp["catalog"])
         if m and comp["catalog"][m.end():].strip():
             comp["mfr"], comp["catalog"] = m.group(1), comp["catalog"][m.end():].strip()
-    # a lone finish-shaped value in the mfr column with no finish is the finish
-    if comp.get("mfr") and not comp.get("finish") and "finish" in layout.fields and FINISH_SHAPE.fullmatch(comp["mfr"]):
-        comp["finish"], comp["mfr"] = comp["mfr"], None
+    # a lone finish-shaped value in the mfr column with no finish is the finish, and "622 SC" is both
+    if comp.get("mfr") and not comp.get("finish") and "finish" in layout.fields:
+        if FINISH_SHAPE.fullmatch(comp["mfr"]):
+            comp["finish"], comp["mfr"] = comp["mfr"], None
+        else:
+            m = re.fullmatch(rf"({FINISH_SHAPE.pattern})\s+([A-Z]{{2,4}})", comp["mfr"])
+            if m:
+                comp["finish"], comp["mfr"] = m.group(1), m.group(2)
     comp["qty"] = parse_qty(comp.get("qty"))
     comp["bbox"] = box([anchor] + extra)
+    # how the row was read, for the confidence scores: lines it spans, whether a qty anchored it, column snapping
+    comp["_evidence"] = {"lines": 1 + len(extra), "qty_row": layout.qty_start(anchor), "calibrated": getattr(layout, "calibrated", False),
+                         "snapped": sorted(getattr(layout, "snapped", ()))}
     return comp
 
 
@@ -383,7 +394,11 @@ def run_columns(spec, pdf, pages):
 
     for i in pages:
         page = page_lines(pdf.pages[i])
-        layout = Layout(calibrate(spec, page))
+        cal = calibrate(spec, page)
+        layout = Layout(cal)
+        # what the calibration did on this page, kept as evidence for the confidence scores
+        layout.calibrated = cal is not spec
+        layout.snapped = {c["field"] for c, o in zip(sorted(cal["columns"], key=lambda c: c["x"]), sorted(spec["columns"], key=lambda c: c["x"])) if c["x"] != o["x"]}
         kept = []
         for l in page:
             # a struck row is a revision, drop it. struck words inside a row are dropped too
@@ -398,7 +413,7 @@ def run_columns(spec, pdf, pages):
         layout.measure(kept)
         for l in kept:
             t = l["text"]
-            if any(p.search(t) for p in skip):
+            if HEADING_RE.match(t) or any(p.search(t) for p in skip):
                 continue
             if any(p.search(t) for p in end):
                 # a book can hold several schedules: end closes the current set, the next header reopens
@@ -497,7 +512,7 @@ def run_grid(spec, pdf, pages):
                         mfr, cat = (s.strip() for s in product.split(sep, 1))
                     cur["components"].append({"qty": parse_qty(get("qty")), "description": desc or None,
                                               "catalog": cat, "mfr": mfr, "finish": get("finish") or None,
-                                              "notes": get("notes") or None, "bbox": bbox, "page": i})
+                                              "notes": get("notes") or None, "bbox": bbox, "page": i, "_evidence": {"grid": True}})
                 elif get("notes") and cur["components"]:
                     c = cur["components"][-1]
                     c["notes"] = " ".join(filter(None, [c["notes"], get("notes")]))

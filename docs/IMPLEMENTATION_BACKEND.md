@@ -43,11 +43,11 @@ Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](I
 **Output** (`extract.py`)
 - Every set has `set_number`, `description`, `location`, `components[]` with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`.
 - Book status is `extracted`, `no_hardware_sets` or `needs_review`. Set status is `active`, `not_used` or `moved`.
-- Per-field confidence (bonus).
+- Per-field confidence, from evidence already in hand: does the value look like its column (a finish code, a maker name, a catalog number), did the column snap to this page's edges, did the row have a quantity, did it span several lines, did the book pass the audit. 1.0 means nothing argued against it, under 0.8 is worth a look, an empty cell is 0.8. Across the 20 books 2% of descriptions and 8% of maker codes land under 0.8, and the low ones surfaced two real bugs (column heading rows read as components, `622 SC` left in the mfr column).
 
 **Eval** (`eval/bench.py`)
 - One command prints exact rows, sets fully correct, precision and mfr/finish swaps, in total, by difficulty tier, by caveat and by book.
-- Current bar: 98.5% of 2,218 rows exact, 94.5% of 311 sets fully correct, 0 swaps. Held out: 97.2% of rows, 89.5% of sets.
+- Current bar: 98.5% of 2,218 rows exact, 94.9% of 311 sets fully correct, 0 swaps. Held out: 97.2% of rows, 89.5% of sets.
 
 **Code size**
 - `hwsets/` stays under about 800 lines.

@@ -7,10 +7,10 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | | Result |
 | :--- | ---: |
 | Sets fully correct (every row exact, nothing extra, status right) | 94.5% (held-out set: 89.5%) |
-| Sets fully correct, pages the spec writer never saw | 94.2% |
+| Sets fully correct, pages the spec writer never saw | 94.5% |
 | Exact rows | 98.5% (held-out set: 97.2%) |
 | Exact rows, pages the spec writer never saw | 98.4% |
-| Precision | 98.5% |
+| Precision | 98.6% |
 | Per-book average of exact rows | 98.9% |
 | Sets found on labeled pages | 99.4% |
 | NOT USED and moved status right | 93.8% |
@@ -36,7 +36,7 @@ Every one of the 155 pages above was used to find and fix bugs, so a separate se
 | Rows | 2,218 | 360 |
 | Sets fully correct | 94.5% | 89.5% |
 | Exact rows | 98.5% | 97.2% |
-| Precision | 98.5% | 97.2% |
+| Precision | 98.6% | 97.2% |
 | Mfr/finish swaps | 0 | 0 |
 | T0 trivial rows | 100.0% | 100.0% |
 | T1 one caveat rows | 100.0% | 100.0% |
@@ -64,11 +64,11 @@ A set counts only when it was found, every labeled row in it is exact, we added 
 
 | | n | Right |
 | :--- | ---: | ---: |
-| Sets whose header is on a labeled page | 311 | 94.5 |
-| Same, pages the spec writer never saw | 292 | 94.2 |
-| Continued pieces (set started on an earlier page) | 31 | 77.4 |
+| Sets whose header is on a labeled page | 311 | 94.9 |
+| Same, pages the spec writer never saw | 292 | 94.5 |
+| Continued pieces (set started on an earlier page) | 31 | 80.6 |
 
-Per book: star 78% of 18, hfh 81% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 12 books.
+Per book: star 78% of 18, hfh 86% of 21, morris 86% of 7, jcryan 88% of 25, oswego 92% of 12, valor 92% of 24, livelle 95% of 20, sjc 98% of 51, and 100% in the other 12 books.
 
 ## By caveat
 
@@ -143,9 +143,9 @@ The same scorer on the output before the interpreter fixes of 2026-10-05 and 202
 
 | | Before | After |
 | :--- | ---: | ---: |
-| Sets fully correct | 70.7% | 94.5% |
+| Sets fully correct | 70.7% | 94.9% |
 | Exact rows | 94.2% | 98.5% |
-| Precision | 91.5% | 98.5% |
+| Precision | 91.5% | 98.6% |
 | Mfr/finish swaps | 4 | 0 |
 | missing_qty exact rows | 69.2% | 95.3% |
 | column_drift exact rows | 81.7% | 93.5% |

@@ -5,7 +5,7 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
 | :--- | ---: | ---: | ---: | ---: |
 | Exact rows | 98.5% (2,184 / 2,218) | 97.1% (2,154 / 2,218) | 95.6% (2,121 / 2,218) | **98.9%** (2,193 / 2,218) |
-| Sets fully correct | 94.5% (294 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
+| Sets fully correct | 94.9% (295 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
 | Held-out rows | 97.2% (350 / 360) | 97.2% (350 / 360) | | |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
 | Set numbers found, all 20 books | 99.7% (1,172 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |

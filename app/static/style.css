@@ -58,6 +58,7 @@ td.mfr, td.notes { color: var(--muted); }
 td.notes { font-size: 12px; }
 td.empty { color: #d1d5db; }
 td.corrected { background: #eff6ff; }
+td.low { background: var(--amber-bg); box-shadow: inset 2px 0 0 var(--amber-border); }
 tr.selected td { background: #f0fdf4; }
 tr:hover td { background: #f9fafb; cursor: pointer; }
 td[contenteditable="true"]:focus { outline: 2px solid var(--blue); background: #fff; }

@@ -23,7 +23,7 @@ The column at x=506 is the manufacturer column, so every `PE` or `ZER` in it is 
 
 ## Where it stands
 
-On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](docs/BENCHMARK.md)), 98.5% of the 2,218 labeled rows come out exactly right with every field correct, and 94.5% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs are in the output. Every spec in `specs/` was written by the API in one call per book (plus one repair call where the audit flagged something), nothing was hand-edited.
+On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](docs/BENCHMARK.md)), 98.5% of the 2,218 labeled rows come out exactly right with every field correct, and 94.9% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs are in the output. Every spec in `specs/` was written by the API in one call per book (plus one repair call where the audit flagged something), nothing was hand-edited.
 
 | Doc | What it covers |
 | :--- | :--- |
@@ -58,7 +58,7 @@ Output: one JSON per book with every set's number, description, status, 1-based 
 uv run hwsets serve
 ```
 
-Then open http://localhost:8000. Pick a book, see each set boxed on its page with its components beside it, double-click a cell to correct it, and edit the layout spec to rerun the whole book with no model call. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
+Then open http://localhost:8000. Pick a book, see each set boxed on its page with its components beside it, double-click a cell to correct it, see the cells the extractor is unsure about tinted amber, and edit the layout spec to rerun the whole book with no model call. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
 
 ## Running the benchmark
 

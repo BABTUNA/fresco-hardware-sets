@@ -30,6 +30,7 @@ def page_texts(path):
 
 
 # per page: how many row-like lines, and how many of those mention hardware
+# input: texts [[line1, line2, ...], ...]  one list per page ouptut: scores [0, 0, 7, 12, 0, 9, 3, 0, 0, 1, 0], vocab [0, 0, 5, 8, 0, 6, 2, 0, 0, 1, 0]
 def page_scores(texts):
     scores, vocab = [], []
     for lines in texts:
@@ -61,6 +62,7 @@ def runs(scores, vocab, gap=1):
 
 
 # the whole first layer: path -> (texts, scores, runs)
+# find the schedule pages in a specbook without knowing the book's header wording, and without coordinates
 def find_schedule(path):
     texts = page_texts(path)
     scores, vocab = page_scores(texts)

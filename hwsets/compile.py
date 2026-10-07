@@ -41,11 +41,16 @@ def ask_claude(prompt, text):
     return validate_spec(json.loads(m.group(0)))
 
 
-# -> (spec, dump), the dump is kept for the repair call
+# compile a spec for a new book, using the sample pages with the most rows. the dump is kept for the repair call
+# creates a regex for the set header, and the capture groups for the set number and description. the spec is saved to specs/<book>.json
+# output example: {"mode": "grid", "set_header": ".*DOOR HARDWARE SETS.*", "set_number": "(\\d+)", "set_description": "(.*)",
 def compile_spec(pdf, runs, scores):
+    # pick the densest pages, the ones with the most row-shaped lines, and dump them to text for the model
     pages = pick_samples(runs, scores)
     text = dump(pdf, pages)
+    # the prompt is in prompts/spec.md, with the sample pages appended. the model reply is the spec JSON
     prompt = (PROMPTS / "spec.md").read_text()
+    # ask the model for a spec, and return the spec and the sample pages text for later repair calls
     return ask_claude(prompt, text), text
 
 

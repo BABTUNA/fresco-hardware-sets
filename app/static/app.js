@@ -77,8 +77,10 @@ function renderComponents(s) {
   const fields = ["qty", "description", "finish", "catalog_number", "mfr", "notes"];
   const cls = { qty: "qty", catalog_number: "catalog", mfr: "mfr", notes: "notes" };
   $("comp-table").tBodies[0].innerHTML = s.components.map((c, i) => `<tr data-i="${i}">` + fields.map((f) => {
-    const v = c[f], corrected = (c.corrected || []).includes(f);
-    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}" data-f="${f}">${v == null ? "—" : v}</td>`;
+    const v = c[f], corrected = (c.corrected || []).includes(f), conf = c.confidence ? c.confidence[f] : null;
+    // a cell under 0.8 confidence is tinted amber, hover shows the score
+    const low = conf != null && conf < 0.8 && !corrected;
+    return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}"` : ""}>${v == null ? "—" : v}</td>`;
   }).join("") + "</tr>").join("");
   $("comp-table").querySelectorAll("tr").forEach((tr) => {
     tr.onclick = () => selectComponent(s.components[+tr.dataset.i], tr);
