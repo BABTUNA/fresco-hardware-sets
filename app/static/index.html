@@ -10,24 +10,26 @@
 <body>
 <header class="topbar">
   <div class="brand"><span class="hammer">&#x1F528;</span><span>FRESCO</span><span class="brand-sub">hardware sets</span></div>
-  <select id="book-select" class="select"></select>
+  <select id="book-select" class="select" aria-label="Book"></select>
 </header>
 
 <main class="card" id="card">
   <div class="card-head">
     <span class="pill" id="pill">HARDWARE SETS</span>
     <h2 id="headline">Pick a book to start.</h2>
-    <p class="sub" id="subline">Every set the extractor found, with the page it came from. Edit the spec to fix a whole book at once.</p>
+    <p class="sub"><span class="file" id="file-name"></span><span id="subline">Every set the extractor found, with the page it came from. Edit the spec to fix a whole book at once.</span></p>
   </div>
 
   <div class="flags" id="flags" hidden></div>
 
-  <div class="panes">
-    <section class="pane page-pane">
-      <div class="pane-head"><span class="icon">&#x1F4C4;</span><span id="page-title">Door Hardware Specs</span>
+  <div class="panes" id="panes">
+    <section class="pane page-pane" id="page-pane">
+      <div class="pane-head"><span class="icon">&#x1F4C4;</span><span class="pane-title" id="page-title">Door Hardware Specs</span>
         <span class="spacer"></span>
-        <button class="ghost" id="prev-page">&#x2039;</button><button class="ghost" id="next-page">&#x203A;</button></div>
+        <span class="btn-group"><button class="ghost" id="zoom-out" title="Zoom out">&minus;</button><button class="ghost zoom-label" id="zoom-fit" title="Fit to width">Fit</button><button class="ghost" id="zoom-in" title="Zoom in">+</button></span>
+        <span class="btn-group"><button class="ghost" id="prev-page" title="Previous page">&#x2039;</button><button class="ghost" id="next-page" title="Next page">&#x203A;</button></span></div>
       <div class="page-wrap" id="page-wrap"><img id="page-img" alt=""></div>
+      <div class="divider" id="divider" title="Drag to resize"></div>
     </section>
 
     <section class="pane table-pane">
@@ -35,21 +37,26 @@
         <span class="spacer"></span><span class="muted" id="set-status"></span></div>
       <div class="table-wrap">
         <table id="comp-table">
-          <thead><tr><th>QTY</th><th>DESCRIPTION</th><th>FINISH</th><th>CATALOG #</th><th>MFR</th><th>NOTES</th></tr></thead>
+          <thead><tr><th class="qty">QTY</th><th>DESCRIPTION</th><th>FINISH</th><th>CATALOG #</th><th>MFR</th><th>NOTES</th></tr></thead>
           <tbody></tbody>
         </table>
-        <p class="hint">Click a row to see it on the page. Double-click a cell to correct it. Amber cells have a confidence under 0.8, hover for the score.</p>
       </div>
+      <p class="hint">Click a row to see it on the page. Double-click a cell to correct it. Amber cells have a confidence under 0.8, hover for the score.</p>
     </section>
 
     <section class="pane side-pane">
-      <div class="pane-head"><span class="icon">&#x1F6AA;</span><span id="doors-title">Doors</span></div>
-      <div class="side-body">
-        <div class="pills" id="doors"></div>
-        <p class="note" id="set-notes"></p>
-      </div>
-      <div class="pane-head"><span class="icon">&#x1F5C2;</span><span id="sets-title">Sets</span></div>
+      <div class="pane-head"><span class="icon">&#x1F5C2;</span><span class="pane-title" id="sets-title">Sets</span></div>
       <ul class="set-list" id="set-list"></ul>
+      <div class="doors">
+        <div class="pane-head"><span class="icon">&#x1F6AA;</span><span class="pane-title" id="doors-title">Doors</span></div>
+        <div class="side-body">
+          <div class="pills" id="doors"></div>
+          <details class="notes" id="notes-box">
+            <summary id="notes-summary">Notes</summary>
+            <p class="note" id="set-notes"></p>
+          </details>
+        </div>
+      </div>
     </section>
   </div>
 

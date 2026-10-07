@@ -1,5 +1,5 @@
 // the viewer: one book at a time, one set selected, the page it sits on with its boxes
-const state = { books: [], book: null, page: 1, set: null, comp: null };
+const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1 };
 const $ = (id) => document.getElementById(id);
 const api = (path, opts) => fetch("/api" + path, opts).then(async (r) => { if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); });
 
@@ -24,7 +24,9 @@ async function openBook(id, keepSet) {
   const b = state.book, n = b.sets.length;
   const codes = b.legend ? Object.values(b.legend).reduce((n, d) => n + Object.keys(d).length, 0) : 0;
   $("pill").textContent = `${b.status.replace("_", " ").toUpperCase()} · ${b.page_count} PAGES${codes ? ` · ${codes} CODES IN THE BOOK'S LEGEND` : ""}`;
-  $("headline").textContent = n ? `We pulled ${n} hardware sets from ${b.file}.` : `No hardware sets found in ${b.file}.`;
+  // the file name goes on its own line under the headline so a long one never wraps the title
+  $("headline").textContent = n ? `We pulled ${n} hardware set${n === 1 ? "" : "s"}.` : "No hardware sets found.";
+  $("file-name").textContent = b.file; $("file-name").title = b.file;
   $("export").href = `/api/books/${id}/export`;
   renderFlags(); renderSteps(); renderSets();
   const keep = keepSet && b.sets.find((s) => s.set_number === keepSet);
@@ -35,7 +37,11 @@ async function openBook(id, keepSet) {
 function renderFlags() {
   const f = state.book.flags || [], box = $("flags");
   box.hidden = !f.length;
-  box.innerHTML = `<b>&#9888; Audit flags (${f.length})</b>` + f.map((x) => `<div>${x.check}: ${x.count}${x.examples ? " · " + JSON.stringify(x.examples[0]).slice(0, 120) : ""}</div>`).join("");
+  // one chip per flag, the first example on hover so the banner stays one or two lines
+  box.innerHTML = `<b>&#9888; Audit flags (${f.length})</b>` + f.map((x) => {
+    const ex = x.examples ? JSON.stringify(x.examples[0]) : "";
+    return `<div title="${ex.replace(/"/g, "&quot;")}">${x.check}: ${x.count}${ex ? ` <span>${ex.slice(0, 80)}</span>` : ""}</div>`;
+  }).join("");
 }
 
 // the pipeline as a stepper, like fresco's: every stage done, review is where the user is
@@ -67,7 +73,11 @@ function selectSet(s) {
   const doors = s.doors.filter((d) => !/provide|following|each|opening|description/i.test(d));
   $("doors-title").textContent = `Doors (${doors.length})`;
   $("doors").innerHTML = doors.map((d) => `<span>${d}</span>`).join("");
-  $("set-notes").textContent = s.doors.filter((d) => !doors.includes(d)).concat(s.notes).join("\n");
+  // notes fold away under the door pills so a long block never pushes the set list off screen
+  const notes = s.doors.filter((d) => !doors.includes(d)).concat(s.notes);
+  $("set-notes").textContent = notes.join("\n");
+  $("notes-box").hidden = !notes.length;
+  $("notes-summary").textContent = `Notes (${notes.length})`;
   renderComponents(s);
   drawPage(s.location[0]?.page || 1);
   const li = $("set-list").querySelector("li.active"); if (li) li.scrollIntoView({ block: "nearest" });
@@ -76,7 +86,7 @@ function selectSet(s) {
 // the component table. a cell is editable in place, a row click highlights its box on the page
 function renderComponents(s) {
   const fields = ["qty", "description", "finish", "catalog_number", "mfr", "notes"];
-  const cls = { qty: "qty", catalog_number: "catalog", mfr: "mfr", notes: "notes" };
+  const cls = { qty: "qty", description: "description", finish: "finish", catalog_number: "catalog", mfr: "mfr", notes: "notes" };
   $("comp-table").tBodies[0].innerHTML = s.components.map((c, i) => `<tr data-i="${i}">` + fields.map((f) => {
     const v = c[f], corrected = (c.corrected || []).includes(f), conf = c.confidence ? c.confidence[f] : null;
     // a code the book's own legend explains shows its full name under it
@@ -117,8 +127,11 @@ async function correctCell(c, row, td) {
 function drawPage(n) {
   const b = state.book; if (!b) return;
   state.page = Math.max(1, Math.min(n, b.page_count));
-  $("page-title").textContent = `Door Hardware Specs (Page ${state.page})`;
+  $("page-title").textContent = `Page ${state.page} of ${b.page_count}`;
   const img = $("page-img"), wrap = $("page-wrap");
+  // zoom is a width multiplier on the image, the box scale follows from the rendered width
+  img.style.width = state.zoom * 100 + "%";
+  $("zoom-fit").textContent = state.zoom === 1 ? "Fit" : Math.round(state.zoom * 100) + "%";
   wrap.querySelectorAll(".box").forEach((x) => x.remove());
   img.onload = () => {
     const k = img.clientWidth / b.page_size[0];
@@ -166,4 +179,30 @@ $("next-set").onclick = () => stepSet(1);
 $("prev-page").onclick = () => drawPage(state.page - 1);
 $("next-page").onclick = () => drawPage(state.page + 1);
 window.addEventListener("resize", () => drawPage(state.page));
+
+// zoom steps between fit and 3x, fit resets
+function setZoom(z) { state.zoom = Math.max(1, Math.min(3, Math.round(z * 4) / 4)); drawPage(state.page); }
+$("zoom-in").onclick = () => setZoom(state.zoom + 0.25);
+$("zoom-out").onclick = () => setZoom(state.zoom - 0.25);
+$("zoom-fit").onclick = () => setZoom(1);
+
+// drag the handle on the page pane's edge to widen it, the width lands in a css variable on the grid
+(() => {
+  const divider = $("divider"), panes = $("panes"), pane = $("page-pane");
+  let startX = 0, startW = 0;
+  const move = (e) => {
+    const w = Math.max(320, Math.min(startW + e.clientX - startX, panes.clientWidth * 0.7));
+    panes.style.setProperty("--page-w", w + "px");
+    drawPage(state.page);
+  };
+  const stop = () => {
+    divider.classList.remove("dragging"); document.body.classList.remove("resizing");
+    window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", stop);
+  };
+  divider.onpointerdown = (e) => {
+    e.preventDefault(); startX = e.clientX; startW = pane.getBoundingClientRect().width;
+    divider.classList.add("dragging"); document.body.classList.add("resizing");
+    window.addEventListener("pointermove", move); window.addEventListener("pointerup", stop);
+  };
+})();
 loadBooks();
