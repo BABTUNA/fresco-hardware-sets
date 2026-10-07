@@ -289,6 +289,8 @@ def assemble(layout, anchor, extra):
 def resolve_middle(layout, items):
     groups, notes = [], []
     for kind, l in items:
+        if kind == "header":
+            continue
         if kind == "note":
             if groups:
                 groups[-1][1].append(l["text"])
@@ -298,6 +300,9 @@ def resolve_middle(layout, items):
             groups[-1][0].append(l)
         else:
             groups.append(([l], []))
+    if groups and (len(groups[-1][1]) >= 2 or (groups[-1][1] and groups[-1][1][0].rstrip().endswith(":"))):
+        notes[:0] = groups[-1][1]
+        groups[-1] = (groups[-1][0], [])
     out = []
     for g, g_notes in groups:
         filled = set().union(*(layout.filled(l) for l in g))
@@ -324,6 +329,9 @@ def resolve(layout, valign, items):
     cur, prev, in_note, pending = None, None, False, []
     prev_kind = None
     for idx, (kind, l) in enumerate(items):
+        if kind == "header":
+            prev, prev_kind = l, kind
+            continue
         h = l["bottom"] - l["top"]
         close = prev is not None and l["top"] - prev["bottom"] < 1.2 * h
         nxt = items[idx + 1] if idx + 1 < len(items) else None
@@ -359,6 +367,12 @@ def resolve(layout, valign, items):
         # what this line became, for the next line's decision
         prev_kind = "anchor" if kind == "anchor" or (cur is not None and cur["lines"] and cur["lines"][-1] is l and len(cur["lines"]) == 1) else ("wrap" if cur is not None and cur["lines"] and cur["lines"][-1] is l else kind)
         prev = l
+    # a block of two or more note lines after the set's last row is about the set, not that row.
+    # a single note line right under a row stays with the row
+    if rows and (len(rows[-1]["notes"]) >= 2 or (rows[-1]["notes"] and rows[-1]["notes"][0].rstrip().endswith(":"))):
+        # the block's heading sat on the row while its prose went to the set, so it goes in front
+        notes[:0] = rows[-1]["notes"]
+        rows[-1]["notes"] = []
     comps = []
     for r in rows:
         c = assemble(layout, r["lines"][0], r["lines"][1:])
