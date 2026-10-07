@@ -23,6 +23,22 @@ Companion to [PLAN.md](PLAN.md). The viewer is in [IMPLEMENTATION_FRONTEND.md](I
 **Audit** (`audit.py`)
 - Flag every book whose spec misses or merges sets.
 - Raise no flags on books that extracted cleanly.
+- How it runs: interpret the book, run the seven checks on the result against the raw page text, and if anything is flagged make one repair call with the spec, the flags and the same sample pages, then interpret and audit once more. Flags left after that mark the book `needs_review`.
+- Two flags from real runs:
+
+  ```json
+  {"check": "header_near_miss", "count": 10,
+   "examples": [[96, "Hardware Group No.103 [BULLETIN 023, 251218]"]]}
+  ```
+  HFH prints some headers without a space after "No." and the first spec required one, so 10 sets merged into their neighbors. The repair call widened the regex to `No\\.?\\s*`.
+
+  ```json
+  {"check": "rows_without_components", "count": 1,
+   "examples": [[25, ["For doors assigned Hardware Group/Set #104 on door schedule, provide the following:",
+                       "8 Ea. Heavy Duty Hinges 5BB1HW 4.4\" x 4.5\" in 622 flat black finish", "..."]]]}
+  ```
+  Star's second section writes its header inside a sentence. The first spec anchored the header at the start of the line and missed it. The flag carries the page's lines so the repair call can see what it never saw in the sample pages.
+- A false flag is the risk in the other direction: SJC had pages full of rows with nothing extracted because every row was struck through, and Valor's running footer `DOOR HARDWARE 087100 - 7` looked like a header near miss. Both checks now look at the page geometry and the spec's `skip` list first.
 
 **Output** (`extract.py`)
 - Every set has `set_number`, `description`, `location`, `components[]` with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`.
