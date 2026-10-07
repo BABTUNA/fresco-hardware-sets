@@ -101,7 +101,8 @@ td[contenteditable="true"]:focus { outline: 2px solid var(--blue); outline-offse
 .set-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: #fff; flex-shrink: 0; }
 .meta-label { font-size: 12px; font-weight: 600; color: var(--muted-2); }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.pills span { padding: 3px 10px; background: var(--green-100); color: var(--green-700); font-size: 12px; line-height: 1.4; border-radius: 9999px; }
+.pills span { padding: 3px 10px; background: var(--green-100); color: var(--green-700); font-size: 12px; line-height: 1.4; border-radius: 9999px; white-space: nowrap; }
+.pills .more { font: inherit; font-size: 12px; color: var(--muted-2); background: #fff; border: 1px solid var(--border); border-radius: 9999px; padding: 2px 10px; cursor: pointer; }
 .pills:empty::before { content: "no door numbers in this set"; color: var(--muted); font-size: 12px; }
 .notes { margin-left: auto; }
 .notes[hidden] { display: none; }

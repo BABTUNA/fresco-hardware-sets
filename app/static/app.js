@@ -68,11 +68,15 @@ function selectSet(s) {
   $("set-status").textContent = s.status === "moved" ? `moved to ${s.moved_to}` : s.status === "not_used" ? "not used" : "";
   $("set-dot").className = "dot " + s.status;
   // the header block holds door numbers and lines like "Provide each PR door(s) with the following:"
-  const doors = s.doors.filter((d) => !/provide|following|each|opening|description/i.test(d));
+  const doorLines = s.doors.filter((d) => !/provide|following|each|opening|description/i.test(d));
+  // one pill per door number: a line like "Doors: D135B, D136, D137" is split on commas and spaces
+  const doors = [...new Set(doorLines.flatMap((d) => d.replace(/^doors?:\s*/i, "").split(/[,\s]+/)).filter((t) => /\d/.test(t)))];
   $("doors-title").textContent = `Doors (${doors.length})`;
-  $("doors").innerHTML = doors.map((d) => `<span>${d.replace(/^doors?:\s*/i, "")}</span>`).join("");
+  const shown = doors.slice(0, 16), more = doors.length - shown.length;
+  $("doors").innerHTML = shown.map((d) => `<span>${d}</span>`).join("") + (more ? `<button class="more" id="more-doors">+${more} more</button>` : "");
+  if (more) $("more-doors").onclick = () => { $("doors").innerHTML = doors.map((d) => `<span>${d}</span>`).join(""); };
   // notes fold away under the door pills so a long block never pushes the set list off screen
-  const notes = s.doors.filter((d) => !doors.includes(d)).concat(s.notes);
+  const notes = s.doors.filter((d) => !doorLines.includes(d)).concat(s.notes);
   $("set-notes").textContent = notes.join("\n");
   $("notes-box").hidden = !notes.length;
   $("notes-summary").textContent = `Notes (${notes.length})`;

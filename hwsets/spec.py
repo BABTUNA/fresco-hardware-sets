@@ -424,10 +424,10 @@ def run_columns(spec, pdf, pages):
             if m:
                 flush(i)
                 num, desc = m.group("num").strip(), (m.groupdict().get("desc") or "").strip()
-                # "Set #AL 01": an all-letter number followed by a digit token is one number
+                # "Set #AL 01" and "Set #U- 01": a letter-only number followed by a digit token is one number
                 dm = re.match(r"^(\d[\w.\-]*)(?:\s+|$)", desc)
-                if re.fullmatch(r"[A-Za-z]{1,4}", num) and dm:
-                    num, desc = f"{num} {dm.group(1)}", desc[dm.end():].strip()
+                if re.fullmatch(r"[A-Za-z]{1,4}-?", num) and dm:
+                    num, desc = num + ("" if num.endswith("-") else " ") + dm.group(1), desc[dm.end():].strip()
                 cur = {"set_number": num, "description": desc or None,
                        "meta": [], "components": [], "notes": [], "location": []}
                 sets.append(cur)
