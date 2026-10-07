@@ -420,6 +420,26 @@ def export(book_id: str):
     return FileResponse(result_path(book_id), filename=book_id + ".json", media_type="application/json")
 
 
+# a shared key gates the deployed viewer: DEMO_KEY set means every visit needs ?key=... once, then a cookie.
+# locally, with no DEMO_KEY, nothing is asked
+from fastapi.responses import HTMLResponse, RedirectResponse
+DEMO_KEY = os.environ.get("DEMO_KEY")
+
+
+@app.middleware("http")
+async def gate(request, call_next):
+    if not DEMO_KEY:
+        return await call_next(request)
+    given = request.query_params.get("key")
+    if given == DEMO_KEY:
+        response = RedirectResponse(request.url.path + ("#" + request.url.fragment if request.url.fragment else ""))
+        response.set_cookie("demo", DEMO_KEY, max_age=60 * 60 * 24 * 30, httponly=True, samesite="lax")
+        return response
+    if request.cookies.get("demo") == DEMO_KEY:
+        return await call_next(request)
+    return HTMLResponse("<p style='font: 15px Inter, system-ui; padding: 40px'>This demo needs the link with its key.</p>", status_code=401)
+
+
 # the page and its script are never cached, so an edit shows on the next reload
 @app.middleware("http")
 async def no_cache(request, call_next):

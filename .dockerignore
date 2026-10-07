@@ -1,0 +1,17 @@
+.git
+.venv
+.env
+out
+cache
+corrections
+data/uploads
+experiments/out_*
+experiments/dumps*
+experiments/eval/pages
+experiments/eval/holdout/pages
+experiments/alt_*/input
+experiments/alt_*/out
+experiments/alt_struct/dump_*
+experiments/specs_*
+docs/diagrams/*.png
+**/__pycache__
