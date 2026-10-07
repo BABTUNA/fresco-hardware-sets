@@ -29,7 +29,7 @@ function renderLibrary() {
 }
 
 function showLibrary() {
-  $("card").hidden = true; $("review").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; $("review-btn").hidden = false;
+  $("card").hidden = true; $("review").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; if (location.hash === "#review") history.replaceState(null, "", location.pathname);
   loadBooks();
 }
 
@@ -49,7 +49,7 @@ async function uploadFile(file) {
 
 // fetch a book's result, select a set, and render everything
 async function openBook(id, keepSet) {
-  $("library").hidden = true; $("review").hidden = true; $("card").hidden = false; $("books-btn").hidden = false; $("review-btn").hidden = true;
+  $("library").hidden = true; $("review").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
   // a book already on screen keeps its headline through a rerun, a new one says what is happening
   if (!state.book || state.book.id !== id) { $("headline").textContent = "Extracting…"; $("file-name").textContent = ""; }
   try {
@@ -386,7 +386,7 @@ $("page-input").onkeydown = (e) => { if (e.key === "Enter") $("page-input").blur
 // hand review: every disagreement between the output and a label, with the page, and a verdict per item
 const review = { items: [], i: 0 };
 async function showReview() {
-  $("card").hidden = true; $("library").hidden = true; $("review").hidden = false; $("books-btn").hidden = false; $("review-btn").hidden = true;
+  $("card").hidden = true; $("library").hidden = true; $("review").hidden = false; $("books-btn").hidden = false;
   const r = await api("/review");
   review.items = r.items;
   const done = review.items.filter((x) => x.verdict).length;
@@ -454,7 +454,9 @@ async function saveVerdict(v) {
   showReviewItem(next < 0 ? review.i : next);
 }
 
-$("review-btn").onclick = showReview;
+// the review screen has no button, it opens at /#review
+if (location.hash === "#review") showReview();
+window.addEventListener("hashchange", () => { if (location.hash === "#review") showReview(); });
 document.querySelectorAll(".verdict").forEach((b) => (b.onclick = () => saveVerdict(b.dataset.v)));
 $("review-note").onkeydown = (e) => { if (e.key === "Enter") { const x = review.items[review.i]; if (x && x.verdict) saveVerdict(x.verdict.verdict); } };
 document.addEventListener("keydown", (e) => {

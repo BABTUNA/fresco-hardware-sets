@@ -374,4 +374,13 @@ def export(book_id: str):
     return FileResponse(result_path(book_id), filename=book_id + ".json", media_type="application/json")
 
 
+# the page and its script are never cached, so an edit shows on the next reload
+@app.middleware("http")
+async def no_cache(request, call_next):
+    response = await call_next(request)
+    if not request.url.path.startswith("/api"):
+        response.headers["Cache-Control"] = "no-store"
+    return response
+
+
 app.mount("/", StaticFiles(directory=os.path.join(ROOT, "app", "static"), html=True), name="static")
