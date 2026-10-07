@@ -6,7 +6,7 @@
   --radius: 12px; --shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   /* the page pane's width, the drag handle writes a px value here */
-  --page-w: 4fr;
+  --page-w: 6fr;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
@@ -41,7 +41,7 @@ button { font: inherit; }
 .flags div span { font-family: var(--mono); opacity: .8; }
 
 /* height 0 keeps the grid's content out of the card's intrinsic height, flex then hands it the room that is left */
-.panes { display: grid; grid-template-columns: minmax(360px, var(--page-w)) minmax(0, 7fr) minmax(230px, 250px); grid-template-rows: minmax(0, 1fr); gap: 16px; padding: 0 24px 16px; flex: 1 1 auto; height: 0; min-height: 560px; }
+.panes { display: grid; grid-template-columns: minmax(480px, var(--page-w)) minmax(0, 5fr) minmax(220px, 240px); grid-template-rows: minmax(0, 1fr); gap: 16px; padding: 0 24px 16px; flex: 1 1 auto; height: 0; min-height: 560px; }
 .pane { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
 .pane-head { padding: 10px 16px; background: var(--head-bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; color: var(--muted-2); font-size: 14px; min-height: 46px; flex-shrink: 0; }
 .pane-head .icon { font-size: 14px; }
