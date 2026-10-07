@@ -123,6 +123,13 @@ function selectSet(s) {
 function renderComponents(s) {
   const fields = ["qty", "description", "finish", "catalog_number", "mfr", "notes"];
   const cls = { qty: "qty", description: "description", finish: "finish", catalog_number: "catalog", mfr: "mfr", notes: "notes" };
+  // the row's confidence is its weakest field, shown as a number so nobody has to hover
+  const rowConf = (c) => { const v = Object.entries(c.confidence || {}).filter(([f, x]) => x != null && c[f] != null).map(([, x]) => x); return v.length ? Math.min(...v) : null; };
+  const confCell = (c) => { const v = rowConf(c); if (v == null) return `<td class="conf"></td>`; const k = v >= 0.9 ? "ok" : v >= 0.8 ? "mid" : "low"; return `<td class="conf ${k}"><span class="conf-pill">${v.toFixed(2)}</span></td>`; };
+  const weak = s.components.reduce((n, c) => n + Object.entries(c.confidence || {}).filter(([f, x]) => x != null && c[f] != null && x < 0.8).length, 0);
+  $("set-status").textContent = [$("set-status").textContent, weak ? `${weak} cell${weak > 1 ? "s" : ""} to check` : ""].filter(Boolean).join(" · ");
+  $("comp-table").classList.toggle("no-notes", !s.components.some((c) => c.notes));
+  // the score sits next to the quantity so it never scrolls out of view
   $("comp-table").tBodies[0].innerHTML = s.components.map((c, i) => `<tr data-i="${i}">` + fields.map((f) => {
     const v = c[f], corrected = (c.corrected || []).includes(f), conf = c.confidence ? c.confidence[f] : null;
     // a code the book's own legend explains shows its full name under it
@@ -130,11 +137,11 @@ function renderComponents(s) {
     // a cell under 0.8 confidence is tinted amber, hover shows the score
     const low = conf != null && conf < 0.8 && !corrected;
     return `<td class="${cls[f] || ""}${v == null ? " empty" : ""}${corrected ? " corrected" : ""}${low ? " low" : ""}" data-f="${f}"${conf != null ? ` title="confidence ${conf}"` : ""}>${v == null ? "—" : v}${name ? `<span class="legend-name">${name}</span>` : ""}</td>`;
-  }).join("") + "</tr>").join("");
+  }).map((cell, j) => j === 0 ? cell + confCell(c) : cell).join("") + "</tr>").join("");
   $("comp-table").querySelectorAll("tr").forEach((tr) => {
     tr.onclick = () => selectComponent(s.components[+tr.dataset.i], tr);
     // single click selects the row, double click edits the cell, enter or leaving the cell saves
-    tr.querySelectorAll("td").forEach((td) => {
+    tr.querySelectorAll("td[data-f]").forEach((td) => {
       td.ondblclick = () => { td.contentEditable = "true"; td.focus(); document.getSelection().selectAllChildren(td); };
       td.onblur = () => { td.contentEditable = "false"; correctCell(s.components[+tr.dataset.i], +tr.dataset.i, td); };
       td.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); td.blur(); } if (e.key === "Escape") { td.textContent = s.components[+tr.dataset.i][td.dataset.f] ?? "—"; td.blur(); } };

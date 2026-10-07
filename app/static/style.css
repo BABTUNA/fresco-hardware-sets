@@ -105,14 +105,16 @@ th { position: sticky; top: 0; background: #fff; text-align: left; font-size: 11
 th:first-child, td:first-child { padding-left: 18px; }
 th:last-child, td:last-child { padding-right: 18px; }
 td { padding: 10px 10px; color: var(--text); font-size: 14px; line-height: 1.45; vertical-align: top; border-bottom: 1px solid #f3f4f6; overflow-wrap: anywhere; }
-td.description { min-width: 140px; }
+td.description { min-width: 120px; }
 td.qty, th.qty { width: 40px; color: var(--heading); font-weight: 500; }
-td.catalog { font-family: var(--mono); font-size: 13px; color: var(--muted-2); min-width: 130px; }
+td.catalog { font-family: var(--mono); font-size: 13px; color: var(--muted-2); min-width: 110px; }
 td.mfr, td.finish { color: var(--muted-2); white-space: nowrap; }
 /* legend names wrap at spaces only so the column grows to fit its longest word */
 td.mfr .legend-name, td.finish .legend-name, td.catalog .legend-name { overflow-wrap: normal; }
 td.finish { color: var(--text); }
-td.notes { color: var(--muted); font-size: 13px; min-width: 110px; }
+td.notes { color: var(--muted); font-size: 13px; min-width: 90px; }
+/* a set with no notes drops the column so the row scores stay in view */
+table.no-notes th.notes, table.no-notes td.notes { display: none; }
 .legend-name { display: block; font-family: Inter, system-ui, sans-serif; font-size: 12px; line-height: 1.35; color: var(--green-700); margin-top: 2px; white-space: normal; }
 td.empty { color: #d1d5db; }
 td.corrected { background: #eff6ff; }
@@ -193,3 +195,10 @@ td[contenteditable="true"]:focus { outline: 2px solid var(--blue); outline-offse
   .step-line { width: 8px; }
   .foot-right { gap: 14px; }
 }
+
+/* the row confidence: green at 0.9 and up, amber down to 0.8, red below */
+th.conf, td.conf { text-align: left; width: 52px; white-space: nowrap; padding-left: 4px; }
+.conf-pill { display: inline-block; min-width: 40px; text-align: center; padding: 2px 6px; border-radius: 9999px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+td.conf.ok .conf-pill { background: var(--green-100); color: var(--green-700); }
+td.conf.mid .conf-pill { background: var(--amber-bg); color: var(--amber-text); border: 1px solid var(--amber-border); }
+td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }

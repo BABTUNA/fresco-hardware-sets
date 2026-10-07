@@ -116,6 +116,6 @@ Example: `{"set_number": "18", "page": 427, "row": 2, "field": "mfr", "value": "
 
 1. Read-only viewer: book list, page image, set boxes, components table. Done.
 2. Spec editor with save and rerun. Done.
-3. Audit flags above the panes, confidence tint on cells under 0.8, full names from the book's legend under maker and finish codes. Done.
+3. Audit flags above the panes, a CONF column per row (its weakest filled cell, green from 0.9, amber from 0.8, red below) plus the amber tint on the cell itself and a "N cells to check" count in the set header, full names from the book's legend under maker and finish codes. Done.
 4. Corrections, double-click a cell. Done.
 5. Export. Done.
