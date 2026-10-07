@@ -58,6 +58,25 @@ To run it: `GT=eval/holdout/gt python bench_tags.py` once, then `GT=eval/holdout
 
 The three not in our output are Star `01` and `102.1`, two more header spellings (`Hardware Set/Group #01`, `Hardware Group/Sets 102.1`), and Livelle `S52`, which is product text (`Hardware Group S52 Series, 200 pound capacity`) rather than a set.
 
+## Unseen books
+
+Five public Division 08 specs from other owners, never seen by the finder, the prompt or the interpreter, run cold on 2026-10-07 with one API call each. No labels, so the check is whether the book compiles to one spec, how it reads, and what the audit says. Scripts and the API-written specs: `data/external/` (not in the repo), `specs_external/`.
+
+| Book | Format | Sets, rows | Audit | What it reads like |
+| :--- | :--- | ---: | :--- | :--- |
+| Cattaraugus County addendum, NY | Hager-style dealer schedule, "Hardware Sets", door lists, HA codes, 16 pages | 42, 211 | clean | `Office Lockset, 3450 WTN 7 PIN, US26D, HA`, every field in its column |
+| Oakton College 08 71 00 | consultant spec, "Set 1.0", long door lists, MK, SA, NO, RO codes | 3, 18 | clean | the `NO` is Norton, read from its column |
+| City of Winnipeg NMS 08710 | Canadian dealer schedule, "Heading # 01", metric sizes, no maker column | 42, 259 | clean | same shape as Bridgeport |
+| UFGS 08 71 00, federal guide spec | template rows `3 Pair Hinges A2111 by 623 by NRP` | 7, 36 | clean | finish stays inside the catalog cell, one bogus set from a prose line |
+| University of Houston master spec | Part 4 "Hardware Sets" as an outline: `C. HW-2: Latchset`, then `1. Latchset, Passage.`, no quantities, catalog numbers or finishes | none found | | the finder needs code-shaped tokens at the end of a row, so a list of plain descriptions never counts as a schedule |
+
+One layout per book held on all four books that have a schedule, each compiled on the first call. What the new books exposed is two formats the current rules do not model, not a layout change inside a book:
+
+- "by"-separated template rows (UFGS and specs derived from it, common in federal work): a column model cannot split `A2111 by 623 by NRP`. A split rule in the spec, like `mfr_split` in grid mode, would cover it.
+- Outline-style sets with descriptions only (master specs and owner standards): the finder skips them. A run of indented lines under a set header would need to count as a schedule, with nulls in the four code fields.
+
+Neither changes the one-spec-per-book design; each is a rule inside it.
+
 ## Sets fully correct
 
 A set counts only when it was found, every labeled row in it is exact, we added no rows to it, and a NOT USED or moved status matches.
