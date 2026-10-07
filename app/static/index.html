@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="hammer">&#x1F528;</span><span>FRESCO</span><span class="brand-sub">hardware sets</span></div>
+  <div class="brand"><img class="logo" src="fresco_logo.png" alt="Fresco"><span class="brand-sub">hardware sets</span></div>
   <button class="ghost books-btn" id="books-btn" hidden>&#x2039; All books</button>
 </header>
 
@@ -21,7 +21,7 @@
   </div>
   <label class="drop" id="drop">
     <input type="file" id="file-input" accept="application/pdf" hidden>
-    <span class="drop-icon">&#x2912;</span>
+    <span class="drop-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="M6 10l6-6 6 6"/><path d="M4 20h16"/></svg></span>
     <span class="drop-title">Drag &amp; drop a spec PDF</span>
     <span class="muted">or click to browse</span>
     <span class="drop-status" id="drop-status"></span>
@@ -48,7 +48,7 @@
 
   <div class="panes" id="panes">
     <section class="pane page-pane" id="page-pane">
-      <div class="pane-head"><span class="icon">&#x1F4C4;</span><span class="pane-title" id="page-title">Door Hardware Specs</span>
+      <div class="pane-head"><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><span class="pane-title" id="page-title">Door Hardware Specs</span>
         <span class="spacer"></span>
         <span class="btn-group"><button class="ghost" id="zoom-out" title="Zoom out">&minus;</button><button class="ghost zoom-label" id="zoom-fit" title="Fit to width">Fit</button><button class="ghost" id="zoom-in" title="Zoom in">+</button></span>
         <span class="btn-group"><button class="ghost" id="prev-page" title="Previous page">&#x2039;</button><button class="ghost" id="next-page" title="Next page">&#x203A;</button></span></div>

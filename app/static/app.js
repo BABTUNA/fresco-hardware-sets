@@ -73,7 +73,7 @@ function renderFlags() {
   const f = state.book.flags || [], box = $("flags");
   box.hidden = !f.length;
   // one chip per flag, the first example on hover so the banner stays one or two lines
-  box.innerHTML = `<b>&#9888; Audit flags (${f.length})</b>` + f.map((x) => {
+  box.innerHTML = `<b>Audit flags (${f.length})</b>` + f.map((x) => {
     const ex = x.examples ? JSON.stringify(x.examples[0]) : "";
     return `<div title="${ex.replace(/"/g, "&quot;")}">${x.check}: ${x.count}${ex ? ` <span>${ex.slice(0, 80)}</span>` : ""}</div>`;
   }).join("");

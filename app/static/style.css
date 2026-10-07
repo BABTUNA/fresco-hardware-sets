@@ -20,7 +20,7 @@ button { font: inherit; }
 
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; }
 .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing: .04em; color: var(--heading); white-space: nowrap; }
-.brand .hammer { font-size: 22px; }
+.brand .logo { height: 44px; width: auto; display: block; }
 .brand-sub { font-weight: 500; letter-spacing: 0; color: var(--muted); }
 .books-btn { font: inherit; font-size: 14px; font-weight: 500; padding: 6px 12px; }
 .books-btn[hidden] { display: none; }
@@ -71,7 +71,7 @@ button { font: inherit; }
 .panes { display: grid; grid-template-columns: minmax(520px, var(--page-w)) minmax(0, 4fr); grid-template-rows: minmax(0, 1fr); gap: 16px; padding: 0 24px 16px; flex: 1 1 auto; height: 0; min-height: 560px; }
 .pane { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
 .pane-head { padding: 10px 16px; background: var(--head-bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; color: var(--muted-2); font-size: 14px; min-height: 46px; flex-shrink: 0; }
-.pane-head .icon { font-size: 14px; }
+.pane-head .icon { display: inline-flex; color: var(--muted); }
 .pane-title { font-weight: 600; color: var(--heading); }
 .spacer { flex: 1; }
 .set-title { font-weight: 600; color: var(--heading); font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
