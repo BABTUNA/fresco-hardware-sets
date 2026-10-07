@@ -3,15 +3,29 @@ const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1 }
 const $ = (id) => document.getElementById(id);
 const api = (path, opts) => fetch("/api" + path, opts).then(async (r) => { if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); });
 
-// the library: one card per pdf under data/, plus the drop zone
+// the library: a searchable, paged table of the pdfs under data/
+const PAGE = 10;
+const lib = { query: "", page: 0 };
 async function loadBooks() {
   state.books = await api("/books");
+  renderLibrary();
+}
+
+function renderLibrary() {
   const label = { extracted: "extracted", needs_review: "needs review", no_hardware_sets: "no sets", "not run": "not run yet" };
-  $("book-grid").innerHTML = state.books.map((b) => `<button class="book" data-id="${b.id}" title="${b.file}">
-      <span class="project">${b.project}</span><span class="name">${b.file}</span>
-      <span class="meta"><span class="chip ${b.status.replace(" ", "_")}">${label[b.status] || b.status}</span>${b.sets != null ? `<span>${b.sets} sets</span>` : ""}${b.status === "not run" && !b.has_spec ? `<span>${b.key ? "spec written on open" : "needs the API key"}</span>` : ""}</span>
-    </button>`).join("");
-  $("book-grid").querySelectorAll(".book").forEach((el) => (el.onclick = () => openBook(el.dataset.id)));
+  const q = lib.query.trim().toLowerCase();
+  const rows = state.books.filter((b) => !q || `${b.project} ${b.file} ${label[b.status] || b.status}`.toLowerCase().includes(q));
+  const pages = Math.max(1, Math.ceil(rows.length / PAGE));
+  lib.page = Math.min(lib.page, pages - 1);
+  const slice = rows.slice(lib.page * PAGE, lib.page * PAGE + PAGE);
+  $("book-table").tBodies[0].innerHTML = slice.map((b) => `<tr data-id="${b.id}">
+      <td class="project">${b.project}</td><td class="file">${b.file}</td>
+      <td><span class="chip ${b.status.replace(" ", "_")}">${label[b.status] || b.status}</span>${b.status === "not run" && !b.has_spec ? `<span class="muted note">${b.key ? "spec written on open" : "needs the API key"}</span>` : ""}</td>
+      <td class="num">${b.sets != null ? b.sets : "—"}</td></tr>`).join("") || `<tr><td colspan="4" class="muted">No books match.</td></tr>`;
+  $("book-table").querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => openBook(tr.dataset.id)));
+  $("lib-count").textContent = rows.length ? `${lib.page * PAGE + 1} to ${Math.min(rows.length, (lib.page + 1) * PAGE)} of ${rows.length}` : "0 books";
+  $("lib-prev").disabled = lib.page === 0;
+  $("lib-next").disabled = lib.page >= pages - 1;
 }
 
 function showLibrary() {
@@ -228,6 +242,9 @@ $("zoom-fit").onclick = () => setZoom(1);
   };
 })();
 $("books-btn").onclick = showLibrary;
+$("book-search").oninput = () => { lib.query = $("book-search").value; lib.page = 0; renderLibrary(); };
+$("lib-prev").onclick = () => { lib.page--; renderLibrary(); };
+$("lib-next").onclick = () => { lib.page++; renderLibrary(); };
 $("file-input").onchange = () => uploadFile($("file-input").files[0]);
 const drop = $("drop");
 drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
