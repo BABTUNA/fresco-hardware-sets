@@ -21,3 +21,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["hwsets", "app"]
+
+[dependency-groups]
+dev = [
+    "playwright>=1.63.0",
+]

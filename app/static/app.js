@@ -50,7 +50,8 @@ async function uploadFile(file) {
 // fetch a book's result, select a set, and render everything
 async function openBook(id, keepSet) {
   $("library").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
-  $("headline").textContent = "Extracting…"; $("file-name").textContent = "";
+  // a book already on screen keeps its headline through a rerun, a new one says what is happening
+  if (!state.book || state.book.id !== id) { $("headline").textContent = "Extracting…"; $("file-name").textContent = ""; }
   try {
     state.book = await api("/books/" + id);
   } catch (e) {
