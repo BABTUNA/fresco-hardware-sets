@@ -423,6 +423,9 @@ def run_columns(spec, pdf, pages):
                 cur = None
                 continue
             m = next((m for h in hdrs if (m := h.search(t))), None)
+            # a set number glued to a letter is a word, not a number: "Sets?" matching inside "sets" leaves num "s"
+            if m and m.start("num") > 0 and t[m.start("num") - 1].isalpha():
+                m = None
             if m:
                 flush(i)
                 num, desc = m.group("num").strip(), (m.groupdict().get("desc") or "").strip()

@@ -47,6 +47,10 @@ Say the words in the right column roughly as written. Do the clicks in the left 
 | Point at the new `Set 102.1` box and the dropdown | There it is, 15 rows. The same box underneath takes a sentence instead ("the set on this page is missing") and sends it to the model, when the click is not enough. |
 | Back on the library screen | On 155 labeled pages from 20 books, scored strictly with every field exact: 98.5% of rows, 94.9% of sets fully correct. Held out: 97.2% of rows. Across all 20 books, 1,174 of the 1,175 printed set numbers come out. Code, specs, labels and the benchmark are in the repo. |
 
+## After recording
+
+The reset put Star's spec back to its pre-feedback version in the working tree. `git checkout specs/` restores the committed one (with the two feedback rules), and `rm -rf corrections data/uploads` clears what the demo added.
+
 ## If something goes wrong
 
 - The drop-in takes longer than 30 s: keep talking, the Valor book is 18 pages and the call is the wait.
