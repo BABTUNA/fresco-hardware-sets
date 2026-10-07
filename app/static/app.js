@@ -172,6 +172,7 @@ function drawPage(n) {
   const b = state.book; if (!b) return;
   state.page = Math.max(1, Math.min(n, b.page_count));
   $("page-title").textContent = `Page ${state.page} of ${b.page_count}`;
+  $("page-input").value = state.page; $("page-input").max = b.page_count;
   const img = $("page-img"), wrap = $("page-wrap");
   // zoom is a width multiplier on the image, the box scale follows from the rendered width
   img.style.width = state.zoom * 100 + "%";
@@ -374,3 +375,6 @@ async function tagLine(line, kind) {
 $("lines-btn").onclick = toggleLines;
 $("lines-cancel").onclick = stopLines;
 document.addEventListener("click", (e) => { if (!$("line-menu").contains(e.target)) $("line-menu").hidden = true; });
+
+$("page-input").onchange = () => drawPage(Number($("page-input").value) || 1);
+$("page-input").onkeydown = (e) => { if (e.key === "Enter") $("page-input").blur(); };

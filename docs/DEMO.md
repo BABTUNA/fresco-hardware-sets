@@ -42,7 +42,7 @@ Say the words in the right column roughly as written. Do the clicks in the left 
 
 | Do | Say |
 | :--- | :--- |
-| Search `star`, open it. Type `107` is not possible, so use the page arrows or the set dropdown: pick Set 103 (page 25), then click the next-page arrow until page 107. Faster: pick Set 102 and go forward one page | Star writes some headers as "Hardware Group/Sets". The model's spec missed this one, so 102.1 was swallowed into set 102. |
+| Search `star`, open it. Type `107` in the page box next to the page title and press Enter | Star writes some headers as "Hardware Group/Sets". The model's spec missed this one, so 102.1 was swallowed into set 102. |
 | Click "Tag a line", click the line `Hardware Group/Sets 102.1`, choose "This starts a set" | Click the line, say what it is. That becomes a literal rule in the spec and the book reruns. |
 | Point at the new `Set 102.1` box and the dropdown | There it is, 15 rows. The same box underneath takes a sentence instead ("the set on this page is missing") and sends it to the model, when the click is not enough. |
 | Back on the library screen | On 155 labeled pages from 20 books, scored strictly with every field exact: 98.5% of rows, 94.9% of sets fully correct. Held out: 97.2% of rows. Across all 20 books, 1,174 of the 1,175 printed set numbers come out. Code, specs, labels and the benchmark are in the repo. |

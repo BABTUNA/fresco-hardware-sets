@@ -230,3 +230,6 @@ td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
 .line-menu button { font: inherit; font-size: 13px; text-align: left; background: #fff; border: 0; border-radius: 6px; padding: 7px 10px; cursor: pointer; color: var(--heading); }
 .line-menu button:hover { background: var(--head-bg); }
 .line-menu button.ghost { color: var(--muted); }
+
+/* jump to a page by number, next to the page title */
+.page-input { width: 64px; font: inherit; font-size: 13px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 6px; color: var(--heading); }

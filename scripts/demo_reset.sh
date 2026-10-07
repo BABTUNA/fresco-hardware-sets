@@ -3,6 +3,7 @@
 #   star's spec back to the api-written version (so tag a line has something to fix on page 107),
 #   no leftover corrections, no uploaded demo book, a fresh pdf copy to drop in
 set -e
+setopt null_glob
 cd "$(dirname "$0")/.."
 git show 892ecf3:specs/star-hardware-9839d1a1-division-8-specs-commons-lane.json > specs/star-hardware-9839d1a1-division-8-specs-commons-lane.json
 rm -f out/star-hardware-9839d1a1-division-8-specs-commons-lane.json out/star.json
