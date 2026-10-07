@@ -22,16 +22,15 @@ function renderLibrary() {
       <td class="project">${b.project}</td><td class="file">${b.file}</td>
       <td><span class="chip ${b.status.replace(" ", "_")}">${label[b.status] || b.status}</span>${b.status === "not run" && !b.has_spec ? `<span class="muted note">${b.key ? "spec written on open" : "needs the API key"}</span>` : ""}</td>
       <td class="num">${b.sets != null ? b.sets : "—"}</td></tr>`).join("") || `<tr><td colspan="4" class="muted">No books match.</td></tr>`;
-  $("book-table").querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => openBook(tr.dataset.id)));
+  $("book-table").querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => go(`#book/${tr.dataset.id}`)));
   $("lib-count").textContent = rows.length ? `${lib.page * PAGE + 1} to ${Math.min(rows.length, (lib.page + 1) * PAGE)} of ${rows.length}` : "0 books";
   $("lib-prev").disabled = lib.page === 0;
   $("lib-next").disabled = lib.page >= pages - 1;
 }
 
 function showLibrary() {
-  $("card").hidden = true; $("review").hidden = true; $("labels").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; if (location.hash === "#review") history.replaceState(null, "", location.pathname);
-  loadBooks();
-}
+  $("card").hidden = true; $("review").hidden = true; $("labels").hidden = true; $("library").hidden = false; $("books-btn").hidden = true;
+  }
 
 // a dropped or chosen pdf is uploaded, then opened, which runs the extraction
 async function uploadFile(file) {
@@ -42,7 +41,7 @@ async function uploadFile(file) {
   try {
     const r = await api("/books/upload", { method: "POST", body: fd });
     status.textContent = "Finding the schedule pages, writing the spec, extracting… under a minute";
-    await openBook(r.id);
+    go(`#book/${r.id}`);
     status.textContent = "";
   } catch (e) { status.textContent = e.message; }
 }
@@ -101,6 +100,7 @@ function selectSet(s) {
   state.set = s; state.comp = null;
   if (!s) { $("set-count").textContent = ""; $("comp-table").tBodies[0].innerHTML = ""; drawPage(1); return; }
   $("set-select").value = s.set_number;
+  history.replaceState(null, "", `#book/${state.book.id}/set/${encodeURIComponent(s.set_number)}`);
   $("set-count").textContent = `${s.components.length} components`;
   $("set-status").textContent = s.status === "moved" ? `moved to ${s.moved_to}` : s.status === "not_used" ? "not used" : "";
   $("set-dot").className = "dot " + s.status;
@@ -240,7 +240,7 @@ $("zoom-fit").onclick = () => setZoom(1);
     window.addEventListener("pointermove", move); window.addEventListener("pointerup", stop);
   };
 })();
-$("books-btn").onclick = showLibrary;
+$("books-btn").onclick = () => go("");
 $("book-search").oninput = () => { lib.query = $("book-search").value; lib.page = 0; renderLibrary(); };
 $("lib-prev").onclick = () => { lib.page--; renderLibrary(); };
 $("lib-next").onclick = () => { lib.page++; renderLibrary(); };
@@ -249,7 +249,6 @@ const drop = $("drop");
 drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
 drop.ondragleave = () => drop.classList.remove("over");
 drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); uploadFile(e.dataTransfer.files[0]); };
-loadBooks();
 
 // column guides: the spec's columns as draggable lines over the page. apply sends the new x values and reruns the book
 function toggleGuides() {
@@ -455,8 +454,6 @@ async function saveVerdict(v) {
 }
 
 // the review screen has no button, it opens at /#review
-if (location.hash === "#review") showReview();
-window.addEventListener("hashchange", () => { if (location.hash === "#review") showReview(); });
 document.querySelectorAll(".verdict").forEach((b) => (b.onclick = () => saveVerdict(b.dataset.v)));
 $("review-note").onkeydown = (e) => { if (e.key === "Enter") { const x = review.items[review.i]; if (x && x.verdict) saveVerdict(x.verdict.verdict); } };
 document.addEventListener("keydown", (e) => {
@@ -525,5 +522,27 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "1") saveLabelVerdict("ok"); else if (e.key === "2") saveLabelVerdict("wrong");
   else if (e.key === "ArrowDown" || e.key === "ArrowRight") showLabelsItem(labels.i + 1); else if (e.key === "ArrowUp" || e.key === "ArrowLeft") showLabelsItem(labels.i - 1);
 });
-if (location.hash === "#labels") showLabels();
-window.addEventListener("hashchange", () => { if (location.hash === "#labels") showLabels(); });
+
+// one router: the url names the screen, so refresh, back and forward all land where they should
+//   /            the library      #book/<id>/set/<n>   a book with a set selected
+//   #labels      the label check  #review              output against the labels
+function go(hash) {
+  if (location.hash === hash) return route();
+  if (hash) location.hash = hash; else history.pushState(null, "", location.pathname), route();
+}
+
+function route() {
+  const h = decodeURIComponent(location.hash);
+  const m = h.match(/^#book\/([^/]+)(?:\/set\/(.+))?$/);
+  if (m) {
+    const [, id, set] = m;
+    if (state.book && state.book.id === id) { const s = set && state.book.sets.find((x) => x.set_number === set); if (s && s !== state.set) selectSet(s); if (!set) selectSet(state.book.sets[0] || null); return; }
+    openBook(id, set);
+  } else if (h === "#labels") showLabels();
+  else if (h === "#review") showReview();
+  else showLibrary();
+}
+
+window.addEventListener("hashchange", route);
+window.addEventListener("popstate", route);
+route();
