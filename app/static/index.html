@@ -51,7 +51,9 @@
       <div class="pane-head"><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><span class="pane-title" id="page-title">Door Hardware Specs</span>
         <span class="spacer"></span>
         <span class="btn-group"><button class="ghost" id="zoom-out" title="Zoom out">&minus;</button><button class="ghost zoom-label" id="zoom-fit" title="Fit to width">Fit</button><button class="ghost" id="zoom-in" title="Zoom in">+</button></span>
-        <span class="btn-group"><button class="ghost" id="prev-page" title="Previous page">&#x2039;</button><button class="ghost" id="next-page" title="Next page">&#x203A;</button></span></div>
+        <span class="btn-group"><button class="ghost" id="prev-page" title="Previous page">&#x2039;</button><button class="ghost" id="next-page" title="Next page">&#x203A;</button></span>
+        <button class="ghost guides-btn" id="guides-btn" title="Show the column lines and drag them">Adjust columns</button></div>
+      <div class="guide-bar" id="guide-bar" hidden><span>Drag each line to where that column starts on the page, then apply. Every set in the book is re-read.</span><span class="spacer"></span><button class="ghost" id="guides-cancel">Cancel</button><button class="primary small" id="guides-apply">Apply to the book</button></div>
       <div class="page-wrap" id="page-wrap"><img id="page-img" alt=""></div>
       <div class="divider" id="divider" title="Drag to resize"></div>
     </section>
@@ -75,11 +77,16 @@
     </section>
   </div>
 
-  <details class="spec" id="spec-box">
-    <summary>Layout spec <span class="muted">one edit fixes every set in the book, no model call</span></summary>
-    <textarea id="spec-text" spellcheck="false"></textarea>
-    <div class="spec-actions"><button class="primary" id="save-spec">Save and rerun</button><span class="muted" id="spec-msg"></span></div>
-  </details>
+  <section class="fix" id="fix">
+    <div class="fix-head"><span class="pane-title">Something wrong?</span><span class="muted">Say what you see and the layout is fixed for the whole book. For a column that is off, use Adjust columns on the page.</span></div>
+    <div class="fix-row"><input id="feedback-note" class="search" placeholder="e.g. the set on this page is missing, or finish and maker are swapped"><button class="primary" id="feedback-btn">Fix it</button></div>
+    <div class="fix-msg" id="fix-msg"></div>
+    <details class="spec" id="spec-box">
+      <summary>Advanced <span class="muted">the layout spec the model wrote for this book</span></summary>
+      <textarea id="spec-text" spellcheck="false"></textarea>
+      <div class="spec-actions"><button class="primary" id="save-spec">Save and rerun</button><span class="muted" id="spec-msg"></span></div>
+    </details>
+  </section>
 
   <footer class="card-foot">
     <button class="link" id="prev-set">&#x2039; Previous set</button>

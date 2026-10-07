@@ -1,5 +1,5 @@
 // the viewer: one book at a time, one set selected, the page it sits on with its boxes
-const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1 };
+const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1, spec: null, guides: null };
 const $ = (id) => document.getElementById(id);
 const api = (path, opts) => fetch("/api" + path, opts).then(async (r) => { if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); });
 
@@ -66,7 +66,8 @@ async function openBook(id, keepSet) {
   renderFlags(); renderSteps(); renderSets();
   const keep = keepSet && b.sets.find((s) => s.set_number === keepSet);
   selectSet(keep || b.sets[0] || null);
-  try { $("spec-text").value = JSON.stringify(await api(`/books/${id}/spec`), null, 1); } catch (e) { $("spec-text").value = ""; }
+  try { state.spec = await api(`/books/${id}/spec`); $("spec-text").value = JSON.stringify(state.spec, null, 1); } catch (e) { state.spec = null; $("spec-text").value = ""; }
+  stopGuides();
 }
 
 function renderFlags() {
@@ -175,7 +176,7 @@ function drawPage(n) {
   // zoom is a width multiplier on the image, the box scale follows from the rendered width
   img.style.width = state.zoom * 100 + "%";
   $("zoom-fit").textContent = state.zoom === 1 ? "Fit" : Math.round(state.zoom * 100) + "%";
-  wrap.querySelectorAll(".box").forEach((x) => x.remove());
+  wrap.querySelectorAll(".box, .guide").forEach((x) => x.remove());
   img.onload = () => {
     const k = img.clientWidth / b.page_size[0];
     const box = (bb, cls, label, onclick) => {
@@ -191,6 +192,7 @@ function drawPage(n) {
       box(l.bbox, mine ? "" : "dim", `Set ${s.set_number}`, mine ? null : () => selectSet(s));
     }
     if (state.comp && state.comp.page === state.page) box(state.comp.bbox, "comp", "");
+    drawGuides(k);
   };
   img.src = `/api/books/${b.id}/pages/${state.page}.png`;
   if (img.complete) img.onload();
@@ -258,3 +260,72 @@ drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
 drop.ondragleave = () => drop.classList.remove("over");
 drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); uploadFile(e.dataTransfer.files[0]); };
 loadBooks();
+
+// column guides: the spec's columns as draggable lines over the page. apply sends the new x values and reruns the book
+function toggleGuides() {
+  if (state.guides) return stopGuides();
+  if (!state.spec || state.spec.mode === "grid") { say("This book is a ruled table, its columns come from the printed headings.", true); return; }
+  state.guides = state.spec.columns.map((c) => ({ field: c.field, x: c.x }));
+  $("guides-btn").classList.add("on"); $("guide-bar").hidden = false;
+  drawPage(state.page);
+}
+
+function stopGuides() {
+  state.guides = null;
+  $("guides-btn").classList.remove("on"); $("guide-bar").hidden = true;
+  $("page-wrap").querySelectorAll(".guide").forEach((x) => x.remove());
+}
+
+function drawGuides(k) {
+  if (!state.guides) return;
+  const wrap = $("page-wrap"), img = $("page-img");
+  wrap.querySelectorAll(".guide").forEach((x) => x.remove());
+  for (const g of state.guides) {
+    const d = document.createElement("div");
+    d.className = "guide"; d.style.left = g.x * k + "px"; d.style.height = img.clientHeight + "px";
+    d.innerHTML = `<span class="tag">${g.field}</span>`;
+    d.onmousedown = (e) => {
+      e.preventDefault(); d.classList.add("dragging");
+      const startX = e.clientX, startLeft = g.x * k;
+      const move = (ev) => { const left = Math.max(0, startLeft + ev.clientX - startX); d.style.left = left + "px"; g.x = Math.round(left / k * 10) / 10; };
+      const up = () => { d.classList.remove("dragging"); window.removeEventListener("mousemove", move); window.removeEventListener("mouseup", up); };
+      window.addEventListener("mousemove", move); window.addEventListener("mouseup", up);
+    };
+    wrap.appendChild(d);
+  }
+}
+
+async function applyGuides() {
+  const btn = $("guides-apply"); btn.disabled = true; say("Re-reading every set in the book…");
+  try {
+    const keep = state.set && state.set.set_number;
+    const r = await api(`/books/${state.book.id}/columns`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ columns: state.guides }) });
+    await openBook(state.book.id, keep);
+    say("Done. " + (r.changes || []).join(", "));
+  } catch (e) { say(e.message, true); }
+  btn.disabled = false;
+}
+
+// the feedback box: a plain-words note about the page in view goes to the model, which edits the spec
+async function sendFeedback() {
+  const note = $("feedback-note").value.trim();
+  if (!note) { say("Say what is wrong first.", true); return; }
+  const btn = $("feedback-btn"); btn.disabled = true;
+  say("Working on it, one model call, 10 to 40 seconds…");
+  try {
+    const keep = state.set && state.set.set_number;
+    const r = await api(`/books/${state.book.id}/feedback`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ note, page: state.page }) });
+    await openBook(state.book.id, keep);
+    $("feedback-note").value = "";
+    say("Done. " + (r.changes || []).join(", ") + ".");
+  } catch (e) { say(e.message, true); }
+  btn.disabled = false;
+}
+
+function say(msg, err) { const m = $("fix-msg"); m.textContent = msg; m.classList.toggle("err", !!err); }
+
+$("guides-btn").onclick = toggleGuides;
+$("guides-cancel").onclick = stopGuides;
+$("guides-apply").onclick = applyGuides;
+$("feedback-btn").onclick = sendFeedback;
+$("feedback-note").onkeydown = (e) => { if (e.key === "Enter") sendFeedback(); };

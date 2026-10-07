@@ -54,7 +54,7 @@ Other books mark sets with a header line, and the wording changes from book to b
 
 **What we do.** The spec says what a set header looks like in that book. A ruled table like Roselle's uses grid mode, where a number in the SET column starts a set. The audit then looks for lines that start like a header but did not match. That check caught 10 HFH sets that had been merged into their neighbors.
 
-**How it scores.** 99.4% of labeled sets found (309 of 311), 100% of the 103 sets on dense pages with 4 or more per page. Across all 20 books, 1,172 of the 1,175 set numbers printed in the PDFs come out.
+**How it scores.** 99.4% of labeled sets found (309 of 311), 100% of the 103 sets on dense pages with 4 or more per page. Across all 20 books, 1,173 of the 1,175 set numbers printed in the PDFs come out.
 
 **Gaps.**
 - Morris prints a door line under each header, `1 Single Door #104   Banking Personal 106 to/from Office 104   105° RH`. It starts with `1`, so it is read as a component. That happens 27 times.

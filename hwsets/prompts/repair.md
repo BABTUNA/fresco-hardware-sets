@@ -8,5 +8,6 @@ What the flags mean:
 - `low_coverage`: far fewer components than row-shaped lines. Same causes as rows_without_components.
 - `suspicious_qty`: a door-number line was read as a row. Add it to `set_meta` or `skip`.
 - `many_empty_sets`: headers matched but their rows did not. Check `row_start` and the column x values.
+- `reviewer`: a note written by a person looking at the output, with the lines of the page they had open. Treat it as true. If they say a set is missing, make the header pattern match the line they mean. If they say values sit in the wrong column, move the column x values. If they say a line is not a component, add it to `skip`, `set_meta` or `note_line` as fits.
 
 The spec format is the same as before: columns mode with set_header, row_start, columns, valign, skip, set_meta, note_line, end; or grid mode with set_column, set_number, columns, mfr_split.

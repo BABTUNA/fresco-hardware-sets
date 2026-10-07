@@ -25,7 +25,7 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 | Page | Page image with a box per set, the selected set's boxes in a stronger color, a component's box when clicked | Previous and next page, jump to a set's first page |
 | Sets | Set number, description, status, page range, flag count | Click selects the set and jumps the page |
 | Components | Table of qty, description, catalog, finish, mfr, notes for the selected set, low-confidence cells tinted | Click a cell to edit it (correction), click the row to highlight its box |
-| Spec | The compiled spec JSON in a text area, audit flags listed under it with their example lines | Save reruns interpret and audit, the sets and boxes update, flags refresh |
+| Fix it | A plain-words box ("the set on this page is missing", "finish and maker are swapped"), and Adjust columns on the page pane, which draws the spec's columns as draggable lines over the page image. The raw spec sits behind an Advanced toggle | The note goes to the repair call with the page's lines, the model edits the spec, the book reruns, and the reply says what changed in plain words. Dragging the lines and applying sets the column x values and reruns with no model call |
 
 ## 4. Function trace
 
@@ -118,4 +118,5 @@ Example: `{"set_number": "18", "page": 427, "row": 2, "field": "mfr", "value": "
 2. Spec editor with save and rerun. Done.
 3. Audit flags above the panes, a CONF column per row (its weakest filled cell, green from 0.9, amber from 0.8, red below) plus the amber tint on the cell itself and a "N cells to check" count in the set header, full names from the book's legend under maker and finish codes. Done.
 4. Corrections, double-click a cell. Done.
+6. Feedback without regex: the Fix it box (one model call) and draggable column guides (no call). Done. Tested on Star: "the set headed Hardware Set/Group #01 on this page is missing" widened the header pattern and the set appeared, whole-book set numbers found went from 1,172 to 1,173 of 1,175.
 5. Export. Done.

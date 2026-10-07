@@ -202,3 +202,22 @@ th.conf, td.conf { text-align: left; width: 52px; white-space: nowrap; padding-l
 td.conf.ok .conf-pill { background: var(--green-100); color: var(--green-700); }
 td.conf.mid .conf-pill { background: var(--amber-bg); color: var(--amber-text); border: 1px solid var(--amber-border); }
 td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
+
+/* the feedback box and the advanced spec under it */
+.fix { margin: 0 24px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.fix-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding: 12px 16px 6px; }
+.fix-row { display: flex; gap: 10px; padding: 4px 16px 12px; }
+.fix-row .search { max-width: none; }
+.fix-msg { padding: 0 16px 10px; font-size: 13px; color: var(--green-700); min-height: 1em; }
+.fix-msg.err { color: var(--amber-text); }
+.fix .spec { margin: 0; border: 0; border-top: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
+.primary.small { padding: 6px 12px; font-size: 13px; }
+/* column guides over the page image: one draggable line per spec column */
+.guides-btn { font-size: 13px; font-weight: 500; }
+.guides-btn.on { background: #eff6ff; color: var(--blue); border-color: var(--blue); }
+.guide-bar { display: flex; align-items: center; gap: 10px; padding: 8px 16px; background: #eff6ff; border-bottom: 1px solid #bfdbfe; font-size: 13px; color: #1e40af; }
+.guide-bar[hidden] { display: none; }
+.guide { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--blue); cursor: ew-resize; z-index: 2; }
+.guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: -8px; width: 16px; }
+.guide .tag { position: absolute; top: 6px; left: 4px; padding: 2px 6px; background: var(--blue); color: #fff; font-size: 10px; font-weight: 600; border-radius: 4px; white-space: nowrap; text-transform: uppercase; }
+.guide.dragging { border-left-style: solid; }

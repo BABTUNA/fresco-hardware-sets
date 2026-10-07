@@ -5,7 +5,9 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import pdfplumber
 from hwsets.extract import extract_book, spec_name
-from hwsets.spec import validate_spec
+from hwsets.spec import validate_spec, dump
+from hwsets.finder import find_schedule
+from hwsets import compile as compiler
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA, OUT, SPECS, CORR, CACHE = (os.path.join(ROOT, d) for d in ("data", "out", "specs", "corrections", "cache/pages"))
@@ -128,6 +130,77 @@ def put_spec(book_id: str, spec: dict):
         raise HTTPException(400, f"bad spec: {e}")
     json.dump(spec, open(os.path.join(SPECS, book_id + ".json"), "w"), indent=1)
     return rerun(book_id)
+
+
+def spec_path(book_id):
+    return os.path.join(SPECS, book_id + ".json")
+
+
+# the spec's differences in plain words, for the reviewer after a fix
+#   -> ["set header pattern widened", "finish column moved from 462 to 470", "2 lines added to skip"]
+def describe_changes(old, new):
+    out = []
+    if old.get("set_header") != new.get("set_header"):
+        out.append("set header pattern changed")
+    if old.get("row_start") != new.get("row_start"):
+        out.append("row start pattern changed")
+    oc = {c["field"]: c["x"] for c in old.get("columns", [])} if isinstance(old.get("columns"), list) else {}
+    nc = {c["field"]: c["x"] for c in new.get("columns", [])} if isinstance(new.get("columns"), list) else {}
+    for f in nc:
+        if f not in oc:
+            out.append(f"{f} column added at x={nc[f]}")
+        elif oc[f] != nc[f]:
+            out.append(f"{f} column moved from {oc[f]} to {nc[f]}")
+    for f in oc:
+        if f not in nc:
+            out.append(f"{f} column removed")
+    for key, label in (("skip", "skipped line patterns"), ("end", "end patterns")):
+        d = len(new.get(key, [])) - len(old.get(key, []))
+        if d:
+            out.append(f"{abs(d)} {label} {'added' if d > 0 else 'removed'}")
+    for key in ("set_meta", "note_line", "valign"):
+        if old.get(key) != new.get(key):
+            out.append(f"{key.replace('_', ' ')} changed")
+    return out or ["nothing changed"]
+
+
+# the column guides: new x per field, every set in the book reruns, no model call
+@app.put("/api/books/{book_id}/columns")
+def put_columns(book_id: str, body: dict):
+    spec = json.load(open(spec_path(book_id)))
+    if spec.get("mode") == "grid":
+        raise HTTPException(400, "this book is a ruled table, its columns come from the printed headings")
+    xs = {c["field"]: float(c["x"]) for c in body.get("columns", [])}
+    new = dict(spec, columns=[{**c, "x": xs.get(c["field"], c["x"])} for c in spec["columns"]])
+    validate_spec(new)
+    json.dump(new, open(spec_path(book_id), "w"), indent=1)
+    r = rerun(book_id)
+    r["changes"] = describe_changes(spec, new)
+    return r
+
+
+# a reviewer's note in plain words goes to the repair call with the page they were looking at
+@app.post("/api/books/{book_id}/feedback")
+def feedback(book_id: str, body: dict):
+    if not key_available():
+        raise HTTPException(409, "this needs the API key")
+    spec = json.load(open(spec_path(book_id)))
+    path = pdf_path(book_id)
+    texts, scores, runs = find_schedule(path)
+    page = int(body.get("page") or 0)
+    lines = [l.strip() for l in texts[page - 1] if l.strip()][:40] if 0 < page <= len(texts) else []
+    result = json.load(open(result_path(book_id)))
+    flags = result.get("flags", []) + [{"check": "reviewer", "count": 1,
+                                         "examples": [{"note": body.get("note", ""), "page": page, "lines": lines}]}]
+    text = dump(pdfplumber.open(path), compiler.pick_samples(runs, scores))
+    try:
+        new = compiler.repair(spec, flags, text)
+    except Exception as e:
+        raise HTTPException(500, f"the model call failed: {e}")
+    json.dump(new, open(spec_path(book_id), "w"), indent=1)
+    r = rerun(book_id)
+    r["changes"] = describe_changes(spec, new)
+    return r
 
 
 @app.post("/api/books/{book_id}/corrections")
