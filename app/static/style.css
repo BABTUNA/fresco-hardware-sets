@@ -210,7 +210,6 @@ td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
 .fix-row .search { max-width: none; }
 .fix-msg { padding: 0 16px 10px; font-size: 13px; color: var(--green-700); min-height: 1em; }
 .fix-msg.err { color: var(--amber-text); }
-.fix .spec { margin: 0; border: 0; border-top: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
 .primary.small { padding: 6px 12px; font-size: 13px; }
 /* column guides over the page image: one draggable line per spec column */
 .guides-btn { font-size: 13px; font-weight: 500; }

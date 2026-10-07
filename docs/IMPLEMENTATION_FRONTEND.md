@@ -25,7 +25,7 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 | Page | Page image with a box per set, the selected set's boxes in a stronger color, a component's box when clicked | Previous and next page, jump to a set's first page |
 | Sets | Set number, description, status, page range, flag count | Click selects the set and jumps the page |
 | Components | Table of qty, description, catalog, finish, mfr, notes for the selected set, low-confidence cells tinted | Click a cell to edit it (correction), click the row to highlight its box |
-| Fix it | A plain-words box ("the set on this page is missing", "finish and maker are swapped"), and Adjust columns on the page pane, which draws the spec's columns as draggable lines over the page image. The raw spec sits behind an Advanced toggle | The note goes to the repair call with the page's lines, the model edits the spec, the book reruns, and the reply says what changed in plain words. Dragging the lines and applying sets the column x values and reruns with no model call |
+| Fix it | A plain-words box ("the set on this page is missing", "finish and maker are swapped"), and Adjust columns on the page pane, which draws the spec's columns as draggable lines over the page image. | The note goes to the repair call with the page's lines, the model edits the spec, the book reruns, and the reply says what changed in plain words. Dragging the lines and applying sets the column x values and reruns with no model call |
 
 ## 4. Function trace
 
@@ -37,7 +37,7 @@ uv run hwsets serve                                                             
 ├─ GET  /api/books                          every PDF under data/, status, set count  app/server.py
 ├─ GET  /api/books/{id}                     cached BookResult, extract first if none  app/server.py
 ├─ GET  /api/books/{id}/pages/{n}.png       page to PNG at 110 dpi, cached            app/server.py
-├─ PUT  /api/books/{id}/spec                save the edited spec, rerun, no LLM call  app/server.py
+├─ PUT  /api/books/{id}/spec (kept for scripts, no UI)                save the edited spec, rerun, no LLM call  app/server.py
 │  ├─ validate_spec(raw)                    schema check, compile the regexes         hwsets/spec.py
 │  ├─ interpret(spec, pdf, pages)           every set again, 12 s for SAT             hwsets/spec.py
 │  ├─ audit(...)                            fresh flags for the new spec              hwsets/audit.py
@@ -115,7 +115,7 @@ Example: `{"set_number": "18", "page": 427, "row": 2, "field": "mfr", "value": "
 ## 7. Build order
 
 1. Read-only viewer: book list, page image, set boxes, components table. Done.
-2. Spec editor with save and rerun. Done.
+2. Spec editor with save and rerun. Built, then removed: a reviewer never sees a regex. The spec is edited only through the column guides, tagged lines and the Fix it box, or by hand in `specs/`.
 3. Audit flags above the panes, a CONF column per row (its weakest filled cell, green from 0.9, amber from 0.8, red below) plus the amber tint on the cell itself and a "N cells to check" count in the set header, full names from the book's legend under maker and finish codes. Done.
 4. Corrections, double-click a cell. Done.
 6. Feedback without regex: the Fix it box (one model call), draggable column guides, and Tag a line: click any line on the page and say "this starts a set", "not a component, skip it", "this is a note" or "door numbers or header block". The server turns the clicked text into a literal rule (digits generalized) in `set_header_extra`, `skip`, `note_line` or `set_meta`, so it cannot break anything else, and the book reruns with no model call. Done. Tested on Star: "the set headed Hardware Set/Group #01 on this page is missing" widened the header pattern and the set appeared, whole-book set numbers found went from 1,172 to 1,174 of 1,175.

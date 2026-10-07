@@ -66,7 +66,7 @@ async function openBook(id, keepSet) {
   renderFlags(); renderSteps(); renderSets();
   const keep = keepSet && b.sets.find((s) => s.set_number === keepSet);
   selectSet(keep || b.sets[0] || null);
-  try { state.spec = await api(`/books/${id}/spec`); $("spec-text").value = JSON.stringify(state.spec, null, 1); } catch (e) { state.spec = null; $("spec-text").value = ""; }
+  try { state.spec = await api(`/books/${id}/spec`); } catch (e) { state.spec = null; }
   stopGuides();
 }
 
@@ -199,27 +199,11 @@ function drawPage(n) {
   if (img.complete) img.onload();
 }
 
-// the spec editor: save, rerun the book, keep the selected set
-async function saveSpec() {
-  const btn = $("save-spec"), msg = $("spec-msg");
-  let spec;
-  try { spec = JSON.parse($("spec-text").value); } catch (e) { msg.textContent = "not valid JSON: " + e.message; return; }
-  btn.disabled = true; msg.textContent = "rerunning the book…";
-  try {
-    const keep = state.set && state.set.set_number;
-    await api(`/books/${state.book.id}/spec`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spec) });
-    await openBook(state.book.id, keep);
-    msg.textContent = "done";
-  } catch (e) { msg.textContent = e.message; }
-  btn.disabled = false;
-}
-
 function stepSet(d) {
   const sets = state.book.sets, i = sets.indexOf(state.set);
   if (sets[i + d]) selectSet(sets[i + d]);
 }
 
-$("save-spec").onclick = saveSpec;
 $("prev-set").onclick = () => stepSet(-1);
 $("next-set").onclick = () => stepSet(1);
 $("prev-page").onclick = () => drawPage(state.page - 1);
