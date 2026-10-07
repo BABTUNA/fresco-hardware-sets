@@ -237,6 +237,10 @@ class Component(TypedDict):
     catalog: str | None
     finish: str | None
     mfr: str | None
+    # text that belongs to this row and is not one of the five fields: the printed NOTES cell in a grid
+    # book (Roselle), or a single note line directly under the row ("NOTE: VERIFY SIZE"). a block of
+    # two or more note lines after a set's last row, or a heading like "Operational Description:",
+    # is about the set and goes to HardwareSet.notes instead
     notes: str | None
     page: int
     bbox: tuple[float, float, float, float]
@@ -263,7 +267,8 @@ class HardwareSet(TypedDict):
     # header block lines: door numbers, "Provide each PR door(s) with the following:"
     meta: list[str]
     components: list[Component]
-    # set-level prose like operational descriptions
+    # set-level prose in reading order: "Notes:" blocks after the last row, operational descriptions,
+    # footnotes. never the header line or the door list, those are set_number, description and meta
     notes: list[str]
     # one entry per page the set appears on
     location: list[Location]

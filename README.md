@@ -50,7 +50,7 @@ uv run hwsets extract "data/village-of-oswego/SPECIFICATIONS VOLUME 1.pdf" -o ou
 
 The 20 sample books have their compiled specs checked in under `specs/`, so they run with no API key and give the output in the docs. A new book needs `ANTHROPIC_API_KEY` in the environment or in `.env`: one call writes its spec into `specs/`, and a second call runs only if the audit flags something. `--spec path.json` uses a spec of your own, `--no-llm` fails instead of calling the API.
 
-Output: one JSON per book with every set's number, description, status, 1-based page and bounding box, and its components with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes`, each with its own page and box. The exact shape is in [IMPLEMENTATION_BACKEND.md](docs/IMPLEMENTATION_BACKEND.md).
+Output: one JSON per book with every set's number, description, status, 1-based page and bounding box, and its components with `qty`, `description`, `catalog_number`, `mfr`, `finish`, `notes` (text printed for that row, a block of notes after the last row goes to the set's `notes` instead), each with its own page and box. The exact shape is in [IMPLEMENTATION_BACKEND.md](docs/IMPLEMENTATION_BACKEND.md).
 
 ## The viewer
 

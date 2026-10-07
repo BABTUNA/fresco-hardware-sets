@@ -24,7 +24,7 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 | :--- | :--- | :--- |
 | Page | Page image with a box per set, the selected set's boxes in a stronger color, a component's box when clicked | Previous and next page, jump to a set's first page |
 | Sets | Set number, description, status, page range, flag count | Click selects the set and jumps the page |
-| Components | Table of qty, description, catalog, finish, mfr, notes for the selected set, low-confidence cells tinted | Click a cell to edit it (correction), click the row to highlight its box |
+| Components | Table of qty, conf, description, finish, catalog, mfr, notes for the selected set. The notes cell is text printed for that row (a grid book's NOTES column, or one note line under the row), clamped to two lines, and the column hides when no row in the set has one. Set-level prose ("Notes:" blocks after the last row, operational descriptions) is under the Notes toggle in the strip above the table, not in a row | Double-click a cell to edit it (correction), click the row to highlight its box |
 | Fix it | A plain-words box ("the set on this page is missing", "finish and maker are swapped"), and Adjust columns on the page pane, which draws the spec's columns as draggable lines over the page image. | The note goes to the repair call with the page's lines, the model edits the spec, the book reruns, and the reply says what changed in plain words. Dragging the lines and applying sets the column x values and reruns with no model call |
 
 ## 4. Function trace
