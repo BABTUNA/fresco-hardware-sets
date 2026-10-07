@@ -60,7 +60,7 @@ The three not in our output are Star `01` and `102.1`, two more header spellings
 
 ## Unseen books
 
-Five public Division 08 specs from other owners, never seen by the finder, the prompt or the interpreter, run cold on 2026-10-07 with one API call each. No labels, so the check is whether the book compiles to one spec, how it reads, and what the audit says. Scripts and the API-written specs: `data/external/` (not in the repo), `specs_external/`.
+Five public Division 08 specs from other owners, never seen by the finder, the prompt or the interpreter, run cold on 2026-10-07 with one API call each. No labels, so the check is whether the book compiles to one spec, how it reads, and what the audit says. Scripts and the API-written specs: `out/external/` (not in the repo), `specs_external/`.
 
 | Book | Format | Sets, rows | Audit | What it reads like |
 | :--- | :--- | ---: | :--- | :--- |
