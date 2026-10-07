@@ -195,7 +195,7 @@ function drawPage(n) {
     if (state.comp && state.comp.page === state.page) box(state.comp.bbox, "comp", "");
     // a set that starts low on the page comes into view, the page is not left showing prose above it
     const target = state.comp && state.comp.page === state.page ? state.comp.bbox : (state.set && (state.set.location.find((l) => l.page === state.page) || {}).bbox);
-    if (target) { const y = target[1] * k - 24; if (y < wrap.scrollTop || y > wrap.scrollTop + wrap.clientHeight - 80) wrap.scrollTo({ top: Math.max(0, y), behavior: "smooth" }); }
+    if (target) { const y = target[1] * k - 24; if (y < wrap.scrollTop || y > wrap.scrollTop + wrap.clientHeight - 80) requestAnimationFrame(() => { wrap.scrollTop = Math.max(0, y); }); }
     drawGuides(k);
     drawLines(k);
   };
