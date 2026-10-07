@@ -1,6 +1,6 @@
 # the viewer's api: books, results, page images, spec edits with a rerun, corrections, export
-import glob, json, os
-from fastapi import FastAPI, HTTPException
+import glob, json, os, re
+from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import pdfplumber
@@ -25,6 +25,10 @@ def pdf_path(book_id):
     if not p:
         raise HTTPException(404, "no such book")
     return p
+
+
+def key_available():
+    return bool(os.environ.get("ANTHROPIC_API_KEY")) or os.path.exists(os.path.join(ROOT, ".env"))
 
 
 def result_path(book_id):
@@ -56,7 +60,7 @@ def corrections_for(book_id):
 # run the extractor for a book and save the result. no api call unless the key is set and no spec exists
 def rerun(book_id):
     try:
-        r = extract_book(pdf_path(book_id), spec_dir=SPECS, allow_llm=bool(os.environ.get("ANTHROPIC_API_KEY")) or os.path.exists(os.path.join(ROOT, ".env")))
+        r = extract_book(pdf_path(book_id), spec_dir=SPECS, allow_llm=key_available())
     except SystemExit as e:
         raise HTTPException(409, str(e))
     r["id"] = book_id
@@ -72,8 +76,20 @@ def list_books():
         r = json.load(open(result_path(book_id))) if os.path.exists(result_path(book_id)) else None
         out.append({"id": book_id, "file": os.path.basename(p), "project": os.path.basename(os.path.dirname(p)),
                     "status": r["status"] if r else "not run", "sets": len(r["sets"]) if r else None,
-                    "has_spec": os.path.exists(os.path.join(SPECS, book_id + ".json"))})
+                    "has_spec": os.path.exists(os.path.join(SPECS, book_id + ".json")), "key": key_available()})
     return out
+
+
+# a dropped pdf lands under data/uploads/ and is listed like any other book. extraction happens on first open
+@app.post("/api/books/upload")
+async def upload(file: UploadFile):
+    name = re.sub(r"[^\w. -]+", "_", os.path.basename(file.filename or "upload.pdf"))
+    if not name.lower().endswith(".pdf"):
+        raise HTTPException(400, "only PDF files")
+    path = os.path.join(DATA, "uploads", name)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "wb").write(await file.read())
+    return {"id": spec_name(path), "file": name}
 
 
 @app.get("/api/books/{book_id}")

@@ -10,10 +10,26 @@
 <body>
 <header class="topbar">
   <div class="brand"><span class="hammer">&#x1F528;</span><span>FRESCO</span><span class="brand-sub">hardware sets</span></div>
-  <select id="book-select" class="select" aria-label="Book"></select>
+  <button class="ghost books-btn" id="books-btn" hidden>&#x2039; All books</button>
 </header>
 
-<main class="card" id="card">
+<main class="card library" id="library">
+  <div class="card-head">
+    <span class="pill">STEP 1 OF 2</span>
+    <h2>Pick a specbook, or drop in a new one.</h2>
+    <p class="sub">A book that already has a layout spec opens at once. A new PDF gets one written by the model on first open, which takes under a minute.</p>
+  </div>
+  <label class="drop" id="drop">
+    <input type="file" id="file-input" accept="application/pdf" hidden>
+    <span class="drop-icon">&#x2912;</span>
+    <span class="drop-title">Drag &amp; drop a spec PDF</span>
+    <span class="muted">or click to browse</span>
+    <span class="drop-status" id="drop-status"></span>
+  </label>
+  <div class="book-grid" id="book-grid"></div>
+</main>
+
+<main class="card" id="card" hidden>
   <div class="card-head">
     <span class="pill" id="pill">HARDWARE SETS</span>
     <h2 id="headline">Pick a book to start.</h2>

@@ -3,19 +3,40 @@ const state = { books: [], book: null, page: 1, set: null, comp: null, zoom: 1 }
 const $ = (id) => document.getElementById(id);
 const api = (path, opts) => fetch("/api" + path, opts).then(async (r) => { if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); });
 
-// fill the book dropdown and open the first one that has run
+// the library: one card per pdf under data/, plus the drop zone
 async function loadBooks() {
   state.books = await api("/books");
-  const sel = $("book-select");
-  sel.innerHTML = state.books.map((b) => `<option value="${b.id}">${b.project} / ${b.file}${b.status === "not run" ? (b.has_spec ? "" : " (needs API key)") : ` (${b.sets} sets)`}</option>`).join("");
-  sel.onchange = () => openBook(sel.value);
-  const first = state.books.find((b) => b.status !== "not run") || state.books[0];
-  if (first) { sel.value = first.id; openBook(first.id); }
+  const label = { extracted: "extracted", needs_review: "needs review", no_hardware_sets: "no sets", "not run": "not run yet" };
+  $("book-grid").innerHTML = state.books.map((b) => `<button class="book" data-id="${b.id}" title="${b.file}">
+      <span class="project">${b.project}</span><span class="name">${b.file}</span>
+      <span class="meta"><span class="chip ${b.status.replace(" ", "_")}">${label[b.status] || b.status}</span>${b.sets != null ? `<span>${b.sets} sets</span>` : ""}${b.status === "not run" && !b.has_spec ? `<span>${b.key ? "spec written on open" : "needs the API key"}</span>` : ""}</span>
+    </button>`).join("");
+  $("book-grid").querySelectorAll(".book").forEach((el) => (el.onclick = () => openBook(el.dataset.id)));
+}
+
+function showLibrary() {
+  $("card").hidden = true; $("library").hidden = false; $("books-btn").hidden = true;
+  loadBooks();
+}
+
+// a dropped or chosen pdf is uploaded, then opened, which runs the extraction
+async function uploadFile(file) {
+  const status = $("drop-status");
+  if (!file || !/\.pdf$/i.test(file.name)) { status.textContent = "PDF files only"; return; }
+  status.textContent = `Uploading ${file.name}…`;
+  const fd = new FormData(); fd.append("file", file);
+  try {
+    const r = await api("/books/upload", { method: "POST", body: fd });
+    status.textContent = "Finding the schedule pages, writing the spec, extracting… under a minute";
+    await openBook(r.id);
+    status.textContent = "";
+  } catch (e) { status.textContent = e.message; }
 }
 
 // fetch a book's result, select a set, and render everything
 async function openBook(id, keepSet) {
-  $("headline").textContent = "Extracting…";
+  $("library").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
+  $("headline").textContent = "Extracting…"; $("file-name").textContent = "";
   try {
     state.book = await api("/books/" + id);
   } catch (e) {
@@ -206,4 +227,10 @@ $("zoom-fit").onclick = () => setZoom(1);
     window.addEventListener("pointermove", move); window.addEventListener("pointerup", stop);
   };
 })();
+$("books-btn").onclick = showLibrary;
+$("file-input").onchange = () => uploadFile($("file-input").files[0]);
+const drop = $("drop");
+drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); uploadFile(e.dataTransfer.files[0]); };
 loadBooks();

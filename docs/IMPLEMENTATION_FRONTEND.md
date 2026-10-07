@@ -16,7 +16,7 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 
 ## 3. Screens
 
-**Book list.** Every PDF under `data/` with its status (`extracted`, `no_hardware_sets`, `needs_review`, or not run yet) and set count. Click to open.
+**Library.** A drop zone for a new spec PDF (`POST /api/books/upload`, saved under `data/uploads/`, extracted on first open), then one card per PDF under `data/` with its project, status chip (`extracted`, `needs review`, `no sets`, `not run yet`) and set count. Click to open. "All books" in the top bar comes back here.
 
 **Book view**, one screen, two panes side by side, the page on the left with about half the width and a drag handle, the components on the right. The set list is a dropdown in the components pane's header, doors and notes a strip under it, the spec editor folds out below both:
 
