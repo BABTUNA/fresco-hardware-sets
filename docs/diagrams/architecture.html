@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Architecture</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* hand-laid svg, every box and arrow at chosen coordinates. rendered to png by render.sh */
+  html, body { margin: 0; background: #f6fbf6; }
+  svg { display: block; font-family: Inter, system-ui, sans-serif; }
+  .box { fill: #fff; stroke: #e5e7eb; stroke-width: 1.5; }
+  .box.green { fill: #f0fdf4; stroke: #16a34a; }
+  .box.blue { fill: #eff6ff; stroke: #2563eb; }
+  .box.amber { fill: #fffbeb; stroke: #f59e0b; }
+  .box.gray { fill: #f9fafb; stroke: #d1d5db; }
+  .title { font-size: 19px; font-weight: 600; fill: #111827; }
+  .sub { font-size: 13px; fill: #4b5563; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; fill: #374151; }
+  .mono.dim { fill: #6b7280; }
+  .mono.green { fill: #15803d; }
+  .mono.blue { fill: #1d4ed8; }
+  .mono.amber { fill: #b45309; }
+  .arrow { stroke: #9ca3af; stroke-width: 1.8; fill: none; marker-end: url(#head); }
+  .arrow.green { stroke: #16a34a; marker-end: url(#head-green); }
+  .arrow.blue { stroke: #2563eb; marker-end: url(#head-blue); stroke-dasharray: 6 5; }
+  .arrow.amber { stroke: #f59e0b; marker-end: url(#head-amber); stroke-dasharray: 6 5; }
+  .h1 { font-size: 30px; font-weight: 700; fill: #111827; }
+  .h2 { font-size: 15px; fill: #4b5563; }
+  .tag { font-size: 11px; font-weight: 600; fill: #15803d; letter-spacing: .06em; }
+  .pill { fill: #dcfce7; }
+  .grid { stroke: rgba(22,101,52,.06); stroke-width: 1; }
+  .page { fill: #fff; stroke: #d1d5db; }
+  .pagebox { fill: rgba(34,197,94,.12); stroke: #22c55e; stroke-width: 2; }
+  .pagetag { fill: #16a34a; }
+  .pagetag-t { font-size: 10px; font-weight: 600; fill: #fff; }
+  .pagetext { font-family: "JetBrains Mono", monospace; font-size: 11px; fill: #1f2937; }
+  .json { font-family: "JetBrains Mono", monospace; font-size: 12px; fill: #1f2937; }
+  .json .k { fill: #15803d; }
+  .json .v { fill: #1d4ed8; }
+  .json .c { fill: #9ca3af; }
+</style>
+</head>
+<body>
+<svg width="1600" height="960" viewBox="0 0 1600 960" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="#9ca3af"/></marker>
+    <marker id="head-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="#16a34a"/></marker>
+    <marker id="head-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="#2563eb"/></marker>
+    <marker id="head-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="#f59e0b"/></marker>
+    <pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path class="grid" d="M28 0H0V28" fill="none"/></pattern>
+  </defs>
+  <rect width="1600" height="960" fill="url(#g)"/>
+
+  <!-- heading -->
+  <text class="h1" x="60" y="62">One spec per book, plain code for every page</text>
+  <text class="h2" x="60" y="90">A model reads two schedule pages once and writes the book's layout. The interpreter reads every page with it. Every value keeps its box on the page.</text>
+
+  <!-- row 1: pdf -> finder -> sample pages -> model call -> spec -->
+  <g>
+    <rect class="box" x="60" y="150" width="200" height="110" rx="10"/>
+    <text class="title" x="80" y="186">Specbook PDF</text>
+    <text class="sub" x="80" y="210">A Division 08 project manual,</text>
+    <text class="sub" x="80" y="228">up to 3,930 pages, mostly prose</text>
+  </g>
+  <path class="arrow" d="M260 205 L320 205"/>
+
+  <g>
+    <rect class="box" x="320" y="150" width="240" height="110" rx="10"/>
+    <text class="title" x="340" y="186">Page finder</text>
+    <text class="sub" x="340" y="210">Keeps pages with row-shaped lines:</text>
+    <text class="mono" x="340" y="230">3 EA HINGE 5BB1 ... 652 IVE</text>
+    <text class="sub" x="340" y="250">No header wording. 697 of 14,224 pages.</text>
+  </g>
+  <path class="arrow" d="M560 205 L620 205"/>
+
+  <g>
+    <rect class="box" x="620" y="150" width="220" height="110" rx="10"/>
+    <text class="title" x="640" y="186">2 densest pages</text>
+    <text class="sub" x="640" y="210">as text, each run of words</text>
+    <text class="sub" x="640" y="228">tagged with its left x:</text>
+    <text class="mono" x="640" y="248">[80]6 [148]HINGE [464]652</text>
+  </g>
+  <path class="arrow blue" d="M840 205 L900 205"/>
+
+  <g>
+    <rect class="box blue" x="900" y="150" width="220" height="110" rx="10"/>
+    <text class="title" x="920" y="186">One model call</text>
+    <text class="sub" x="920" y="210">writes the layout spec for</text>
+    <text class="sub" x="920" y="228">this book. The only call,</text>
+    <text class="sub" x="920" y="246">cached afterwards.</text>
+  </g>
+  <path class="arrow green" d="M1120 205 L1180 205"/>
+
+  <g>
+    <rect class="box green" x="1180" y="150" width="360" height="110" rx="10"/>
+    <text class="title" x="1200" y="186">Layout spec</text>
+    <text class="mono green" x="1200" y="208">"set_header": "^HARDWARE GROUP NO\. (?P&lt;num&gt;\S+)"</text>
+    <text class="mono green" x="1200" y="226">"columns": [{"qty": 78}, {"description": 146},</text>
+    <text class="mono green" x="1200" y="244">   {"catalog": 288}, {"finish": 462}, {"mfr": 506}]</text>
+  </g>
+
+  <!-- spec down to the interpreter -->
+  <path class="arrow green" d="M1360 260 L1360 320 L450 320 L450 380"/>
+  <text class="mono green" x="470" y="312">the spec runs over every page</text>
+
+  <!-- row 2: interpreter -> audit -> output -> viewer -->
+  <g>
+    <rect class="box" x="320" y="380" width="260" height="130" rx="10"/>
+    <text class="title" x="340" y="416">Interpreter</text>
+    <text class="sub" x="340" y="440">Per page: words to lines, snap the</text>
+    <text class="sub" x="340" y="458">columns to this page's edges, tag</text>
+    <text class="sub" x="340" y="476">each line, join wraps into rows.</text>
+    <text class="sub" x="340" y="494">Deterministic. 0.1 s per page.</text>
+  </g>
+  <path class="arrow" d="M580 445 L640 445"/>
+
+  <g>
+    <rect class="box amber" x="640" y="380" width="220" height="130" rx="10"/>
+    <text class="title" x="660" y="416">Audit</text>
+    <text class="sub" x="660" y="440">Seven checks against the</text>
+    <text class="sub" x="660" y="458">raw text: header near-misses,</text>
+    <text class="sub" x="660" y="476">rows with nothing extracted,</text>
+    <text class="sub" x="660" y="494">prose in code columns...</text>
+  </g>
+  <!-- repair loop back to the model call -->
+  <path class="arrow amber" d="M750 380 L750 340 L1010 340 L1010 260"/>
+  <text class="mono amber" x="770" y="334">flags? one repair call, then needs_review</text>
+  <path class="arrow" d="M860 445 L920 445"/>
+
+  <g>
+    <rect class="box green" x="920" y="380" width="260" height="130" rx="10"/>
+    <text class="title" x="940" y="416">JSON per book</text>
+    <text class="sub" x="940" y="440">Sets with number, description,</text>
+    <text class="sub" x="940" y="458">status, page and bbox. Rows with</text>
+    <text class="sub" x="940" y="476">the five fields, a box, a confidence</text>
+    <text class="sub" x="940" y="494">per field, legend names.</text>
+  </g>
+  <path class="arrow" d="M1180 445 L1240 445"/>
+
+  <g>
+    <rect class="box" x="1240" y="380" width="300" height="130" rx="10"/>
+    <text class="title" x="1260" y="416">Viewer</text>
+    <text class="sub" x="1260" y="440">The page with a box per set beside</text>
+    <text class="sub" x="1260" y="458">its rows. A reviewer fixes mistakes</text>
+    <text class="sub" x="1260" y="476">without seeing a regex.</text>
+    <text class="sub" x="1260" y="494">Drop in a new PDF, it compiles.</text>
+  </g>
+
+  <!-- feedback: a box under the viewer, one path into the spec with no call, one through the model -->
+  <path class="arrow" d="M1390 510 L1390 550"/>
+  <g>
+    <rect class="box" x="1240" y="550" width="300" height="118" rx="10"/>
+    <text class="title" x="1260" y="582">Fixing mistakes</text>
+    <text class="mono" x="1260" y="604">drag the column lines  -> columns[].x</text>
+    <text class="mono" x="1260" y="622">tag a line             -> a literal rule</text>
+    <text class="mono" x="1260" y="640">say what is wrong      -> one repair call</text>
+    <text class="mono" x="1260" y="658">double-click a cell    -> a correction</text>
+  </g>
+  <path class="arrow green" d="M1540 609 L1572 609 L1572 205 L1546 205"/>
+  <text class="mono green" x="1240" y="690">spec changes, the whole book reruns, no call</text>
+  <path class="arrow blue" d="M1240 640 L1210 640 L1210 300 L1060 300 L1060 266"/>
+  <path class="arrow" d="M1260 550 L1260 530 L1100 530 L1100 516"/>
+  <text class="mono dim" x="1105" y="545">corrections, kept across reruns</text>
+
+  <!-- i/o inset: a row on the page and the json it becomes -->
+  <text class="tag" x="60" y="690">WHAT COMES OUT, FOR ONE ROW</text>
+  <rect class="page" x="60" y="705" width="620" height="210" rx="6"/>
+  <text class="pagetext" xml:space="preserve" x="84" y="736">HARDWARE GROUP NO. 18</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="754">E120A  E121B</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="772">PROVIDE EACH PR DOOR(S) WITH THE FOLLOWING:</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="790">QTY   DESCRIPTION          CATALOG NUMBER              FINISH  MFR</text>
+  <rect class="pagebox" x="76" y="798" width="590" height="36" rx="3"/>
+  <rect class="pagetag" x="620" y="776" width="46" height="14" rx="3"/><text class="pagetag-t" x="626" y="787">ROW 1</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="814">6     EA  HINGE          5BB1HW 4.5 X 4.5 - NRP AT     652     IVE</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="830">                         OUTSWINGING DRS</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="852">1     EA  CLOSER         4040XP                        689     LCN</text>
+  <text class="pagetext" xml:space="preserve" x="84" y="870">1     EA  KICK PLATE     8400 10" X 2" LDW             630     IVE</text>
+  <text class="mono dim" x="84" y="900">Oswego, page 428. The wrapped catalog line is joined into one value.</text>
+
+  <path class="arrow green" d="M690 810 L740 810"/>
+
+  <rect class="page" x="750" y="705" width="790" height="210" rx="6"/>
+  <text class="json" x="774" y="736">{</text>
+  <text class="json" x="774" y="756">  <tspan class="k">"qty"</tspan>: <tspan class="v">6</tspan>, <tspan class="k">"description"</tspan>: <tspan class="v">"HINGE"</tspan>,</text>
+  <text class="json" x="774" y="776">  <tspan class="k">"catalog_number"</tspan>: <tspan class="v">"5BB1HW 4.5 X 4.5 - NRP AT OUTSWINGING DRS"</tspan>,</text>
+  <text class="json" x="774" y="796">  <tspan class="k">"finish"</tspan>: <tspan class="v">"652"</tspan>, <tspan class="k">"mfr"</tspan>: <tspan class="v">"IVE"</tspan>, <tspan class="k">"notes"</tspan>: <tspan class="v">null</tspan>,</text>
+  <text class="json" x="774" y="816">  <tspan class="k">"page"</tspan>: <tspan class="v">428</tspan>, <tspan class="k">"bbox"</tspan>: [<tspan class="v">80.1</tspan>, <tspan class="v">98.2</tspan>, <tspan class="v">528.0</tspan>, <tspan class="v">121.7</tspan>],</text>
+  <text class="json" x="774" y="836">  <tspan class="k">"confidence"</tspan>: {<tspan class="k">"qty"</tspan>: <tspan class="v">1.0</tspan>, <tspan class="k">"catalog_number"</tspan>: <tspan class="v">0.9</tspan>, <tspan class="k">"finish"</tspan>: <tspan class="v">1.0</tspan>, <tspan class="k">"mfr"</tspan>: <tspan class="v">1.0</tspan>, ...},</text>
+  <text class="json" x="774" y="856">  <tspan class="k">"mfr_name"</tspan>: <tspan class="v">null</tspan>, <tspan class="k">"finish_name"</tspan>: <tspan class="v">null</tspan>   <tspan class="c">// filled when the book prints a legend</tspan></text>
+  <text class="json" x="774" y="876">}</text>
+  <text class="mono dim" x="774" y="900">Confidence: the row's evidence, not a probability. Legend names when the book prints one.</text>
+  <text class="mono" x="60" y="945">Measured on 155 labeled pages, every field exact: 98.5% of rows, 94.9% of sets fully correct. Held out: 97.2% of rows. 1,174 of 1,175 printed set numbers found.</text>
+</svg>
+</body>
+</html>

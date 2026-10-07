@@ -21,6 +21,10 @@ Oswego's spec, shortened:
 
 The column at x=506 is the manufacturer column, so every `PE` or `ZER` in it is a manufacturer for the whole book. Every value comes from real words on the page, so each set gets an exact page and bounding box.
 
+![How a specbook becomes JSON](docs/diagrams/architecture.png)
+
+Diagram source: [docs/diagrams/architecture.html](docs/diagrams/architecture.html), a hand-laid SVG, rendered by `docs/diagrams/render.sh`.
+
 ## Where it stands
 
 On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](docs/BENCHMARK.md)), 98.5% of the 2,218 labeled rows come out exactly right with every field correct, and 94.9% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,174 of the 1,175 set numbers printed in the PDFs are in the output. Every spec in `specs/` was written by the API in one call per book (plus one repair call where the audit flagged something). The only edits since came through the viewer's own feedback tools, two rules on Star.
