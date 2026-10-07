@@ -17,7 +17,8 @@ def main():
     args = ap.parse_args()
     if args.cmd == "serve":
         import uvicorn
-        uvicorn.run("app.server:app", port=args.port, reload=False)
+        # 0.0.0.0 so a container host can reach it, the same command serves locally
+        uvicorn.run("app.server:app", host="0.0.0.0", port=args.port, reload=False)
         return
     result = extract_book(args.pdf, spec_path=args.spec, allow_llm=not args.no_llm)
     text = json.dumps(result, indent=1)
