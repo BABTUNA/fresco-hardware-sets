@@ -30,7 +30,8 @@ function renderLibrary() {
 
 function showLibrary() {
   $("card").hidden = true; $("review").hidden = true; $("labels").hidden = true; $("library").hidden = false; $("books-btn").hidden = true;
-  }
+  loadBooks();
+}
 
 // a dropped or chosen pdf is uploaded, then opened, which runs the extraction
 async function uploadFile(file) {
