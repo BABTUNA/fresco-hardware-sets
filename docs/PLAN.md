@@ -68,70 +68,58 @@ PDF -> 1. find schedule pages -> 2. compile spec (1 LLM call) -> 3. interpret ev
 ```
 fresco/
   hwsets/
-    lines.py      words to lines, drops rotated watermark text
-    finder.py     step 1
+    lines.py      words to lines, strike marks
+    finder.py     step 1, and the header widening after the spec exists
     spec.py       spec schema and interpreter (columns and grid modes)
     compile.py    step 2 and the repair call (Anthropic API)
     audit.py      step 4
-    legend.py     code lookup tables printed in the book (bonus)
-    extract.py    runs the pipeline, writes the output JSON
+    legend.py     code lists printed in the book, to full names
+    extract.py    runs the pipeline, confidence scores, writes the output JSON
     cli.py        hwsets extract book.pdf -o out.json, hwsets serve
     prompts/      spec compile and repair prompts
   specs/          compiled spec per sample book, checked in
-  eval/
-    gt/           labeled pages
-    score.py
-  app/            viewer
+  app/            the viewer: server.py and one static page
+  experiments/    the research: finder and interpreter prototypes, the benchmark (eval/, bench.py), the alternatives
   scripts/download_data.sh
   README.md
 ```
 
 **Checked-in specs.** A reviewer can run every sample book without an API key and get the same output I got. The key is only needed for a new book.
 
-**Size.** Keep `hwsets/` under about 800 lines. It is about 560 now in `experiments/`.
+**Size.** `hwsets/` is about 900 lines with comments, the viewer about 500.
 
 ## Build order
 
-1. **Port the core.** Move `lines`, `finder`, `spec_parse`, and the audit from `experiments/` into `hwsets/`, cleaned up, with the output schema above.
-2. **Fix the known residuals** from the experiments:
+Done, in this order:
 
-   | Problem | Seen in | Fix |
-   | :--- | :--- | :--- |
-   | Struck-through rows and words are kept | HFH, SJC, Valor | Thin lines through a word's mid-height mark it struck. Drop struck words, mark struck rows `removed`. |
-   | Door-number line read as a row with qty 115 | Lyons | Audit flags qty over 99 with no catalog |
-   | Set-note line glued onto the last row's description | Gerrard | Treat a line under the last row as a note when it ends with ":" or the row already has all its code columns |
-   | Hyphen join fires inside a line | Bridgeport | Only join across line breaks |
-   | "As Req" qty row not anchored | SJC | Let `row_start` match words, qty stays null |
+1. Port the core from `experiments/` into `hwsets/` with the output schema above. Reproduced the benchmark exactly.
+2. The known residuals (struck rows, door-number lines, note lines glued to rows, hyphen joins, "As Req" rows) were fixed in the experiments before the port.
+3. Compile and repair through the API. All 20 specs recompiled fresh: 98.5% rows, 94.9% sets, 1,174 of 1,175 printed set numbers.
+4. Eval: the strict scorer on 155 labeled pages plus 25 held out, in `experiments/`.
+5. CLI and README.
+6. Viewer: library with a drop zone, page image with a box per set, components table, corrections by double-click.
+7. Confidence scores per field, shown as a CONF column.
+8. Code resolution from the legends four books print.
+9. Feedback without regex: draggable column guides, tag a line, and a plain-words box that goes to the repair call.
 
-3. **Compile and repair with Claude.** The prompt is `experiments/SPEC_PROMPT.md`. Validate the reply against the spec JSON schema. Repair gets the spec, the audit flags, and the same 2 pages. One repair round max, then `needs_review`.
-4. **Eval.** Move the 39 labeled pages into `eval/gt/`, port the scorer, and print one table per book plus the total. This is the headline number for the README.
-5. **CLI and README.** Setup with `uv`, the download script, one command per sample book.
+Still open:
 
-**Cut line: the submission is complete here.**
-
-6. **Viewer.** One page: pick a book, see the PDF page with a box per set, click a set to see its components next to it. The compiled spec sits in an editor beside it. Editing it reruns the interpreter and every set in the book updates.
-7. **Confidence scores.** Per field, from evidence the pipeline already has: did the column snap to an aligned edge on this page, does the value have the shape of its column (finish code vs mfr code), did the set pass the audit.
-8. **Code resolution from legends.** Gerrard and Forest Park print Manufacturer, Finish and Option lists before the sets (`HA = Hager`, `C = Charcoal`). Parse those code/name blocks and add `mfr_name` and `finish_name`.
-
-**Cut line: bonus points done.**
-
-9. **Deploy.** On hold until the rest is done.
-10. **Demo video.** Oswego (wrapped rows), Roselle (grid table, 13 sets per page), JC Ryan (centered cells), then HFH to show the audit catching 10 merged sets and the repair fixing them.
+10. Demo video. Library, drop a PDF, Oswego, Star page 107 with tag a line, the numbers.
+11. Deploy, or leave the local run steps.
 
 ## Decided
 
 - Approach: compile one spec per book, interpret deterministically.
-- LLM: Anthropic API, key in `.env`.
-- UI: viewer plus spec editing.
+- LLM: Anthropic API, `claude-sonnet-5-5`, key in `.env`. One call per book, a second only when the audit flags.
+- UI: a viewer where a reviewer never sees the spec. Column guides, tagged lines and a feedback box edit it for them.
 - Text layer only. Every sample book has one. Scanned PDFs return `needs_review`.
 
 ## Open
 
-- Deploy target.
-- Which Claude model compiles specs. Try the cheaper one first and keep it if the eval holds.
+- Deploy target, if any.
 
 ## Risks
 
-- **The eval is small and model-labeled.** 39 pages. Every mismatch was checked by hand and 3 turned out to be labeler errors. I should label a few more pages myself before quoting the number.
+- **The eval is model-labeled.** 155 pages plus 25 held out, labeled by Claude from page images, two labelers agreeing 99% of the time. Mismatches were checked by hand and a few turned out to be labeler errors. A hand check of a sample of sets by a person is still worth doing before quoting the number as fact.
 - **A spec can be wrong in a way the audit does not see.** HFH looked fine on recall while 10 sets were merged. More audit checks are cheap, so add one for each failure found.
 - **Books that switch layouts mid-schedule.** Star does this a little and per-page calibration covered it. A book with two truly different layouts would need one spec per page run.

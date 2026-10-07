@@ -11,7 +11,7 @@ Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 set
 | Set numbers found, all 20 books | 99.7% (1,174 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
 | Values invented | impossible | impossible | 23 of 8,028 | 25 of 7,693 |
 | LLM calls, 20 books | 20 + repairs (2 in the last run) | 39 | 694 | 694 |
-| Time, 100 pages | 14 s | 32 s | 17 min | 17 min |
+| Time, 100 pages | 14 to 45 s | 32 s | 17 min | 17 min |
 | Same output every run | yes | yes | no | no |
 | Cost, 20 books (per set page) | $0.21 ($0.0003) | $0.53 ($0.0008) | $8.20 ($0.012) | $12.30 ($0.018) |
 
@@ -20,7 +20,7 @@ Notes:
 - Set numbers found covers every page of every book, the other rows cover the 155 labeled pages.
 - The multimodal score is inflated: the labels were made by Claude from the same page images.
 - Approach 1 was tuned on this benchmark. Quote the held-out row.
-- Times: finder and interpreter measured, model calls estimated from token counts at 60 tokens per second, one call at a time.
+- Times: finder and interpreter measured. Approach 1's model call measured on the 20 fresh compiles, 4 to 35 s per book (one call, two where the audit fired). Calls for approaches 2 to 4 estimated from token counts at 60 tokens per second, one call at a time.
 - Cost from the measured tokens per call at $3 per million input and $15 per million output.
 
 ## Random samples

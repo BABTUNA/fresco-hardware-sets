@@ -23,7 +23,7 @@ The column at x=506 is the manufacturer column, so every `PE` or `ZER` in it is 
 
 ## Where it stands
 
-On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](docs/BENCHMARK.md)), 98.5% of the 2,218 labeled rows come out exactly right with every field correct, and 94.9% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,174 of the 1,175 set numbers printed in the PDFs are in the output. Every spec in `specs/` was written by the API in one call per book (plus one repair call where the audit flagged something), nothing was hand-edited.
+On 155 labeled pages from 20 books (labeled from page images, see [BENCHMARK.md](docs/BENCHMARK.md)), 98.5% of the 2,218 labeled rows come out exactly right with every field correct, and 94.9% of the 311 sets are fully correct. On a separate held-out set of 25 pages scored once after all tuning, it is 97.2% of rows and 89.5% of sets. Across all 20 books, 1,174 of the 1,175 set numbers printed in the PDFs are in the output. Every spec in `specs/` was written by the API in one call per book (plus one repair call where the audit flagged something). The only edits since came through the viewer's own feedback tools, two rules on Star.
 
 | Doc | What it covers |
 | :--- | :--- |
@@ -58,7 +58,12 @@ Output: one JSON per book with every set's number, description, status, 1-based 
 uv run hwsets serve
 ```
 
-Then open http://localhost:8000. Pick a book from the library, or drop a new spec PDF on it (it lands in `data/uploads/` and gets its spec written on first open), see each set boxed on its page with its components beside it, double-click a cell to correct it, see the cells the extractor is unsure about tinted amber, read the full name under a code when the book prints a legend for it, and fix a layout mistake for the whole book without touching a regex: drag the column lines on the page, or type what is wrong ("the set on this page is missing") and one model call edits the spec and reruns. A book under `data/` that has no spec yet is compiled on first open, which needs the API key.
+Then open http://localhost:8000.
+
+- **Library.** Every PDF under `data/` with its status and set count, searchable. Drop a new spec PDF on it and it is extracted on the spot (needs the API key for the one spec call).
+- **Book view.** The page image with a box per set beside the set's components. Click a row to see it on the page. A CONF column scores each row, and a cell under 0.8 is tinted. Codes the book explains in a printed legend show their full name.
+- **Fixing mistakes, no regex.** Double-click a cell to correct one value. Drag the column lines on the page to move a column for the whole book. Click a line and say what it is (a set header, not a component, a note). Or type what is wrong ("the set on this page is missing") and one model call edits the layout and reruns.
+- **Export JSON** gives the result file.
 
 ## Running the benchmark
 
@@ -83,11 +88,11 @@ cd experiments && uvx --from pdfplumber python3 bench.py out_hwsets
 ```
 
 ```bash
-uvx --from pdfplumber python3 bench_checks.py
+cd experiments && uvx --from pdfplumber python3 bench_checks.py out_hwsets
 ```
 
 ## What is and is not in the repo
 
-Included: all code, the compiled specs in `experiments/specs_e2e/`, and the benchmark labels, tags and checks in `experiments/eval/`.
+Included: all code, the compiled specs in `specs/`, and the benchmark labels, tags and checks in `experiments/eval/`. The Drive share holds 43 PDFs across 21 projects; 20 contain hardware sets and the other 23 (doors, frames, glazing sections, extra volumes) are the empty-book check.
 
 Left out: the PDFs, rendered page images, page text dumps, and full extraction output, since they copy the challenge material wholesale.
