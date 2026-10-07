@@ -268,6 +268,105 @@ def post_correction(book_id: str, c: dict):
     return r
 
 
+# hand review of the benchmark: every row where our output and a label disagree, with the page and a verdict
+EVAL = os.path.join(ROOT, "experiments", "eval")
+REVIEW = os.path.join(EVAL, "review.json")
+FIELDS = ("qty", "description", "catalog", "finish", "mfr")
+
+
+# the scorer's normalizer: case, whitespace, curly quotes, a hyphen at a line break
+def norm(v):
+    if v is None:
+        return None
+    v = re.sub(r"\s+", " ", str(v)).strip().upper()
+    v = v.replace("\u2013", "-").replace("\u201d", '"').replace("\u201c", '"').replace("\u2019", "'").replace("\u2033", '"').replace("\u2032", "'")
+    v = re.sub(r"(?<=\w)- (?=\w)", "-", v)
+    return v or None
+
+
+def norm_set(v):
+    return re.sub(r"^0+(?=\d)", "", re.sub(r"\s+", " ", str(v)).strip().upper())
+
+
+def row_key(c):
+    return tuple(norm(c.get(f)) if f != "qty" else c.get(f) for f in FIELDS)
+
+
+# label rows against our rows for one set on one page -> the disagreements
+#   [{"kind": "field", "field": "finish", "label": "626", "ours": "652", "row": {...}, "bbox": [...]},
+#    {"kind": "missed", "row": {...}}, {"kind": "extra", "row": {...}, "bbox": [...]}]
+def diff_rows(gt_rows, our_rows):
+    ours = [dict(c, catalog=c.get("catalog_number")) for c in our_rows]
+    left_gt = list(gt_rows)
+    left_ours = list(ours)
+    # exact matches drop out first
+    for g in list(left_gt):
+        hit = next((o for o in left_ours if row_key(o) == row_key(g)), None)
+        if hit:
+            left_gt.remove(g); left_ours.remove(hit)
+    out = []
+    # a label row that shares its description or catalog with one of ours is the same row read differently
+    for g in list(left_gt):
+        hit = next((o for o in left_ours if norm(o.get("description")) == norm(g.get("description")) or (g.get("catalog") and norm(o.get("catalog")) == norm(g.get("catalog")))), None)
+        if hit:
+            for f in FIELDS:
+                gv, ov = (g.get(f), hit.get(f)) if f == "qty" else (norm(g.get(f)), norm(hit.get(f)))
+                if gv != ov:
+                    out.append({"kind": "field", "field": f, "label": g.get(f), "ours": hit.get(f), "row": g, "bbox": hit.get("bbox"), "page": hit.get("page")})
+            left_gt.remove(g); left_ours.remove(hit)
+    out += [{"kind": "missed", "row": g} for g in left_gt]
+    out += [{"kind": "extra", "row": o, "bbox": o.get("bbox"), "page": o.get("page")} for o in left_ours]
+    return out
+
+
+@app.get("/api/review")
+def review_items():
+    plan = json.load(open(os.path.join(EVAL, "e2e_plan.json")))
+    verdicts = json.load(open(REVIEW)) if os.path.exists(REVIEW) else {}
+    items = []
+    for gt_file in sorted(glob.glob(os.path.join(EVAL, "gt", "*.json"))):
+        book, page0 = re.match(r".*/(\w+)_p(\d+)\.json", gt_file).groups()
+        if book not in plan:
+            continue
+        book_id = spec_name(os.path.join(DATA, plan[book]["file"]))
+        rp = result_path(book_id)
+        if not os.path.exists(rp):
+            continue
+        page = int(page0) + 1
+        result = json.load(open(rp))
+        gt = json.load(open(gt_file))
+        # our sets on this page: number, whether they started earlier, their rows here
+        ours = [{"key": norm_set(s["set_number"]), "cont": s["location"][0]["page"] < page,
+                 "rows": [c for c in s["components"] if c["page"] == page]}
+                for s in result["sets"] if any(l["page"] == page for l in s["location"])]
+        for g in gt["sets"]:
+            # a label set that continues from the previous page has no header here, it pairs with our set that started earlier
+            if g.get("starts_on_page") is False or norm_set(g["set_number"]) == "CONTINUED":
+                hit = next((o for o in ours if o["cont"]), None)
+            else:
+                hit = next((o for o in ours if o["key"] == norm_set(g["set_number"])), None)
+            our_rows = None
+            if hit:
+                ours.remove(hit); our_rows = hit["rows"]
+            if our_rows is None:
+                diffs = [{"kind": "set_missed", "row": c} for c in g["components"]] or [{"kind": "set_missed", "row": {}}]
+            else:
+                diffs = diff_rows(g["components"], our_rows)
+            for i, d in enumerate(diffs):
+                k = f"{book}_p{page0}_{g['set_number']}_{i}_{d['kind']}_{d.get('field', '')}"
+                items.append({**d, "key": k, "book": book, "book_id": book_id, "page": page, "page_w": result["page_size"][0],
+                              "set_number": g["set_number"], "verdict": verdicts.get(k)})
+    return {"items": items, "pages": len(glob.glob(os.path.join(EVAL, "gt", "*.json")))}
+
+
+@app.post("/api/review")
+def review_verdict(body: dict):
+    verdicts = json.load(open(REVIEW)) if os.path.exists(REVIEW) else {}
+    verdicts[body["key"]] = {"verdict": body.get("verdict"), "note": body.get("note", "")}
+    json.dump(verdicts, open(REVIEW, "w"), indent=1)
+    return {"ok": True, "count": len(verdicts)}
+
+
 @app.get("/api/books/{book_id}/export")
 def export(book_id: str):
     if not os.path.exists(result_path(book_id)):

@@ -10,8 +10,35 @@
 <body>
 <header class="topbar">
   <div class="brand"><img class="logo" src="fresco_logo.png" alt="Fresco"><span class="brand-sub">hardware sets</span></div>
-  <button class="ghost books-btn" id="books-btn" hidden>&#x2039; All books</button>
+  <span class="top-right"><button class="ghost books-btn" id="review-btn">Review labels</button><button class="ghost books-btn" id="books-btn" hidden>&#x2039; All books</button></span>
 </header>
+
+<main class="card" id="review" hidden>
+  <div class="card-head">
+    <span class="pill">HAND REVIEW</span>
+    <h2 id="review-headline">Every row where the output and a label disagree.</h2>
+    <p class="sub">Read the page, decide who is right. 1 = the label is wrong, 2 = the extractor is wrong, 3 = both acceptable. Arrows move. Verdicts save to experiments/eval/review.json.</p>
+  </div>
+  <div class="review-panes">
+    <ul class="review-list" id="review-list"></ul>
+    <section class="pane review-detail">
+      <div class="pane-head"><span class="pane-title" id="review-title"></span><span class="spacer"></span><span class="muted" id="review-pos"></span></div>
+      <div class="review-body">
+        <div class="page-wrap review-page" id="review-page"><img id="review-img" alt=""></div>
+        <div class="review-side">
+          <table class="diff-table" id="diff-table"><thead><tr><th></th><th>QTY</th><th>DESCRIPTION</th><th>CATALOG #</th><th>FINISH</th><th>MFR</th></tr></thead><tbody></tbody></table>
+          <div class="verdicts">
+            <button class="verdict" data-v="label_wrong">1 · Label is wrong</button>
+            <button class="verdict" data-v="extractor_wrong">2 · Extractor is wrong</button>
+            <button class="verdict" data-v="both_ok">3 · Both acceptable</button>
+          </div>
+          <input id="review-note" class="search" placeholder="note, optional, Enter saves it with the verdict">
+          <p class="muted" id="review-saved"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
 
 <main class="card library" id="library">
   <div class="card-head">

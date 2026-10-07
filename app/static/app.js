@@ -29,7 +29,7 @@ function renderLibrary() {
 }
 
 function showLibrary() {
-  $("card").hidden = true; $("library").hidden = false; $("books-btn").hidden = true;
+  $("card").hidden = true; $("review").hidden = true; $("library").hidden = false; $("books-btn").hidden = true; $("review-btn").hidden = false;
   loadBooks();
 }
 
@@ -49,7 +49,7 @@ async function uploadFile(file) {
 
 // fetch a book's result, select a set, and render everything
 async function openBook(id, keepSet) {
-  $("library").hidden = true; $("card").hidden = false; $("books-btn").hidden = false;
+  $("library").hidden = true; $("review").hidden = true; $("card").hidden = false; $("books-btn").hidden = false; $("review-btn").hidden = true;
   // a book already on screen keeps its headline through a rerun, a new one says what is happening
   if (!state.book || state.book.id !== id) { $("headline").textContent = "Extracting…"; $("file-name").textContent = ""; }
   try {
@@ -382,3 +382,83 @@ document.addEventListener("click", (e) => { if (!$("line-menu").contains(e.targe
 
 $("page-input").onchange = () => drawPage(Number($("page-input").value) || 1);
 $("page-input").onkeydown = (e) => { if (e.key === "Enter") $("page-input").blur(); };
+
+// hand review: every disagreement between the output and a label, with the page, and a verdict per item
+const review = { items: [], i: 0 };
+async function showReview() {
+  $("card").hidden = true; $("library").hidden = true; $("review").hidden = false; $("books-btn").hidden = false; $("review-btn").hidden = true;
+  const r = await api("/review");
+  review.items = r.items;
+  const done = review.items.filter((x) => x.verdict).length;
+  $("review-headline").textContent = `${review.items.length} disagreements on ${r.pages} labeled pages, ${done} reviewed.`;
+  renderReviewList();
+  const first = review.items.findIndex((x) => !x.verdict);
+  showReviewItem(first < 0 ? 0 : first);
+}
+
+function renderReviewList() {
+  $("review-list").innerHTML = review.items.map((x, i) => `<li data-i="${i}" class="${i === review.i ? "active" : ""}"><span class="vdot ${x.verdict ? x.verdict.verdict : ""}"></span><span>${x.book} p${x.page} set ${x.set_number}</span><span class="kind">${x.kind}${x.field ? " · " + x.field : ""}</span></li>`).join("");
+  $("review-list").querySelectorAll("li").forEach((li) => (li.onclick = () => showReviewItem(+li.dataset.i)));
+}
+
+function showReviewItem(i) {
+  if (!review.items.length) return;
+  review.i = Math.max(0, Math.min(i, review.items.length - 1));
+  const x = review.items[review.i];
+  $("review-list").querySelectorAll("li").forEach((li) => li.classList.toggle("active", +li.dataset.i === review.i));
+  const li = $("review-list").querySelector("li.active"); if (li) li.scrollIntoView({ block: "nearest" });
+  const what = { field: `${x.field} differs`, missed: "label row with no match in the output", extra: "output row with no match in the labels", set_missed: "the whole labeled set is missing from the output" }[x.kind];
+  $("review-title").textContent = `${x.book} · page ${x.page} · set ${x.set_number} · ${what}`;
+  $("review-pos").textContent = `${review.i + 1} of ${review.items.length}`;
+  // the label row and our row, the differing field marked
+  const fields = ["qty", "description", "catalog", "finish", "mfr"];
+  const cell = (row, f, hot) => `<td class="${hot ? "hot" : ""}">${row && row[f] != null ? row[f] : "<span class='muted'>—</span>"}</td>`;
+  const label = x.kind === "extra" ? null : x.row;
+  const oursRow = x.kind === "field" ? Object.fromEntries(fields.map((f) => [f, f === x.field ? x.ours : x.row[f]])) : x.kind === "extra" ? { ...x.row, catalog: x.row.catalog_number ?? x.row.catalog } : null;
+  $("diff-table").tBodies[0].innerHTML =
+    `<tr><td>label</td>${fields.map((f) => cell(label, f, x.kind === "field" && f === x.field)).join("")}</tr>` +
+    `<tr><td>ours</td>${fields.map((f) => cell(oursRow, f, x.kind === "field" && f === x.field)).join("")}</tr>`;
+  // the page, scrolled to our row's box when there is one
+  const img = $("review-img"), wrap = $("review-page");
+  wrap.querySelectorAll(".box").forEach((b) => b.remove());
+  // draw once the image has a width, which can be a frame after onload when it comes from cache
+  const place = (tries) => {
+    const k = img.clientWidth / (x.page_w || 612);
+    if (!img.clientWidth && tries) return setTimeout(() => place(tries - 1), 50);
+    wrap.querySelectorAll(".box").forEach((b) => b.remove());
+    if (x.bbox) {
+      const d = document.createElement("div"); d.className = "box comp";
+      d.style.cssText = `left:${x.bbox[0] * k}px;top:${x.bbox[1] * k}px;width:${(x.bbox[2] - x.bbox[0]) * k}px;height:${(x.bbox[3] - x.bbox[1]) * k}px`;
+      wrap.appendChild(d);
+      wrap.scrollTop = Math.max(0, x.bbox[1] * k - wrap.clientHeight / 2);
+    } else {
+      wrap.scrollTop = 0;
+    }
+  };
+  img.onload = () => place(10);
+  img.src = `/api/books/${x.book_id}/pages/${x.page}.png`;
+  if (img.complete) place(10);
+  $("review-note").value = x.verdict ? x.verdict.note || "" : "";
+  $("review-saved").textContent = x.verdict ? `saved: ${x.verdict.verdict.replace("_", " ")}` : "";
+  document.querySelectorAll(".verdict").forEach((b) => b.classList.toggle("on", !!x.verdict && x.verdict.verdict === b.dataset.v));
+}
+
+async function saveVerdict(v) {
+  const x = review.items[review.i];
+  x.verdict = { verdict: v, note: $("review-note").value.trim() };
+  await api("/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ key: x.key, ...x.verdict }) });
+  const done = review.items.filter((y) => y.verdict).length;
+  $("review-headline").textContent = `${review.items.length} disagreements, ${done} reviewed.`;
+  renderReviewList();
+  const next = review.items.findIndex((y, j) => j > review.i && !y.verdict);
+  showReviewItem(next < 0 ? review.i : next);
+}
+
+$("review-btn").onclick = showReview;
+document.querySelectorAll(".verdict").forEach((b) => (b.onclick = () => saveVerdict(b.dataset.v)));
+$("review-note").onkeydown = (e) => { if (e.key === "Enter") { const x = review.items[review.i]; if (x && x.verdict) saveVerdict(x.verdict.verdict); } };
+document.addEventListener("keydown", (e) => {
+  if ($("review").hidden || e.target.tagName === "INPUT") return;
+  if (e.key === "1") saveVerdict("label_wrong"); else if (e.key === "2") saveVerdict("extractor_wrong"); else if (e.key === "3") saveVerdict("both_ok");
+  else if (e.key === "ArrowDown" || e.key === "ArrowRight") showReviewItem(review.i + 1); else if (e.key === "ArrowUp" || e.key === "ArrowLeft") showReviewItem(review.i - 1);
+});

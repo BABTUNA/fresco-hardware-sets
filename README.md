@@ -68,6 +68,7 @@ Then open http://localhost:8000.
 - **Book view.** The page image with a box per set beside the set's components. Click a row to see it on the page. A CONF column scores each row, and a cell under 0.8 is tinted. Codes the book explains in a printed legend show their full name.
 - **Fixing mistakes, no regex.** Double-click a cell to correct one value. Drag the column lines on the page to move a column for the whole book. Click a line and say what it is (a set header, not a component, a note). Or type what is wrong ("the set on this page is missing") and one model call edits the layout and reruns.
 - **Export JSON** gives the result file.
+- **Review labels** (top right) walks every disagreement between the output and the benchmark labels, page and rows side by side, and records who was right.
 
 ## Running the benchmark
 
