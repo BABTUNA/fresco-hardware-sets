@@ -21,8 +21,17 @@ function renderLibrary() {
   $("book-table").tBodies[0].innerHTML = slice.map((b) => `<tr data-id="${b.id}">
       <td class="project">${b.project}</td><td class="file">${b.file}</td>
       <td><span class="chip ${b.status.replace(" ", "_")}">${label[b.status] || b.status}</span>${b.status === "not run" && !b.has_spec ? `<span class="muted note">${b.key ? "spec written on open" : "needs the API key"}</span>` : ""}</td>
-      <td class="num">${b.sets != null ? b.sets : "—"}</td></tr>`).join("") || `<tr><td colspan="4" class="muted">No books match.</td></tr>`;
+      <td class="num">${b.sets != null ? b.sets : "—"}</td>
+      <td class="act">${b.status !== "not run" || b.project === "uploads" ? `<button class="link remove" data-id="${b.id}" title="${b.project === "uploads" ? "Delete this PDF and everything made from it" : "Remove the result and spec, so the next open reprocesses it"}">${b.project === "uploads" ? "Delete" : "Reprocess"}</button>` : ""}</td></tr>`).join("") || `<tr><td colspan="5" class="muted">No books match.</td></tr>`;
   $("book-table").querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => go(`#book/${tr.dataset.id}`)));
+  // remove asks once, inline, then deletes the result, spec and corrections (and an uploaded pdf itself)
+  $("book-table").querySelectorAll("button.remove").forEach((btn) => (btn.onclick = (e) => {
+    e.stopPropagation();
+    const td = btn.parentElement, id = btn.dataset.id, word = btn.textContent;
+    td.innerHTML = `<span class="muted">${word}? </span><button class="link remove yes">Yes</button> <button class="link remove no">No</button>`;
+    td.querySelector(".no").onclick = (ev) => { ev.stopPropagation(); renderLibrary(); };
+    td.querySelector(".yes").onclick = async (ev) => { ev.stopPropagation(); await api(`/books/${id}`, { method: "DELETE" }); await loadBooks(); };
+  }));
   $("lib-count").textContent = rows.length ? `${lib.page * PAGE + 1} to ${Math.min(rows.length, (lib.page + 1) * PAGE)} of ${rows.length}` : "0 books";
   $("lib-prev").disabled = lib.page === 0;
   $("lib-next").disabled = lib.page >= pages - 1;

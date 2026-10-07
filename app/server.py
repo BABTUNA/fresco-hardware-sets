@@ -102,6 +102,23 @@ def get_book(book_id: str):
     return rerun(book_id)
 
 
+# remove what the pipeline made for a book, so the next open starts from scratch with a fresh spec call.
+# an uploaded pdf is deleted with it, a pdf from the dataset stays
+@app.delete("/api/books/{book_id}")
+def delete_book(book_id: str):
+    path = pdf_path(book_id)
+    removed = []
+    for f in (result_path(book_id), spec_path(book_id), os.path.join(CORR, book_id + ".json")):
+        if os.path.exists(f):
+            os.remove(f); removed.append(os.path.relpath(f, ROOT))
+    for png in glob.glob(os.path.join(CACHE, f"{book_id}_*.png")):
+        os.remove(png)
+    uploaded = os.path.abspath(path).startswith(os.path.join(DATA, "uploads") + os.sep)
+    if uploaded:
+        os.remove(path); removed.append(os.path.relpath(path, ROOT))
+    return {"removed": removed, "pdf_deleted": uploaded}
+
+
 @app.get("/api/books/{book_id}/spec")
 def get_spec(book_id: str):
     p = os.path.join(SPECS, book_id + ".json")

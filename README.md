@@ -64,7 +64,7 @@ uv run hwsets serve
 
 Then open http://localhost:8000.
 
-- **Library.** Every PDF under `data/` with its status and set count, searchable. Drop a new spec PDF on it and it is extracted on the spot (needs the API key for the one spec call).
+- **Library.** Every PDF under `data/` with its status and set count, searchable. Drop a new spec PDF on it and it is extracted on the spot (needs the API key for the one spec call). Reprocess on a row drops its result and spec so the next open starts from scratch; Delete on an upload removes the file too.
 - **Book view.** The page image with a box per set beside the set's components. Click a row to see it on the page. A CONF column scores each row, and a cell under 0.8 is tinted. Codes the book explains in a printed legend show their full name.
 - **Fixing mistakes, no regex.** Double-click a cell to correct one value. Drag the column lines on the page to move a column for the whole book. Click a line and say what it is (a set header, not a component, a note). Or type what is wrong ("the set on this page is missing") and one model call edits the layout and reruns.
 - **Export JSON** gives the result file.
