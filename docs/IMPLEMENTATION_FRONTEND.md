@@ -18,7 +18,7 @@ FastAPI serving a JSON API and one static page, vanilla JS, no framework. Pages 
 
 **Book list.** Every PDF under `data/` with its status (`extracted`, `no_hardware_sets`, `needs_review`, or not run yet) and set count. Click to open.
 
-**Book view**, one screen, four panes:
+**Book view**, one screen, two panes side by side, the page on the left with about half the width and a drag handle, the components on the right. The set list is a dropdown in the components pane's header, doors and notes a strip under it, the spec editor folds out below both:
 
 | Pane | Shows | Actions |
 | :--- | :--- | :--- |

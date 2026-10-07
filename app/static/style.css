@@ -41,7 +41,7 @@ button { font: inherit; }
 .flags div span { font-family: var(--mono); opacity: .8; }
 
 /* height 0 keeps the grid's content out of the card's intrinsic height, flex then hands it the room that is left */
-.panes { display: grid; grid-template-columns: minmax(480px, var(--page-w)) minmax(0, 5fr) minmax(220px, 240px); grid-template-rows: minmax(0, 1fr); gap: 16px; padding: 0 24px 16px; flex: 1 1 auto; height: 0; min-height: 560px; }
+.panes { display: grid; grid-template-columns: minmax(520px, var(--page-w)) minmax(0, 4fr); grid-template-rows: minmax(0, 1fr); gap: 16px; padding: 0 24px 16px; flex: 1 1 auto; height: 0; min-height: 560px; }
 .pane { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
 .pane-head { padding: 10px 16px; background: var(--head-bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; color: var(--muted-2); font-size: 14px; min-height: 46px; flex-shrink: 0; }
 .pane-head .icon { font-size: 14px; }
@@ -96,22 +96,18 @@ tr.selected:hover td { background: #ecfdf3; }
 td[contenteditable="true"]:focus { outline: 2px solid var(--blue); outline-offset: -2px; background: #fff; }
 .hint { color: var(--muted); font-size: 12px; margin: 0; padding: 8px 18px 10px; border-top: 1px solid var(--border); background: var(--head-bg); flex-shrink: 0; }
 
-/* the set list is the main navigation, it gets the pane's height. doors and notes sit under it and never push it off */
-.set-list { list-style: none; margin: 0; padding: 6px 0; overflow: auto; flex: 1 1 0; min-height: 160px; }
-.set-list li { padding: 8px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13px; line-height: 1.4; color: var(--text); }
-.set-list li:hover { background: var(--head-bg); }
-.set-list li.active { background: #f0fdf4; color: var(--green-dark); font-weight: 600; box-shadow: inset 3px 0 0 var(--green-500); }
-.set-list li .muted { font-size: 12px; white-space: nowrap; }
-.doors { flex: 0 0 auto; display: flex; flex-direction: column; border-top: 1px solid var(--border); }
-.doors .pane-head { border-top: 0; }
-.side-body { padding: 12px 16px; overflow: auto; max-height: 190px; }
+/* the set dropdown sits in the table pane's header, doors and notes in a strip under it */
+.set-select { font: inherit; font-weight: 600; font-size: 15px; color: var(--heading); background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; max-width: 60%; min-width: 0; text-overflow: ellipsis; }
+.set-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: #fff; flex-shrink: 0; }
+.meta-label { font-size: 12px; font-weight: 600; color: var(--muted-2); }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .pills span { padding: 3px 10px; background: var(--green-100); color: var(--green-700); font-size: 12px; line-height: 1.4; border-radius: 9999px; }
 .pills:empty::before { content: "no door numbers in this set"; color: var(--muted); font-size: 12px; }
-.notes { margin-top: 10px; }
+.notes { margin-left: auto; }
 .notes[hidden] { display: none; }
 .notes summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--muted-2); }
-.note { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.note { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 160px; overflow: auto; width: 100%; }
+.notes[open] { flex-basis: 100%; margin-left: 0; }
 
 .spec { margin: 0 24px 16px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; flex-shrink: 0; }
 .spec summary { padding: 12px 16px; cursor: pointer; font-weight: 600; color: var(--heading); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
@@ -133,20 +129,15 @@ td[contenteditable="true"]:focus { outline: 2px solid var(--blue); outline-offse
 .step-line { width: 14px; height: 1px; background: var(--border); margin-top: 13px; }
 
 /* below 1300px the table and the page stack on the left and the set list keeps the full height on the right */
-@media (max-width: 1299px) {
+@media (max-width: 1099px) {
   body { height: auto; }
-  .panes { grid-template-columns: minmax(0, 1fr) 250px; grid-template-rows: auto auto; grid-template-areas: "table sets" "page sets"; height: auto; min-height: 0; flex: none; }
+  .panes { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; grid-template-areas: "table" "page"; height: auto; min-height: 0; flex: none; }
   .table-pane { grid-area: table; max-height: 60vh; }
-  .page-pane { grid-area: page; height: 72vh; }
-  .side-pane { grid-area: sets; height: auto; min-height: 0; max-height: calc(60vh + 72vh + 16px); }
-  .side-pane .set-list { min-height: 240px; }
+  .page-pane { grid-area: page; height: 80vh; }
   .divider { display: none; }
 }
 /* below 1000px the table takes the full width and the page and sets share the row under it */
 @media (max-width: 999px) {
-  .panes { grid-template-columns: minmax(0, 3fr) minmax(240px, 2fr); grid-template-areas: "table table" "page sets"; }
-  /* the row takes the page's own height, the set list fills whatever that is */
-  .page-pane, .side-pane { height: auto; max-height: 72vh; }
   /* the stepper moves onto its own row so the links beside it fit */
   .card-foot { flex-wrap: wrap; justify-content: space-between; }
   .steps { order: -1; width: 100%; justify-content: center; }
@@ -159,13 +150,10 @@ td[contenteditable="true"]:focus { outline: 2px solid var(--blue); outline-offse
   .card-head { padding: 16px 16px 12px; }
   .card-head h2 { font-size: 20px; }
   .flags, .spec { margin-left: 16px; margin-right: 16px; }
-  .panes { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; grid-template-areas: "table" "page" "sets"; gap: 14px; padding: 0 16px 14px; }
+  .panes { gap: 14px; padding: 0 16px 14px; }
   .table-pane { max-height: 70vh; }
   .page-pane { height: 60vh; }
-  .side-pane { height: auto; max-height: 70vh; }
-  .set-list { max-height: 320px; }
-  .doors { max-height: none; }
-  .side-body { max-height: 200px; }
+  .set-select { max-width: 100%; }
   th:first-child, td:first-child { padding-left: 14px; }
   th:last-child, td:last-child { padding-right: 14px; }
   td { padding: 9px 8px; font-size: 13px; }

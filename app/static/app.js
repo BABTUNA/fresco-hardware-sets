@@ -54,25 +54,23 @@ function renderSteps() {
 }
 
 function renderSets() {
-  const ul = $("set-list"), sets = state.book.sets;
-  $("sets-title").textContent = `Sets (${sets.length})`;
-  ul.innerHTML = sets.map((s) => `<li data-n="${s.set_number}"><span>Set ${s.set_number}${s.status !== "active" ? ` <span class="muted">${s.status}</span>` : ""}</span><span class="muted">${s.components.length} · p${s.location[0]?.page ?? "?"}</span></li>`).join("");
-  ul.querySelectorAll("li").forEach((li) => (li.onclick = () => selectSet(sets.find((s) => s.set_number === li.dataset.n))));
+  const sel = $("set-select"), sets = state.book.sets;
+  sel.innerHTML = sets.map((s) => `<option value="${s.set_number}">Set ${s.set_number}${s.description ? " · " + s.description : ""}${s.status !== "active" ? ` (${s.status.replace("_", " ")})` : ""} · ${s.components.length} rows · p${s.location[0]?.page ?? "?"}</option>`).join("");
+  sel.onchange = () => selectSet(sets.find((s) => s.set_number === sel.value));
 }
 
 // jump to the set's first page and show its rows
 function selectSet(s) {
   state.set = s; state.comp = null;
-  $("set-list").querySelectorAll("li").forEach((li) => li.classList.toggle("active", !!s && li.dataset.n === s.set_number));
-  if (!s) { $("set-title").textContent = "Hardware Set"; $("set-count").textContent = ""; $("comp-table").tBodies[0].innerHTML = ""; drawPage(1); return; }
-  $("set-title").textContent = `Hardware Set ${s.set_number}${s.description ? " · " + s.description : ""}`;
+  if (!s) { $("set-count").textContent = ""; $("comp-table").tBodies[0].innerHTML = ""; drawPage(1); return; }
+  $("set-select").value = s.set_number;
   $("set-count").textContent = `${s.components.length} components`;
   $("set-status").textContent = s.status === "moved" ? `moved to ${s.moved_to}` : s.status === "not_used" ? "not used" : "";
   $("set-dot").className = "dot " + s.status;
   // the header block holds door numbers and lines like "Provide each PR door(s) with the following:"
   const doors = s.doors.filter((d) => !/provide|following|each|opening|description/i.test(d));
   $("doors-title").textContent = `Doors (${doors.length})`;
-  $("doors").innerHTML = doors.map((d) => `<span>${d}</span>`).join("");
+  $("doors").innerHTML = doors.map((d) => `<span>${d.replace(/^doors?:\s*/i, "")}</span>`).join("");
   // notes fold away under the door pills so a long block never pushes the set list off screen
   const notes = s.doors.filter((d) => !doors.includes(d)).concat(s.notes);
   $("set-notes").textContent = notes.join("\n");
@@ -80,7 +78,6 @@ function selectSet(s) {
   $("notes-summary").textContent = `Notes (${notes.length})`;
   renderComponents(s);
   drawPage(s.location[0]?.page || 1);
-  const li = $("set-list").querySelector("li.active"); if (li) li.scrollIntoView({ block: "nearest" });
 }
 
 // the component table. a cell is editable in place, a row click highlights its box on the page
