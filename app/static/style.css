@@ -218,7 +218,7 @@ td.conf.low .conf-pill { background: #fee2e2; color: #991b1b; }
 .guide-bar[hidden] { display: none; }
 /* the two buttons in the bar share one size and never wrap, the text takes the rest */
 .guide-bar > span:first-child { flex: 1; min-width: 0; }
-.guide-bar .ghost, .guide-bar .primary { font-size: 13px; line-height: 1.2; padding: 7px 14px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; min-width: 0; }
+.guide-bar .ghost, .guide-bar .primary { font-size: 13px; line-height: 1; height: 32px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; min-width: 0; box-sizing: border-box; }
 /* no z-index on the line itself, so its label can sit above every other line */
 .guide { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--blue); cursor: ew-resize; }
 .guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: -8px; width: 16px; }
