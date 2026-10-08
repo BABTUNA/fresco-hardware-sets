@@ -38,7 +38,8 @@
   "^\\s*\\d{2}\\s?\\d{2}\\s?\\d{2}\\s+integrated door assemblies",
   "Last printed\\s+\\d{1,2}/\\d{1,2}/\\d{4}",
   "Blank space after a Group",
-  "^\\s*a Hardware Group/Set onto two pages"
+  "^\\s*a Hardware Group/Set onto two pages",
+  "^\\s*(?:Unit|Exterior|Interior) Hardware Sets \\(Typically"
  ],
  "note_line": "^\\s*Note:",
  "end": [

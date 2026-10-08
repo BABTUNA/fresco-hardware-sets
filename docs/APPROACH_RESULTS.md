@@ -1,12 +1,12 @@
 # Approach results
 
-Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 sets, 2,218 rows, 20 books). A row counts only when all five fields are exact. The held-out set is 25 pages labeled after all tuning and scored once.
+Strict scorer from [BENCHMARK.md](BENCHMARK.md), same 155 labeled pages (311 sets, 2,218 rows, 20 books). A row counts only when all five fields are exact. The held-out set is 25 pages labeled after all tuning. Our column shows the rerun of 2026-10-07 after the last interpreter fixes, the other columns were scored on 2026-10-06 and run their own code.
 
 | | 1. Spec per book (ours) | 2. Spec by example | 3. Per-page LLM | 4. Multimodal |
 | :--- | ---: | ---: | ---: | ---: |
 | Exact rows | 98.5% (2,184 / 2,218) | 97.1% (2,154 / 2,218) | 95.6% (2,121 / 2,218) | **98.9%** (2,193 / 2,218) |
 | Sets fully correct | 94.9% (295 / 311) | 93.6% (291 / 311) | 81.4% (253 / 311) | **95.2%** (296 / 311) |
-| Held-out rows | 97.2% (350 / 360) | 97.2% (350 / 360) | | |
+| Held-out rows | 98.6% (355 / 360) | 97.2% (350 / 360) | | |
 | Mfr/finish swaps | 0 | 0 | 0 | 0 |
 | Set numbers found, all 20 books | 99.9% (1,174 / 1,175) | 99.2% (1,166 / 1,175) | not run | not run |
 | Set pages read, all 20 books | 697 / 697 | 697 / 697 | not run | not run |
@@ -33,7 +33,7 @@ The 155 pages above were partly picked to hit caveats. These two sets were drawn
 | :--- | ---: | ---: | ---: | ---: |
 | Round 1, 39 random pages: exact rows | 99.6% (531 / 533) | 99.6% (531 / 533) | 96.2% (513 / 533) | 99.1% (528 / 533) |
 | Round 1: sets fully correct | 98.5% (66 / 67) | 97.0% (65 / 67) | 73.1% (49 / 67) | 92.5% (62 / 67) |
-| Held-out, 25 random pages: exact rows | 97.2% (350 / 360) | 97.2% (350 / 360) | not run | not run |
+| Held-out, 25 random pages: exact rows | 98.6% (355 / 360) | 97.2% (350 / 360) | not run | not run |
 | Held-out: sets fully correct | 89.5% (34 / 38) | 89.5% (34 / 38) | not run | not run |
 
 ## Where each one loses

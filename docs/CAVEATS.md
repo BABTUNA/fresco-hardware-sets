@@ -1,16 +1,16 @@
 # Caveats
 
-The brief lists six cases where a simple extractor breaks. Below is each one with a real example from the sample PDFs, what the pipeline does about it, and how it scores on the benchmark (81 labeled pages, 1,103 components). Page numbers are PDF pages, starting at 1.
+The brief lists six cases where a simple extractor breaks. Below is each one with a real example from the sample PDFs, what the pipeline does about it, and how it scores on the benchmark (155 labeled pages, 311 sets, 2,218 rows). Page numbers are PDF pages, starting at 1.
 
-| Caveat | Status |
-| :--- | :--- |
-| 1. Manufacturer vs finish codes | Solved |
-| 2. Set boundaries | Mostly |
-| 3. NOT USED sets | Solved |
-| 4. Multi-page sets | Solved |
-| 5. Different column layouts | Mostly |
-| 6. Missing quantities | Partly |
-| Extra: crossed-out revisions | Not built yet |
+| Caveat | Status | On the benchmark |
+| :--- | :--- | :--- |
+| 1. Manufacturer vs finish codes | Solved | 0 swaps in 2,218 rows |
+| 2. Set boundaries | Solved | 309 of 311 labeled sets found, 1,174 of 1,175 printed set numbers across the 20 books |
+| 3. NOT USED sets | Solved | 10 of 11 labeled sets with the right status, 5 of 5 moved sets |
+| 4. Multi-page sets | Solved | 25 of 25 labeled multi-page sets found |
+| 5. Different column layouts | Mostly | 93.5% of rows exact where columns drift, 100% in grid tables |
+| 6. Missing quantities | Solved | 95.3% of the 107 rows with no quantity exact |
+| Extra: crossed-out revisions | Solved | 97.4% of rows exact on the 392 rows from pages with struck text |
 
 ## 1. Manufacturer vs finish codes
 
@@ -52,14 +52,11 @@ SET    HARDWARE TYPE     MANUFACTURER - PRODUCT       QTY  FINISH
 
 Other books mark sets with a header line, and the wording changes from book to book: `HARDWARE GROUP NO. 18`, `Set #AL 01`, `Set: 2.0`, `HW E21`, `Heading #3`. Some books even change it inside one book. HFH writes `Hardware Group No.103 [BULLETIN 023, 251218]` for revised sets, and Star mixes `Group/Set`, `Groups/Set` and `Set/Group`.
 
-**What we do.** The spec says what a set header looks like in that book. A ruled table like Roselle's uses grid mode, where a number in the SET column starts a set. The audit then looks for lines that start like a header but did not match. That check caught 10 HFH sets that had been merged into their neighbors.
+**What we do.** The spec says what a set header looks like in that book. A ruled table like Roselle's uses grid mode, where a number in the SET column starts a set. Lines that look like a row but are not, such as Morris's door line under each header (`1 Single Door #104   Banking Personal 106 to/from Office 104   105° RH`) or Lyons's door lists (`326 327 330 334 337B`), are set metadata in the spec and become the set's doors. The audit then looks for lines that start like a header but did not match. That check caught 10 HFH sets that had been merged into their neighbors.
 
 **How it scores.** 99.4% of labeled sets found (309 of 311), 100% of the 103 sets on dense pages with 4 or more per page. Across all 20 books, 1,174 of the 1,175 set numbers printed in the PDFs come out.
 
-**Gaps.**
-- Morris prints a door line under each header, `1 Single Door #104   Banking Personal 106 to/from Office 104   105° RH`. It starts with `1`, so it is read as a component. That happens 27 times.
-- Lyons door lists like `326 327 330 334 337B` are read the same way.
-- Gerrard's `Set #AL 01` comes out as set `AL` with description `01`, because the header regex does not allow a space in the number.
+**Gap.** The two labeled sets we miss are SJC E01, a NOT USED set whose whole block is struck through, header included, and one Star set whose header sits mid-line after a door reference.
 
 ## 3. NOT USED sets
 
@@ -83,7 +80,7 @@ HW 11   Moved to Exterior Set HW E14
 {"set_number": "11", "status": "moved", "moved_to": "E14", "components": []}
 ```
 
-**How it scores.** All 6 NOT USED checks pass. Lyons has 4 NOT USED groups in its raw text and we found all 4. On the benchmark, 10 of the 11 labeled NOT USED sets come out with the right status.
+**How it scores.** All 6 NOT USED checks pass. Lyons has 4 NOT USED groups in its raw text and we found all 4. On the benchmark, 10 of the 11 labeled NOT USED sets come out with the right status, and all 5 moved sets do. The miss is SJC E01, struck through header and all.
 
 ## 4. Multi-page sets
 
@@ -122,7 +119,7 @@ Rows also wrap differently. In Oswego a long cell continues on the lines below t
 
 **How it scores.** Grid tables and embedded manufacturers are at 100% of rows exact, centered cells at 96.6%.
 
-**Gap.** Pages where the columns move more than 30 points are the weakest layout case at 93.5% of rows exact, next to full-name manufacturers at 92.8%. Morris's second layout and Star page 77 put the finish into the catalog or manufacturer field.
+**Gap.** Pages where the columns move more than 30 points are the weakest layout case at 93.5% of rows exact, next to full-name manufacturers at 92.8%. Both are mostly Star, whose catalog cells are full sentences with the finish and maker written inside them (`in 622 finish by Trimco manufacturing`). The labels pull those out, we leave them in the catalog.
 
 ## 6. Missing quantities
 
@@ -135,14 +132,11 @@ SJC p721:     As Req   Hinge-HT        CB51 HT                                  
 Oswego p427:           DIAGRAMS        PROVIDE FACTORY POINT TO POINT WIRING DIAGRAMS  B/O
 ```
 
-**What we do.** All of these become `"qty": null`, never a guess. A row with no qty still starts a new component when it fills the description and manufacturer columns, like Oswego's DIAGRAMS row. `3.0` in Forest Park becomes `3`.
+**What we do.** All of these become `"qty": null`, never a guess. A row with no qty still starts a new component when it fills the description and a code column, like Oswego's DIAGRAMS row or its `SEALS - AS TESTED BY DOOR MANUFACTURER` row on page 418. `3.0` in Forest Park becomes `3`. Bridgeport's real 4-digit quantities (`2571 Standard Hinge`, for 857 apartments) stay numbers.
 
 **How it scores.** All 5 missing-quantity checks pass. On the benchmark, 95.3% of the 107 rows with no quantity are exact.
 
-**Gaps.**
-- A row with no qty and no manufacturer gets merged into the row above. Oswego page 418: `SEALS - AS TESTED BY DOOR MANUFACTURER` ends up inside the MULLION SEAL row.
-- SJC's `As Req` hinge rows are dropped.
-- Bridgeport page 48 has real 4-digit quantities, `2571 Standard Hinge` for 857 apartments. The spec only accepts up to 3 digits, so the qty comes out null.
+**Gap.** A ragged wrap can look like a row with no quantity. Oswego page 445 breaks `WIRE HARNESS` / `CONNECTOR - IN FRAME` early with room left on the line, and we read the second line as its own row.
 
 ## Extra: crossed-out revisions
 
@@ -150,6 +144,6 @@ This one is not in the brief but shows up in 3 books. When a spec is revised, ol
 
 **Example.** HFH page 103, set 110: `1 EA GASKETING SET 188SBK PSA [BULLETIN 023, 251218]` has a line drawn through it. Valor page 13 strikes a single word, `OFFICE STOREROOM LEVER LOCKSET`.
 
-**What we do now.** Nothing yet, so struck rows come out as normal components. This is the largest source of extra components on the benchmark and fails both revision checks.
+**What we do.** A thin horizontal rule through a word's mid-height marks it struck. A row whose first word is struck, or more than half of whose words are, is a revision and is dropped. Struck words inside a kept row are dropped, so Valor's row comes out as `STOREROOM LEVER LOCKSET`. The audit also knows which pages carry strike marks, so a book with revisions is not flagged for the rows it left out.
 
-**Plan.** A thin horizontal line through a word's mid-height marks it struck. A probe already detects both the HFH row and the Valor word. A fully struck row is kept with status `removed`, and struck words inside a row are dropped.
+**How it scores.** Both revision checks pass. On the 392 labeled rows from pages with struck text, 97.4% are exact, and the HFH set 110 row above does not appear in the output.

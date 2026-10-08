@@ -86,7 +86,7 @@ fresco/
 
 **Checked-in specs.** A reviewer can run every sample book without an API key and get the same output I got. The key is only needed for a new book.
 
-**Size.** `hwsets/` is about 900 lines with comments, the viewer about 500.
+**Size.** `hwsets/` is about 1,100 lines with comments, the viewer about 1,200 across the server and the page.
 
 ## Build order
 
@@ -101,11 +101,12 @@ Done, in this order:
 7. Confidence scores per field, shown as a CONF column.
 8. Code resolution from the legends four books print.
 9. Feedback without regex: draggable column guides, tag a line, and a plain-words box that goes to the repair call.
+10. Demo video, recorded 2026-10-07 (script in DEMO.md).
+11. Deployed to Fly with the sample books pre-extracted, behind a shared key.
 
 Still open:
 
-10. Demo video. Library, drop a PDF, Oswego, Star page 107 with tag a line, the numbers.
-11. Deploy, or leave the local run steps.
+12. A label check pass through `/#labels`, so the labels have a human verdict and not only the agreement and grounding tests.
 
 ## Decided
 
@@ -116,7 +117,7 @@ Still open:
 
 ## Open
 
-- Deploy target, if any.
+- Labels on a cold book, so there is a scored number for a book the rules were never tuned on.
 
 ## Risks
 

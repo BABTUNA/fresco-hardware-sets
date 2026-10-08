@@ -29,7 +29,7 @@ One layout per book. A hardware schedule is written by one consultant with one t
 
 ## Where it stands
 
-155 pages from 20 books labeled from page images, scored strictly with every field exact: 98.5% of 2,218 rows, 94.9% of 311 sets fully correct, 0 mfr/finish swaps. A held-out set of 25 pages scored once after all tuning: 97.2% of rows. Across all 20 books, 1,174 of the 1,175 printed set numbers come out. Every spec in `specs/` was written by the API. How the labels were made, how the scorer works and where it loses are in the docs.
+155 pages from 20 books labeled from page images, scored strictly with every field exact: 98.5% of 2,218 rows, 94.9% of 311 sets fully correct, 0 mfr/finish swaps. A held-out set of 25 pages scored after all tuning, with nothing changed in response: 98.6% of rows, 89.5% of sets. Across all 20 books, 1,174 of the 1,175 printed set numbers come out. Every spec in `specs/` was written by the API. How the labels were made, how the scorer works and where it loses are in the docs.
 
 | Doc | What it covers |
 | :--- | :--- |
@@ -88,4 +88,4 @@ uv run python experiments/run_hwsets.py
 cd experiments && uvx --from pdfplumber python3 bench_tags.py && uvx --from pdfplumber python3 bench.py out_hwsets
 ```
 
-Included in the repo: all code, the specs in `specs/`, and the labels, tags and checks in `experiments/eval/`. The Drive share holds 43 PDFs across 21 projects. 20 contain hardware sets, and the other 23 are the empty-book check.
+Included in the repo: all code, the specs in `specs/`, and the labels, tags and checks in `experiments/eval/`. The Drive share holds 43 PDFs across 21 projects. 20 contain hardware sets, 2 are second copies of a schedule already counted (Gerrard's full spec and Bridgeport's Rev 0), and the other 21 are the empty-book check.

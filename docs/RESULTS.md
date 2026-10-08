@@ -6,9 +6,9 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 
 | | Result |
 | :--- | ---: |
-| Sets fully correct (every row exact, nothing extra, status right) | 94.5% (held-out set: 89.5%) |
+| Sets fully correct (every row exact, nothing extra, status right) | 94.9% (held-out set: 89.5%) |
 | Sets fully correct, pages the spec writer never saw | 94.5% |
-| Exact rows | 98.5% (held-out set: 97.2%) |
+| Exact rows | 98.5% (held-out set: 98.6%) |
 | Exact rows, pages the spec writer never saw | 98.4% |
 | Precision | 98.6% |
 | Per-book average of exact rows | 98.9% |
@@ -16,7 +16,7 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | NOT USED and moved status right | 93.8% |
 | Mfr/finish swaps | 0 of 2,218 |
 | Checks | 49/49 |
-| Set numbers printed in the PDFs that we output, all 20 books | 1,174 of 1,175 (99.7%) |
+| Set numbers printed in the PDFs that we output, all 20 books | 1,174 of 1,175 (99.9%) |
 
 | Tier | n | Exact rows | qty | description | catalog | finish | mfr |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -24,25 +24,27 @@ Scored with the strict exact-match scorer on 155 labeled pages (311 sets, 2,218 
 | T1 one caveat | 671 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | T2 hard | 1,091 | 96.9 | 99.2 | 98.5 | 97.3 | 98.9 | 98.4 |
 
-The weakest areas are column drift (93.1% exact rows) and wrapped cells (95.5%), and both are mostly Star, whose catalog cells are full sentences. The T0 misses are Bridgeport, where the labels split `IVES` out of `IVES 69 / 63` and we keep it in the catalog.
+The weakest areas are column drift (93.5% exact rows) and wrapped cells (96.1%), and both are mostly Star, whose catalog cells are full sentences.
 
 ## Held-out set
 
-Every one of the 155 pages above was used to find and fix bugs, so a separate set of 25 pages was labeled afterwards and scored once, with no changes made after seeing the result. The pages were picked on 2026-10-06 from schedule pages that had never been labeled and that the spec writer never saw: one from every book that still had such a page (15 books), plus 10 more spread by book size. Labels and frozen tags are in `experiments/eval/holdout/`.
+Every one of the 155 pages above was used to find and fix bugs, so a separate set of 25 pages was labeled afterwards and scored with no changes made in response. The pages were picked on 2026-10-06 from schedule pages that had never been labeled and that the spec writer never saw: one from every book that still had such a page (15 books), plus 10 more spread by book size. Labels and frozen tags are in `experiments/eval/holdout/`.
+
+It was scored twice. The first run on 2026-10-06 gave 97.2% of rows and 89.5% of sets. Interpreter fixes made later that day against the tuned set (the glued set number, the trailing note block, the column heading rows) and the fresh recompile of every spec moved it to 98.6% of rows, with the same 4 sets wrong. The table shows the rerun of 2026-10-07, which is the code in the repo.
 
 | | Tuned set (155 pages) | Held-out set (25 pages) |
 | :--- | ---: | ---: |
 | Sets | 311 | 38 |
 | Rows | 2,218 | 360 |
-| Sets fully correct | 94.5% | 89.5% |
-| Exact rows | 98.5% | 97.2% |
-| Precision | 98.6% | 97.2% |
+| Sets fully correct | 94.9% | 89.5% |
+| Exact rows | 98.5% | 98.6% |
+| Precision | 98.6% | 98.6% |
 | Mfr/finish swaps | 0 | 0 |
 | T0 trivial rows | 100.0% | 100.0% |
 | T1 one caveat rows | 100.0% | 100.0% |
-| T2 hard rows | 96.8% | 92.8% |
+| T2 hard rows | 96.9% | 96.4% |
 
-The held-out numbers are the ones to quote. Rows hold up (1.2 points lower), and sets drop 5 points, which with 38 sets is 2 sets: 3 of 4 Star sets and 1 of 2 HFH sets, the two books that were weakest on the tuned set as well. Every other book is at 100% on both. The tuned set is what the fixes were developed against, so its number is the optimistic one.
+The held-out numbers are the ones to quote. Rows hold up, and sets drop 5 points, which with 38 sets is 4 sets, all in Star and HFH, the two books that were weakest on the tuned set as well. The 5 wrong rows are Star prose cells on pages 56, 57 and 103, an HFH `DIAGRAMS` row with no quantity on page 137, and a struck HFH row on page 86. Every other book is at 100% on both. The tuned set is what the fixes were developed against, so its number is the optimistic one.
 
 To run it: `GT=eval/holdout/gt python bench_tags.py` once, then `GT=eval/holdout/gt python bench.py`.
 
@@ -54,9 +56,9 @@ To run it: `GT=eval/holdout/gt python bench_tags.py` once, then `GT=eval/holdout
 | :--- | ---: |
 | Set numbers printed in the 20 PDFs | 1,175 |
 | Of those, in our output | 1,174 |
-| Set numbers we output | 1,173 |
+| Distinct set numbers we output | 1,175 |
 
-The three not in our output are Star `01` and `102.1`, two more header spellings (`Hardware Set/Group #01`, `Hardware Group/Sets 102.1`), and Livelle `S52`, which is product text (`Hardware Group S52 Series, 200 pound capacity`) rather than a set.
+The one not in our output is Livelle `S52`, which is product text (`Hardware Group S52 Series, 200 pound capacity`) rather than a set. The one we output that the broad pattern does not see is Star `104`, whose header on page 26 reads `For doors assigned Hardware Group/Set #104 on door schedule`, and the spec's header rule allows that prefix.
 
 ## Unseen books
 
